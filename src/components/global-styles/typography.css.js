@@ -72,6 +72,7 @@ export const Heading1 = styled.h1`
   @media (max-width: 450px) {
     font-size: 1.5rem;
     line-height: 1.17;
+    margin-bottom: 1.5rem;
   }
 `
 
@@ -399,6 +400,7 @@ export const BC2 = styled.p`
     }
   }};
   @media (max-width: 450px) {
+    margin-bottom: 1.5rem;
   }
 `
 
@@ -442,7 +444,7 @@ export const BC3 = styled.p`
 
   @media (max-width: 450px) {
     font-size: 1rem;
-    margin-bottom: 2.35rem;
+    margin-bottom: ${props => props.imageControls ? '0' : '1.5rem'};
     line-height: 1.15;
   }
 `

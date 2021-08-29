@@ -17,11 +17,12 @@ justify-content: ${props => props.column ? '' : 'space-between'};
     flex-direction: column;
     :first-child {
         margin-top: 56px;
+        margin-bottom: 6rem;
     }
     :last-child {
         margin-bottom: 0;
     }
-    margin-bottom: 96px 0;
+    margin-bottom: 6rem;
 }
 `
 export const TextContainer = styled.div`

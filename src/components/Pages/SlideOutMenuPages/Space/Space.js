@@ -6,6 +6,7 @@ import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOut
 import { ImageWrapper, SlideOutPageWrapper, TextContainer, SectionWrapper } from "./Space.css"
 
 import b from "../../../../images/Space/thestalls.png"
+import { DesktopWrapper, MobileWrapper } from "../../../global-styles/containers.css"
 
 const Space = ({ activePage }) => {
   return (
@@ -24,7 +25,25 @@ const Space = ({ activePage }) => {
             src="../../../../images/Space/thestalls.png"
             alt="the stalls"
           />
-          <BC3 imageControls marginTop="md" marginBottom="xl"> PREVIOUS | NEXT</BC3>
+         <DesktopWrapper>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > PREVIOUS | NEXT</BC3>
+          </DesktopWrapper>
+          <MobileWrapper imageControls>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > 1/2</BC3>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > VIEW FULLSCREEN</BC3>
+          </MobileWrapper>
         </ImageWrapper>
       </SectionWrapper>
 
@@ -41,7 +60,25 @@ const Space = ({ activePage }) => {
             src="../../../../images/Space/theyard.png"
             alt="the stalls"
           />
-          <BC3 imageControls marginTop="md" marginBottom="xl"> PREVIOUS | NEXT</BC3>
+         <DesktopWrapper>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > PREVIOUS | NEXT</BC3>
+          </DesktopWrapper>
+          <MobileWrapper imageControls>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > 1/2</BC3>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > VIEW FULLSCREEN</BC3>
+          </MobileWrapper>
         </ImageWrapper>
       </SectionWrapper>
 
@@ -52,13 +89,34 @@ const Space = ({ activePage }) => {
             src="../../../../images/Space/thestalls.png"
             alt="the stalls"
           />
-          <BC3 imageControls marginTop="md"> PREVIOUS | NEXT</BC3>
+          <DesktopWrapper>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > PREVIOUS | NEXT</BC3>
+          </DesktopWrapper>
+          <MobileWrapper imageControls>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > 1/2</BC3>
+          <BC3 
+          style={{
+            color: `grey`
+          }}
+          marginTop="md" > VIEW FULLSCREEN</BC3>
+          </MobileWrapper>
         </ImageWrapper>
 
         <TextContainer right full>
           <BreakLine none/>
-          <Heading1 > PerformerX</Heading1>
-          <Heading1 marginBottom="md"> Video</Heading1>
+          <Heading1 > PerformerX
+            <br/>
+            Video
+          </Heading1>
+      
           <BC2 >
             Our casual dining area is perfect for sit down events for up to 70
             people. The space offers a mix of high tables and dining tables.
