@@ -121,6 +121,9 @@ export const Logos = styled.div`
       margin-bottom: 1rem;
     }
   } */
+  @media (max-width: 450px){
+    padding: 20px 0;
+  }
 `
 export const Logo = styled.div`
   fill: #f9f9f4;

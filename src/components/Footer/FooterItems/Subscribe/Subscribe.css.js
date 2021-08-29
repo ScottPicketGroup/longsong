@@ -5,6 +5,10 @@ export const SubscribeWrapper = styled.div `
 width: 28%;
 display: flex;
 flex-direction: column;
+
+@media screen and (max-width: 450px) {
+      width: 100%;
+    }
 `
 
 
