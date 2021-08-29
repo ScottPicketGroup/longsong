@@ -15,6 +15,10 @@ display: flex;
 width: 100%;
 flex-direction: ${props => props.column ? 'column' : 'row'};
 justify-content: ${props => props.column ? '' : 'space-between'};
+margin-bottom: 6rem;
+:last-child {
+    margin-bottom: 8.86rem;
+}
 @media (max-width: 450px){
     flex-direction: column;
     :first-child {
@@ -33,6 +37,7 @@ props.sixty ? '60%' :
 "40%"};
 align-self: ${props => props.right ? 'flex-end' : ""};
 float: right;
+margin-top: ${props => props.first ? '56px' : ''};
 @media (max-width: 450px){
     width: 100%;
 }

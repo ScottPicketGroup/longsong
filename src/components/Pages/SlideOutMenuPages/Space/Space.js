@@ -19,9 +19,10 @@ import {
 const Space = ({ activePage }) => {
   return (
     <SlideOutPageWrapper activePage={activePage} page={2}>
+       
       <SectionWrapper column>
-        <TextContainer>
-          <BreakLine first />
+        <TextContainer first>
+        <BreakLine  none/>
           <Heading1 marginBottom="md"> The Stalls</Heading1>
           <BC2 marginBottom="lg">
             Our casual dining area is perfect for sit down events for up to 70
@@ -68,7 +69,7 @@ const Space = ({ activePage }) => {
       </SectionWrapper>
 
       <SectionWrapper>
-        <TextContainer>
+        <TextContainer >
           <BreakLine none />
           <Heading1 marginBottom="md"> The Yard</Heading1>
           <BC2 marginBottom="lg">
@@ -158,7 +159,7 @@ const Space = ({ activePage }) => {
           </MobileWrapper>
         </ImageWrapper>
 
-        <TextContainer right full>
+        <TextContainer right full first>
           <BreakLine none />
           <Heading1>
             {" "}
