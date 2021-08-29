@@ -33,7 +33,6 @@ export const MenuSlideOutWrapper = styled.div`
   background: #2b3c31;
   transition: width 1s ease-in-out;
   overflow-y: scroll;
-  
 `
 
 export const SlideOutSideBarWrapper = styled.div`
@@ -56,6 +55,11 @@ export const SlideOutSideBarWrapper = styled.div`
     display: flex;
     align-items: center;
     padding: 0 1rem;
+
+    position: sticky;
+    top: 0;
+    background: #2B3C31;
+    z-index: 1000;
   }
 `
 export const MenuXWrapper = styled.svg`
