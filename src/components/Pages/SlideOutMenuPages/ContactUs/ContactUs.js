@@ -1,10 +1,9 @@
-import { StaticImage } from "gatsby-plugin-image"
+
 import React from "react"
-import { Button } from "../../../global-styles/GlobalStyles.css"
-import { BC3, BC2, Heading1 } from "../../../global-styles/typography.css"
+import {  BC2, Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import {
-  ImageWrapper,
+
   SlideOutPageWrapper,
   SectionWrapper,
   TextContainer,
@@ -13,7 +12,9 @@ import ContactUsForm from "./ContactUsForm"
 
 const ContactUs = ({ activePage }) => {
   return (
-    <SlideOutPageWrapper activePage={activePage} page={5}>
+    <SlideOutPageWrapper activePage={activePage} page={5}
+    contact
+    >
       <BreakLine first/>
       <SectionWrapper>
         <TextContainer>
@@ -41,7 +42,7 @@ const ContactUs = ({ activePage }) => {
           </BC2>
           <BC2 marginBottom="md">WALKINS WELCOME</BC2>
           
-          <BC2 marginBottom="xl">PLEASE NOTE, GROUPS OF 8 OR LARGER ARE REQUIRED TO SELECT THE BANQUET MENU</BC2>
+          <BC2>PLEASE NOTE, GROUPS OF 8 OR LARGER ARE REQUIRED TO SELECT THE BANQUET MENU</BC2>
         </TextContainer>
 
         

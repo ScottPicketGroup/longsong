@@ -4,7 +4,9 @@ export const SlideOutPageWrapper = styled.div`
 padding-right: 8%;
 display: ${props => props.activePage === props.page ? 'flex' : 'none'};
 flex-direction: column;
+
 @media (max-width: 450px){
+    margin-top: ${props => props.contact ? '56px' : ''};
     padding: 0;
   }
 `

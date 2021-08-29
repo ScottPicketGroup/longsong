@@ -1,5 +1,6 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
+import { DesktopWrapper, MobileWrapper } from "../../../global-styles/containers.css"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { BC3, BC2, Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
@@ -19,10 +20,37 @@ const GiftVouchers = ({ activePage }) => {
             src="../../../../images/GroupBookingsAndGiftVouchers/giftVoucher.png"
             alt="gift voucher image"
           />
-          <BC3 imageControls marginTop="md">
-            {" "}
-            PREVIOUS | NEXT
-          </BC3>
+          <DesktopWrapper>
+            <BC3
+              style={{
+                color: `grey`,
+              }}
+              marginTop="md"
+            >
+              {" "}
+              PREVIOUS | NEXT
+            </BC3>
+          </DesktopWrapper>
+          <MobileWrapper imageControls>
+            <BC3
+              style={{
+                color: `grey`,
+              }}
+              marginTop="md"
+            >
+              {" "}
+              1/2
+            </BC3>
+            <BC3
+              style={{
+                color: `grey`,
+              }}
+              marginTop="md"
+            >
+              {" "}
+              VIEW FULLSCREEN
+            </BC3>
+          </MobileWrapper>
         </ImageWrapper>
 
         <TextContainer right full>
