@@ -28,7 +28,6 @@ const ContactUsForm = () => {
     newsletter: false,
   })
 
-  const [form, setForm] = useState(true)
   const [thankyou, setThankyou] = useState(false)
   const encode = (data) => {
     return Object.keys(data)
@@ -44,31 +43,12 @@ const ContactUsForm = () => {
       : setError(error => ({ ...error, email: false}) )
 
   }
-
-  const checkForm = () => {
-    
-    !inputs.fName ? setError(error => ({ ...error, fName: true}) )
-    : setError(error => ({ ...error, fName: false}) )
-    inputs.sName.length === 0 ? setError(error => ({ ...error, sName: true}) )
-    : setError(error => ({ ...error, sName: false}) )
-    inputs.email.length === 0 || !inputs.email.includes(".") || !inputs.email.includes("@") ? setError(error => ({ ...error, email: true}) )
-    : setError(error => ({ ...error, email: false}) )
-    inputs.number.length === 0 ? setError(error => ({ ...error, number: true}) )
-    : setError(error => ({ ...error, number: false}) )
-    inputs.message.length === 0 ? setError(error => ({ ...error, message: true}) )
-    : setError(error => ({ ...error, message: false}) )
-  }
-
-
   
   const handleSubmit = e => {
     e.preventDefault()
    const timestamp = Date.now()
 
-   if((   inputs.fName 
-    && inputs.sName 
-    && inputs.email 
-    && inputs.email.includes(".")) || inputs.email.includes("@"))   
+   if((inputs.fName && inputs.sName && inputs.email && inputs.email.includes(".")) || inputs.email.includes("@"))   
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -82,7 +62,7 @@ const ContactUsForm = () => {
       )
       .catch(error => alert(error));
     
-      if ( inputs.newsletter === true && (inputs.email && inputs.email.includes(".")) || inputs.email.includes("@")) {
+      if ((inputs.newsletter === true && inputs.email && inputs.email.includes(".")) || inputs.email.includes("@")) {
         var myHeaders = new Headers()
         myHeaders.append(
           "Authorization",
@@ -203,11 +183,10 @@ const ContactUsForm = () => {
   
    </InputContainer>
    <TixboxContainer >
-     <div onClick={() => setInputs(inputs => ({ ...inputs, newsletter: true })) }>
-     
-    <CheckBox  />
-    </div>
-       <Label bc2 style={{width: `90%`}}>I would like to receive communications about Scott Pickett Group services, events and matters of relevant interest.</Label>
+     <div onClick={() => setInputs(inputs => ({ ...inputs, newsletter: true })) } aria-hidden="true">
+      <CheckBox  />
+      </div>
+      <Label bc2 style={{width: `90%`}}>I would like to receive communications about Scott Pickett Group services, events and matters of relevant interest.</Label>
    </TixboxContainer>
    <Button onClick={handleSubmit} err={error.email} type="submit" submit>
    SUBMIT

@@ -1,5 +1,5 @@
 import React from "react"
-import { MENU } from "../../global-styles/typography.css"
+import { MenuText } from "../../global-styles/typography.css"
 import LongsongSubMenuIcon from "../Icons/LongsongSubMenuIcon"
 import MenuX from "../Icons/MenuX"
 import { DesktopMenuIconWrapper, MobileMenuIconWrapper } from "../MenuContainer.css"
@@ -10,9 +10,9 @@ const SlideOutSideBar = ({ setMenuOpen, menuOpen, setActivePage}) => {
     <SlideOutSideBarWrapper menuOpen={menuOpen}>
        <DesktopMenuIconWrapper> <MenuX menuOpen={menuOpen} setMenuOpen={setMenuOpen} setActivePage={setActivePage} /></DesktopMenuIconWrapper>
        <MobileMenuIconWrapper>
-        <MENU
+        <MenuText
          onClick={() => setMenuOpen(false)}
-        >CLOSE</MENU>
+        >CLOSE</MenuText>
         <LongsongSubMenuIcon onClick={() => setMenuOpen(true)} setActivePage={setActivePage}/>
     </MobileMenuIconWrapper>
     </SlideOutSideBarWrapper>

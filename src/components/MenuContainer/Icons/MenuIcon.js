@@ -1,5 +1,5 @@
 import React from "react"
-import { MENU } from "../../global-styles/typography.css"
+import { MenuText } from "../../global-styles/typography.css"
 import { DesktopMenuIconWrapper, MobileMenuIconWrapper } from "../MenuContainer.css"
 
 const MenuIcon = ({setMenuOpen, setActivePage}) => {
@@ -36,11 +36,11 @@ const MenuIcon = ({setMenuOpen, setActivePage}) => {
     </svg>
     </DesktopMenuIconWrapper>
     <MobileMenuIconWrapper>
-        <MENU
+        <MenuText
          onClick={() => {
           setActivePage(0) 
           setMenuOpen(true)}}
-        >MENU</MENU>
+        >MENU</MenuText>
     </MobileMenuIconWrapper>
     </>
   )

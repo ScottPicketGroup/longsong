@@ -1,5 +1,4 @@
 import React from "react"
-import { MenuXWrapper } from "../MenuSlideOutContainer/MenuSlideOutContianer.css"
 
 const MenuX = ({setMenuOpen, setActivePage}) => {
 

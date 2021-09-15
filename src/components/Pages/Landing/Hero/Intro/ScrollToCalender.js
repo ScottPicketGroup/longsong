@@ -4,7 +4,7 @@ import {
   DesktopWrapper,
   MobileWrapper,
 } from "../../../../global-styles/containers.css"
-import { DownArrow, ScrollToCalenderContainer } from "../Hero.css"
+import { ScrollToCalenderContainer } from "../Hero.css"
 import LandingDownArrow from "./LandingDownArrow"
 
 const ScrollToCalender = () => {

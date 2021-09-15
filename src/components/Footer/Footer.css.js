@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components"
-import { Link } from "gatsby"
+
 export const FooterWrapper = styled.div`
   width: 100%;
   

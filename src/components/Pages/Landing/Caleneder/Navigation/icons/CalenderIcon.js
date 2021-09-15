@@ -2,7 +2,7 @@ import React from "react"
 import { MonthIconWrapper } from "../../Calender.css"
 
 const CalenderIcon = ({daysView, setDaysView}) => {
-  console.log(daysView)
+
   return (
     <MonthIconWrapper xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 39.869 40"
     daysView={daysView}

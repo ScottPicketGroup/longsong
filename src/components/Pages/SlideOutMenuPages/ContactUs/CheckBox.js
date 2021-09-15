@@ -8,13 +8,10 @@ const CheckBox = () => {
        
     }
     return (
-        <label>
-        <Checkbox
-          checked={checked}
-          onChange={handleChecked}
-        />
-       
-      </label>
+      <Checkbox
+        checked={checked}
+        onChange={handleChecked}
+      />
     )
 }
 const Checkbox = ({ className, checked, ...props }) => (
@@ -60,9 +57,4 @@ const StyledCheckbox = styled.div`
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
-`
-const Icon = styled.svg`
-  fill: none;
-  stroke: #153E35;
-  stroke-width: 2px;
 `

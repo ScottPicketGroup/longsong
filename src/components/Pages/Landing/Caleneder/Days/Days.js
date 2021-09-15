@@ -8,7 +8,6 @@ import {
   EventListWrapper,
   EventFooterWrapper,
 } from "../Calender.css"
-import { BreakLine } from "../../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
 const Days = ({ daysView }) => {
   const [daysToDisplay, setDaysToDisplay] = React.useState()
@@ -19,10 +18,10 @@ const Days = ({ daysView }) => {
   const month = date.getMonth()
 
   useEffect(() => {
-    var date = new Date(Date.UTC(year, month, 1))
+    let date = new Date(Date.UTC(year, month, 1))
     const day = { weekday: "long" }
     const dat = { day: "numeric" }
-    var days = []
+    let days = []
     while (date.getUTCMonth() === month) {
       days.push({
         day: date.toLocaleDateString("au-EN", day),
@@ -31,10 +30,11 @@ const Days = ({ daysView }) => {
       date.setUTCDate(date.getUTCDate() + 1)
     }
     setDaysToDisplay(days)
+    // eslint-disable-next-line
   }, [])
-  console.log(daysToDisplay)
+
   return (
-    <DaysWrapper cols={daysView}>
+    <DaysWrapper cols={daysView ? "true" : "false"}>
       {daysToDisplay &&
         daysToDisplay.map((item, i) =>
           daysView && day < i + 1 ? (

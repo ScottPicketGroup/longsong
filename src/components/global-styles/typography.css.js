@@ -126,7 +126,7 @@ export const Heading3 = styled.h3`
   font-size: 1.15rem;
   line-height: 1.2;
   color: ${props =>
-    props.day == props.date
+    props.day === props.date
       ? "#457E5C "
       : props.day < props.date
       ? "#314638"
@@ -174,7 +174,7 @@ export const Heading3 = styled.h3`
 export const Number1 = styled.h3`
   font-family: heavy;
   color: ${props =>
-    props.day == props.date
+    props.day === props.date
       ? "#457E5C "
       : props.day < props.date
       ? "#314638"
@@ -598,7 +598,7 @@ export const SN2 = styled.p`
   }
 `
 
-export const MENU = styled.p`
+export const MenuText = styled.p`
   font-size: 1.5em;
   line-height: 1;
   letter-spacing: 0;

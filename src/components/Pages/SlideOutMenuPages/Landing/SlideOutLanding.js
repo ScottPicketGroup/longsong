@@ -2,7 +2,6 @@ import React from 'react'
 import { SlideOutLandingWrapper } from './SlideOutLanding.css'
 
 const SlideOutLanding = ({activePage}) => {
-  console.log(activePage)
     return (
         <SlideOutLandingWrapper activePage={activePage} pageNum={1}>
             <svg xmlns="http://www.w3.org/2000/svg" width="580.252" height="300.688" viewBox="0 0 622.252 390.688">

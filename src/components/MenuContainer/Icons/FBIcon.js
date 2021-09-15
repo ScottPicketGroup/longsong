@@ -20,7 +20,7 @@ const FBIcon = () => {
           transform="translate(-3629 26)"
           fill="none"
           
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           id="Facebook-2"

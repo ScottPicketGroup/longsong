@@ -10,7 +10,6 @@ import {
   SectionWrapper,
 } from "./Space.css"
 
-import b from "../../../../images/Space/thestalls.png"
 import {
   DesktopWrapper,
   MobileWrapper,

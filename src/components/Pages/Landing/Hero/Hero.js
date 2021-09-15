@@ -1,7 +1,6 @@
 
 import React from 'react'
-import { BC1 } from '../../../global-styles/typography.css'
-import { AnimationWrapper, HeroWrapper, IntroContainer} from './Hero.css'
+import { AnimationWrapper, HeroWrapper } from './Hero.css'
 import LongsongVideo from './LongsongVideo/LongsongVideo'
 import ScrollToCalender from './Intro/ScrollToCalender'
 import Intro from './Intro/Intro'

@@ -3,7 +3,7 @@ import { BreakLine, SlideOutMenuNavWrapper, MenuItem } from "./SlideOutMenuNavig
 import LongsongIcon from "../../Icons/LongsongIcon"
 
 import DownloadIcon from "../../Icons/DownloadIcon"
-import { BC1, Heading1 } from "../../../global-styles/typography.css"
+import { BC1 } from "../../../global-styles/typography.css"
 import FBIcon from "../../Icons/FBIcon"
 import InstaIcon from "../../Icons/InstaIcon"
 import { DesktopMenuIconWrapper } from "../../MenuContainer.css"
