@@ -132,6 +132,10 @@ export const IntroContainerWrapper = styled.div`
       margin: 1rem;
   }
 `
+export const IntroTextWrapper = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+`
 
 export const ScrollToCalenderContainer = styled.div`
 animation: ${ScrollTotFadeIn} 6s ease;

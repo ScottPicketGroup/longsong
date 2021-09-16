@@ -22,6 +22,17 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
       <MenuItem onClick={() => setActivePage(3)} active={activePage} item={3}> <BC1>Group Bookings</BC1> </MenuItem>
       <MenuItem onClick={() => setActivePage(4)} active={activePage} item={4}> <BC1>Gift Vouchers</BC1></MenuItem>
       <MenuItem onClick={() => setActivePage(5)} active={activePage} item={5}> <BC1 >Contact</BC1> </MenuItem>
+      <MenuItem>
+        <BC1> 
+          <a
+            href="https://longrainmelbourne.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Longrain
+          </a>
+        </BC1>
+      </MenuItem>
 
 
     <DesktopMenuIconWrapper>

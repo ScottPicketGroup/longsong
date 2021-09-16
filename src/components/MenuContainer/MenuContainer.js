@@ -12,7 +12,7 @@ const MenuContainer = ({menuOpen, setMenuOpen, activePage, setActivePage}) => {
     <MenuWrapper>
       <MainWrapper>
         <MenuIcon setMenuOpen={setMenuOpen} setActivePage={setActivePage}/>
-        <LongsongIcon />
+        <LongsongIcon setActivePage={setActivePage} />
       </MainWrapper>
       <EventsWrapper>
         <BC2>Private Events</BC2>
