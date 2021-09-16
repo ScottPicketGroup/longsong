@@ -18,10 +18,9 @@ import {
 const Space = ({ activePage }) => {
   return (
     <SlideOutPageWrapper activePage={activePage} page={2}>
-       
       <SectionWrapper column>
         <TextContainer first>
-        <BreakLine  none/>
+          <BreakLine none />
           <Heading1 marginBottom="md"> The Stalls</Heading1>
           <BC2 marginBottom="lg">
             Our casual dining area is perfect for sit down events for up to 70
@@ -40,7 +39,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               PREVIOUS | NEXT
             </BC3>
           </DesktopWrapper>
@@ -51,7 +49,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               1/2
             </BC3>
             <BC3
@@ -60,7 +57,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               VIEW FULLSCREEN
             </BC3>
           </MobileWrapper>
@@ -68,9 +64,9 @@ const Space = ({ activePage }) => {
       </SectionWrapper>
 
       <SectionWrapper>
-        <TextContainer >
+        <TextContainer>
           <BreakLine none />
-          <Heading1 marginBottom="md"> The Yard</Heading1>
+          <Heading1 marginBottom="md">The Yard</Heading1>
           <BC2 marginBottom="lg">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -92,7 +88,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               PREVIOUS | NEXT
             </BC3>
           </DesktopWrapper>
@@ -103,7 +98,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               1/2
             </BC3>
             <BC3
@@ -112,7 +106,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               VIEW FULLSCREEN
             </BC3>
           </MobileWrapper>
@@ -132,7 +125,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               PREVIOUS | NEXT
             </BC3>
           </DesktopWrapper>
@@ -143,7 +135,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               1/2
             </BC3>
             <BC3
@@ -152,7 +143,6 @@ const Space = ({ activePage }) => {
               }}
               marginTop="md"
             >
-              {" "}
               VIEW FULLSCREEN
             </BC3>
           </MobileWrapper>
@@ -161,12 +151,10 @@ const Space = ({ activePage }) => {
         <TextContainer right full first>
           <BreakLine none />
           <Heading1>
-            {" "}
             PerformerX
             <br />
             Video
           </Heading1>
-
           <BC2>
             Our casual dining area is perfect for sit down events for up to 70
             people. The space offers a mix of high tables and dining tables.
