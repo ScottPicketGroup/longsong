@@ -18,7 +18,7 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
       </DesktopMenuIconWrapper>
       <MenuItem active={activePage} item={0}> <BC1>Drinks</BC1> <DownloadIcon/></MenuItem>
       <MenuItem active={activePage} item={0}> <BC1>Food</BC1> <DownloadIcon/></MenuItem>
-      <MenuItem onClick={() => setActivePage(2)} active={activePage} item={2}> <BC1>Space</BC1> </MenuItem>
+      <MenuItem onClick={() => setActivePage(2)} active={activePage} item={2}> <BC1>Bar</BC1> </MenuItem>
       <MenuItem onClick={() => setActivePage(3)} active={activePage} item={3}> <BC1>Private Events</BC1> </MenuItem>
       <MenuItem onClick={() => setActivePage(4)} active={activePage} item={4}> <BC1>Gift Vouchers</BC1></MenuItem>
       <MenuItem onClick={() => setActivePage(5)} active={activePage} item={5}> <BC1 >Contact</BC1> </MenuItem>
