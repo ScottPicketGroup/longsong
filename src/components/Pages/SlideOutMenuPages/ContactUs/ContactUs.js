@@ -1,9 +1,7 @@
-
 import React from "react"
-import {  BC2, Heading1 } from "../../../global-styles/typography.css"
+import { BC2, Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import {
-
   SlideOutPageWrapper,
   SectionWrapper,
   TextContainer,
@@ -12,13 +10,11 @@ import ContactUsForm from "./ContactUsForm"
 
 const ContactUs = ({ activePage }) => {
   return (
-    <SlideOutPageWrapper activePage={activePage} page={5}
-    contact
-    >
-      <BreakLine first/>
+    <SlideOutPageWrapper activePage={activePage} page={5} contact>
+      <BreakLine first />
       <SectionWrapper>
         <TextContainer>
-        <Heading1> Contact Us</Heading1>
+          <Heading1> Contact Us</Heading1>
         </TextContainer>
         <TextContainer sixty>
           <BC2 marginBottom="md">
@@ -41,20 +37,20 @@ const ContactUs = ({ activePage }) => {
             <br />
           </BC2>
           <BC2 marginBottom="md">WALKINS WELCOME</BC2>
-          
-          <BC2>PLEASE NOTE, GROUPS OF 8 OR LARGER ARE REQUIRED TO SELECT THE BANQUET MENU</BC2>
-        </TextContainer>
 
-        
+          <BC2>
+            PLEASE NOTE, GROUPS OF 8 OR LARGER ARE REQUIRED TO SELECT THE
+            BANQUET MENU
+          </BC2>
+        </TextContainer>
       </SectionWrapper>
       <SectionWrapper>
-      <TextContainer >
-        <Heading1> Contact Form</Heading1>
+        <TextContainer>
+          <Heading1> Contact Form</Heading1>
         </TextContainer>
-        <TextContainer sixty >
-        <ContactUsForm />
+        <TextContainer sixty>
+          <ContactUsForm />
         </TextContainer>
-      
       </SectionWrapper>
     </SlideOutPageWrapper>
   )

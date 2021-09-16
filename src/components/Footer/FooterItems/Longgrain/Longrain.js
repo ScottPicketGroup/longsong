@@ -7,7 +7,7 @@ const FooterLongrain = () => {
     <FooterLinksColumn>
   
       <BC4 marginBottom="sm">
-        <a href="https://longrainmelbourne.com/" target="_blank">LONGRAIN</a>
+        <a href="https://longrainmelbourne.com/" target="_blank" rel="noreferrer">LONGRAIN</a>
       </BC4>
     
     </FooterLinksColumn>

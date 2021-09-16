@@ -23,8 +23,8 @@ const InstaIcon = () => {
           transform="translate(-3629 83.001)"
           fill="none"
        
-          stroke-miterlimit="10"
-          stroke-width="2"
+          strokeMiterlimit="10"
+          strokeWidth="2"
         >
           <circle cx="26.015" cy="26.015" r="26.015" stroke="none" />
           <circle cx="26.015" cy="26.015" r="25.015" fill="none" />

@@ -3,13 +3,11 @@ import { BreakLine, SlideOutMenuNavWrapper, MenuItem } from "./SlideOutMenuNavig
 import LongsongIcon from "../../Icons/LongsongIcon"
 
 import DownloadIcon from "../../Icons/DownloadIcon"
-import { BC1, Heading1 } from "../../../global-styles/typography.css"
+import { BC1 } from "../../../global-styles/typography.css"
 import FBIcon from "../../Icons/FBIcon"
 import InstaIcon from "../../Icons/InstaIcon"
 import { DesktopMenuIconWrapper } from "../../MenuContainer.css"
 const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
-
-console.log(activePage)
 
   return (
     <SlideOutMenuNavWrapper>
@@ -20,10 +18,21 @@ console.log(activePage)
       </DesktopMenuIconWrapper>
       <MenuItem active={activePage} item={0}> <BC1>Drinks</BC1> <DownloadIcon/></MenuItem>
       <MenuItem active={activePage} item={0}> <BC1>Food</BC1> <DownloadIcon/></MenuItem>
-      <MenuItem onClick={() => setActivePage(2)} active={activePage} item={2}> <BC1>Space</BC1> </MenuItem>
-      <MenuItem onClick={() => setActivePage(3)} active={activePage} item={3}> <BC1>Group Bookings</BC1> </MenuItem>
+      <MenuItem onClick={() => setActivePage(2)} active={activePage} item={2}> <BC1>Bar</BC1> </MenuItem>
+      <MenuItem onClick={() => setActivePage(3)} active={activePage} item={3}> <BC1>Private Events</BC1> </MenuItem>
       <MenuItem onClick={() => setActivePage(4)} active={activePage} item={4}> <BC1>Gift Vouchers</BC1></MenuItem>
       <MenuItem onClick={() => setActivePage(5)} active={activePage} item={5}> <BC1 >Contact</BC1> </MenuItem>
+      <MenuItem active={false}>
+        <BC1> 
+          <a
+            href="https://longrainmelbourne.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Longrain
+          </a>
+        </BC1>
+      </MenuItem>
 
 
     <DesktopMenuIconWrapper>

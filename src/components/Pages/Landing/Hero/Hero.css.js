@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 export const LogoAnimation = keyframes`
   0% {
@@ -131,6 +131,10 @@ export const IntroContainerWrapper = styled.div`
   @media (max-width: 450px) {
       margin: 1rem;
   }
+`
+export const IntroTextWrapper = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
 `
 
 export const ScrollToCalenderContainer = styled.div`

@@ -12,7 +12,7 @@ import {
   Label,
 } from "./contact-components"
 import CheckBox from "./CheckBox"
-import { Button } from "../../../global-styles/GlobalStyles.css"
+import { Button } from "../../../../global-styles/GlobalStyles.css"
 const ContactUsForm = () => {
   const [error, setError] = useState({
     fName: false,
@@ -156,7 +156,34 @@ const ContactUsForm = () => {
                   />
                 </InputContainer>
               </ContactFormRow>
-
+              <ContactFormRow>
+                <InputContainer>
+                  <Label>TYPE OF EVENT</Label>
+                  <Input
+                    placeholder="Please enter the type of event"
+                    name=""
+                    type="text"
+                  />
+                </InputContainer>
+                <InputContainer>
+                  <Label>DATE OF EVENT</Label>
+                  <Input
+                    placeholder="Please enter the date of event"
+                    name=""
+                    type="text"
+                  />
+                </InputContainer>
+              </ContactFormRow>
+              <ContactFormRow>
+                <InputContainer>
+                  <Label>NUMBER OF GUESTS</Label>
+                  <Input
+                    placeholder="Please enter the number of guests"
+                    name=""
+                    type="text"
+                  />
+                </InputContainer>
+              </ContactFormRow>
               <InputContainer>
                 <Label>MESSAGE</Label>
                 <InputMessage

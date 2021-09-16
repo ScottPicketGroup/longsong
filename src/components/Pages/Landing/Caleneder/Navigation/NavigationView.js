@@ -1,5 +1,5 @@
 import React from 'react'
-import { CalanderView, DayView, NavigationViewWrapper } from '../Calender.css'
+import { NavigationViewWrapper } from '../Calender.css'
 import CalenderIcon from './icons/CalenderIcon'
 import DayIcon from './icons/DayIcon'
 

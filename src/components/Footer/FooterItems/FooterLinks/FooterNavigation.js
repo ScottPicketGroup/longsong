@@ -17,7 +17,7 @@ const FooterNavigation = ({
           setMenuOpen(true)
         }}
       >
-        Group Bookings
+        Private Events
       </FooterLink>
       <FooterLink
         marginBottom="sm"

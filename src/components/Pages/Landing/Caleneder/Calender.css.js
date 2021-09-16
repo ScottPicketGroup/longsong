@@ -58,7 +58,7 @@ export const DaysWrapper = styled.div`
 
   display: grid;
   grid-template-columns: ${props =>
-    props.cols === true ? `repeat(2, 1fr)` : `repeat(7, 1fr)`};
+    props.cols === "true" ? `repeat(2, 1fr)` : `repeat(7, 1fr)`};
   grid-gap: 0 1rem;
   @media (max-width: 450px) {
     grid-template-columns: repeat(1, 1fr);
@@ -67,13 +67,13 @@ export const DaysWrapper = styled.div`
 `
 export const DayContainer = styled.div`
   border-top: ${props =>
-    props.day == props.date
+    props.day === props.date
       ? ".5px  #457E5C solid"
       : props.day < props.date
       ? ".5px #314638 solid"
       : ".5px white solid"};
   border-bottom: ${props =>
-    props.day == props.date
+    props.day === props.date
       ? ".5px  #457E5C solid"
       : props.day < props.date
       ? ".5px #314638 solid"

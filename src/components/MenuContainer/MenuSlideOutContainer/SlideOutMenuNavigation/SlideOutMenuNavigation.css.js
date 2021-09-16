@@ -25,7 +25,7 @@ align-items: center;
 margin-bottom: 1.25rem;
 margin-top: ${props => props.socials ? '6rem' : ''};
 cursor: pointer;
-font-family: ${props => props.active == props.item ? 'bold' : 'normal'};
+font-family: ${props => props.active === props.item ? 'bold' : 'normal'};
 :nth-last-child(3){
     margin-bottom: 0;
 }

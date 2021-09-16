@@ -7,10 +7,10 @@ const FooterSocials = () => {
     <FooterLinksColumn>
       <BC4 marginBottom="md">SOCIAL MEDIA</BC4>
       <BC4 marginBottom="sm">
-        <a href="http://instagram.com/longsongmelbourne" target="_blank">Instagram</a>
+        <a href="http://instagram.com/longsongmelbourne" target="_blank" rel="noreferrer">Instagram</a>
       </BC4>
       <BC4>
-        <a href="https://www.facebook.com/longsongmelbourne/" target="_blank">Facebook</a>
+        <a href="https://www.facebook.com/longsongmelbourne/" target="_blank" rel="noreferrer">Facebook</a>
       </BC4>
     </FooterLinksColumn>
   )

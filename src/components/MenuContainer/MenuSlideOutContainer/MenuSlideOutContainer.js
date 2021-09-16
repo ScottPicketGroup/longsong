@@ -30,8 +30,6 @@ const MenuSlideOutContainer = ({
 
 
 {
-
-  console.log(menuOpen)
   return (
     <MenuSlideOutWrapper menuOpen={menuOpen}>
       <PageContainer fd="row">
