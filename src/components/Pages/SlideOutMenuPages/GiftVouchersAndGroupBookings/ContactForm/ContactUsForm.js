@@ -25,6 +25,9 @@ const ContactUsForm = () => {
     message: "",
     messageLength: 0,
     newsletter: false,
+    eventType: "",
+    eventDate:"",
+    guestNum: ""
   })
 
   const [thankyou, setThankyou] = useState(false)
@@ -161,16 +164,22 @@ const ContactUsForm = () => {
                   <Label>TYPE OF EVENT</Label>
                   <Input
                     placeholder="Please enter the type of event"
-                    name=""
+                    name="eventType"
                     type="text"
+                    value={inputs.eventType}
+                    onChange={handleChange}
+                    err={error.eventType}
                   />
                 </InputContainer>
                 <InputContainer>
                   <Label>DATE OF EVENT</Label>
                   <Input
                     placeholder="Please enter the date of event"
-                    name=""
+                    name="eventDate"
                     type="text"
+                    value={inputs.eventDate}
+                    onChange={handleChange}
+                    err={error.eventDate}
                   />
                 </InputContainer>
               </ContactFormRow>
@@ -179,8 +188,11 @@ const ContactUsForm = () => {
                   <Label>NUMBER OF GUESTS</Label>
                   <Input
                     placeholder="Please enter the number of guests"
-                    name=""
+                    name="guestNum"
                     type="text"
+                    value={inputs.guestNum}
+                    onChange={handleChange}
+                    err={error.guestNum}
                   />
                 </InputContainer>
               </ContactFormRow>
