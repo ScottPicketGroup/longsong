@@ -9,8 +9,6 @@ import InstaIcon from "../../Icons/InstaIcon"
 import { DesktopMenuIconWrapper } from "../../MenuContainer.css"
 const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
 
-console.log(activePage)
-
   return (
     <SlideOutMenuNavWrapper>
       <DesktopMenuIconWrapper>
