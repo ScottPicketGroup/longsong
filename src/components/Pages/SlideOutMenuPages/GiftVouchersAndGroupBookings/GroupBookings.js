@@ -63,19 +63,10 @@ const GroupBookings = ({ activePage }) => {
             to 180 people. For more information please contact us:
             info@longsong.com.au.
           </BC2>
-          <Button marginBottom="xl">FUNCTIONS PACKAGE 1</Button>
+          <Button marginBottom="" style={{ marginRight: `2rem`}}>FUNCTIONS PACKAGE 1</Button>
+          <Button >FUNCTIONS PACKAGE 2</Button>
         </TextContainer>
-        <TextContainer right full>
-          <BreakLine none />
-          <Heading1>Private Events</Heading1>
-          <Heading1 marginBottom="md">Video</Heading1>
-          <BC2 marginBottom="lg">
-            Longsong is available for private functions. We can hold from 10 up
-            to 180 people. For more information please contact us:
-            info@longsong.com.au.
-          </BC2>
-          <Button marginBottom="xl">FUNCTIONS PACKAGE 2</Button>
-        </TextContainer>
+        
       </SectionWrapper>
       <SectionWrapper column>
         <TextContainer first>

@@ -1,10 +1,20 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+
+export const xFadeIn = keyframes`
+  0% {
+    display: none;
+    opacity: 0;
+  
+  100% {
+    opacity: 1; 
+  }`
 
 export const SlideOutPageWrapper = styled.div`
 padding-right: 8%;
 display: ${props => props.activePage === props.page ? 'flex' : 'none'};
 flex-direction: column;
-
+animation: ${xFadeIn} 1s ease;
 @media (max-width: 450px){
     margin-top: ${props => props.contact ? '56px' : ''};
     padding: 0;
