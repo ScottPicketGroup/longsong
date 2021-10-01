@@ -5,19 +5,27 @@ import MenuIcon from "./Icons/MenuIcon"
 import { EventsWrapper, MainWrapper, MenuWrapper } from "./MenuContainer.css"
 import MenuSlideOutContainer from "./MenuSlideOutContainer/MenuSlideOutContainer"
 
-const MenuContainer = ({menuOpen, setMenuOpen, activePage, setActivePage}) => {
-  
-
+const MenuContainer = ({
+  menuOpen,
+  setMenuOpen,
+  activePage,
+  setActivePage,
+}) => {
   return (
     <MenuWrapper>
       <MainWrapper>
-        <MenuIcon setMenuOpen={setMenuOpen} setActivePage={setActivePage}/>
+        <MenuIcon setMenuOpen={setMenuOpen} setActivePage={setActivePage} />
         <LongsongIcon setActivePage={setActivePage} />
       </MainWrapper>
       <EventsWrapper>
         <BC2>Private Events</BC2>
       </EventsWrapper>
-      <MenuSlideOutContainer menuOpen={menuOpen} setMenuOpen={setMenuOpen} activePage={activePage} setActivePage={setActivePage}/>
+      <MenuSlideOutContainer
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        activePage={activePage}
+        setActivePage={setActivePage}
+      />
     </MenuWrapper>
   )
 }
