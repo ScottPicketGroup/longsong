@@ -31,7 +31,7 @@ border: 1px solid white;
 width: ${props => props.submit ? '35%' : ''};
 color: white;
 padding: .5rem .75rem;
-transition: all .2 ease-in-out;
+transition: all .2s ease-in-out;
 :hover {
   color: #2B3C31;
   background: white;

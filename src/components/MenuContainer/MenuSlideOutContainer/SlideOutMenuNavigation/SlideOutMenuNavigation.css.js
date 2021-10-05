@@ -9,7 +9,7 @@ flex-direction: column;
 export const BreakLine = styled.div`
 width: 100%;
 height: 1px;
-margin: ${props => props.none ? ' 0 0 2.65rem 0' : props.first ? '3.25rem 0 2.65rem 0' : '0 0 1.5rem 0' };
+margin: ${props => props.none ? ' 0 0 2.65rem 0' : props.first ? '3.25rem 0 2.65rem 0' : '1.5rem 0 1.5rem 0' };
 border-bottom: 1px solid grey;
 @media (max-width: 450px){
     display: none;
