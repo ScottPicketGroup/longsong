@@ -11,6 +11,7 @@ const MenuX = ({setMenuOpen, setActivePage}) => {
       xmlns="http://www.w3.org/2000/svg"
       onClick={handleClick}
       viewBox="0 0 39.914 39.914"
+      height="2rem"
     >
       <path
         id="LaTrobe_Icon_Library-20"

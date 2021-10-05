@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { BC3, Heading1 } from "../../global-styles/typography.css"
@@ -11,57 +10,20 @@ import {
   MobileWrapper,
 } from "../../global-styles/containers.css"
 
-const StallsAndYard = () => {
-  const data = useStaticQuery(graphql`
-    query StallsAndYard {
-      contentfulLongsongPageContent {
-        theStallsTitle
-        theStallsMedia {
-          gatsbyImageData
-          title
-        }
-        theStallsDescription {
-          raw
-        }
-        theYardTitle
-        theYardMedia {
-          gatsbyImageData
-          title
-        }
-        theYardContent {
-          raw
-        }
-        featuredPerformerTitle
-        featuredPerformerDescription {
-          raw
-        }
-        featuredPerformerMedia {
-          gatsbyImageData
-          title
-        }
-      }
-    }
-  `)
+const StallsAndYard = ({ data }) => {
 
   return (
     <>
       <SectionWrapper column>
         <TextContainer first marginBottom="lg">
           <BreakLine none />
-          <Heading1 marginBottom="md">
-            {data.contentfulLongsongPageContent.theStallsTitle}
-          </Heading1>
-          {renderRichText(
-            data.contentfulLongsongPageContent.theStallsDescription
-          )}
+          <Heading1 marginBottom="md">{data.firstSection.title}</Heading1>
+          {renderRichText(data.firstSection.content)}
         </TextContainer>
         <ImageWrapper horizontal>
           <GatsbyImage
-            image={
-              data.contentfulLongsongPageContent.theStallsMedia[0]
-                .gatsbyImageData
-            }
-            alt={data.contentfulLongsongPageContent.theStallsMedia[0].title}
+            image={data.firstSection.imageData}
+            alt={data.firstSection.imageTitle}
           />
           <DesktopWrapper>
             <BC3
@@ -97,17 +59,13 @@ const StallsAndYard = () => {
       <SectionWrapper>
         <TextContainer>
           <BreakLine none />
-          <Heading1 marginBottom="md">
-            {data.contentfulLongsongPageContent.theYardTitle}
-          </Heading1>
-          {renderRichText(data.contentfulLongsongPageContent.theYardContent)}
+          <Heading1 marginBottom="md">{data.secondSection.title}</Heading1>
+          {renderRichText(data.secondSection.content)}
         </TextContainer>
         <ImageWrapper>
           <GatsbyImage
-            image={
-              data.contentfulLongsongPageContent.theYardMedia[0].gatsbyImageData
-            }
-            alt={data.contentfulLongsongPageContent.theYardMedia[0].title}
+            image={data.secondSection.imageData}
+            alt={data.secondSection.imageTitle}
           />
           <DesktopWrapper>
             <BC3
@@ -143,13 +101,8 @@ const StallsAndYard = () => {
       <SectionWrapper column>
         <ImageWrapper full>
           <GatsbyImage
-            image={
-              data.contentfulLongsongPageContent.featuredPerformerMedia
-                .gatsbyImageData
-            }
-            alt={
-              data.contentfulLongsongPageContent.featuredPerformerMedia.title
-            }
+            image={data.thirdSection.imageData}
+            alt={data.thirdSection.imageTitle}
           />
           <DesktopWrapper>
             <BC3
@@ -183,12 +136,8 @@ const StallsAndYard = () => {
 
         <TextContainer right full first>
           <BreakLine none />
-          <Heading1>
-            {data.contentfulLongsongPageContent.featuredPerformerTitle}
-          </Heading1>
-          {renderRichText(
-            data.contentfulLongsongPageContent.featuredPerformerDescription
-          )}
+          <Heading1 marginBottom="md">{data.thirdSection.title}</Heading1>
+          {renderRichText(data.thirdSection.content)}
         </TextContainer>
       </SectionWrapper>
     </>

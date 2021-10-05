@@ -15,48 +15,62 @@ const Days = ({ daysView }) => {
   const date = new Date()
   const day = date.getDay()
   const year = date.getYear()
-  const month = date.getMonth()
+  const month = date.getMonth() 
+
 
   useEffect(() => {
-    let date = new Date(Date.UTC(year, month, 1))
+    let date = new Date(Date.UTC(2021, month, 1))
+    
     const day = { weekday: "long" }
     const dat = { day: "numeric" }
     let days = []
+    
     while (date.getUTCMonth() === month) {
+      let iterator = date.getDate()
+      
+    if ( iterator < 10 ){
+      days.push({
+        day: date.toLocaleDateString("au-EN", day),
+        date: "0" + date.toLocaleDateString("au-EN", dat),
+      })}
+      else{
       days.push({
         day: date.toLocaleDateString("au-EN", day),
         date: date.toLocaleDateString("au-EN", dat),
-      })
+      })}
       date.setUTCDate(date.getUTCDate() + 1)
     }
     setDaysToDisplay(days)
-    // eslint-disable-next-line
+  
+    
   }, [])
+
+
 
   return (
     <DaysWrapper cols={daysView ? "true" : "false"}>
       {daysToDisplay &&
         daysToDisplay.map((item, i) =>
           daysView && day < i + 1 ? (
-            <DayContainer>
-              <DateDisplayContainer day={item.date} date={day} i={i} key={i}>
+            <DayContainer i={i}>
+              <DateDisplayContainer  dayOfWeek={item.day} day={item.date} date={date.getDate()} i={i} key={i}>
                 <DateDisplayContainer>
-                  <Heading3 day={item.date} date={day} i={i}>
+                  <Heading3 dayOfWeek={item.day} day={item.date} date={date.getDate()} i={i}>
                     {item.day}
                   </Heading3>
-                  <Number1 day={item.date} date={day} i={i}>
+                  <Number1 dayOfWeek={item.day} day={item.date} date={date.getDate()} i={i}>
                     {item.date}
                   </Number1>
                 </DateDisplayContainer>
               </DateDisplayContainer>
             </DayContainer>
           ) : !daysView ? (
-            <DayContainer day={item.date} date={day} i={i} key={i}>
+            <DayContainer day={item.date} date={date.getDate()} i={i} key={i}>
                <DateDisplayContainer>
-              <Heading3 day={item.date} date={day} i={i}>
+              <Heading3 day={item.date} date={date.getDate()} i={i}>
                 {item.day}
               </Heading3>
-              <Number1 day={item.date} date={day} i={i}>
+              <Number1 day={item.date} date={date.getDate()} i={i}>
                 {item.date}
               </Number1>
               </DateDisplayContainer>

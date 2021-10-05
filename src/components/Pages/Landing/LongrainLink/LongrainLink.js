@@ -1,6 +1,6 @@
 import React from "react"
 import { BC4 } from "../../../global-styles/typography.css"
-import { LongrainLinkWrapper } from "./LongrainLink.css"
+import { LongrainLinkWrapper, Underline } from "./LongrainLink.css"
 
 const LongrainLink = () => {
   return (
@@ -13,6 +13,7 @@ const LongrainLink = () => {
         >
           LONGRAIN
         </a>
+        <Underline /> 
       </BC4>
     </LongrainLinkWrapper>
   )

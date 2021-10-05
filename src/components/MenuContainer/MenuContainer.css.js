@@ -53,6 +53,9 @@ export const EventsWrapper = styled.div`
 `
 
 export const DesktopMenuIconWrapper = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
   @media (max-width: 451px) {
     display: none;
   }
