@@ -1,4 +1,6 @@
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql } from "gatsby"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import React from "react"
 import {
   DesktopWrapper,
@@ -17,13 +19,72 @@ import ContactUsForm from "./ContactForm/ContactUsForm"
 import StallsAndYard from "../StallsAndYard"
 
 const GroupBookings = ({ activePage }) => {
+  const data = useStaticQuery(graphql`
+    query PrivateEvent {
+      contentfulLongsongPageContent {
+        privateEventsHeroImage {
+          title
+          gatsbyImageData
+        }
+        privateEventSection1title
+        privateEventSection1description {
+          raw
+        }
+        privateEventsSection1media {
+          gatsbyImageData
+          title
+        }
+        privateEventsSection2title
+        privateEventsSection2description {
+          raw
+        }
+        privateEventsSection2media {
+          title
+          gatsbyImageData
+        }
+        privateEventsSection3title
+        privateEventsSection3description {
+          raw
+        }
+        privateEventsSection3media {
+          title
+          gatsbyImageData
+        }
+      }
+    }
+  `)
+  const newData = {
+    firstSection: {
+      title: data.contentfulLongsongPageContent.privateEventSection1title,
+      content: data.contentfulLongsongPageContent.privateEventSection1description,
+      imageData: data.contentfulLongsongPageContent.privateEventsSection1media[0].gatsbyImageData,
+      imageTitle: data.contentfulLongsongPageContent.privateEventsSection1media[0].title,
+    },
+    secondSection: {
+      title: data.contentfulLongsongPageContent.privateEventsSection2title,
+      content: data.contentfulLongsongPageContent.privateEventsSection2description,
+      imageData: data.contentfulLongsongPageContent.privateEventsSection2media[0].gatsbyImageData,
+      imageTitle: data.contentfulLongsongPageContent.privateEventsSection2media[0].title,
+    },
+    thirdSection: {
+      title: data.contentfulLongsongPageContent.privateEventsSection3title,
+      content: data.contentfulLongsongPageContent.privateEventsSection3description,
+      imageData: data.contentfulLongsongPageContent.privateEventsSection3media[0].gatsbyImageData,
+      imageTitle: data.contentfulLongsongPageContent.privateEventsSection3media[0].title,
+    }
+  }
   return (
     <SlideOutPageWrapper activePage={activePage} page={3}>
       <SectionWrapper column>
         <ImageWrapper full>
-          <StaticImage
-            src="../../../../images/GroupBookingsAndGiftVouchers/groupBookings.png"
-            alt="gift voucher image"
+          <GatsbyImage
+            image={
+              data.contentfulLongsongPageContent.privateEventsHeroImage[0]
+                .gatsbyImageData
+            }
+            alt={
+              data.contentfulLongsongPageContent.privateEventsHeroImage[0].title
+            }
           />
           <DesktopWrapper>
             <BC3
@@ -55,21 +116,22 @@ const GroupBookings = ({ activePage }) => {
           </MobileWrapper>
         </ImageWrapper>
 
-        <TextContainer right full>
+        <TextContainer right full marginBottom="lg">
           <BreakLine none />
           <Heading1>Private Events</Heading1>
           <Heading1 marginBottom="md">Video</Heading1>
-          <BC2 marginBottom="lg">
+          <BC2>
             Longsong is available for private functions. We can hold from 10 up
             to 180 people. For more information please contact us:
             info@longsong.com.au.
           </BC2>
-          <Button marginBottom="" style={{ marginRight: `2rem`}}>FUNCTIONS PACKAGE 1</Button>
-          <Button >FUNCTIONS PACKAGE 2</Button>
+          <Button marginBottom="" style={{ marginRight: `2rem` }}>
+            FUNCTIONS PACKAGE 1
+          </Button>
+          <Button>FUNCTIONS PACKAGE 2</Button>
         </TextContainer>
-        
       </SectionWrapper>
-      <StallsAndYard />
+      <StallsAndYard data={newData} />
       <BreakLine first />
       <SectionWrapper>
         <TextContainer>
