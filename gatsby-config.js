@@ -40,10 +40,9 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-         spaceId: 's1sz6aratr2c,
-         accessToken: 'CkhxT5t8yLHclzwnxj_pdmlhwpEROUUczOUhBJRk48k',
-        host: `preview.contentful.com`,
-      }
-    },
+        spaceId: `s1sz6aratr2c`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: CkhxT5t8yLHclzwnxj_pdmlhwpEROUUczOUhBJRk48k,
+      },
   ],
 }
