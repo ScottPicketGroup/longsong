@@ -66,18 +66,35 @@ export const DaysWrapper = styled.div`
   }
 `
 export const DayContainer = styled.div`
-  border-top: ${props =>
-    props.day === props.date
-      ? ".5px  #457E5C solid"
-      : props.day < props.date
-      ? ".5px #314638 solid"
-      : ".5px white solid"};
-  border-bottom: ${props =>
-    props.day === props.date
-      ? ".5px  #457E5C solid"
-      : props.day < props.date
-      ? ".5px #314638 solid"
-      : ".5px white solid"};
+border-top: ${props =>
+  props.day < props.date
+    ? ".5px solid #6A6A6A"
+    :     props.day == props.date
+    ? "1px solid #457E5C" :
+    props.day == props.date + 1 
+    ? ".5px solid #314638" :
+    props.day == props.date +8 
+    ? ".5px solid #314638" :
+    props.day > props.date && props.day < props.date + 7 
+    ? ".5px solid #6A6A6A" 
+    : props.day == props.date + 7 ?
+    "1px solid #457E5C" 
+    : props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30 
+    ? "#6A6A6A.5px solid" 
+    : ".5px solid white"};
+   
+    border-bottom: ${props => 
+      props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30
+    ? ".5px solid #6A6A6A" : 
+      props.i > 23 ? '1px solid white'  
+    : 
+    'none'};
+//#457E5C
+      height: 12vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
   @media (max-width: 450px) {
     display: ${props => (props.day < props.date ? "none" : "flex")};
     border: 1px solid white;
@@ -87,7 +104,8 @@ export const DayContainer = styled.div`
 `
 
 export const DateDisplayContainer = styled.div`
-  padding-top: 1rem;
+  padding-top: .25rem;
+  margin-left: .8rem;
   @media (max-width: 450px) {
     width: 100%;
     border-bottom: 1px solid white;

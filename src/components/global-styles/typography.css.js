@@ -123,13 +123,19 @@ export const Heading2 = styled.h2`
 
 export const Heading3 = styled.h3`
   font-family: normal;
-  font-size: 1.15rem;
+  font-weight: 100;
+  font-size: 1rem;
   line-height: 1.2;
   color: ${props =>
-    props.day === props.date
-      ? "#457E5C "
-      : props.day < props.date
-      ? "#314638"
+    props.day < props.date
+      ? "#6A6A6A" 
+      : props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30 
+      ? "#6A6A6A" 
+      :     props.day == props.date
+      ? "#457E5C" :
+      props.day == props.date + 1 
+      ? "#314638" 
+      
       : "white"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -172,15 +178,20 @@ export const Heading3 = styled.h3`
 `
 
 export const Number1 = styled.h3`
-  font-family: heavy;
+letter-spacing: 3px;
+font-weight: 100;
   color: ${props =>
-    props.day === props.date
-      ? "#457E5C "
-      : props.day < props.date
+    props.day < props.date
+      ? "#6A6A6A"
+      :     props.day == props.date
+      ? "#457E5C" :
+       props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30 
+      ? "#6A6A6A" :
+      props.day == props.date + 1 
       ? "#314638"
       : "white"};
   font-size: 4.68rem;
-  line-height: 1;
+  line-height: .75;
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":
