@@ -129,16 +129,29 @@ export const IntroContainerWrapper = styled.div`
   margin-bottom: -2rem;
   text-align: center;
   @media (max-width: 450px) {
-      margin: 1rem;
+    margin: 1rem;
   }
 `
 export const IntroTextWrapper = styled.div`
   max-width: 1000px;
   margin: 0 auto;
+
+  p {
+    font-size: 1.44rem !important;
+    line-height: 1.13;
+    letter-spacing: 10;
+  }
+
+  @media (max-width: 450px) {
+    p {
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+  }
 `
 
 export const ScrollToCalenderContainer = styled.div`
-animation: ${ScrollTotFadeIn} 6s ease;
+  animation: ${ScrollTotFadeIn} 6s ease;
   display: flex;
   flex-direction: column;
   align-items: center;

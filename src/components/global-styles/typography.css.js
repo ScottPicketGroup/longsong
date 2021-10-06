@@ -122,6 +122,7 @@ export const Heading2 = styled.h2`
 `
 
 export const Heading3 = styled.h3`
+margin-left: 1rem;
   font-family: normal;
   font-weight: 100;
   font-size: 1rem;
@@ -129,11 +130,12 @@ export const Heading3 = styled.h3`
   color: ${props =>
     props.day < props.date
       ? "#6A6A6A" 
-      : props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30 
-      ? "#6A6A6A" 
-      :     props.day == props.date
-      ? "#457E5C" :
-      props.day == props.date + 1 
+      : props.dayOfWeek == 'Sunday' 
+      ? "#6A6A6A" :
+      props.i === props.date - 1 
+    ? "#457E5C" :
+    
+    props.i === props.date 
       ? "#314638" 
       
       : "white"};
@@ -178,16 +180,17 @@ export const Heading3 = styled.h3`
 `
 
 export const Number1 = styled.h3`
+margin-left: 1rem;
 letter-spacing: 3px;
 font-weight: 100;
   color: ${props =>
     props.day < props.date
-      ? "#6A6A6A"
-      :     props.day == props.date
-      ? "#457E5C" :
-       props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30 
       ? "#6A6A6A" :
-      props.day == props.date + 1 
+      props.i === props.date - 1 
+      ? "#457E5C" :
+       props.dayOfWeek == 'Sunday' 
+      ? "#6A6A6A" :
+      props.i === props.date  
       ? "#314638"
       : "white"};
   font-size: 4.68rem;
@@ -223,7 +226,7 @@ font-weight: 100;
       case "xxl":
         return "100%"
       default:
-        return "4.42rem"
+        return "0"
     }
   }};
   @media (max-width: 450px) {
@@ -236,7 +239,7 @@ font-weight: 100;
 `
 
 export const Month1 = styled.h3`
-  font-family: bold;
+  font-family: normal;
   color: #457e5c;
   font-size: 2.5rem;
   line-height: 1;

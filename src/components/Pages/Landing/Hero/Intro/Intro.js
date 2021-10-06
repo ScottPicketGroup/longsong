@@ -1,5 +1,4 @@
 import React from "react"
-import { BC1, BC2 } from "../../../../global-styles/typography.css"
 import { useStaticQuery, graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import {
@@ -9,37 +8,34 @@ import {
 import { IntroContainerWrapper, IntroTextWrapper } from "../Hero.css"
 const Intro = () => {
   const data = useStaticQuery(graphql`
-  query landingIntro {
-    allContentfulLongsongPageContent {
-      edges {
-        node {
-          landingIntro {
-            raw
+    query landingIntro {
+      allContentfulLongsongPageContent {
+        edges {
+          node {
+            landingIntro {
+              raw
+            }
           }
         }
       }
     }
-  }
   `)
 
   return (
     <IntroContainerWrapper>
       <DesktopWrapper>
         <IntroTextWrapper>
-          <BC1>
-         
           {renderRichText(
-          data.allContentfulLongsongPageContent.edges[0].node.landingIntro
+            data.allContentfulLongsongPageContent.edges[0].node.landingIntro
           )}
-          </BC1>
         </IntroTextWrapper>
       </DesktopWrapper>
       <MobileWrapper>
-        <BC2>
-        {renderRichText(
-          data.allContentfulLongsongPageContent.edges[0].node.landingIntro
+        <IntroTextWrapper mobile>
+          {renderRichText(
+            data.allContentfulLongsongPageContent.edges[0].node.landingIntro
           )}
-        </BC2>
+        </IntroTextWrapper>
       </MobileWrapper>
     </IntroContainerWrapper>
   )
