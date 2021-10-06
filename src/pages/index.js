@@ -9,7 +9,7 @@ const IndexPage = () => (
   <Layout fd="column">
     <Seo title="Home" />
     <Hero />
-
+<Calender/>
   </Layout>
 )
 

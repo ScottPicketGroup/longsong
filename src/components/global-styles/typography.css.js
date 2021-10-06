@@ -223,7 +223,7 @@ font-weight: 100;
       case "xxl":
         return "100%"
       default:
-        return "4.42rem"
+        return "0"
     }
   }};
   @media (max-width: 450px) {
@@ -236,7 +236,7 @@ font-weight: 100;
 `
 
 export const Month1 = styled.h3`
-  font-family: bold;
+  font-family: normal;
   color: #457e5c;
   font-size: 2.5rem;
   line-height: 1;

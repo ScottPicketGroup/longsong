@@ -17,9 +17,7 @@ export const NavigationViewWrapper = styled.div`
   align-self: flex-start;
   justify-content: space-between;
 `
-export const CalanderView = styled.div``
 
-export const DayView = styled.div``
 
 export const MonthsContainer = styled.div`
   float: right;
@@ -85,12 +83,12 @@ border-top: ${props =>
    
     border-bottom: ${props => 
       props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30
-    ? ".5px solid #6A6A6A" : 
+    ? "none" : 
       props.i > 23 ? '1px solid white'  
     : 
     'none'};
 //#457E5C
-      height: 12vw;
+    height: ${props => `${props.height - 1}px`};
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -104,8 +102,12 @@ border-top: ${props =>
 `
 
 export const DateDisplayContainer = styled.div`
-  padding-top: .25rem;
-  margin-left: .8rem;
+position: relative;
+  padding: .5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   @media (max-width: 450px) {
     width: 100%;
     border-bottom: 1px solid white;
@@ -114,7 +116,16 @@ export const DateDisplayContainer = styled.div`
 `
 
 export const EventDetailsWrapper = styled.div`
-display: none;
+display: ${props => props.open ? `flex` : `none`};
+background: #314638;
+transition: width 1s ease-in-out;
+height: ${props => `${props.height}px`};
+min-width: ${props => `${props.width}px`};
+position: absolute;
+z-index: 500;
+top: ${props => props.i < 21 ? '0' : ''};
+bottom: ${props => props.i > 21 ? '0' : ''};
+right: ${props => props.i === 7 || props.i === 14 || props.i === 21 || props.i === 28 ? '0' : ``};
 @media (max-width: 450px){
 
     display: flex;

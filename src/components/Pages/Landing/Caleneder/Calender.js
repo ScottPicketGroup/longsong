@@ -5,6 +5,7 @@ import Navigation from './Navigation/Navigation'
 
 const Calender = () => {
   const [daysView, setDaysView] = React.useState(false)
+
     return (
         <CalanderWrapper >
           <Navigation daysView={daysView} setDaysView={setDaysView}/>
