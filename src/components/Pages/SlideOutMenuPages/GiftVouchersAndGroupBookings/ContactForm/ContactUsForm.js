@@ -14,6 +14,7 @@ import {
 import CheckBox from "./CheckBox"
 import { Button } from "../../../../global-styles/GlobalStyles.css"
 const ContactUsForm = () => {
+  const functionURL = "https://pear-cobra-4528.twil.io/send-email";
   const [error, setError] = useState({
     fName: false,
   })
@@ -55,10 +56,11 @@ const ContactUsForm = () => {
         inputs.email.includes(".")) ||
       inputs.email.includes("@")
     )
-      fetch("/", {
+      fetch("functionURL", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "cont", ...inputs }),
+        // body: encode({ "form-name": "cont", ...inputs }),
+        body: encode({ fromEmail: inputs.email, subject: "Longsong Contact Form", body: inputs.message }),
       })
         .then(setThankyou(true))
         .catch(error => alert(error))
