@@ -27,7 +27,7 @@ const EventsModule = ({ data }) => {
         <EventSectionWrapper style={{ justifyContent: "space-between" }}>
           <TimeAndButtonWrapper>
             <Time style={{ margin: "0 0 3rem 0" }}>{data[0].eventDate}</Time>
-            {data[0].bookNowData && (
+            {data[0].bookNowButtonLink && (
               <Button marginBottom="lg" style={{ width: "80%" }}>
                 BOOK NOW
               </Button>
@@ -37,11 +37,7 @@ const EventsModule = ({ data }) => {
           <HeadingAndIntroWrapper>
             <Heading1 marginBottom="md">{data[0].eventName}</Heading1>
             <Renderer node={data[0].eventDescription} />
-            <Link
-              to={
-                "/events/" + data[0].eventName.toLowerCase().replace(" ", "-")
-              }
-            >
+            <Link to={"/events/" + data[0].slug}>
               <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
             </Link>
           </HeadingAndIntroWrapper>
@@ -53,17 +49,15 @@ const EventsModule = ({ data }) => {
       <SectionWrapper>
         <TextContainer>
           <Time style={{ margin: "0 0 3rem 0" }}>{data[1].eventDate}</Time>
-          {data[0].bookNowData && (
-            <Button marginBottom="lg" style={{ width: "60%" }}>
+          {data[1].bookNowButtonLink && (
+            <Button marginBottom="lg" style={{ width: "80%" }}>
               BOOK NOW
             </Button>
           )}
           <BreakLine none />
           <Heading1 marginBottom="md">{data[1].eventName}</Heading1>
           <Renderer node={data[1].eventDescription} />
-          <Link
-            to={"/events/" + data[1].eventName.toLowerCase().replace(" ", "-")}
-          >
+          <Link to={"/events/" + data[1].slug}>
             <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
           </Link>
         </TextContainer>
