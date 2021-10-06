@@ -4,41 +4,57 @@ import {
   EventDetailsWrapper,
   EventListWrapper,
   EventFooterWrapper,
+  EventInfoWrapper,
+  EventContents
 } from "../Calender.css"
-import { Heading2 } from "../../../../global-styles/typography.css"
+import { Heading3, Number1, Heading2 } from "../../../../global-styles/typography.css"
+import { DateDisplayContainer } from "../Calender.css"
 
 
+const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day, dayOfWeek, todaysDate, item }) => {
 
-const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen }) => {
 
-
-  console.log(open)
 
   return (
 
     <EventDetailsWrapper
       open={open}
-      height={height * 2}
-      width={width / 7 * 2}
+      height={height * 3}
+      width={width / 7 * 2 - 10}
       i={i}
       onClick={() => setOpen(false)}
     >
-      <EventListWrapper width={width}>
-        <Heading2>
-          Event 1
-        </Heading2>
-        <Heading2>
-          Event 1
-        </Heading2>
-        <Heading2 marginBottom="sm">
-          Event 1
-        </Heading2>
-
+      <EventListWrapper width={width} height={height} i={i}>
+        <DateDisplayContainer
+          height={height}
+          width={width}
+          modal
+        >
+          <Heading3
+            calander
+            dayOfWeek={day} day={day} date={todaysDate} i={i} key={i + 1}>
+            {item.date == todaysDate + 1 ? 'Tomorrow' : item.day}
+          </Heading3>
+          <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i} key={i + 2}>
+            {item.date}
+          </Number1>
+        </DateDisplayContainer>
       </EventListWrapper>
-      <EventFooterWrapper>
-        <Heading2 >VIEW DETAILS</Heading2>
-        <LongsongIcon />
-      </EventFooterWrapper>
+
+
+
+      <EventInfoWrapper>
+        <EventContents>
+          <Heading2>
+            hi
+          </Heading2>
+        </EventContents>
+        <EventFooterWrapper>
+          <Heading2 >VIEW DETAILS</Heading2>
+          <LongsongIcon />
+        </EventFooterWrapper>
+      </EventInfoWrapper>
+
     </EventDetailsWrapper>
 
   )

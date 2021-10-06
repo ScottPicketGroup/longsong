@@ -18,22 +18,26 @@ const CalanderView = ({ day, i, item, todaysDate, modalWidth, openModel, setOpen
         openModel === i ? setOpen(true) : setOpen(false)
     }, [openModel])
 
+console.log(item)
+
     return (
         <DayContainer dayOfWeek={day} day={day} date={todaysDate} i={i} key={i} ref={dayContainerRef} height={elementWidth}
             onClick={() => setOpenModel(i)}
         >
             <DateDisplayContainer
+            height={elementWidth}
             >
                 <Heading3
                     calander
-                    dayOfWeek={day} day={day} date={todaysDate} i={i} key={i + 1}>
+                    dayOfWeek={item.day}  day={day} date={todaysDate} i={i} key={i + 1}>
                     {item.date == todaysDate + 1 ? 'Tomorrow' : item.day}
                 </Heading3>
-                <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i} key={i + 2}>
+                <Number1 dayOfWeek={item.day} day={day} date={todaysDate} i={i} key={i + 2} >
                     {item.date}
                 </Number1>
 
                 <EventDetailsModal
+                dayOfWeek={day} day={day} date={todaysDate} i={i} key={i}  height={elementWidth} item={item}
                     open={open}
                     i={i + 1}
                     height={elementWidth}
