@@ -39,20 +39,17 @@ const Space = ({ activePage }) => {
     firstSection: {
       title: data.contentfulLongsongPageContent.theStallsTitle,
       content: data.contentfulLongsongPageContent.theStallsDescription,
-      imageData: data.contentfulLongsongPageContent.theStallsMedia[0].gatsbyImageData,
-      imageTitle: data.contentfulLongsongPageContent.theStallsMedia[0].title,
+      imageData: data.contentfulLongsongPageContent.theStallsMedia,
     },
     secondSection: {
       title: data.contentfulLongsongPageContent.theYardTitle,
       content: data.contentfulLongsongPageContent.theYardContent,
-      imageData: data.contentfulLongsongPageContent.theYardMedia[0].gatsbyImageData,
-      imageTitle: data.contentfulLongsongPageContent.theYardMedia[0].title,
+      imageData: data.contentfulLongsongPageContent.theYardMedia
     },
     thirdSection: {
       title: data.contentfulLongsongPageContent.featuredPerformerTitle,
       content: data.contentfulLongsongPageContent.featuredPerformerDescription,
-      imageData: data.contentfulLongsongPageContent.featuredPerformerMedia.gatsbyImageData,
-      imageTitle: data.contentfulLongsongPageContent.featuredPerformerMedia.title,
+      imageData: data.contentfulLongsongPageContent.featuredPerformerMedia
     }
   }
 

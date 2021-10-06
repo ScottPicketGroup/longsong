@@ -1,17 +1,12 @@
 import React from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import {
   Heading1,
   Heading2,
-  BC3,
 } from "../../components/global-styles/typography.css"
-import {
-  DesktopWrapper,
-  MobileWrapper,
-} from "../../components/global-styles/containers.css"
 
 import {
   EventHeroContainer,
@@ -26,6 +21,7 @@ import {
 import { TextContainer } from "../../components/Pages/SlideOutMenuPages/Space/Space.css"
 import { Button } from "../../components/global-styles/GlobalStyles.css"
 import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
+import Slider from "../../components/ImageSlider"
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
@@ -35,10 +31,7 @@ const EventTemplate = ({ pageContext }) => {
       <Seo title="Home" />
       <EventHeroContainer>
         <ImageWrapper>
-          <GatsbyImage
-            image={eventData.eventMedia[0].gatsbyImageData}
-            alt={eventData.eventMedia[0].title}
-          />
+          <Slider imageData={eventData.eventMedia} />
           <StaticImage
             className="play-button"
             src="../../images/EventTemplate/playbutton.png"
@@ -49,34 +42,6 @@ const EventTemplate = ({ pageContext }) => {
             src="../../images/EventTemplate/fullscreenbutton.png"
             alt="fullscreen-button"
           />
-          <DesktopWrapper>
-            <BC3
-              style={{
-                color: `grey`,
-              }}
-              marginTop="md"
-            >
-              PREVIOUS | NEXT
-            </BC3>
-          </DesktopWrapper>
-          <MobileWrapper imageControls>
-            <BC3
-              style={{
-                color: `grey`,
-              }}
-              marginTop="md"
-            >
-              1/2
-            </BC3>
-            <BC3
-              style={{
-                color: `grey`,
-              }}
-              marginTop="md"
-            >
-              VIEW FULLSCREEN
-            </BC3>
-          </MobileWrapper>
         </ImageWrapper>
         <DateContainer>
           <DateWrapper>
