@@ -1,5 +1,7 @@
 import React from "react"
-import { BC2, Heading1 } from "../../../global-styles/typography.css"
+import { useStaticQuery, graphql } from "gatsby"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import {
   SlideOutPageWrapper,
@@ -9,39 +11,27 @@ import {
 import ContactUsForm from "./ContactUsForm"
 
 const ContactUs = ({ activePage }) => {
+  const data = useStaticQuery(graphql`
+    query ContactUs {
+      contentfulLongsongPageContent {
+        contactUsDescription {
+          raw
+        }
+      }
+    }
+  `)
+
   return (
     <SlideOutPageWrapper activePage={activePage} page={5} contact>
       <BreakLine first />
       <SectionWrapper>
         <TextContainer>
-          <Heading1> Contact Us</Heading1>
+          <Heading1>Contact Us</Heading1>
         </TextContainer>
-        <TextContainer sixty>
-          <BC2 marginBottom="md">
-            Longrain and Longsong are the two latest editions to the Pickett &
-            Co. stable of venues. Fill in your details here to send us a message
-            and tick the box to be first to hear about all the exciting things
-            we’ve got planned. We’re growing fast and if you’re interested in
-            being part of the family, we’d love to hear from you.
-          </BC2>
-          <BC2 marginBottom="md">
-            Follow the links at the bottom of the page to our social pages so
-            you don’t miss any of the action.
-          </BC2>
-          <BC2 marginBottom="md">
-            Opening hours: <br />
-            Monday – Thursday 5.30 pm – late
-            <br />
-            Friday 12 pm – 3 pm | 5 pm – late <br />
-            Saturday 5 pm – late
-            <br />
-          </BC2>
-          <BC2 marginBottom="md">WALKINS WELCOME</BC2>
-
-          <BC2>
-            PLEASE NOTE, GROUPS OF 8 OR LARGER ARE REQUIRED TO SELECT THE
-            BANQUET MENU
-          </BC2>
+        <TextContainer sixty marginBottom="md">
+          {renderRichText(
+            data.contentfulLongsongPageContent.contactUsDescription
+          )}
         </TextContainer>
       </SectionWrapper>
       <SectionWrapper>

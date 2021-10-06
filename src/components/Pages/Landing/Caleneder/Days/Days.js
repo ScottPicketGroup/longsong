@@ -1,84 +1,31 @@
-import React, { useEffect } from "react"
-import { Heading2, Heading3, Number1 } from "../../../../global-styles/typography.css"
-import {
-  DayContainer,
-  DaysWrapper,
-  DateDisplayContainer,
-  EventDetailsWrapper,
-  EventListWrapper,
-  EventFooterWrapper,
-} from "../Calender.css"
-import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
-const Days = ({ daysView }) => {
-  const [daysToDisplay, setDaysToDisplay] = React.useState()
+import React, {useRef, useState} from "react"
 
-  const date = new Date()
-  const day = date.getDay()
-  const year = date.getYear()
-  const month = date.getMonth()
+import useGetDaysOfMonth from '../../../../hooks/DateInformation'
 
-  useEffect(() => {
-    let date = new Date(Date.UTC(year, month, 1))
-    const day = { weekday: "long" }
-    const dat = { day: "numeric" }
-    let days = []
-    while (date.getUTCMonth() === month) {
-      days.push({
-        day: date.toLocaleDateString("au-EN", day),
-        date: date.toLocaleDateString("au-EN", dat),
-      })
-      date.setUTCDate(date.getUTCDate() + 1)
-    }
-    setDaysToDisplay(days)
-    // eslint-disable-next-line
-  }, [])
+import CalanderView from "../CalenderViews/CalanderView"
+import EventsListView from "../CalenderViews/EventsListView"
+
+import { DaysWrapper } from "../Calender.css"
+import useGetElementSize from "../../../../hooks/ItemSizing"
+
+
+const Days = ({ daysView, currentMonth,  nextMonth, events }) => {
+  const { daysToDisplay, day, date, todaysDate } = useGetDaysOfMonth(currentMonth,  nextMonth, events)
+  const daysWrapperRef = useRef(null)
+  const {elementWidth} = useGetElementSize(daysWrapperRef)
+  const [openModel, setOpenModel] = useState(null)
+ 
 
   return (
-    <DaysWrapper cols={daysView ? "true" : "false"}>
+    <DaysWrapper cols={daysView ? "true" : "false"}  ref={daysWrapperRef}>
       {daysToDisplay &&
         daysToDisplay.map((item, i) =>
           daysView && day < i + 1 ? (
-            <DayContainer>
-              <DateDisplayContainer day={item.date} date={day} i={i} key={i}>
-                <DateDisplayContainer>
-                  <Heading3 day={item.date} date={day} i={i}>
-                    {item.day}
-                  </Heading3>
-                  <Number1 day={item.date} date={day} i={i}>
-                    {item.date}
-                  </Number1>
-                </DateDisplayContainer>
-              </DateDisplayContainer>
-            </DayContainer>
+            <EventsListView day={item.date} date={date} i={i} item={item} key={i + 4} openModel={openModel} setOpenModel={setOpenModel}/>
           ) : !daysView ? (
-            <DayContainer day={item.date} date={day} i={i} key={i}>
-               <DateDisplayContainer>
-              <Heading3 day={item.date} date={day} i={i}>
-                {item.day}
-              </Heading3>
-              <Number1 day={item.date} date={day} i={i}>
-                {item.date}
-              </Number1>
-              </DateDisplayContainer>
-              <EventDetailsWrapper>
-                <EventListWrapper>
-                  <Heading2>
-                    Event 1
-                  </Heading2>
-                  <Heading2>
-                    Event 1
-                  </Heading2>
-                  <Heading2 marginBottom="sm">
-                    Event 1
-                  </Heading2>
-               
-                </EventListWrapper>
-                <EventFooterWrapper>
-                  <Heading2>VIEW DETAILS</Heading2>
-                  <LongsongIcon/>
-                </EventFooterWrapper>
-              </EventDetailsWrapper>
-            </DayContainer>
+            <CalanderView day={item.date} todaysDate={todaysDate} i={i} item={item} key={i + 5} modalWidth={elementWidth}
+            openModel={openModel} setOpenModel={setOpenModel}
+            />
           ) : null
         )}
     </DaysWrapper>
