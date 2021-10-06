@@ -56,7 +56,7 @@ const ContactUsForm = () => {
         inputs.email.includes(".")) ||
       inputs.email.includes("@")
     )
-      fetch("functionURL", {
+      fetch(functionURL, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         // body: encode({ "form-name": "cont", ...inputs }),

@@ -25,7 +25,7 @@ const StallsAndYard = ({ data }) => {
           {renderRichText(data.secondSection.content)}
         </TextContainer>
         <ImageWrapper>
-          <Slider imageData={data.secondSection.imageData} />
+          <Slider imageData={data.secondSection.imageData} aspectRatio="16/9" />
         </ImageWrapper>
       </SectionWrapper>
       <SectionWrapper column>
