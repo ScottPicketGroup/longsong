@@ -51,3 +51,28 @@ export const ButtonWrapper = styled.div`
     display: none;
   }
 `
+
+export const ImageWrapper = styled.div`
+  width: ${props => (props.full ? "100%" : props.horizontal ? "80%" : "")};
+  position: relative;
+
+  .play-button {
+    position: absolute !important;
+    left: 50%;
+    top: calc(50% - 1.25rem);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+
+  .fullscreen-button {
+    position: absolute !important;
+    right: 16px;
+    bottom: 16px;
+    transform: translate(0%, -100%);
+    cursor: pointer;
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
+  }
+`

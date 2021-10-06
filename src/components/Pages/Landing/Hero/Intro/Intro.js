@@ -1,5 +1,4 @@
 import React from "react"
-import { BC1, BC2 } from "../../../../global-styles/typography.css"
 import { useStaticQuery, graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import {

@@ -14,7 +14,6 @@ const Days = ({ daysView }) => {
 
   const date = new Date()
   const day = date.getDay()
-  const year = date.getYear()
   const month = date.getMonth() 
 
 
@@ -43,7 +42,7 @@ const Days = ({ daysView }) => {
     setDaysToDisplay(days)
   
     
-  }, [])
+  }, [month])
 
 
 

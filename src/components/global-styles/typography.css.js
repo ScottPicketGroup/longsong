@@ -131,9 +131,9 @@ export const Heading3 = styled.h3`
       ? "#6A6A6A" 
       : props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30 
       ? "#6A6A6A" 
-      :     props.day == props.date
+      :     props.day === props.date
       ? "#457E5C" :
-      props.day == props.date + 1 
+      props.day === props.date + 1 
       ? "#314638" 
       
       : "white"};
@@ -183,11 +183,11 @@ font-weight: 100;
   color: ${props =>
     props.day < props.date
       ? "#6A6A6A"
-      :     props.day == props.date
+      :     props.day === props.date
       ? "#457E5C" :
        props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30 
       ? "#6A6A6A" :
-      props.day == props.date + 1 
+      props.day === props.date + 1 
       ? "#314638"
       : "white"};
   font-size: 4.68rem;

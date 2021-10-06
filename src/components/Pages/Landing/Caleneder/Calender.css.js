@@ -69,15 +69,15 @@ export const DayContainer = styled.div`
 border-top: ${props =>
   props.day < props.date
     ? ".5px solid #6A6A6A"
-    :     props.day == props.date
+    :     props.day === props.date
     ? "1px solid #457E5C" :
-    props.day == props.date + 1 
+    props.day === props.date + 1 
     ? ".5px solid #314638" :
-    props.day == props.date +8 
+    props.day === props.date +8 
     ? ".5px solid #314638" :
     props.day > props.date && props.day < props.date + 7 
     ? ".5px solid #6A6A6A" 
-    : props.day == props.date + 7 ?
+    : props.day === props.date + 7 ?
     "1px solid #457E5C" 
     : props.i === 9 || props.i === 16 || props.i === 23 || props.i === 30 
     ? "#6A6A6A.5px solid" 

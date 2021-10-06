@@ -1,6 +1,6 @@
 import React from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import {
@@ -20,12 +20,10 @@ import {
   DateWrapper,
   Time,
   ButtonWrapper,
+  ImageWrapper,
 } from "./index.css"
 
-import {
-  ImageWrapper,
-  TextContainer,
-} from "../../components/Pages/SlideOutMenuPages/Space/Space.css"
+import { TextContainer } from "../../components/Pages/SlideOutMenuPages/Space/Space.css"
 import { Button } from "../../components/global-styles/GlobalStyles.css"
 import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 
@@ -36,10 +34,20 @@ const EventTemplate = ({ pageContext }) => {
     <Layout fd="column">
       <Seo title="Home" />
       <EventHeroContainer>
-        <ImageWrapper full>
+        <ImageWrapper>
           <GatsbyImage
             image={eventData.eventMedia[0].gatsbyImageData}
             alt={eventData.eventMedia[0].title}
+          />
+          <StaticImage
+            className="play-button"
+            src="../../images/EventTemplate/playbutton.png"
+            alt="play-button"
+          />
+          <StaticImage
+            className="fullscreen-button"
+            src="../../images/EventTemplate/fullscreenbutton.png"
+            alt="fullscreen-button"
           />
           <DesktopWrapper>
             <BC3
