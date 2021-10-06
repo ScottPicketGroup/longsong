@@ -38,7 +38,7 @@ const EventsListView = ({
   const [event, setEvent] = React.useState({})
 
   const [elementWidth, setElementWidth] = useState(0)
-  const { handleOpenMenuClick } = useActivePage()
+  const { setMenuOpen } = useActivePage()
 
   useEffect(() => {
     if (dayContainerRef.current)
@@ -240,7 +240,7 @@ const EventsListView = ({
                     // >
                     //   VIEW DETAILS
                     // </Link>
-                    <Link to="/">VIEW DETAILS</Link>
+                    <Link onClick={()=>setMenuOpen(false)} to="/">VIEW DETAILS</Link>
                   ) : (
                     "CLOSED"
                   )}

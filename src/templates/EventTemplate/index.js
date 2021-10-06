@@ -76,9 +76,9 @@ const EventTemplate = ({ pageContext }) => {
             <Time>{eventDateTime[1]}</Time>
           </DateWrapper>
           <ButtonWrapper>
-            {eventData.bookNowData && <Button>BOOK NOW</Button>}
+            {eventData.bookNowButtonLink && <Button>BOOK NOW</Button>}
             <Link to="/">
-              <Button onClick={()=>handleOpenMenuClick(1)}>RETURN TO CALENDAR OVERVIEW</Button>
+              <Button onClick={()=> handleOpenMenuClick(6)}>RETURN TO CALENDAR OVERVIEW</Button>
             </Link>
           </ButtonWrapper>
         </DateContainer>
