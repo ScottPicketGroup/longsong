@@ -9,12 +9,15 @@ import {
   EventFooterWrapper,
 } from "../Calender.css"
 import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
+
+
+
 const Days = ({ daysView }) => {
   const [daysToDisplay, setDaysToDisplay] = React.useState()
 
   const date = new Date()
   const day = date.getDay()
-  const year = date.getYear()
+  const year = date.getYear().slice(1,year.length)
   const month = date.getMonth() 
 
 

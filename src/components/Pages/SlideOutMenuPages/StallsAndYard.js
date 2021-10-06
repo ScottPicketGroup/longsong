@@ -66,6 +66,7 @@ const StallsAndYard = ({ data }) => {
           <GatsbyImage
             image={data.secondSection.imageData}
             alt={data.secondSection.imageTitle}
+            style={{aspectRatio: `9/16`}}
           />
           <DesktopWrapper>
             <BC3
