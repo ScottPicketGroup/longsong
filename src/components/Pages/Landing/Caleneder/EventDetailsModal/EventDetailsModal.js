@@ -46,7 +46,24 @@ const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day,
       <EventInfoWrapper>
         <EventContents>
           <Heading2>
-            hi
+            Event Placeholder
+          </Heading2>
+          <Heading2>
+            The Jeofreys
+          </Heading2>
+          <Heading2>
+            Bar Specials
+          </Heading2>
+          <Heading2>
+            Food Specials
+          </Heading2>
+          <Heading2>
+            
+         Happy Hour
+
+          </Heading2>
+          <Heading2>
+            5 - 7 PM
           </Heading2>
         </EventContents>
         <EventFooterWrapper>
