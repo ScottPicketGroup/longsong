@@ -6,7 +6,7 @@ import { SlideOutPageWrapper } from "./Space.css"
 const Space = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query StallsAndYard {
-      contentfulLongsongPageContent {
+      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
         theStallsTitle
         theStallsMedia {
           gatsbyImageData

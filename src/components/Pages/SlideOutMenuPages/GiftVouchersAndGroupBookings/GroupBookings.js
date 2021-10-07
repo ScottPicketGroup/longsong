@@ -17,7 +17,7 @@ import Slider from "../../../ImageSlider"
 const GroupBookings = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query PrivateEvent {
-      contentfulLongsongPageContent {
+      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
         privateEventsHeroImage {
           title
           gatsbyImageData

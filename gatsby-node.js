@@ -5,8 +5,8 @@
  */
 
 // You can delete this file if you're not using it
-/**
-shop disabled until required
+
+// shop disabled until required
  
 
 // You can delete this file if you're not using it
@@ -24,8 +24,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             eventName
             eventMedia {
               title
-              gatsbyImageData
-              description
             }
             eventDescription {
               raw
@@ -67,4 +65,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 }
-*/
+

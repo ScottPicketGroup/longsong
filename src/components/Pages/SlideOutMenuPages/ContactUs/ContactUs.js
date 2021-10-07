@@ -13,7 +13,7 @@ import ContactUsForm from "./ContactUsForm"
 const ContactUs = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query ContactUs {
-      contentfulLongsongPageContent {
+      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
         contactUsDescription {
           raw
         }

@@ -16,7 +16,7 @@ import Slider from "../../../ImageSlider"
 const GiftVouchers = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query GiftVouchers {
-      contentfulLongsongPageContent {
+      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
         giftVouchersHeroImge {
           title
           gatsbyImageData
