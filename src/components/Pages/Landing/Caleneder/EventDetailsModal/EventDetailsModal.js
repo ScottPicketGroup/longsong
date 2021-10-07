@@ -33,7 +33,7 @@ const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day,
           <Heading3
             calander
             dayOfWeek={day} day={day} date={todaysDate} i={i} key={i + 1}>
-            {item.date == todaysDate + 1 ? 'Tomorrow' : item.day}
+            {item.date === todaysDate + 1 ? 'Tomorrow' : item.day}
           </Heading3>
           <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i} key={i + 2}>
             {item.date}

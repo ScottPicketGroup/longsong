@@ -68,7 +68,7 @@ export const ImageWrapper = styled.div`
     position: absolute !important;
     right: 16px;
     bottom: 16px;
-    transform: translate(0%, -100%);
+    // transform: translate(0%, -100%);
     cursor: pointer;
   }
 

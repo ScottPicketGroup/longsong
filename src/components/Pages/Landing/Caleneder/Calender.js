@@ -1,15 +1,14 @@
-import React, {useEffect} from 'react'
-import { CalanderWrapper} from './Calender.css'
-import Days from './Days/Days'
-import Navigation from './Navigation/Navigation'
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react"
+import { CalanderWrapper } from "./Calender.css"
+import Days from "./Days/Days"
+import Navigation from "./Navigation/Navigation"
+// import { useStaticQuery, graphql } from "gatsby"
 const Calender = () => {
   const [daysView, setDaysView] = React.useState(false)
-  
 
   const [currentMonth, setCurrentMonth] = React.useState(0)
   const [nextMonth, setNextMonth] = React.useState(1)
-  const [events, setEvents] = React.useState([])
+  const [events] = React.useState([])
 
   // const data = useStaticQuery(graphql`
   // query allEvents {
@@ -36,32 +35,34 @@ const Calender = () => {
   //     }
   //   }
   // }
-  
+
   // `)
-// useEffect(() => {
+  // React.useEffect(() => {
 
-//   data &&
-// setEvents(data.allContentfulLongsongEvents.edges)
-// }, [data])
+  //   data &&
+  // setEvents(data.allContentfulLongsongEvents.edges)
+  // }, [data])
 
-
-    return (
-        <CalanderWrapper >
-          <Navigation daysView={daysView} setDaysView={setDaysView}
-          currentMonth={currentMonth} 
-          setCurrentMonth={setCurrentMonth}
-          nextMonth = {nextMonth}
-          setNextMonth = {setNextMonth}
-          />
-          <Days 
-          events={events}
-          daysView={daysView} currentMonth={currentMonth}
-          currentMonth={currentMonth} 
-          setCurrentMonth={setCurrentMonth}
-          nextMonth = {nextMonth}
-          setNextMonth = {setNextMonth} />
-        </CalanderWrapper>
-    )
+  return (
+    <CalanderWrapper>
+      <Navigation
+        daysView={daysView}
+        setDaysView={setDaysView}
+        currentMonth={currentMonth}
+        setCurrentMonth={setCurrentMonth}
+        nextMonth={nextMonth}
+        setNextMonth={setNextMonth}
+      />
+      <Days
+        events={events}
+        daysView={daysView}
+        currentMonth={currentMonth}
+        setCurrentMonth={setCurrentMonth}
+        nextMonth={nextMonth}
+        setNextMonth={setNextMonth}
+      />
+    </CalanderWrapper>
+  )
 }
 
 export default Calender

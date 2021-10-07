@@ -17,7 +17,9 @@ import Slider from "../../../ImageSlider"
 const GroupBookings = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query PrivateEvent {
-      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
+      contentfulLongsongPageContent(
+        contentful_id: { eq: "7aRmLZ6sUc9SbpIPPRRj7A" }
+      ) {
         privateEventsHeroImage {
           title
           gatsbyImageData
@@ -49,6 +51,20 @@ const GroupBookings = ({ activePage }) => {
         privateEventsSection3media {
           title
           gatsbyImageData
+        }
+        sampleMenuOne {
+          title
+          file {
+            url
+            fileName
+          }
+        }
+        sampleMenuTwo {
+          title
+          file {
+            url
+            fileName
+          }
         }
       }
     }
@@ -94,9 +110,23 @@ const GroupBookings = ({ activePage }) => {
             data.contentfulLongsongPageContent.groupBookingsDescription
           )}
           <Button marginBottom="" style={{ marginRight: `2rem` }}>
-            FUNCTIONS PACKAGE 1
+            <a
+              href={data.contentfulLongsongPageContent.sampleMenuOne.file.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              FUNCTIONS PACKAGE 1
+            </a>
           </Button>
-          <Button>FUNCTIONS PACKAGE 2</Button>
+          <Button>
+            <a
+              href={data.contentfulLongsongPageContent.sampleMenuTwo.file.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              FUNCTIONS PACKAGE 2
+            </a>
+          </Button>
         </TextContainer>
       </SectionWrapper>
       <StallsAndYard data={newData} />

@@ -67,7 +67,7 @@ export const DayContainer = styled.div`
 border-top: ${props =>
   props.day < props.date
     ? ".5px solid #6A6A6A"
-    :     props.i == props.date -1
+    :     props.i === props.date -1
     ? "1px solid #457E5C" :
     props.i === props.date 
     ? ".5px solid #314638"  :
@@ -82,7 +82,7 @@ border-top: ${props =>
     : ".5px solid white"};
    
     border-bottom: ${props => 
-      props.dayOfWeek == 'Sunday' 
+      props.dayOfWeek === 'Sunday' 
     ? "none" : 
       props.i > 22 ? '1px solid white'  
     : 
