@@ -37,6 +37,7 @@ const MenuSlideOutContainer = ({
           setMenuOpen={setMenuOpen}
           menuOpen={menuOpen}
           setActivePage={setActivePage}
+          activePage={activePage}
         />
         <PageWrapper>
           <SectionContainer flex>

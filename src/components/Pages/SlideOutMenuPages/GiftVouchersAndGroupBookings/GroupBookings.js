@@ -94,13 +94,13 @@ const GroupBookings = ({ activePage }) => {
     <SlideOutPageWrapper activePage={activePage} page={3}>
       <SectionWrapper column>
         <ImageWrapper full>
-          <Slider
+          <Slider hero
             imageData={
               data.contentfulLongsongPageContent.privateEventsHeroImage
             }
           />
         </ImageWrapper>
-        <TextContainer right full marginBottom="lg">
+        <TextContainer right full marginBottom="lg" first>
           <BreakLine none />
           <Heading1>
             {data.contentfulLongsongPageContent.groupBookingTitle}

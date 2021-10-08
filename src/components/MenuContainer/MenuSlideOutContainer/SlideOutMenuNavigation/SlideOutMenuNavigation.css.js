@@ -1,5 +1,19 @@
-import styled from 'styled-components'
+import styled, { keyframes } from "styled-components"
+export const xFadeIn = keyframes`
+  0% {
+    display: none;
+    opacity: 0;
+   
+   
+  }
+  
 
+  100% {
+    opacity: 1;
+    display: flex;
+
+  }
+`
 export const SlideOutMenuNavWrapper = styled.div`
 width: 100%;
 display: flex;
@@ -26,6 +40,7 @@ margin-bottom: 1.25rem;
 margin-top: ${props => props.socials ? '6rem' : ''};
 cursor: pointer;
 font-family: ${props => props.active === props.item ? 'bold' : 'normal'};
+animation: ${xFadeIn} 500ms ease-in-out;
 :nth-last-child(3){
     margin-bottom: 0;
 }

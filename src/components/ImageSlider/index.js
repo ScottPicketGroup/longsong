@@ -11,9 +11,13 @@ import {
 import NextIcon from "./Controls/NextIcon"
 import PreviousIcon from "./Controls/PreviousIcon"
 
-import { DesktopWrapper, MobileWrapper } from "../global-styles/containers.css"
+import {
+  DesktopWrapper,
+  MobileWrapper,
+  aspectRatio,
+} from "../global-styles/containers.css"
 
-const Slider = ({ imageData, aspectRatio }) => {
+const Slider = ({ imageData, hero, aspectRatio }) => {
   const [images, setImages] = useState([])
   const [imageCount, setImageCount] = useState(0)
   let title = useRef(null)
@@ -118,7 +122,7 @@ const Slider = ({ imageData, aspectRatio }) => {
             />
           ))}
       </SliderContainer>
-      {imageCount > 0 && (
+      {imageCount > 0 && !hero && (
         <>
           <DesktopWrapper>
             <ControlsContainer>

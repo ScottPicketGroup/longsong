@@ -25,14 +25,14 @@ const StallsAndYard = ({ data }) => {
           {renderRichText(data.secondSection.content)}
         </TextContainer>
         <ImageWrapper>
-          <Slider imageData={data.secondSection.imageData} aspectRatio="9/16" />
+          <Slider imageData={data.secondSection.imageData} aspectRatio="16/9" />
         </ImageWrapper>
       </SectionWrapper>
-      <SectionWrapper column>
+      <SectionWrapper column mobInvert>
         <ImageWrapper full>
           <Slider imageData={data.thirdSection.imageData} />
         </ImageWrapper>
-        <TextContainer right full first>
+        <TextContainer right full first topMarginNotRequiredMob>
           <BreakLine none />
           <Heading1 marginBottom="md">{data.thirdSection.title}</Heading1>
           {renderRichText(data.thirdSection.content)}
