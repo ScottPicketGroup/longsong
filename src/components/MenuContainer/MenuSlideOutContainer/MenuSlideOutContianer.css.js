@@ -26,6 +26,7 @@ export const xFadeIn = keyframes`
 export const MenuSlideOutWrapper = styled.div`
   overflow-y: hidden;
   position: fixed;
+  top: 0;
   z-index: 1000;
   height: 100vh;
   flex-direction: row;

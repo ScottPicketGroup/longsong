@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 export const CalanderWrapper = styled.div`
   width: 100%;
@@ -65,28 +65,28 @@ export const DaysWrapper = styled.div`
 `
 export const DayContainer = styled.div`
 border-top: ${props =>
-  props.day < props.date
-    ? ".5px solid #6A6A6A"
-    :     props.i == props.date -1
-    ? "1px solid #457E5C" :
-    props.i === props.date 
-    ? ".5px solid #314638"  :
-    props.i === props.date + 7 
-    ? ".5px solid #314638":
-    props.day > props.date 
-    ? ".5px solid #6A6A6A" 
-    : props.day === props.date + 6 ?
-    "1px solid #457E5C" 
-    : props.day === 9 || props.i === 16 || props.i === 23 || props.i === 30 
-    ? "#000 .5px solid" 
-    : ".5px solid white"};
+    props.day < props.date
+      ? ".5px solid #6A6A6A"
+      : props.i == props.date - 1
+        ? "1px solid #457E5C" :
+        props.i === props.date
+          ? ".5px solid #314638" :
+          props.i === props.date + 7
+            ? ".5px solid #314638" :
+            props.day > props.date
+              ? ".5px solid #6A6A6A"
+              : props.day === props.date + 6 ?
+                "1px solid #457E5C"
+                : props.day === 9 || props.i === 16 || props.i === 23 || props.i === 30
+                  ? "#000 .5px solid"
+                  : ".5px solid white"};
    
-    border-bottom: ${props => 
-      props.dayOfWeek == 'Sunday' 
-    ? "none" : 
-      props.i > 22 ? '1px solid white'  
-    : 
-    'none'};
+    border-bottom: ${props =>
+    props.dayOfWeek == 'Sunday'
+      ? "none" :
+      props.i > 22 ? '1px solid white'
+        :
+        'none'};
 //#457E5C
     height: ${props => `${props.height - 1}px`};
       display: flex;
@@ -108,7 +108,7 @@ padding: .5rem 0;
   flex-direction: column;
   justify-content: space-between;
   height: ${props => `${props.height - 1}px`};
-  width: ${props => `${props.width / 7  - 10}px`};
+  width: ${props => `${props.width / 7 - 10}px`};
 
   @media (max-width: 450px) {
     width: 100%;
@@ -116,21 +116,41 @@ padding: .5rem 0;
     padding: 1rem 1rem 1rem 1rem;
   }
 `
+export const xFadeIn = keyframes`
+  0% {
+transform: scale(0);
+opacity: 0;
+  }
 
+
+25% {
+opacity: 0;
+  transform: scale(.4)
+}
+  }
+ 
+  100% {
+    transform: scale(1) 
+  
+opacity: 1;
+      
+  }
+`
 export const EventDetailsWrapper = styled.div`
 display: ${props => props.open ? `flex` : `none`};
 flex-direction: column;
 background: #314638;
-transition: width 1s ease-in-out;
+transform-origin: left top;
 height: ${props => `${props.height}px`};
-min-width: ${props => `${props.width}px`};
+width: ${props => `${props.width}px`};
 position: absolute;
 z-index: 500;
-
+animation: ${xFadeIn} 500ms ease-in-out;
 border: 1px solid white;
 top: ${props => props.i < 21 ? '0' : ''};
 bottom: ${props => props.i > 21 ? '0' : ''};
 right: ${props => props.i === 7 || props.i === 14 || props.i === 21 || props.i === 28 ? '0' : ``};
+overflow: hidden;
 @media (max-width: 450px){
 
   display: ${props => props.open ? `flex` : `none`};
