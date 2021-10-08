@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
 import {
   EventDetailsWrapper,
@@ -12,9 +12,12 @@ import { DateDisplayContainer } from "../Calender.css"
 import { Link } from 'gatsby'
 
 
-const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day, dayOfWeek, todaysDate, item }) => {
+const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day, dayOfWeek, todaysDate, item, month }) => {
+const [eventDetails, setEventDetails] = React.useState({})
 
-
+useEffect(() => {
+  item.event && setEventDetails(item.event.node)
+}, [item])
 
   return (
 
@@ -46,18 +49,21 @@ const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day,
 
       <EventInfoWrapper>
         <EventContents>
-          <Heading2>
-            Event Placeholder
+        {eventDetails.eventMedia ? (
+        <>
+        <Heading2>
+            {eventDetails.eventName }
           </Heading2>
           <Heading2>
-            The Jeofreys
+            {eventDetails.drinksSpecialTitle}
           </Heading2>
           <Heading2>
-            Bar Specials
+          {eventDetails.foodSpecialTitle}
           </Heading2>
-          <Heading2>
-            Food Specials
-          </Heading2>
+          </>
+         ) : <></>
+        
+        } 
           <Heading2>
             
          Happy Hour
@@ -68,9 +74,13 @@ const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day,
           </Heading2>
         </EventContents>
         <EventFooterWrapper>
-          <Link to="/page-2">
-          <Heading2 >VIEW DETAILS</Heading2>
-          </Link>
+        {eventDetails.eventMedia ? (
+        <>
+        <Link to={`events/${eventDetails.eventName.toLowerCase().replace(" ", "-")}`}>VIEW DETAILS</Link>
+          </>
+         ) : <></>
+        
+        } 
           <LongsongIcon />
         </EventFooterWrapper>
       </EventInfoWrapper>

@@ -1,6 +1,6 @@
-import React, {useRef, useState} from "react"
+import React, { useRef, useState } from "react"
 
-import useGetDaysOfMonth from '../../../../hooks/DateInformation'
+import useGetDaysOfMonth from "../../../../hooks/DateInformation"
 
 import CalanderView from "../CalenderViews/CalanderView"
 import EventsListView from "../CalenderViews/EventsListView"
@@ -8,22 +8,48 @@ import EventsListView from "../CalenderViews/EventsListView"
 import { DaysWrapper } from "../Calender.css"
 import useGetElementSize from "../../../../hooks/ItemSizing"
 
-
-const Days = ({ daysView, currentMonth,  nextMonth, events }) => {
-  const { daysToDisplay, day, date, todaysDate } = useGetDaysOfMonth(currentMonth,  nextMonth, events)
+const Days = ({ daysView, currentMonth, nextMonth, events }) => {
+  const { daysToDisplay, day, date, todaysDate, month } = useGetDaysOfMonth(
+    currentMonth,
+    nextMonth,
+    events
+  )
   const daysWrapperRef = useRef(null)
-  const {elementWidth} = useGetElementSize(daysWrapperRef)
+  const { elementWidth } = useGetElementSize(daysWrapperRef)
   const [openModel, setOpenModel] = useState(null)
 
   return (
-    <DaysWrapper cols={daysView ? "true" : "false"}  ref={daysWrapperRef}>
+    <DaysWrapper cols={daysView ? "true" : "false"} ref={daysWrapperRef}>
       {daysToDisplay &&
         daysToDisplay.map((item, i) =>
-          daysView && day < i + 1 ? (
-            <EventsListView day={item.date} date={date} i={i} item={item} key={i + 4} openModel={openModel} setOpenModel={setOpenModel}/>
+          daysView && date.getDate() < i + 2 ? (
+            <EventsListView
+              day={item.date}
+              i={i}
+              day={item.date}
+              todaysDate={todaysDate}
+              date={date}
+              item={item}
+              modalWidth={elementWidth}
+              currentMonth={currentMonth}
+              month={month}
+              key={i + 4}
+              openModel={openModel}
+              setOpenModel={setOpenModel}
+            />
           ) : !daysView ? (
-            <CalanderView day={item.date} todaysDate={todaysDate} i={i} item={item} key={i + 5} modalWidth={elementWidth}
-            openModel={openModel} setOpenModel={setOpenModel}
+            <CalanderView
+              key={i + 5}
+              i={i}
+              day={item.date}
+              todaysDate={todaysDate}
+              date={date}
+              item={item}
+              modalWidth={elementWidth}
+              currentMonth={currentMonth}
+              month={month}
+              openModel={openModel}
+              setOpenModel={setOpenModel}
             />
           ) : null
         )}
