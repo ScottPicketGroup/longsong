@@ -10,6 +10,7 @@ const Calender = () => {
   const [nextMonth, setNextMonth] = React.useState(1)
   const [events] = React.useState([])
 
+
   // const data = useStaticQuery(graphql`
   // query allEvents {
   //   allContentfulLongsongEvents {
@@ -38,6 +39,40 @@ const Calender = () => {
 
   // `)
   // React.useEffect(() => {
+
+  const data = useStaticQuery(graphql`
+  query allEvents {
+    allContentfulLongsongEvents {
+      edges {
+        node {
+          drinksSpecialDetails {
+            raw
+          }
+          drinksSpecialTitle
+          eventDate(formatString: "DDMMYY")
+          eventDescription {
+            raw
+          }
+          eventMedia {
+            gatsbyImageData
+          }
+          eventName
+          foodSpecialDetails {
+            raw
+          }
+          foodSpecialTitle
+        }
+      }
+    }
+  }
+  
+  `)
+useEffect(() => {
+
+  data &&
+setEvents(data.allContentfulLongsongEvents.edges)
+}, [data])
+
 
   //   data &&
   // setEvents(data.allContentfulLongsongEvents.edges)

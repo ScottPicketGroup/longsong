@@ -14,7 +14,6 @@ const Days = ({ daysView, currentMonth,  nextMonth, events }) => {
   const daysWrapperRef = useRef(null)
   const {elementWidth} = useGetElementSize(daysWrapperRef)
   const [openModel, setOpenModel] = useState(null)
- 
 
   return (
     <DaysWrapper cols={daysView ? "true" : "false"}  ref={daysWrapperRef}>
