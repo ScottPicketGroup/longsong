@@ -6,36 +6,24 @@ import { DesktopMenuIconWrapper, MobileMenuIconWrapper } from "../MenuContainer.
 import { SlideOutSideBarWrapper } from "./MenuSlideOutContianer.css"
 
 const SlideOutSideBar = ({ setMenuOpen, menuOpen, activePage, setActivePage }) => {
+  console.log(activePage)
   return (
     <SlideOutSideBarWrapper menuOpen={menuOpen}>
       <DesktopMenuIconWrapper> <MenuX menuOpen={menuOpen} setMenuOpen={setMenuOpen} setActivePage={setActivePage} /></DesktopMenuIconWrapper>
       <MobileMenuIconWrapper>
-
-
-        {activePage > 1 ? 
+        {activePage > 1 ?
           (
             <MenuText
-              onClick={() => setActivePage(1)}
-            >
-
-              MENU
-
-            </MenuText>
+              onClick={() => setActivePage(0)}
+            > MENU </MenuText>
           ) :
           (
             <MenuText
               onClick={() => setMenuOpen(false)}
-            >
-
-              CLOSE
-
-            </MenuText>
+            > CLOSE </MenuText>
           )
-
         }
-
-
-        <LongsongSubMenuIcon onClick={() => setMenuOpen(true)} setActivePage={setActivePage} />
+         <LongsongSubMenuIcon onClick={() => setMenuOpen(true)} setActivePage={setActivePage} />
       </MobileMenuIconWrapper>
     </SlideOutSideBarWrapper>
   )

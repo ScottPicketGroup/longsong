@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
@@ -78,13 +79,13 @@ const GroupBookings = ({ activePage }) => {
     <SlideOutPageWrapper activePage={activePage} page={3}>
       <SectionWrapper column>
         <ImageWrapper full>
-          <Slider
+          <Slider hero
             imageData={
               data.contentfulLongsongPageContent.privateEventsHeroImage
             }
           />
         </ImageWrapper>
-        <TextContainer right full marginBottom="lg">
+        <TextContainer right full marginBottom="lg" first>
           <BreakLine none />
           <Heading1>
             {data.contentfulLongsongPageContent.groupBookingTitle}

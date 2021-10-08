@@ -13,7 +13,7 @@ import PreviousIcon from "./Controls/PreviousIcon"
 
 import { DesktopWrapper, MobileWrapper } from "../global-styles/containers.css"
 
-const Slider = ({ imageData }) => {
+const Slider = ({ imageData, hero }) => {
   const [images, setImages] = useState([])
   const imageCount = images.length - 1
   let title = useRef(null)
@@ -110,7 +110,8 @@ const Slider = ({ imageData }) => {
             />
           ))}
       </SliderContainer>
-      <DesktopWrapper>
+
+      {!hero ? (<><DesktopWrapper>
         <ControlsContainer>
           <ControlButton onClick={previousImage}>
             <PreviousIcon />
@@ -145,7 +146,8 @@ const Slider = ({ imageData }) => {
         >
           VIEW FULLSCREEN
         </BC3>
-      </MobileWrapper>
+      </MobileWrapper> </>) : (<></>) }
+      
     </div>
   ) : (
     <div></div>

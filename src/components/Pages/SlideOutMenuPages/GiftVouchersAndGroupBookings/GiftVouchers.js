@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
@@ -11,7 +12,7 @@ import {
   TextContainer,
 } from "../Space/Space.css"
 
-import Slider from "../../../ImageSlider"
+
 
 const GiftVouchers = ({ activePage }) => {
   const data = useStaticQuery(graphql`
@@ -38,13 +39,13 @@ const GiftVouchers = ({ activePage }) => {
   return (
     <SlideOutPageWrapper activePage={activePage} page={4}>
       <SectionWrapper column>
-        <ImageWrapper full>
-          <Slider
-            imageData={data.contentfulLongsongPageContent.giftVouchersHeroImge}
+        <ImageWrapper full marginRequired>
+          <GatsbyImage
+            image={getImage(data.contentfulLongsongPageContent.giftVouchersHeroImge)}
           />
         </ImageWrapper>
 
-        <TextContainer right full marginBottom="md">
+        <TextContainer right full marginBottom="md" >
           <BreakLine none />
           <Heading1 marginBottom="md">
             {data.contentfulLongsongPageContent.longsongGiftVoucher}
