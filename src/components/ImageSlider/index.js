@@ -11,7 +11,7 @@ import {
 import NextIcon from "./Controls/NextIcon"
 import PreviousIcon from "./Controls/PreviousIcon"
 
-import { DesktopWrapper, MobileWrapper } from "../global-styles/containers.css"
+import { DesktopWrapper, MobileWrapper, aspectRatio } from "../global-styles/containers.css"
 
 const Slider = ({ imageData, hero }) => {
   const [images, setImages] = useState([])
@@ -107,6 +107,7 @@ const Slider = ({ imageData, hero }) => {
               alt={image.title}
               id={i}
               activeimg={activeImg}
+              aspectratio={aspectRatio}
             />
           ))}
       </SliderContainer>

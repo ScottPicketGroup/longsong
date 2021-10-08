@@ -1,7 +1,8 @@
 import styled, { keyframes } from "styled-components"
-
+import { fadeIn } from "../../../global-styles/animations"
 export const CalanderWrapper = styled.div`
   width: 100%;
+  animation: ${fadeIn} 500ms ease-in-out;
 `
 
 export const NavigationWrapper = styled.div`
@@ -52,8 +53,9 @@ export const MonthItem = styled.div`
 // days section
 
 export const DaysWrapper = styled.div`
-  width: 100%;
 
+  width: 100%;
+opacity: 1;
   display: grid;
   grid-template-columns: ${props =>
     props.cols === "true" ? `repeat(2, 1fr)` : `repeat(7, 1fr)`};
@@ -99,6 +101,7 @@ border-top: ${props =>
     height: 346px;
     flex-direction: column;
   }
+  animation: ${fadeIn} 500ms ease-in-out;
 `
 
 export const DateDisplayContainer = styled.div`
