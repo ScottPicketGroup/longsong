@@ -26,8 +26,8 @@ export const xFadeIn = keyframes`
 export const MenuSlideOutWrapper = styled.div`
   overflow-y: hidden;
   position: fixed;
-  z-index: 2;
-  height: 105%;
+  z-index: 1000;
+  height: 100vh;
   flex-direction: row;
   width: ${props => (props.menuOpen ? "100%" : "0")};
   background: #2b3c31;

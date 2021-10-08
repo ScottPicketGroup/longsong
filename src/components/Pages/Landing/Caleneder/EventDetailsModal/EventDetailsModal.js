@@ -9,6 +9,7 @@ import {
 } from "../Calender.css"
 import { Heading3, Number1, Heading2 } from "../../../../global-styles/typography.css"
 import { DateDisplayContainer } from "../Calender.css"
+import { Link } from 'gatsby'
 
 
 const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day, dayOfWeek, todaysDate, item }) => {
@@ -67,7 +68,9 @@ const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day,
           </Heading2>
         </EventContents>
         <EventFooterWrapper>
+          <Link to="/page-2">
           <Heading2 >VIEW DETAILS</Heading2>
+          </Link>
           <LongsongIcon />
         </EventFooterWrapper>
       </EventInfoWrapper>
