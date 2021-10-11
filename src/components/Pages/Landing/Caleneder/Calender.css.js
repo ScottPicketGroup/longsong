@@ -27,9 +27,11 @@ export const MonthsContainer = styled.div`
   grid-template-columns: ${props => `repeat(${props.cols}, 1fr)`};
   grid-gap: 0 10px;
   @media (max-width: 450px) {
-    position: sticky;
-    top: 1vh;
+    position: fixed;
+    top: -25px;
+    right: 30px;
     width: 50%;
+    z-index: 1000;
   }
 `
 export const MonthItem = styled.div`
@@ -141,6 +143,10 @@ export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
   border-top: 0;
   border-left: 0;
   color: black !important;
+
+  @media (max-width: 450px) {
+    height: 120px;
+  }
 `
 
 export const xFadeIn = keyframes`
