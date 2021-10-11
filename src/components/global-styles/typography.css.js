@@ -122,22 +122,22 @@ export const Heading2 = styled.h2`
 `
 
 export const Heading3 = styled.h3`
-margin-left: 1rem;
+  margin-left: 1rem;
   font-family: normal;
   font-weight: 100;
   font-size: 1rem;
   line-height: 1.2;
   color: ${props =>
-    props.day < props.date
-      ? "#6A6A6A" 
-      : props.dayOfWeek == 'Sunday' 
-      ? "#6A6A6A" :
-      props.i === props.date - 1 
-    ? "#457E5C" :
-    
-    props.i === props.date 
-      ? "#314638" 
-      
+    props.month === props.currentMonth + props.month && props.day < props.date
+      ? "#6A6A6A"
+      : props.dayOfWeek == "Sunday"
+      ? "#6A6A6A"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date - 1
+      ? "#457E5C"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date
+      ? "#314638"
       : "white"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -180,21 +180,24 @@ margin-left: 1rem;
 `
 
 export const Number1 = styled.h3`
-margin-left: 1rem;
-letter-spacing: 3px;
-font-weight: 100;
+  margin-left: 1rem;
+  letter-spacing: 3px;
+  font-weight: 100;
   color: ${props =>
-    props.day < props.date
-      ? "#6A6A6A" :
-      props.i === props.date - 1 
-      ? "#457E5C" :
-       props.dayOfWeek == 'Sunday' 
-      ? "#6A6A6A" :
-      props.i === props.date  
+    props.month === props.currentMonth + props.month && props.day < props.date
+      ? "#6A6A6A"
+      : props.dayOfWeek == "Sunday"
+      ? "#6A6A6A"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date - 1
+      ? "#457E5C"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date
       ? "#314638"
       : "white"};
+
   font-size: 4.68rem;
-  line-height: .75;
+  line-height: 0.75;
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":
@@ -234,7 +237,6 @@ font-weight: 100;
     font-size: 5rem;
     line-height: 1;
     margin-top: 1.5rem;
-   
   }
 `
 
@@ -349,7 +351,7 @@ export const BC1 = styled.p`
         return "3.75rem"
       case "xl":
         return "8rem"
-        case "xxl":
+      case "xxl":
         return "9.63rem"
       default:
         return "0"
@@ -420,9 +422,9 @@ export const BC2 = styled.p`
 
 export const BC3 = styled.p`
   font-family: normal;
-  
+
   font-size: 1.25rem;
-  color: ${props => props.imageControls ? '#6A6A6A' : 'white'};
+  color: ${props => (props.imageControls ? "#6A6A6A" : "white")};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":
@@ -458,15 +460,15 @@ export const BC3 = styled.p`
 
   @media (max-width: 450px) {
     font-size: 1rem;
-    margin-bottom: ${props => props.imageControls ? '0' : '1.5rem'};
+    margin-bottom: ${props => (props.imageControls ? "0" : "1.5rem")};
     line-height: 1.15;
   }
 `
 export const BC4 = styled.p`
   font-family: normal;
-  
+
   font-size: 1.25rem;
-  color: ${props => props.imageControls ? '#6A6A6A' : 'white'};
+  color: ${props => (props.imageControls ? "#6A6A6A" : "white")};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":
@@ -502,23 +504,23 @@ export const BC4 = styled.p`
 
   @media (max-width: 450px) {
     font-size: 1rem;
-     line-height: 1.15;
-     margin-bottom: ${props => {
-    switch (props.marginBottom) {
-      case "sm":
-        return "1rem"
-      case "md":
-        return "1.5rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "9.63rem"
-      default:
-        return "0"
-    }
-  }};
+    line-height: 1.15;
+    margin-bottom: ${props => {
+      switch (props.marginBottom) {
+        case "sm":
+          return "1rem"
+        case "md":
+          return "1.5rem"
+        case "lg":
+          return "3.75rem"
+        case "xl":
+          return "8rem"
+        case "xxl":
+          return "9.63rem"
+        default:
+          return "0"
+      }
+    }};
   }
 `
 

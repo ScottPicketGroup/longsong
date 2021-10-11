@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import { fadeIn } from "../../../global-styles/animations"
+import { Link } from "gatsby"
 export const CalanderWrapper = styled.div`
   width: 100%;
   animation: ${fadeIn} 500ms ease-in-out;
@@ -57,7 +58,7 @@ export const DaysWrapper = styled.div`
   display: grid;
   grid-template-columns: ${props =>
     props.cols === "true" ? `repeat(2, 1fr)` : `repeat(7, 1fr)`};
-  grid-gap: 0 1rem;
+  grid-gap: ${props => (props.cols === "true" ? `1rem` : `0 1rem`)};
   @media (max-width: 450px) {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
@@ -65,31 +66,35 @@ export const DaysWrapper = styled.div`
 `
 export const DayContainer = styled.div`
   border-top: ${props =>
-    props.day < props.date
+    props.month === props.currentMonth + props.month && props.day < props.date
       ? ".5px solid #6A6A6A"
-      : props.i == props.date - 1
-      ? "1px solid #457E5C"
-      : props.i === props.date
-      ? ".5px solid #314638"
-      : props.i === props.date + 7
-      ? ".5px solid #314638"
-      : props.day > props.date
+      : props.dayOfWeek == "Sunday"
       ? ".5px solid #6A6A6A"
-      : props.day === props.date + 6
-      ? "1px solid #457E5C"
-      : props.day === 9 || props.i === 16 || props.i === 23 || props.i === 30
-      ? "#000 .5px solid"
+      : (props.month === props.currentMonth + props.month &&
+          props.i === props.date - 1) ||
+        (props.month === props.currentMonth + props.month &&
+          props.i === props.date + 6)
+      ? ".5px solid #457E5C"
+      : (props.month === props.currentMonth + props.month &&
+          props.i === props.date) ||
+        (props.month === props.currentMonth + props.month &&
+          props.i === props.date + 7)
+      ? ".5px solid #314638"
       : ".5px solid white"};
 
   border-bottom: ${props =>
-    props.dayOfWeek == "Sunday"
-      ? "none"
+    props.dayOfWeek == "Sunday" && props.i > 22
+      ? "1px #6A6A6A solid"
       : props.i > 22
       ? "1px solid white"
+      : props.dayOfWeek == "Sunday" && props.i > 27
+      ? "none"
       : "none"};
+  //#457E5C
   height: ${props => `${props.height - 1}px`};
   display: flex;
-  flex-direction: column;
+
+  flex-direction: ${props => (props.events ? "" : "column")};
   justify-content: space-between;
 
   @media (max-width: 450px) {
@@ -100,15 +105,19 @@ export const DayContainer = styled.div`
   }
   animation: ${fadeIn} 500ms ease-in-out;
 `
+export const EventDayContainer = styled(DayContainer)`
+  border: 1px solid white;
+`
 
 export const DateDisplayContainer = styled.div`
+  animation: ${fadeIn} 500ms ease-in-out;
   position: relative;
   padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: ${props => `${props.height - 1}px`};
-  width: ${props => `${props.width / 7 - 10}px`};
+  height: ${props => `${props.height - 2}px`};
+  width: ${props => `${props.height}px`};
 
   @media (max-width: 450px) {
     width: 100%;
@@ -116,6 +125,24 @@ export const DateDisplayContainer = styled.div`
     padding: 1rem 1rem 1rem 1rem;
   }
 `
+
+export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
+  background: ${props =>
+    props.month === props.currentMonth + props.month &&
+    props.i === props.date - 1
+      ? "#457E5C"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date
+      ? "#314638"
+      : props.dayOfWeek == "Sunday"
+      ? ""
+      : ""};
+  border: 0.5px solid white;
+  border-top: 0;
+  border-left: 0;
+  color: black !important;
+`
+
 export const xFadeIn = keyframes`
   0% {
 transform: scale(0);
@@ -218,4 +245,48 @@ export const MonthIconWrapper = styled.svg`
   @media (max-width: 450px) {
     display: none;
   }
+`
+export const EventsListDetailsWrapper = styled.div`
+  flex: 1;
+  border-right: 1px solid white;
+  display: flex;
+  padding: 0.5rem;
+  background: ${props =>
+    props.month === props.currentMonth + props.month &&
+    props.i === props.date - 1
+      ? "#457E5C"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date
+      ? "#314638"
+      : ""};
+`
+
+export const EventsListPerformerDetailsWrapper = styled.div`
+  width: 50%;
+  margin-left: 2rem;
+`
+
+export const EventsListMenusDetailsWrapper = styled.div`
+  flex: 2;
+`
+
+export const EventsListDetailsViewDetailsLink = styled(Link)`
+  background: ${props =>
+    props.month === props.currentMonth + props.month &&
+    props.i === props.date - 1
+      ? "#457E5C"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date
+      ? "#314638"
+      : ""};
+
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 `
