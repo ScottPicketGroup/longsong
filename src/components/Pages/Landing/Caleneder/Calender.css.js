@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import { fadeIn } from "../../../global-styles/animations"
-import { Link } from "gatsby"
+
 export const CalanderWrapper = styled.div`
   width: 100%;
   animation: ${fadeIn} 500ms ease-in-out;
@@ -27,9 +27,9 @@ export const MonthsContainer = styled.div`
   grid-template-columns: ${props => `repeat(${props.cols}, 1fr)`};
   grid-gap: 0 10px;
   @media (max-width: 450px) {
-    position: fixed;
+    position: ${props => props.scrollPosition > 830 ? `fixed` : 'unset'};
     top: -25px;
-    right: 30px;
+    right: 0px;
     width: 50%;
     z-index: 1000;
   }
@@ -62,6 +62,7 @@ export const DaysWrapper = styled.div`
     props.cols === "true" ? `repeat(2, 1fr)` : `repeat(7, 1fr)`};
   grid-gap: ${props => (props.cols === "true" ? `1rem` : `0 1rem`)};
   @media (max-width: 450px) {
+    margin-top : ${props => (props.scrollPosition > 830 ? `6rem` : `0`)};
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
   }
@@ -124,7 +125,6 @@ export const DateDisplayContainer = styled.div`
   @media (max-width: 450px) {
     width: 100%;
     border-bottom: 1px solid white;
-    padding: 1rem 1rem 1rem 1rem;
   }
 `
 
@@ -145,7 +145,7 @@ export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
   color: black !important;
 
   @media (max-width: 450px) {
-    height: 120px;
+    height: 140px;
   }
 `
 
@@ -256,7 +256,7 @@ export const EventsListDetailsWrapper = styled.div`
   flex: 1;
   border-right: 1px solid white;
   display: flex;
-  padding: 0.5rem;
+  padding: 1rem;
   background: ${props =>
     props.month === props.currentMonth + props.month &&
     props.i === props.date - 1
@@ -270,13 +270,16 @@ export const EventsListDetailsWrapper = styled.div`
 export const EventsListPerformerDetailsWrapper = styled.div`
   width: 50%;
   margin-left: 2rem;
+  @media (max-width: 450px) {
+    margin-left: 0rem;
+  }
 `
 
 export const EventsListMenusDetailsWrapper = styled.div`
   flex: 2;
 `
 
-export const EventsListDetailsViewDetailsLink = styled(Link)`
+export const EventsListDetailsViewDetailsLink = styled.div`
   background: ${props =>
     props.month === props.currentMonth + props.month &&
     props.i === props.date - 1
@@ -286,13 +289,9 @@ export const EventsListDetailsViewDetailsLink = styled(Link)`
       ? "#314638"
       : ""};
 
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  writing-mode: vertical-rl;
   text-orientation: mixed;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
 `

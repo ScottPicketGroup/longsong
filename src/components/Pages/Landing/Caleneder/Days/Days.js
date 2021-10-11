@@ -7,7 +7,7 @@ import EventsListView from "../CalenderViews/EventsListView"
 
 import { DaysWrapper } from "../Calender.css"
 import useGetElementSize from "../../../../hooks/ItemSizing"
-
+import useScrollPosition from "../../../../hooks/ScrollPosition"
 const Days = ({ daysView, currentMonth, nextMonth, events }) => {
   const { daysToDisplay, day, date, todaysDate, month } = useGetDaysOfMonth(
     currentMonth,
@@ -17,9 +17,9 @@ const Days = ({ daysView, currentMonth, nextMonth, events }) => {
   const daysWrapperRef = useRef(null)
   const { elementWidth } = useGetElementSize(daysWrapperRef)
   const [openModel, setOpenModel] = useState(null)
-
+  const scrollPosition = useScrollPosition();
   return (
-    <DaysWrapper cols={daysView ? "true" : "false"} ref={daysWrapperRef}>
+    <DaysWrapper cols={daysView ? "true" : "false"} ref={daysWrapperRef} scrollPosition={scrollPosition}>
       {daysToDisplay &&
         daysToDisplay.map((item, i) =>
           daysView && date.getDate() < i + 2 ? (

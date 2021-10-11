@@ -4,18 +4,19 @@ import LongsongIcon from "./Icons/LongsongIcon"
 import MenuIcon from "./Icons/MenuIcon"
 import { EventsWrapper, MainWrapper, MenuWrapper } from "./MenuContainer.css"
 import MenuSlideOutContainer from "./MenuSlideOutContainer/MenuSlideOutContainer"
-
+import useScrollPosition from "../hooks/ScrollPosition"
 const MenuContainer = ({
   menuOpen,
   setMenuOpen,
   activePage,
   setActivePage,
 }) => {
+  const scrollPosition = useScrollPosition()
   return (
     <MenuWrapper>
       <MainWrapper>
         <MenuIcon setMenuOpen={setMenuOpen} setActivePage={setActivePage} />
-        <LongsongIcon setActivePage={setActivePage} />
+        {scrollPosition <= 830 &&<LongsongIcon setActivePage={setActivePage} />}
       </MainWrapper>
       <EventsWrapper>
         <BC2>Private Events</BC2>

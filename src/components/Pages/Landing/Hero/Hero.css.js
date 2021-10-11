@@ -107,7 +107,7 @@ export const HeroWrapper = styled.div`
   align-content: space-between;
 
   @media (max-width: 451px) {
-    margin-top: -4.5rem;
+    margin-top: -2.5rem;
   }
 `
 

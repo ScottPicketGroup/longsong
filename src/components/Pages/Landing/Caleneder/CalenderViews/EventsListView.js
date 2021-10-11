@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-
+import { Link } from "gatsby"
 import {
   Heading2,
   Heading3,
@@ -16,6 +16,7 @@ import {
   EventDayContainer,
 } from "../Calender.css"
 import useGetElementSize from "../../../../hooks/ItemSizing"
+import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
 const EventsListView = ({
   day,
   i,
@@ -27,11 +28,7 @@ const EventsListView = ({
 }) => {
   const dayContainerRef = useRef(null)
   const { elementWidth } = useGetElementSize(dayContainerRef)
-
-  // console.log(parseInt(item.date, 10), date.getDate())
   const asdf = parseInt(item.date, 10)
-  console.log(asdf)
-  // if (asdf === todaysDate + 1) console.log("tomorrow")
   return (
     <EventDayContainer
       i={i}
@@ -157,18 +154,20 @@ const EventsListView = ({
           </Heading2>
         </EventsListMenusDetailsWrapper>
       </EventsListDetailsWrapper>
-      {/* <EventsListDetailsViewDetailsLink currentMonth={currentMonth}
-       calander
-       month={month}
-       currentMonth={currentMonth}
-       calander
-       dayOfWeek={item.day}
-       day={day}
-       date={todaysDate}
-       i={i}
-       >
-                View Details
-            </EventsListDetailsViewDetailsLink> */}
+      <EventsListDetailsViewDetailsLink
+        currentMonth={currentMonth}
+        calander
+        month={month}
+        currentMonth={currentMonth}
+        calander
+        dayOfWeek={item.day}
+        day={day}
+        date={todaysDate}
+        i={i}
+      >
+        <Link to="#">View Details</Link>
+        <LongsongIcon setActivePage={(e)=> console.log(e)} />
+      </EventsListDetailsViewDetailsLink>
     </EventDayContainer>
   )
 }
