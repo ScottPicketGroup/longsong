@@ -27,7 +27,7 @@ export const MonthsContainer = styled.div`
   grid-template-columns: ${props => `repeat(${props.cols}, 1fr)`};
   grid-gap: 0 10px;
   @media (max-width: 450px) {
-    position: ${props => props.scrollPosition > 830 ? `fixed` : 'unset'};
+    position: ${props => (props.scrollPosition > 530 ? `fixed` : "unset")};
     top: -25px;
     right: 0px;
     width: 50%;
@@ -62,7 +62,6 @@ export const DaysWrapper = styled.div`
     props.cols === "true" ? `repeat(2, 1fr)` : `repeat(7, 1fr)`};
   grid-gap: ${props => (props.cols === "true" ? `1rem` : `0 1rem`)};
   @media (max-width: 450px) {
-    margin-top : ${props => (props.scrollPosition > 830 ? `6rem` : `0`)};
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
   }
@@ -280,18 +279,21 @@ export const EventsListMenusDetailsWrapper = styled.div`
 `
 
 export const EventsListDetailsViewDetailsLink = styled.div`
-  background: ${props =>
-    props.month === props.currentMonth + props.month &&
-    props.i === props.date - 1
-      ? "#457E5C"
-      : props.month === props.currentMonth + props.month &&
-        props.i === props.date
-      ? "#314638"
-      : ""};
+  display: none;
+  @media (max-width: 450px) {
+    background: ${props =>
+      props.month === props.currentMonth + props.month &&
+      props.i === props.date - 1
+        ? "#457E5C"
+        : props.month === props.currentMonth + props.month &&
+          props.i === props.date
+        ? "#314638"
+        : ""};
 
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-orientation: mixed;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-orientation: mixed;
+  }
 `

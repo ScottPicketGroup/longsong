@@ -16,7 +16,7 @@ const MenuContainer = ({
     <MenuWrapper>
       <MainWrapper>
         <MenuIcon setMenuOpen={setMenuOpen} setActivePage={setActivePage} />
-        {scrollPosition <= 830 &&<LongsongIcon setActivePage={setActivePage} />}
+        {scrollPosition <= 530 &&<LongsongIcon setActivePage={setActivePage} />}
       </MainWrapper>
       <EventsWrapper>
         <BC2>Private Events</BC2>
