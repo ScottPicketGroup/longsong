@@ -7,9 +7,9 @@ import {
 import { ScrollToCalenderContainer } from "../Hero.css"
 import LandingDownArrow from "./LandingDownArrow"
 
-const ScrollToCalender = () => {
+const ScrollToCalender = ({excuteScroll}) => {
   return (
-    <ScrollToCalenderContainer>
+    <ScrollToCalenderContainer onClick={excuteScroll}>
       <DesktopWrapper>
         <Heading2>VIEW OUR UPCOMING EVENTS</Heading2>
       </DesktopWrapper>

@@ -5,7 +5,7 @@ import Navigation from "./Navigation/Navigation"
 import { useStaticQuery, graphql } from "gatsby"
 import useGetElementSize from "../../../hooks/ItemSizing"
 
-const Calender = () => {
+const Calender = ({ setCalenderRef }) => {
   const [daysView, setDaysView] = React.useState(false)
 
   const [currentMonth, setCurrentMonth] = React.useState(0)
@@ -13,8 +13,8 @@ const Calender = () => {
   const [events, setEvents] = React.useState([])
   const [isFade, setIsFade] = React.useState(false)
   const calenderRef = useRef(null)
-  const { elementWidth } = useGetElementSize(calenderRef);
-  
+  const { elementWidth } = useGetElementSize(calenderRef)
+
   const data = useStaticQuery(graphql`
     query allEvents {
       allContentfulLongsongEvents {
@@ -51,9 +51,13 @@ const Calender = () => {
 
   useEffect(() => {
     if (elementWidth <= 450) {
-      setDaysView(true);
+      setDaysView(true)
     }
   }, [elementWidth, daysView])
+
+  useEffect(() => {
+    setCalenderRef(calenderRef)
+  }, [calenderRef])
 
   const handlePreviousMonthChange = () => {
     if (currentMonth === 0) {
@@ -88,14 +92,16 @@ const Calender = () => {
         handlePreviousMonthChange={handlePreviousMonthChange}
         handleNextMonthChange={handleNextMonthChange}
       />
-      {isFade && <Days
-        events={events}
-        daysView={daysView}
-        currentMonth={currentMonth}
-        setCurrentMonth={setCurrentMonth}
-        nextMonth={nextMonth}
-        setNextMonth={setNextMonth}
-      />}
+      {isFade && (
+        <Days
+          events={events}
+          daysView={daysView}
+          currentMonth={currentMonth}
+          setCurrentMonth={setCurrentMonth}
+          nextMonth={nextMonth}
+          setNextMonth={setNextMonth}
+        />
+      )}
     </CalanderWrapper>
   )
 }
