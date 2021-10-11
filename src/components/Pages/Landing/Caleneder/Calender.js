@@ -9,6 +9,7 @@ const Calender = () => {
   const [currentMonth, setCurrentMonth] = React.useState(0)
   const [nextMonth, setNextMonth] = React.useState(1)
   const [events, setEvents] = React.useState([])
+  const [isFade, setIsFade] = React.useState(false)
 
   const data = useStaticQuery(graphql`
     query allEvents {
@@ -40,15 +41,21 @@ const Calender = () => {
     data && setEvents(data.allContentfulLongsongEvents.edges)
   }, [data])
 
+  useEffect(() => {
+    setIsFade(true)
+  }, [currentMonth])
+
   const handlePreviousMonthChange = () => {
     if (currentMonth == 0) {
       setCurrentMonth(0)
       setNextMonth(1)
+      setIsFade(false)
     } else if (currentMonth < 12) {
       let next = nextMonth - 1
       let current = currentMonth - 1
       setCurrentMonth(current)
       setNextMonth(next)
+      setIsFade(false)
     }
   }
 
@@ -57,6 +64,7 @@ const Calender = () => {
     let current = currentMonth + 1
     setNextMonth(next)
     setCurrentMonth(current)
+    setIsFade(false)
   }
 
   return (
@@ -71,14 +79,14 @@ const Calender = () => {
         handlePreviousMonthChange={handlePreviousMonthChange}
         handleNextMonthChange={handleNextMonthChange}
       />
-      <Days
+      {isFade && <Days
         events={events}
         daysView={daysView}
         currentMonth={currentMonth}
         setCurrentMonth={setCurrentMonth}
         nextMonth={nextMonth}
         setNextMonth={setNextMonth}
-      />
+      />}
     </CalanderWrapper>
   )
 }
