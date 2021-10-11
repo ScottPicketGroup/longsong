@@ -40,6 +40,25 @@ const Calender = () => {
     data && setEvents(data.allContentfulLongsongEvents.edges)
   }, [data])
 
+  const handlePreviousMonthChange = () => {
+    if (currentMonth == 0) {
+      setCurrentMonth(0)
+      setNextMonth(1)
+    } else if (currentMonth < 12) {
+      let next = nextMonth - 1
+      let current = currentMonth - 1
+      setCurrentMonth(current)
+      setNextMonth(next)
+    }
+  }
+
+  const handleNextMonthChange = () => {
+    let next = nextMonth + 1
+    let current = currentMonth + 1
+    setNextMonth(next)
+    setCurrentMonth(current)
+  }
+
   return (
     <CalanderWrapper>
       <Navigation
@@ -49,6 +68,8 @@ const Calender = () => {
         setCurrentMonth={setCurrentMonth}
         nextMonth={nextMonth}
         setNextMonth={setNextMonth}
+        handlePreviousMonthChange={handlePreviousMonthChange}
+        handleNextMonthChange={handleNextMonthChange}
       />
       <Days
         events={events}

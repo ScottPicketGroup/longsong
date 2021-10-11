@@ -42,6 +42,7 @@ const GiftVouchers = ({ activePage }) => {
         <ImageWrapper full marginRequired>
           <GatsbyImage
             image={getImage(data.contentfulLongsongPageContent.giftVouchersHeroImge)}
+            alt={data.contentfulLongsongPageContent.giftVouchersHeroImge.title}
           />
         </ImageWrapper>
 
