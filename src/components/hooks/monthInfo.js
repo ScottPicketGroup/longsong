@@ -18,7 +18,7 @@ useEffect(() => {
     const nextMonth = nextMonthDate.toLocaleDateString('en-EU', options)
     const thisMonthYear = date.getFullYear()
     const nextMonthYear = nextMonthDate.getFullYear() 
-  console.log(monthNext)
+
     setThisMonthInfo([thisMonth, thisMonthYear])
     setNextMonthInfo([nextMonth, nextMonthYear])
 }, [current])

@@ -17,7 +17,7 @@ import {
 const GiftVouchers = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query GiftVouchers {
-      contentfulLongsongPageContent {
+      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
         giftVouchersHeroImge {
           title
           gatsbyImageData
@@ -42,6 +42,7 @@ const GiftVouchers = ({ activePage }) => {
         <ImageWrapper full marginRequired>
           <GatsbyImage
             image={getImage(data.contentfulLongsongPageContent.giftVouchersHeroImge)}
+            alt={data.contentfulLongsongPageContent.giftVouchersHeroImge.title}
           />
         </ImageWrapper>
 

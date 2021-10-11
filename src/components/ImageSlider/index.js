@@ -11,11 +11,15 @@ import {
 import NextIcon from "./Controls/NextIcon"
 import PreviousIcon from "./Controls/PreviousIcon"
 
-import { DesktopWrapper, MobileWrapper, aspectRatio } from "../global-styles/containers.css"
+import {
+  DesktopWrapper,
+  MobileWrapper,
+  aspectRatio,
+} from "../global-styles/containers.css"
 
-const Slider = ({ imageData, hero }) => {
+const Slider = ({ imageData, hero, aspectRatio }) => {
   const [images, setImages] = useState([])
-  const imageCount = images.length - 1
+  const [imageCount, setImageCount] = useState(0)
   let title = useRef(null)
   const [imageNumber, setImageNumber] = useState(1)
   const handlers = useSwipeable({
@@ -25,11 +29,17 @@ const Slider = ({ imageData, hero }) => {
   const [activeImg, setActiveImg] = useState(0)
 
   useEffect(() => {
-    if (imageData.length > 0) setImages(imageData)
-    else if (typeof imageData === "object") setImages([imageData])
+    if (imageData.length > 0) {
+      setImages(imageData)
+      setImageCount(imageData.length - 1)
+    } else if (typeof imageData === "object") {
+      setImages([imageData])
+      setImageCount(0)
+    }
   }, [imageData])
 
   const nextImage = () => {
+    if (imageNumber === images.length) return
     gsap.fromTo(
       title,
       0.1,
@@ -64,6 +74,7 @@ const Slider = ({ imageData, hero }) => {
   }
 
   const previousImage = () => {
+    if (imageNumber === 1) return
     gsap.fromTo(
       title,
       0.1,
@@ -111,44 +122,31 @@ const Slider = ({ imageData, hero }) => {
             />
           ))}
       </SliderContainer>
-
-      {!hero ? (<><DesktopWrapper>
-        <ControlsContainer>
-          <ControlButton onClick={previousImage}>
-            <PreviousIcon />
-          </ControlButton>
-          <BC3
-            style={{
-              color: `grey`,
-            }}
-            marginTop="md"
-          >
-            |
-          </BC3>
-          <ControlButton onClick={nextImage}>
-            <NextIcon />
-          </ControlButton>
-        </ControlsContainer>
-      </DesktopWrapper>
-      <MobileWrapper imageControls>
-        <BC3
-          style={{
-            color: `grey`,
-          }}
-          marginTop="md"
-        >
-          {imageNumber}/{images.length}
-        </BC3>
-        <BC3
-          style={{
-            color: `grey`,
-          }}
-          marginTop="md"
-        >
-          VIEW FULLSCREEN
-        </BC3>
-      </MobileWrapper> </>) : (<></>) }
-      
+      {imageCount > 0 && !hero && (
+        <>
+          <DesktopWrapper>
+            <ControlsContainer>
+              <ControlButton onClick={previousImage}>
+                <PreviousIcon disabled={imageNumber === 1} />
+              </ControlButton>
+              <BC3 style={{ color: `grey` }} marginTop="md">
+                |
+              </BC3>
+              <ControlButton onClick={nextImage}>
+                <NextIcon disabled={imageNumber === images.length} />
+              </ControlButton>
+            </ControlsContainer>
+          </DesktopWrapper>
+          <MobileWrapper imageControls>
+            <BC3 style={{ color: `grey` }} marginTop="md">
+              {imageNumber}/{images.length}
+            </BC3>
+            <BC3 style={{ color: `grey` }} marginTop="md">
+              VIEW FULLSCREEN
+            </BC3>
+          </MobileWrapper>
+        </>
+      )}
     </div>
   ) : (
     <div></div>

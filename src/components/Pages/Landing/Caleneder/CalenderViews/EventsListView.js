@@ -28,10 +28,10 @@ const EventsListView = ({
   const dayContainerRef = useRef(null)
   const { elementWidth } = useGetElementSize(dayContainerRef)
 
-  console.log(parseInt(item.date, 10), date.getDate())
+  // console.log(parseInt(item.date, 10), date.getDate())
   const asdf = parseInt(item.date, 10)
   console.log(asdf)
-  if (asdf === todaysDate + 1) console.log("tomorrow")
+  // if (asdf === todaysDate + 1) console.log("tomorrow")
   return (
     <EventDayContainer
       i={i}

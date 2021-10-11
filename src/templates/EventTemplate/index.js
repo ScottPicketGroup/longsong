@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
@@ -22,16 +22,40 @@ import { TextContainer } from "../../components/Pages/SlideOutMenuPages/Space/Sp
 import { Button } from "../../components/global-styles/GlobalStyles.css"
 import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import Slider from "../../components/ImageSlider"
+import { useStaticQuery, graphql } from "gatsby"
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
   const eventDateTime = eventData.eventDate.split(" ")
+  const [imageData, setImageData] = useState([]);
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allContentfulLongsongEvents {
+        edges {
+          node {
+            id
+            eventMedia {
+              title
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  useEffect(() => {
+    data.allContentfulLongsongEvents.edges.forEach(({node}) => {
+      if(node.id === eventData.id) setImageData(node.eventMedia)
+    })
+  }, [eventData, data])
+
   return (
     <Layout fd="column">
       <Seo title="Home" />
       <EventHeroContainer>
         <ImageWrapper>
-          <Slider imageData={eventData.eventMedia} />
+          {imageData.length > 0 && <Slider imageData={imageData} />}
           <StaticImage
             className="play-button"
             src="../../images/EventTemplate/playbutton.png"

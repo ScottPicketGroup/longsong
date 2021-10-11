@@ -1,12 +1,10 @@
 import React from "react"
 import { BC3 } from "../../global-styles/typography.css"
 
-const PreviousIcon = () => {
+const PreviousIcon = ({ disabled }) => {
   return (
     <BC3
-      style={{
-        color: `grey`,
-      }}
+      style={disabled ? { color: "transparent" } : { color: "gray" }}
       marginTop="md"
     >
       PREVIOUS

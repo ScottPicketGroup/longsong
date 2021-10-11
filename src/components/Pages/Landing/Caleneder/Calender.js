@@ -1,67 +1,86 @@
-import React, {useEffect} from 'react'
-import { CalanderWrapper} from './Calender.css'
-import Days from './Days/Days'
-import Navigation from './Navigation/Navigation'
+import React, { useEffect } from "react"
+import { CalanderWrapper } from "./Calender.css"
+import Days from "./Days/Days"
+import Navigation from "./Navigation/Navigation"
 import { useStaticQuery, graphql } from "gatsby"
 const Calender = () => {
   const [daysView, setDaysView] = React.useState(false)
-  
 
   const [currentMonth, setCurrentMonth] = React.useState(0)
   const [nextMonth, setNextMonth] = React.useState(1)
   const [events, setEvents] = React.useState([])
 
   const data = useStaticQuery(graphql`
-  query allEvents {
-    allContentfulLongsongEvents {
-      edges {
-        node {
-          drinksSpecialDetails {
-            raw
+    query allEvents {
+      allContentfulLongsongEvents {
+        edges {
+          node {
+            drinksSpecialDetails {
+              raw
+            }
+            drinksSpecialTitle
+            eventDate(formatString: "DDMMYY")
+            eventDescription {
+              raw
+            }
+            eventMedia {
+              gatsbyImageData
+            }
+            eventName
+            foodSpecialDetails {
+              raw
+            }
+            foodSpecialTitle
           }
-          drinksSpecialTitle
-          eventDate(formatString: "DDMMYY")
-          eventDescription {
-            raw
-          }
-          eventMedia {
-            gatsbyImageData
-          }
-          eventName
-          foodSpecialDetails {
-            raw
-          }
-          foodSpecialTitle
         }
       }
     }
-  }
-  
   `)
-useEffect(() => {
+  useEffect(() => {
+    data && setEvents(data.allContentfulLongsongEvents.edges)
+  }, [data])
 
-  data &&
-setEvents(data.allContentfulLongsongEvents.edges)
-}, [data])
+  const handlePreviousMonthChange = () => {
+    if (currentMonth == 0) {
+      setCurrentMonth(0)
+      setNextMonth(1)
+    } else if (currentMonth < 12) {
+      let next = nextMonth - 1
+      let current = currentMonth - 1
+      setCurrentMonth(current)
+      setNextMonth(next)
+    }
+  }
 
+  const handleNextMonthChange = () => {
+    let next = nextMonth + 1
+    let current = currentMonth + 1
+    setNextMonth(next)
+    setCurrentMonth(current)
+  }
 
-    return (
-        <CalanderWrapper >
-          <Navigation daysView={daysView} setDaysView={setDaysView}
-          currentMonth={currentMonth} 
-          setCurrentMonth={setCurrentMonth}
-          nextMonth = {nextMonth}
-          setNextMonth = {setNextMonth}
-          />
-          <Days 
-          events={events}
-          daysView={daysView} currentMonth={currentMonth}
-          currentMonth={currentMonth} 
-          setCurrentMonth={setCurrentMonth}
-          nextMonth = {nextMonth}
-          setNextMonth = {setNextMonth} />
-        </CalanderWrapper>
-    )
+  return (
+    <CalanderWrapper>
+      <Navigation
+        daysView={daysView}
+        setDaysView={setDaysView}
+        currentMonth={currentMonth}
+        setCurrentMonth={setCurrentMonth}
+        nextMonth={nextMonth}
+        setNextMonth={setNextMonth}
+        handlePreviousMonthChange={handlePreviousMonthChange}
+        handleNextMonthChange={handleNextMonthChange}
+      />
+      <Days
+        events={events}
+        daysView={daysView}
+        currentMonth={currentMonth}
+        setCurrentMonth={setCurrentMonth}
+        nextMonth={nextMonth}
+        setNextMonth={setNextMonth}
+      />
+    </CalanderWrapper>
+  )
 }
 
 export default Calender

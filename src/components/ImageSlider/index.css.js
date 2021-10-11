@@ -20,6 +20,7 @@ export const ControlButton = styled.div`
 `
 
 export const SliderImage = styled(GatsbyImage)`
+  aspect-ratio: ${props => (props.aspectratio ? props.aspectratio : "unset")};
   display: ${props =>
     props.activeimg === props.id ? "block" : "none"} !important;
 `

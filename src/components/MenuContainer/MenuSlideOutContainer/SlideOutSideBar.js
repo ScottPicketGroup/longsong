@@ -6,7 +6,7 @@ import { DesktopMenuIconWrapper, MobileMenuIconWrapper } from "../MenuContainer.
 import { SlideOutSideBarWrapper } from "./MenuSlideOutContianer.css"
 
 const SlideOutSideBar = ({ setMenuOpen, menuOpen, activePage, setActivePage }) => {
-  console.log(activePage)
+
   return (
     <SlideOutSideBarWrapper menuOpen={menuOpen}>
       <DesktopMenuIconWrapper> <MenuX menuOpen={menuOpen} setMenuOpen={setMenuOpen} setActivePage={setActivePage} /></DesktopMenuIconWrapper>
