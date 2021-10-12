@@ -27,12 +27,17 @@ export const MonthsContainer = styled.div`
   grid-template-columns: ${props => `repeat(${props.cols}, 1fr)`};
   grid-gap: 0 10px;
   @media (max-width: 450px) {
-    position: ${props => (props.scrollPosition > 530 ? `fixed` : "unset")};
-    top: -25px;
-    right: 0px;
-    width: 50%;
-    z-index: 1000;
+   display: none;
   }
+`
+
+export const MenuMonthsContainer = styled(MonthsContainer)`
+@media (max-width: 451px) {
+display: flex;
+  position: ${props => (props.scrollPosition > 530 ? `fixed` : "unset")};
+  animation: ${fadeIn} 500ms ease-out;
+  float: right;
+}
 `
 export const MonthItem = styled.div`
   height: 100px;
