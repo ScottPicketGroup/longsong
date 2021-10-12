@@ -31,7 +31,7 @@ const MenuContainer = ({
     <MenuWrapper ref={menuRef}>
       <MainWrapper>
         <MenuIcon setMenuOpen={setMenuOpen} setActivePage={setActivePage} />
-        {elementWidth > 72 ? (
+        {elementWidth > 250 ? (
           <>
             {scrollPosition >= 530 && (
               <Month

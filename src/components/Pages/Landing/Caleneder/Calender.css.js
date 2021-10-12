@@ -36,7 +36,6 @@ export const MenuMonthsContainer = styled(MonthsContainer)`
     display: flex;
     justify-content: flex-end;
     animation: ${fadeIn} 500ms ease-out;
-    float: right;
   }
 `
 export const MonthItem = styled.div`
@@ -52,12 +51,17 @@ export const MonthItem = styled.div`
     border-top: 3px solid #314638;
     align-self: flex-end;
   }
-
+`
+export const MenuMonthItem = styled.div`
   @media (max-width: 451px) {
     height: 28px;
     margin-bottom: 0;
-    padding: 0 0.5rem;
+    padding: 0 1.5rem;
     animation: ${fadeIn} 500ms ease-out;
+  }
+
+  h3 {
+    padding: 0 !important;
   }
 `
 
