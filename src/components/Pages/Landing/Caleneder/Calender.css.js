@@ -27,17 +27,17 @@ export const MonthsContainer = styled.div`
   grid-template-columns: ${props => `repeat(${props.cols}, 1fr)`};
   grid-gap: 0 10px;
   @media (max-width: 450px) {
-   display: none;
+    display: none;
   }
 `
 
 export const MenuMonthsContainer = styled(MonthsContainer)`
-@media (max-width: 451px) {
-display: flex;
-  position: ${props => (props.scrollPosition > 530 ? `fixed` : "unset")};
-  animation: ${fadeIn} 500ms ease-out;
-  float: right;
-}
+  @media (max-width: 451px) {
+    display: flex;
+    justify-content: flex-end;
+    animation: ${fadeIn} 500ms ease-out;
+    float: right;
+  }
 `
 export const MonthItem = styled.div`
   height: 100px;
@@ -48,12 +48,16 @@ export const MonthItem = styled.div`
   :first-child {
     border-top: 8px solid #457e5c;
   }
-  :first-child {
-    border-top: 8px solid #457e5c;
-  }
   :last-child {
     border-top: 3px solid #314638;
     align-self: flex-end;
+  }
+
+  @media (max-width: 451px) {
+    height: 28px;
+    margin-bottom: 0;
+    padding: 0 0.5rem;
+    animation: ${fadeIn} 500ms ease-out;
   }
 `
 
