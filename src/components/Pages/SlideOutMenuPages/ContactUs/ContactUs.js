@@ -30,7 +30,7 @@ const ContactUs = ({ activePage }) => {
           <Heading1>Contact Us</Heading1>
         </TextContainer>
         <TextContainer sixty marginBottom="md">
-          <Renderer node={  data.contentfulLongsongPageContent.contactUsDescription} />
+          {/* <Renderer node={  data.contentfulLongsongPageContent.contactUsDescription} /> */}
         </TextContainer>
       </SectionWrapper>
       <SectionWrapper>

@@ -50,10 +50,10 @@ const GiftVouchers = ({ activePage }) => {
         <TextContainer right full marginBottom="md" >
           <BreakLine none />
           <Heading1 marginBottom="md">
-            <Renderer node={data.contentfulLongsongPageContent.longsongGiftVoucher} />
+            {/* <Renderer node={data.contentfulLongsongPageContent.longsongGiftVoucher} /> */}
 
           </Heading1>
-          <Renderer node={data.contentfulLongsongPageContent.longsongGiftVoucherDescription} />
+          {/* <Renderer node={data.contentfulLongsongPageContent.longsongGiftVoucherDescription} /> */}
 
           <Button marginBottom="xl">PURCHAGE VOUCHER</Button>
         </TextContainer>
@@ -62,7 +62,7 @@ const GiftVouchers = ({ activePage }) => {
           <Heading1 marginBottom="md">
             {data.contentfulLongsongPageContent.groupGiftVoucherHeading}
           </Heading1>
-          <Renderer node={data.contentfulLongsongPageContent.groupGiftVoucherDescription} />
+          {/* <Renderer node={data.contentfulLongsongPageContent.groupGiftVoucherDescription} /> */}
           <Button marginBottom="xl">PURCHAGE VOUCHER</Button>
         </TextContainer>
       </SectionWrapper>
