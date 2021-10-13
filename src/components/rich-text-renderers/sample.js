@@ -10,7 +10,7 @@ const Renderer = ({ node }) => {
 
     const options = {
         renderMark: {
-            [MARKS.BOLD]: text => <BC1 marginBottom="sm" ><b>{text}</b></BC1>,
+            [MARKS.BOLD]: text => <BC1 marginBottom="sm" bold><strong>{text}</strong></BC1>,
           },
         renderNode: {
             [BLOCKS.HEADING_1]: (node, children) => <Heading1>{children}</Heading1>,

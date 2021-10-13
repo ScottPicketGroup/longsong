@@ -341,6 +341,7 @@ export const BC1 = styled.p`
   line-height: 1.13;
   letter-spacing: 10;
   font-size: 1.25rem;
+  font-weight: ${props => props.bold ? '900' : '100'};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":
