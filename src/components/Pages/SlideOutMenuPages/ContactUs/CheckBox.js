@@ -12,6 +12,9 @@ const CheckBox = () => {
     </label>
   )
 }
+
+console.log('beep')
+
 const Checkbox = ({ className, checked, ...props }) => (
   <CheckboxContainer className={className}>
     <HiddenCheckbox checked={checked} {...props} />

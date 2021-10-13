@@ -21,7 +21,7 @@ const ContactUs = ({ activePage }) => {
       }
     }
   `)
-
+console.log('beep')
   return (
     <SlideOutPageWrapper activePage={activePage} page={5} contact>
       <BreakLine first />

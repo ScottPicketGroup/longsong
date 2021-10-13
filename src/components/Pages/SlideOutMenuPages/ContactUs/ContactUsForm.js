@@ -14,6 +14,9 @@ import {
 import CheckBox from "./CheckBox"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 const ContactUsForm = () => {
+
+
+
   const functionURL = "https://pear-cobra-4528.twil.io/send-email";
   const [error, setError] = useState({
     fName: false,
@@ -180,12 +183,12 @@ const ContactUsForm = () => {
               </InputContainer>
               <TixboxContainer>
                 <div
-                  onClick={() =>
-                    setInputs(inputs => ({ ...inputs, newsletter: true }))
+                  onClick={() =>{
+                    setInputs(inputs => ({ ...inputs, newsletter: true }))}
                   }
                   aria-hidden="true"
                 >
-                  <CheckBox />
+                  <CheckBox onClick={() => console.log('beep')}/>
                 </div>
                 <Label bc2 style={{ width: `90%` }}>
                   I would like to receive communications about Scott Pickett

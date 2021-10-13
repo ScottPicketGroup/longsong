@@ -127,13 +127,13 @@ const Slider = ({ imageData, hero, aspectRatio }) => {
           <DesktopWrapper>
             <ControlsContainer>
               <ControlButton onClick={previousImage}>
-                <PreviousIcon disabled={imageNumber === 1} />
+                <PreviousIcon />
               </ControlButton>
               <BC3 style={{ color: `grey` }} marginTop="md">
                 |
               </BC3>
               <ControlButton onClick={nextImage}>
-                <NextIcon disabled={imageNumber === images.length} />
+                <NextIcon  />
               </ControlButton>
             </ControlsContainer>
           </DesktopWrapper>

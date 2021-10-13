@@ -104,7 +104,7 @@ const GroupBookings = ({ activePage }) => {
         </ImageWrapper>
         <TextContainer right full marginBottom="lg" first>
           <BreakLine none />
-          <Heading1>
+          <Heading1 marginBottom="md">
             {data.contentfulLongsongPageContent.groupBookingTitle}
           </Heading1>
          
