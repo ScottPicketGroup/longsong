@@ -13,13 +13,7 @@ const Layout = ({ children, fd }) => {
   const [activePage, setActivePage] = React.useState(1)
   return (
     <PageContainer fd={fd}>
-      <MenuContainer menuOpen={menuOpen} setMenuOpen={setMenuOpen} activePage={activePage} setActivePage={setActivePage}/>
-
-      <PageWrapper>
-        <LongrainLink />
-        <SectionContainer marginBottom="xl">{children}</SectionContainer>
-        <Footer menuOpen={menuOpen} setMenuOpen={setMenuOpen} activePage={activePage} setActivePage={setActivePage}/>
-      </PageWrapper>
+  
     </PageContainer>
   )
 }

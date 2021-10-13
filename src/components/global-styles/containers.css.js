@@ -4,7 +4,7 @@ export const PageContainer = styled.div`
   width: 100%;
  
   display: flex;
-  
+
   @media (max-width: 450px) {
     width: 100%;
     flex-direction: column;
