@@ -11,10 +11,10 @@ const ScrollToCalender = ({excuteScroll}) => {
   return (
     <ScrollToCalenderContainer onClick={excuteScroll}>
       <DesktopWrapper>
-        <Heading2>VIEW OUR UPCOMING EVENTS</Heading2>
+        <Heading2>See what's on at Longsong</Heading2>
       </DesktopWrapper>
       <MobileWrapper>
-        <BC2>VIEW OUR UPCOMING EVENTS</BC2>
+        <BC2>See what's on at Longsong</BC2>
       </MobileWrapper>
       <LandingDownArrow />
     </ScrollToCalenderContainer>

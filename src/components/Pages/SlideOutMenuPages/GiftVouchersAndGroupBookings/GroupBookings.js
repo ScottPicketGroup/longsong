@@ -106,7 +106,7 @@ const GroupBookings = ({ activePage }) => {
           <Heading1>
             {data.contentfulLongsongPageContent.groupBookingTitle}
           </Heading1>
-          <Heading1 marginBottom="md">Video</Heading1>
+         
           <Renderer node={data.contentfulLongsongPageContent.groupBookingsDescription} />
          
           <Button marginBottom="" style={{ marginRight: `2rem` }}>
@@ -115,7 +115,7 @@ const GroupBookings = ({ activePage }) => {
               target="_blank"
               rel="noreferrer"
             >
-              FUNCTIONS PACKAGE 1
+              FUNCTIONS PACKAGE 
             </a>
           </Button>
           <Button>
@@ -124,7 +124,7 @@ const GroupBookings = ({ activePage }) => {
               target="_blank"
               rel="noreferrer"
             >
-              FUNCTIONS PACKAGE 2
+              WEDDING PACKAGE
             </a>
           </Button>
         </TextContainer>
