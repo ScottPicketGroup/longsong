@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { fadeInBG } from './animations';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -13,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'normal', sans-serif;
     letter-spacing: 10;
     background: #231F20;
+    animation: ${fadeInBG} 2s ease-out;
     color: white;
   }
   a {

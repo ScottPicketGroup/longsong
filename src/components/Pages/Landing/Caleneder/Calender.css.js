@@ -41,7 +41,7 @@ export const MenuMonthsContainer = styled(MonthsContainer)`
 export const MonthItem = styled.div`
   height: 100px;
   margin-bottom: 3.32rem;
-
+cursor: pointer;
   padding-top: 1.5rem;
   padding-left: 1rem;
   :first-child {
@@ -53,6 +53,7 @@ export const MonthItem = styled.div`
   }
 `
 export const MenuMonthItem = styled.div`
+
   @media (max-width: 451px) {
     height: 28px;
     margin-bottom: 0;
@@ -292,8 +293,17 @@ export const EventsListMenusDetailsWrapper = styled.div`
 `
 
 export const EventsListDetailsViewDetailsLink = styled.div`
-  display: none;
+display: flex;
+justify-content: center;
+align-items: center;
+writing-mode: vertical-rl;
+text-orientation: mixed;
+transform: rotate(180deg);
+ padding: 1rem;
+   
+ 
   @media (max-width: 450px) {
+    
     background: ${props =>
       props.month === props.currentMonth + props.month &&
       props.i === props.date - 1
@@ -307,6 +317,6 @@ export const EventsListDetailsViewDetailsLink = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-orientation: mixed;
+    text-orientation: rl;
   }
 `

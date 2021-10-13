@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useEffect } from "react"
 import { Link } from "gatsby"
 import {
   Heading2,
@@ -25,11 +25,32 @@ const EventsListView = ({
   currentMonth,
   month,
   date,
+  events
 }) => {
   const dayContainerRef = useRef(null)
   const { elementWidth } = useGetElementSize(dayContainerRef)
   const asdf = parseInt(item.date, 10)
+
+const thisFakeMonth = month + 2
+const componentDate = item.date 
+
+
+const [event, setEvent] = React.useState({})
+
+events.map(e => {
+ 
+  if (e.node.eventDate.slice(0,2) === componentDate) console.log(e)
+})
+
+
+
   return (
+<>
+    {
+      events.map(e => {
+        if(e.node.eventDate.slice(0,2) === componentDate) 
+        return (
+         
     <EventDayContainer
       i={i}
       ref={dayContainerRef}
@@ -43,7 +64,7 @@ const EventsListView = ({
       i={i}
       height={elementWidth / 3.5}
       events
-    >
+    > 
       <EventsDateDisplayContainer
         events
         currentMonth={currentMonth}
@@ -77,82 +98,52 @@ const EventsListView = ({
         date={todaysDate}
         i={i}
       >
-        <EventsListPerformerDetailsWrapper>
-          <Heading2
-            calander
-            month={month}
-            currentMonth={currentMonth}
-            calander
-            dayOfWeek={item.day}
-            day={day}
-            date={todaysDate}
-            i={i}
-          >
-            Performer 1
-          </Heading2>
-          <Heading2
-            calander
-            month={month}
-            currentMonth={currentMonth}
-            calander
-            dayOfWeek={item.day}
-            day={day}
-            date={todaysDate}
-            i={i}
-          >
-            Performer 1
-          </Heading2>
-          <Heading2
-            calander
-            month={month}
-            currentMonth={currentMonth}
-            calander
-            dayOfWeek={item.day}
-            day={day}
-            date={todaysDate}
-            i={i}
-          >
-            Performer 1
-          </Heading2>
-        </EventsListPerformerDetailsWrapper>
-        <EventsListMenusDetailsWrapper>
-          <Heading2
-            calander
-            month={month}
-            currentMonth={currentMonth}
-            calander
-            dayOfWeek={item.day}
-            day={day}
-            date={todaysDate}
-            i={i}
-          >
-            Menu 1
-          </Heading2>
-          <Heading2
-            calander
-            month={month}
-            currentMonth={currentMonth}
-            calander
-            dayOfWeek={item.day}
-            day={day}
-            date={todaysDate}
-            i={i}
-          >
-            Menu 2
-          </Heading2>
-          <Heading2
-            calander
-            month={month}
-            currentMonth={currentMonth}
-            calander
-            dayOfWeek={item.day}
-            day={day}
-            date={todaysDate}
-            i={i}
-          >
-            HappyHour
-          </Heading2>
-        </EventsListMenusDetailsWrapper>
+         {asdf === todaysDate + 1
+            ? "Tomorrow"
+            : item.day === "Sunday"
+            ? "Closed" : e.node.isTheVenueOpenToThePublic === false ? "Longsong bar is closed for private event"
+            : (
+              <EventsListPerformerDetailsWrapper>
+              <Heading2
+                calander
+                month={month}
+                currentMonth={currentMonth}
+                calander
+                dayOfWeek={item.day}
+                day={day}
+                date={todaysDate}
+                i={i}
+              >
+             {e.node.eventName} 
+              </Heading2>
+              <Heading2
+                calander
+                month={month}
+                currentMonth={currentMonth}
+                calander
+                dayOfWeek={item.day}
+                day={day}
+                date={todaysDate}
+                i={i}
+              >
+                {e.node.drinksSpecialTitle}
+              </Heading2>
+              <Heading2
+                calander
+                month={month}
+                currentMonth={currentMonth}
+                calander
+                dayOfWeek={item.day}
+                day={day}
+                date={todaysDate}
+                i={i}
+              >
+               {e.node.foodSpecialTitle}
+              </Heading2>
+            </EventsListPerformerDetailsWrapper>
+            )}
+      
+  
       </EventsListDetailsWrapper>
       <EventsListDetailsViewDetailsLink
         currentMonth={currentMonth}
@@ -165,10 +156,22 @@ const EventsListView = ({
         date={todaysDate}
         i={i}
       >
-        <Link to="#">View Details</Link>
-        <LongsongIcon setActivePage={(e)=> console.log(e)} />
+        {e.node.isTheVenueOpenToThePublic === false ? (
+ <Link to={`events/${e.node.eventName.toLowerCase().replace(" ", "-")}`}>VIEW DETAILS</Link>
+        ): (
+          "CLOSED"
+        )}
+        
+          
+  
       </EventsListDetailsViewDetailsLink>
     </EventDayContainer>
+  
+          
+        )
+      } )
+    }
+</>
   )
 }
 

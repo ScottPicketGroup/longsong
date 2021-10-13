@@ -21,6 +21,8 @@ export const DateContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding: 0 3rem;
+max-width: 30%;
 `
 export const DateWrapper = styled.div`
   border-top: 1px solid gray;

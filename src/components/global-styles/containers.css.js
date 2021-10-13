@@ -1,9 +1,9 @@
 import styled from "styled-components"
-
+import { fadeInBG } from "./animations"
 export const PageContainer = styled.div`
   width: 100%;
- 
-  display: flex;
+
+ display: flex;
 
   @media (max-width: 450px) {
     width: 100%;

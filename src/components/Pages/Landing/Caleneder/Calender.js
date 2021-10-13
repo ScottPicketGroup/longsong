@@ -5,6 +5,7 @@ import Navigation from "./Navigation/Navigation"
 import { useStaticQuery, graphql } from "gatsby"
 import useGetElementSize from "../../../hooks/ItemSizing"
 import useChangeMonth from "../../../hooks/ChangeMonth"
+import useWindowDimensions from "../../../hooks/useWindowDimensions"
 
 const Calender = ({ setCalenderRef }) => {
   const [daysView, setDaysView] = React.useState(false)
@@ -21,7 +22,7 @@ const Calender = ({ setCalenderRef }) => {
     handlePreviousMonthChange,
     handleNextMonthChange,
   } = useChangeMonth()
-
+  const { height, width } = useWindowDimensions();
   const data = useStaticQuery(graphql`
     query allEvents {
       allContentfulLongsongEvents {
@@ -42,6 +43,7 @@ const Calender = ({ setCalenderRef }) => {
             foodSpecialDetails {
               raw
             }
+            isTheVenueOpenToThePublic
             foodSpecialTitle
           }
         }
@@ -57,10 +59,13 @@ const Calender = ({ setCalenderRef }) => {
   }, [currentMonth, isFade])
 
   useEffect(() => {
-    if (elementWidth <= 450) {
+    if (width <= 450) {
       setDaysView(true)
+      
     }
-  }, [elementWidth, daysView])
+  }, [daysView])
+
+
 
   useEffect(() => {
     setCalenderRef(calenderRef)

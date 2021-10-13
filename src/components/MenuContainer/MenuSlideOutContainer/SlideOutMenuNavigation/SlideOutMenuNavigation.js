@@ -42,7 +42,14 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
         <BreakLine />
       </DesktopMenuIconWrapper>
       <MenuItem active={activePage} item={0}>
-        <BC1>Drinks</BC1>
+        <BC1>
+        <a
+          href={data.contentfulLongsongPageContent.drinksMenu.file.url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Drinks
+          </a></BC1>
         <a
           href={data.contentfulLongsongPageContent.drinksMenu.file.url}
           target="_blank"
@@ -52,7 +59,13 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
         </a>
       </MenuItem>
       <MenuItem active={activePage} item={0}>
+      <a
+          href={data.contentfulLongsongPageContent.foodMenu.file.url}
+          target="_blank"
+          rel="noreferrer"
+        >
         <BC1>Food</BC1>
+        </a>
         <a
           href={data.contentfulLongsongPageContent.foodMenu.file.url}
           target="_blank"
@@ -89,8 +102,20 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
         <BreakLine />
       </DesktopMenuIconWrapper>
       <MenuItem socials>
+      <a
+          href="https://www.instagram.com/longsongmelbourne"
+          target="_blank"
+          rel="noreferrer"
+        >
         <InstaIcon />
+        </a>
+        <a
+          href="https://www.facebook.com/longsongmelbourne"
+          target="_blank"
+          rel="noreferrer"
+        >
         <FBIcon />
+        </a>
       </MenuItem>
     </SlideOutMenuNavWrapper>
   )

@@ -112,7 +112,7 @@ export const HeroWrapper = styled.div`
 `
 
 export const AnimationWrapper = styled.div`
-  // animation: ${LogoAnimation} 6s linear;
+  animation: ${LogoAnimation} 3s linear;
   transform: scale(0.8);
 
   display: flex;
@@ -122,7 +122,7 @@ export const AnimationWrapper = styled.div`
 `
 
 export const IntroContainerWrapper = styled.div`
-  // animation: ${TextFadeIn} 6s linear;
+  animation: ${TextFadeIn} 3s linear;
   display: flex;
   align-items: center;
   flex-direction: column;

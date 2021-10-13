@@ -35,11 +35,11 @@ const Month = ({
   ) : (
     <MonthsContainer cols="2" scrollPosition={scrollPosition}>
       <MonthItem onClick={handlePreviousMonthChange}>
-        <Month1>{thisMonthInfo[0]}</Month1>
+        <Month1>{thisMonthInfo[0]}.</Month1>
         <Month1>{thisMonthInfo[1]}</Month1>
       </MonthItem>
       <MonthItem onClick={handleNextMonthChange}>
-        <Month2>{nextMonthInfo[0]}</Month2>
+        <Month2>{nextMonthInfo[0]}.</Month2>
         <Month2>{nextMonthInfo[1]}</Month2>
       </MonthItem>
     </MonthsContainer>
