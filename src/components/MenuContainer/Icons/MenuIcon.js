@@ -6,7 +6,9 @@ const MenuIcon = ({setMenuOpen, setActivePage}) => {
   return (
       <>
     <DesktopMenuIconWrapper
-    onClick={() => setMenuOpen(true)}
+   onClick={() => {
+    setActivePage(1) 
+    setMenuOpen(true)}}
     >
            <svg
       id="Burger_Menu"

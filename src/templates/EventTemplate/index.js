@@ -22,7 +22,7 @@ import { TextContainer } from "../../components/Pages/SlideOutMenuPages/Space/Sp
 import { Button } from "../../components/global-styles/GlobalStyles.css"
 import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import Slider from "../../components/ImageSlider"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
@@ -87,7 +87,9 @@ const EventTemplate = ({ pageContext }) => {
           {renderRichText(eventData.drinksSpecialDetails)}
           <Heading1 marginBottom="lg">{eventData.foodSpecialTitle}</Heading1>
           {renderRichText(eventData.foodSpecialDetails)}
-          <Button>RETURN TO CALENDAR OVERVIEW</Button>
+         <Link to ="/">
+         <Button>RETURN TO CALENDAR OVERVIEW</Button>
+         </Link>
         </TextContainer>
       </EventContentContainer>
     </Layout>

@@ -15,18 +15,28 @@ const MenuContainer = ({
   activePage,
   setActivePage,
 }) => {
-  const scrollPosition = useScrollPosition()
+  //refs and external hooks
+  const menuRef = useRef(null)
+  const { elementWidth } = useGetElementSize(menuRef)
   const {
     currentMonth,
     nextMonth,
     handlePreviousMonthChange,
     handleNextMonthChange,
   } = useChangeMonth()
+  const scrollPosition = useScrollPosition()
+ 
+// state
 
-  const menuRef = useRef(null)
+const [menuPage, setMenuPage]  = React.useState(0)
+ 
 
-  const { elementWidth } = useGetElementSize(menuRef)
 
+const handleOpenEvents = () => {
+  setMenuOpen(true)
+  setMenuPage(3)
+}
+console.log(menuPage)
   return (
     <MenuWrapper ref={menuRef}>
       <MainWrapper>
@@ -50,8 +60,14 @@ const MenuContainer = ({
           <LongsongIcon setActivePage={setActivePage} />
         )}
       </MainWrapper>
-      <EventsWrapper>
-        <BC2>Private Events</BC2>
+      <EventsWrapper
+    
+      >
+        <BC2
+        onClick={() => {
+          setActivePage(3) 
+          setMenuOpen(true)}}
+        >Private Events</BC2>
       </EventsWrapper>
       <MenuSlideOutContainer
         menuOpen={menuOpen}

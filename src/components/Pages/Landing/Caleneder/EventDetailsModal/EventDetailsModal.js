@@ -47,7 +47,23 @@ useEffect(() => {
 
 
 
-      <EventInfoWrapper>
+      
+      {
+            eventDetails.isTheVenueOpenToThePublic === false ? (
+           <EventInfoWrapper>
+             <EventContents>
+             <Heading2>
+               Longsong Bar is closed for a private function
+             </Heading2>
+              </EventContents>
+              <EventFooterWrapper>
+         
+        
+          <LongsongIcon />
+        </EventFooterWrapper>
+           </EventInfoWrapper>
+            ) : (
+              <EventInfoWrapper>
         <EventContents>
         {eventDetails.eventMedia ? (
         <>
@@ -74,17 +90,17 @@ useEffect(() => {
           </Heading2>
         </EventContents>
         <EventFooterWrapper>
-        {eventDetails.eventMedia ? (
-        <>
-        <Link to={`events/${eventDetails.eventName.toLowerCase().replace(" ", "-")}`}>VIEW DETAILS</Link>
-          </>
-         ) : <></>
+          {
+            eventDetails.eventName &&   <Link to={`events/${eventDetails.eventName.toLowerCase().replace(" ", "-")}`}>VIEW DETAILS</Link>
+          }
+      
         
-        } 
           <LongsongIcon />
         </EventFooterWrapper>
       </EventInfoWrapper>
 
+            )
+          }
     </EventDetailsWrapper>
 
   )
