@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
@@ -13,6 +12,7 @@ import {
 import ContactUsForm from "./ContactForm/ContactUsForm"
 import StallsAndYard from "../StallsAndYard"
 import Slider from "../../../ImageSlider"
+import Renderer from "../../../rich-text-renderers/sample"
 
 const GroupBookings = ({ activePage }) => {
   const data = useStaticQuery(graphql`
@@ -106,9 +106,8 @@ const GroupBookings = ({ activePage }) => {
             {data.contentfulLongsongPageContent.groupBookingTitle}
           </Heading1>
           <Heading1 marginBottom="md">Video</Heading1>
-          {renderRichText(
-            data.contentfulLongsongPageContent.groupBookingsDescription
-          )}
+          <Renderer node={data.contentfulLongsongPageContent.groupBookingsDescription} />
+         
           <Button marginBottom="" style={{ marginRight: `2rem` }}>
             <a
               href={data.contentfulLongsongPageContent.sampleMenuOne.file.url}

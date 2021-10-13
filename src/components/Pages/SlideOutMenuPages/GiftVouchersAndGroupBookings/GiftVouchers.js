@@ -11,6 +11,7 @@ import {
   SectionWrapper,
   TextContainer,
 } from "../Space/Space.css"
+import Renderer from "../../../rich-text-renderers/sample"
 
 
 
@@ -49,11 +50,11 @@ const GiftVouchers = ({ activePage }) => {
         <TextContainer right full marginBottom="md" >
           <BreakLine none />
           <Heading1 marginBottom="md">
-            {data.contentfulLongsongPageContent.longsongGiftVoucher}
+            <Renderer node={data.contentfulLongsongPageContent.longsongGiftVoucher} />
+
           </Heading1>
-          {renderRichText(
-            data.contentfulLongsongPageContent.longsongGiftVoucherDescription
-          )}
+          <Renderer node={data.contentfulLongsongPageContent.longsongGiftVoucherDescription} />
+
           <Button marginBottom="xl">PURCHAGE VOUCHER</Button>
         </TextContainer>
         <TextContainer right full marginBottom="md">
@@ -61,9 +62,7 @@ const GiftVouchers = ({ activePage }) => {
           <Heading1 marginBottom="md">
             {data.contentfulLongsongPageContent.groupGiftVoucherHeading}
           </Heading1>
-          {renderRichText(
-            data.contentfulLongsongPageContent.groupGiftVoucherDescription
-          )}
+          <Renderer node={data.contentfulLongsongPageContent.groupGiftVoucherDescription} />
           <Button marginBottom="xl">PURCHAGE VOUCHER</Button>
         </TextContainer>
       </SectionWrapper>

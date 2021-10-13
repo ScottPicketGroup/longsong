@@ -99,7 +99,7 @@ export const ScrollTotFadeIn = keyframes`
 
 export const HeroWrapper = styled.div`
   height: 100vh;
-  padding: 0 0 3.5rem 0;
+  margin: 0 0 13.25rem 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -112,7 +112,7 @@ export const HeroWrapper = styled.div`
 `
 
 export const AnimationWrapper = styled.div`
-  animation: ${LogoAnimation} 6s linear;
+  // animation: ${LogoAnimation} 6s linear;
   transform: scale(0.8);
 
   display: flex;
@@ -122,7 +122,7 @@ export const AnimationWrapper = styled.div`
 `
 
 export const IntroContainerWrapper = styled.div`
-  animation: ${TextFadeIn} 6s linear;
+  // animation: ${TextFadeIn} 6s linear;
   display: flex;
   align-items: center;
   flex-direction: column;

@@ -9,6 +9,7 @@ import {
   TextContainer,
 } from "../Space/Space.css"
 import ContactUsForm from "./ContactUsForm"
+import Renderer from "../../../rich-text-renderers/sample"
 
 const ContactUs = ({ activePage }) => {
   const data = useStaticQuery(graphql`
@@ -29,9 +30,7 @@ const ContactUs = ({ activePage }) => {
           <Heading1>Contact Us</Heading1>
         </TextContainer>
         <TextContainer sixty marginBottom="md">
-          {renderRichText(
-            data.contentfulLongsongPageContent.contactUsDescription
-          )}
+          <Renderer node={  data.contentfulLongsongPageContent.contactUsDescription} />
         </TextContainer>
       </SectionWrapper>
       <SectionWrapper>

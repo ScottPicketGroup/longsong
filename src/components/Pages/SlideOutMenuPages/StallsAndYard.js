@@ -4,6 +4,7 @@ import { Heading1 } from "../../global-styles/typography.css"
 import { BreakLine } from "../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import { ImageWrapper, TextContainer, SectionWrapper } from "./Space/Space.css"
 import Slider from "../../ImageSlider"
+import Renderer from "../../rich-text-renderers/sample"
 
 const StallsAndYard = ({ data }) => {
   return (
@@ -12,7 +13,8 @@ const StallsAndYard = ({ data }) => {
         <TextContainer first marginBottom="lg">
           <BreakLine none />
           <Heading1 marginBottom="md">{data.firstSection.title}</Heading1>
-          {renderRichText(data.firstSection.content)}
+          <Renderer node={data.firstSection.content} />
+          
         </TextContainer>
         <ImageWrapper horizontal>
           <Slider imageData={data.firstSection.imageData} />
@@ -22,7 +24,8 @@ const StallsAndYard = ({ data }) => {
         <TextContainer>
           <BreakLine none />
           <Heading1 marginBottom="md">{data.secondSection.title}</Heading1>
-          {renderRichText(data.secondSection.content)}
+             <Renderer node={data.secondSection.content} />
+          
         </TextContainer>
         <ImageWrapper>
           <Slider imageData={data.secondSection.imageData} aspectRatio="16/9" />
@@ -35,7 +38,8 @@ const StallsAndYard = ({ data }) => {
         <TextContainer right full first topMarginNotRequiredMob>
           <BreakLine none />
           <Heading1 marginBottom="md">{data.thirdSection.title}</Heading1>
-          {renderRichText(data.thirdSection.content)}
+             <Renderer node={data.thirdSection.content} />
+          
         </TextContainer>
       </SectionWrapper>
     </>
