@@ -135,7 +135,7 @@ export const IntroContainerWrapper = styled.div`
 export const IntroTextWrapper = styled.div`
   max-width: 1000px;
   margin: 0 auto;
-
+  flex-direction: column;
   p {
     font-size: 1.44rem !important;
     line-height: 1.13;

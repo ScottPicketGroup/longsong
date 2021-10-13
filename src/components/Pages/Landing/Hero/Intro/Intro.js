@@ -1,10 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
+
 import {
   DesktopWrapper,
   MobileWrapper,
 } from "../../../../global-styles/containers.css"
+
+import Renderer from '../../../../rich-text-renderers/sample.js'
 import { IntroContainerWrapper, IntroTextWrapper } from "../Hero.css"
 const Intro = () => {
   const data = useStaticQuery(graphql`
@@ -25,16 +27,14 @@ const Intro = () => {
     <IntroContainerWrapper>
       <DesktopWrapper>
         <IntroTextWrapper>
-          {renderRichText(
-            data.allContentfulLongsongPageContent.edges[0].node.landingIntro
-          )}
+    
+          <Renderer node={data.allContentfulLongsongPageContent.edges[0].node.landingIntro} />
         </IntroTextWrapper>
       </DesktopWrapper>
       <MobileWrapper>
         <IntroTextWrapper mobile>
-          {renderRichText(
-            data.allContentfulLongsongPageContent.edges[0].node.landingIntro
-          )}
+         
+        <Renderer node={data.allContentfulLongsongPageContent.edges[0].node.landingIntro} />
         </IntroTextWrapper>
       </MobileWrapper>
     </IntroContainerWrapper>
