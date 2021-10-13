@@ -4,12 +4,24 @@ import { FooterLink, FooterLinksColumn } from "../../Footer.css"
 const FooterNavigation = ({
   setMenuOpen,
   setActivePage,
+  foodMenu,
+  drinksMenu
 }) => {
   return (
     <FooterLinksColumn>
       <FooterLink marginBottom="md">LONGSONG</FooterLink>
-      <FooterLink marginBottom="sm">Drinks</FooterLink>
-      <FooterLink marginBottom="sm">Food</FooterLink>
+      <FooterLink marginBottom="sm"><a
+          href={drinksMenu.file.url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Drinks
+          </a></FooterLink>
+      <FooterLink marginBottom="sm"><a
+          href={foodMenu.file.url}
+          target="_blank"
+          rel="noreferrer"
+        >Food</a></FooterLink>
       <FooterLink
         marginBottom="sm"
         onClick={() => {

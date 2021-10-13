@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import { DesktopWrapper } from "../../global-styles/containers.css"
 import { FooterLinksColumn, FooterLinksGrid } from "../Footer.css"
@@ -7,6 +8,29 @@ import FooterSocials from "./FooterSocials/FooterSocials"
 import FooterLongrain from "./Longgrain/Longrain"
 
 const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage }) => {
+
+  const data = useStaticQuery(graphql`
+  query menuLink {
+    contentfulLongsongPageContent {
+    
+      foodMenu {
+        file {
+          url
+          fileName
+        }
+      }
+       drinksMenu {
+        file {
+          url
+          fileName
+        }
+      }
+    }
+  }
+    
+`)
+
+
   return (
     <FooterLinksGrid>
       <DesktopWrapper>
@@ -15,6 +39,9 @@ const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage }) => {
           setMenuOpen={setMenuOpen}
           activePage={activePage}
           setActivePage={setActivePage}
+          foodMenu={data.contentfulLongsongPageContent.foodMenu}
+          drinksMenu={data.contentfulLongsongPageContent.drinksMenu}
+
         />
       </DesktopWrapper>
       <FooterContactDetails />
