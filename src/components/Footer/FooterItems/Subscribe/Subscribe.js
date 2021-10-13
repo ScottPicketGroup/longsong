@@ -8,7 +8,7 @@ const FooterSocials = () => {
     <SubscribeWrapper>
       <BC4 marginBottom="sm">SUBSCRIBE</BC4>
       <BC4 marginBottom="md">
-      Sign up to our newletter for news, stories and invitations to the things we love to share and enjoy from Pickett & Co.
+      Sign up for updates from the Scott Pickett Group and be the first to hear about events, collaborations and more. 
       </BC4>
       <SubscribeForm />
     </SubscribeWrapper>

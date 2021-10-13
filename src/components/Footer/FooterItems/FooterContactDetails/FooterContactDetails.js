@@ -19,14 +19,13 @@ const FooterContactDetails = () => {
       <BC4 marginBottom="md">
         Upstairs at <br />
         44 Little Bourke Street VIC 3000 <br />
-        <a href="mailto:info@longsong.com">info@longsong.com</a>
+        <a href="mailto:info@longsong.com.au">info@longsong.com.au</a>
         <br />
         03 9653 1600
       </BC4>
       <BC4 >
         Opening hours: <br />
-        Mon – Thur 5.30pm – late <br />
-        Fri 12pm – 3pm | 5pm – late Sat <br />
+        Wednesday - Sunday <br />
         5pm – late
       </BC4>
     </FooterLinksColumn>

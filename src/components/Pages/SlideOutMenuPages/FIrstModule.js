@@ -5,19 +5,38 @@ import { BreakLine } from "../../MenuContainer/MenuSlideOutContainer/SlideOutMen
 import { ImageWrapper, TextContainer, SectionWrapper } from "./Space/Space.css"
 import Slider from "../../ImageSlider"
 import Renderer from "../../rich-text-renderers/sample"
+import { graphql, useStaticQuery } from "gatsby"
 
-const FirstModule = ({ data }) => {
+const FirstModule = () => {
+
+    const data = useStaticQuery(graphql`
+    query firstModule {
+        contentfulLongsongPageContent {
+          privateSection4Title
+          privatEventsSection4Description {
+            raw
+          }
+          privateEventsSection4Image {
+            gatsbyImageData
+          }
+        }
+      }
+      
+  `)
+
+  const {privateSection4Title, privatEventsSection4Description, privateEventsSection4Image} = data.contentfulLongsongPageContent
+
   return (
     <>
       <SectionWrapper column>
         <TextContainer first marginBottom="lg">
           <BreakLine none />
-          <Heading1 marginBottom="md">{data.firstSection.title}</Heading1>
-          <Renderer node={data.firstSection.content} />
+          <Heading1 marginBottom="md">{privateSection4Title}</Heading1>
+          <Renderer node={privatEventsSection4Description} />
           
         </TextContainer>
         <ImageWrapper horizontal>
-          <Slider imageData={data.firstSection.imageData} />
+          <Slider imageData={privateEventsSection4Image} />
         </ImageWrapper>
 
   

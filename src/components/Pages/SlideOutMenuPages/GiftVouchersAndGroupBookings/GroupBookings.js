@@ -14,6 +14,7 @@ import ContactUsForm from "./ContactForm/ContactUsForm"
 import StallsAndYard from "../StallsAndYard"
 import Slider from "../../../ImageSlider"
 import Renderer from "../../../rich-text-renderers/sample"
+import FirstModule from "../FIrstModule"
 
 const GroupBookings = ({ activePage }) => {
   const data = useStaticQuery(graphql`
@@ -130,6 +131,7 @@ const GroupBookings = ({ activePage }) => {
         </TextContainer>
       </SectionWrapper>
       <StallsAndYard data={newData} />
+      <FirstModule />
       <BreakLine first />
       <SectionWrapper>
         <TextContainer>

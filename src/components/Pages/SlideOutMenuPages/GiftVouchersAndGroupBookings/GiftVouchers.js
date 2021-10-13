@@ -61,7 +61,7 @@ const GiftVouchers = ({ activePage }) => {
               target="_blank"
               rel="noreferrer"
             >
-              PURCHAGE VOUCHER
+              PURCHASE VOUCHER
             </a>
             </Button>
         </TextContainer>
@@ -76,7 +76,7 @@ const GiftVouchers = ({ activePage }) => {
               target="_blank"
               rel="noreferrer"
             >
-              PURCHAGE VOUCHER
+              PURCHASE VOUCHER
             </a></Button>
         </TextContainer>
       </SectionWrapper>
