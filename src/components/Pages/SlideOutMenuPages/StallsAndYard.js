@@ -13,7 +13,7 @@ const StallsAndYard = ({ data }) => {
         <TextContainer first marginBottom="lg">
           <BreakLine none />
           <Heading1 marginBottom="md">{data.firstSection.title}</Heading1>
-          {/* <Renderer node={data.firstSection.content} /> */}
+          <Renderer node={data.firstSection.content} />
           
         </TextContainer>
         <ImageWrapper horizontal>
@@ -24,11 +24,11 @@ const StallsAndYard = ({ data }) => {
         <TextContainer>
           <BreakLine none />
           <Heading1 marginBottom="md">{data.secondSection.title}</Heading1>
-             {/* <Renderer node={data.secondSection.content} /> */}
+             <Renderer node={data.secondSection.content} />
           
         </TextContainer>
         <ImageWrapper>
-          <Slider imageData={data.secondSection.imageData} aspectRatio="16/9" />
+          <Slider imageData={data.secondSection.imageData} aspectRatio="3/4" />
         </ImageWrapper>
       </SectionWrapper>
       <SectionWrapper column mobInvert>
@@ -38,7 +38,7 @@ const StallsAndYard = ({ data }) => {
         <TextContainer right full first topMarginNotRequiredMob>
           <BreakLine none />
           <Heading1 marginBottom="md">{data.thirdSection.title}</Heading1>
-             {/* <Renderer node={data.thirdSection.content} /> */}
+             <Renderer node={data.thirdSection.content} />
           
         </TextContainer>
       </SectionWrapper>
