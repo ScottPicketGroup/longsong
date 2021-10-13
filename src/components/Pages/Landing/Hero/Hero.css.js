@@ -58,13 +58,13 @@ export const TextFadeIn = keyframes`
    
    
   }
-  80% {
+  50% {
     display: none;
     opacity: 0;
    
    
   }
-  85% {
+  55% {
     opacity: 1;
     display: flex;
 
@@ -112,7 +112,7 @@ export const HeroWrapper = styled.div`
 `
 
 export const AnimationWrapper = styled.div`
-  animation: ${LogoAnimation} 3s linear;
+  animation: ${LogoAnimation} 2s linear;
   transform: scale(0.8);
 
   display: flex;
@@ -122,7 +122,7 @@ export const AnimationWrapper = styled.div`
 `
 
 export const IntroContainerWrapper = styled.div`
-  animation: ${TextFadeIn} 3s linear;
+  animation: ${TextFadeIn} 3s ease;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -151,7 +151,7 @@ export const IntroTextWrapper = styled.div`
 `
 
 export const ScrollToCalenderContainer = styled.div`
-  animation: ${ScrollTotFadeIn} 6s ease;
+  animation: ${ScrollTotFadeIn} 2.5s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
