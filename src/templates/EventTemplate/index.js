@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"

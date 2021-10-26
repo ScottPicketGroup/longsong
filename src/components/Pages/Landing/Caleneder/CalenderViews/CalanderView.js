@@ -6,6 +6,7 @@ import EventDetailsModal from "../EventDetailsModal/EventDetailsModal"
 import { Heading3, Number1 } from "../../../../global-styles/typography.css"
 
 import useGetElementSize from "../../../../hooks/ItemSizing"
+import useActivePage from "../../../../hooks/ActivePage"
 
 const CalanderView = ({
   day,
@@ -21,8 +22,14 @@ const CalanderView = ({
 }) => {
   const [open, setOpen] = useState(false)
   const dayContainerRef = useRef(null)
+  const { activePage } = useActivePage()
 
-  const { elementWidth } = useGetElementSize(dayContainerRef)
+  const [elementWidth, setElementWidth] = useState(0)
+
+  useEffect(() => {
+    if (dayContainerRef.current)
+      setElementWidth(dayContainerRef.current.clientWidth)
+  }, [activePage, dayContainerRef])
 
   useEffect(() => {
     openModel === i ? setOpen(true) : setOpen(false)
@@ -82,7 +89,6 @@ const CalanderView = ({
           item={item}
           open={open}
           i={i + 1}
-          height={elementWidth}
           width={modalWidth}
           month={month}
           onClick={() => setOpen(false)}
