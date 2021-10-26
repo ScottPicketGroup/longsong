@@ -71,7 +71,7 @@ export const ImageWrapper = styled.div`
 export const EventSectionWrapper = styled(SectionWrapper)`
   @media (max-width: 450px) {
     :first-child {
-      margin-bottom: 2rem;
+      margin-bottom: 3.25rem;
       margin-top: 0;
     }
   }

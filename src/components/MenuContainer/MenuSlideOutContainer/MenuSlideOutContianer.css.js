@@ -92,7 +92,6 @@ export const RightMenuContainer = styled.div`
 export const WhatsOnCalendarContainer = styled.div`
   display: ${props => (props.activePage === props.page ? "flex" : "none")};
   padding: 2.25rem 6% 0 3%;
-
   width: 100%;
   /* padding: ${props =>
     props.overflow === "true"

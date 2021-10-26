@@ -180,15 +180,18 @@ export const HeroContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-content: space-between;
-  padding: 2rem;
   
   @media (max-width: 451px) {
-    margin-top: -2.5rem;
+    // margin-top: 2.5rem;
   }
 `
 export const HeroImage = styled(GatsbyImage)`
   position: absolute;
   height: 100vh;
+  @media(max-width: 450px){
+    margin-left: -2rem;
+  }
+  
 `
 export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;

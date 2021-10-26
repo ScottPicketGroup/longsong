@@ -61,10 +61,10 @@ export const SectionRow = styled.div`
 
 export const LandingPageModuleContainer = styled.div`
   width: 70%;
-  margin: 8rem auto 0;
+  margin: 6rem auto 0;
   @media(max-width: 450px){
     width: 100%;
-    margin: 2rem 0;
+    margin: 6rem auto 0;
   }
 `
 

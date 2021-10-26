@@ -26,7 +26,7 @@ const EventsModule = ({ data }) => {
   const path0 = "/events/" + data[0].eventName.toLowerCase().replace(" ", "-")
   return (
     <LandingPageModuleContainer>
-      <EventSectionWrapper column>
+      <EventSectionWrapper column style={{marginBottom: "3.25rem"}}>
         <EventSectionWrapper style={{ justifyContent: "space-between" }}>
           <TimeAndButtonWrapper>
             <Time style={{ margin: "0 0 3rem 0" }}>{data[0].eventDate}</Time>
