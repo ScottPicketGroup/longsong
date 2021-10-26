@@ -23,11 +23,12 @@ import { Button } from "../../components/global-styles/GlobalStyles.css"
 import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import Slider from "../../components/ImageSlider"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import Renderer from "../../components/rich-text-renderers/sample"
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
   const eventDateTime = eventData.eventDate.split(" ")
-  const [imageData, setImageData] = useState([]);
+  const [imageData, setImageData] = useState([])
   const data = useStaticQuery(graphql`
     query MyQuery {
       allContentfulLongsongEvents {
@@ -45,8 +46,8 @@ const EventTemplate = ({ pageContext }) => {
   `)
 
   useEffect(() => {
-    data.allContentfulLongsongEvents.edges.forEach(({node}) => {
-      if(node.id === eventData.id) setImageData(node.eventMedia)
+    data.allContentfulLongsongEvents.edges.forEach(({ node }) => {
+      if (node.id === eventData.id) setImageData(node.eventMedia)
     })
   }, [eventData, data])
 
@@ -82,14 +83,14 @@ const EventTemplate = ({ pageContext }) => {
         <TextContainer marginBottom="lg">
           <BreakLine none />
           <Heading1 marginBottom="lg">{eventData.eventName}</Heading1>
-          {renderRichText(eventData.eventDescription)}
+          <Renderer node={eventData.eventDescription} />
           <Heading1 marginBottom="lg">{eventData.drinksSpecialTitle}</Heading1>
-          {renderRichText(eventData.drinksSpecialDetails)}
+          <Renderer node={eventData.drinksSpecialDetails} />
           <Heading1 marginBottom="lg">{eventData.foodSpecialTitle}</Heading1>
-          {renderRichText(eventData.foodSpecialDetails)}
-         <Link to ="/">
-         <Button>RETURN TO CALENDAR OVERVIEW</Button>
-         </Link>
+          <Renderer node={eventData.foodSpecialDetails} />
+          <Link to="/">
+            <Button>RETURN TO CALENDAR OVERVIEW</Button>
+          </Link>
         </TextContainer>
       </EventContentContainer>
     </Layout>
