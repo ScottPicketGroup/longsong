@@ -3,18 +3,18 @@ import { AnimationImgWrapper, HeroContainer, HeroImage } from "./Hero.css"
 import LongsongVideo from "./LongsongVideo/LongsongVideo"
 import HeroText from "./HeroText"
 import { getImage } from "gatsby-plugin-image"
-import { GatsbyImage } from "gatsby-plugin-image"
 
-const HeroBackground = ({ heroImage, heroTextOverImage, excuteScroll }) => {
+const HeroBackground = ({ heroImage, heroTextOverImage }) => {
   return (
-    // <HeroContainer bgImage={heroImage}>
-    <HeroContainer>
-      <AnimationImgWrapper>
-        <LongsongVideo />
-      </AnimationImgWrapper>
+    <>
       <HeroImage image={getImage(heroImage)} />
-      <HeroText text={heroTextOverImage} />
-    </HeroContainer>
+      <HeroContainer>
+        <AnimationImgWrapper>
+          <LongsongVideo />
+        </AnimationImgWrapper>
+        <HeroText text={heroTextOverImage} />
+      </HeroContainer>
+    </>
   )
 }
 

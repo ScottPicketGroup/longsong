@@ -1,34 +1,21 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Hero from "../components/Pages/Landing/Hero/Hero"
-import Calender from "../components/Pages/Landing/Caleneder/Calender"
 import HeroBackground from "../components/Pages/Landing/Hero/HeroBackgound"
 import LandingPageModules from "../components/Pages/Landing/LandingPageModules"
 
 const IndexPage = ({ data }) => {
-  const [calenderRef, setCalenderRef] = useState(null)
-  const excuteScroll = () =>
-    calenderRef.current.scrollIntoView({
-      behavior: "smooth",
-      inline: "nearest",
-    })
-
   const { heroImage, heroTextOverImage, landingPageModules } =
     data.allContentfulLongsongLandingPageContent.edges[0].node
 
   return (
     <Layout fd="column" heroImage={heroImage}>
       <Seo title="Home" />
-      {/* <Hero excuteScroll={excuteScroll} />
-      <Calender setCalenderRef={setCalenderRef} /> */}
       <HeroBackground
-        // heroImage={heroImage.file.url}
         heroImage={heroImage}
         heroTextOverImage={heroTextOverImage}
-        excuteScroll={excuteScroll}
       />
       <LandingPageModules data={landingPageModules} />
     </Layout>

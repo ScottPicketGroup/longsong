@@ -1,18 +1,18 @@
-import { GatsbyImage } from "gatsby-plugin-image"
 import styled, { keyframes } from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const LogoAnimation = keyframes`
   0% {
     display: none;
     opacity: 0;
-    // transform: scale(1.2);
+    transform: scale(1.2);
     transform: translateY(20vh)
    
   }
   10% {
     opacity: 1;
     display: flex;
-    // transform: scale(1.2);
+    transform: scale(1.2);
     transform: translateY(20vh);
   }
   65% {
@@ -25,7 +25,7 @@ export const LogoAnimation = keyframes`
  }
   70% {
       
-    // transform: scale(1.2);
+    transform: scale(1.2);
     transform: translateY(20vh);
    
     
@@ -34,7 +34,7 @@ export const LogoAnimation = keyframes`
   71% {
 
     transform: translateY(0);
-    // transform: scale(.8);
+    transform: scale(.8);
   }
 
   75% {
@@ -174,34 +174,27 @@ export const HeroText = styled.p`
 `
 
 export const HeroContainer = styled.div`
-  postion: relative;
-
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+  padding: 2rem;
+  
   @media (max-width: 451px) {
     margin-top: -2.5rem;
-    margin-bottom: 4rem;
   }
 `
-export const AnimationImgWrapper = styled(AnimationWrapper)`
+export const HeroImage = styled(GatsbyImage)`
   position: absolute;
-  width: 60%;
-  left: 50%;
-  top: 10%;
-  transform: translate(-50%, 0%);
-  z-index: 2;
+`
+export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
 `
 export const AnimationIntroContainer = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  bottom: 20%;
   animation: ${ScrollTotFadeIn} 2.5s ease;
   max-width: 700px;
   text-align: center;
   margin: auto;
-`
-
-export const HeroImage = styled(GatsbyImage)`
-  // width: 100vw;
-  height: 100vh;
 `
