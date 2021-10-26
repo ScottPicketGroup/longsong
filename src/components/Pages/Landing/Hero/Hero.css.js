@@ -189,7 +189,7 @@ export const HeroContainer = styled.div`
   }
 `
 export const AnimationImgWrapper = styled(AnimationWrapper)`
-  margin-top: 2.25rem;
+  margin-top: 4.25rem;
 `
 export const AnimationIntroContainer = styled.div`
   animation: ${ScrollTotFadeIn} 2.5s ease;

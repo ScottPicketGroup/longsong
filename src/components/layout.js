@@ -11,10 +11,10 @@ import { SectionRow } from "./Pages/Landing/LandingPageModules/index.css"
 
 import MenuContainer from "./MenuContainer/MenuContainer"
 import LongrainLink from "./Pages/Landing/LongrainLink/LongrainLink"
+import useActivePage from "./hooks/ActivePage"
 
 const Layout = ({ children, fd, heroImage }) => {
-  const [menuOpen, setMenuOpen] = React.useState(false)
-  const [activePage, setActivePage] = React.useState(1)
+  const { menuOpen, setMenuOpen, activePage, setActivePage } = useActivePage();
   const [loading, setLoading] = React.useState(true)
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Layout = ({ children, fd, heroImage }) => {
       {loading ? (
         <> </>
       ) : (
-        <PageContainer fd="fd">
+        <PageContainer fd={fd}>
           <MenuContainer
             menuOpen={menuOpen}
             setMenuOpen={setMenuOpen}

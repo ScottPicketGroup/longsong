@@ -25,11 +25,7 @@ const MenuSlideOutContainer = ({
   setMenuOpen,
   activePage,
   setActivePage,
-}) => 
-
-
-
-{
+}) => {
   return (
     <MenuSlideOutWrapper menuOpen={menuOpen}>
       <PageContainer fd="row">

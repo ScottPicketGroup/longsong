@@ -14,8 +14,10 @@ import {
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
+import useActivePage from "../../../hooks/ActivePage"
 
 const PrivateEventModule = ({ data }) => {
+  const { handleOpenMenuClick } = useActivePage();
   return (
     <LandingPageModuleContainer>
       <ImageWrapper>
@@ -33,9 +35,9 @@ const PrivateEventModule = ({ data }) => {
             {data.title}
           </Heading1>
           <Renderer node={data.intro} />
-          <Link to="/">
-            <Button marginTop="md" submit>LEARN MORE</Button>
-          </Link>
+          {/* <Link to="/"> */}
+            <Button marginTop="md"  onClick={() => handleOpenMenuClick(3)}>LEARN MORE</Button>
+          {/* </Link> */}
         </TextContainer>
       </EventContentContainer>
     </LandingPageModuleContainer>
