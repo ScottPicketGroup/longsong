@@ -44,8 +44,6 @@ export const SectionWrapper = styled.div`
       flex-direction: ${props => props.mobInvert ? 'column-reverse': ''};
     }
 
-    
-
     margin-bottom: 6rem;
   }
 `
@@ -56,49 +54,6 @@ export const TextContainer = styled.div`
   margin-top: ${props => (props.first ? "56px" : "")};
   @media (max-width: 450px) {
     width: 100%;
-  }
-
-  p {
-    font-family: normal;
-    line-height: 1.14;
-    font-size: 1.25rem !important;
-    margin-bottom: ${props => {
-    switch (props.marginBottom) {
-      case "sm":
-        return "1rem"
-      case "md":
-        return "1.5rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "100%"
-      default:
-        return "0"
-    }
-  }};
-    margin-top: ${props => {
-    switch (props.marginTop) {
-      case "sm":
-        return "1rem"
-      case "md":
-        return "1.5rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "100%"
-      default:
-        return "0"
-    }
-  }};
-    @media (max-width: 450px) {
-      margin-bottom: 1.5rem;
-      
-     margin-top: ${props => props.topMarginNotRequiredMob ? '0' : ''};
-    }
   }
 `
 
