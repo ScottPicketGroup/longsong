@@ -21,9 +21,7 @@ import { Button } from "../../../global-styles/GlobalStyles.css"
 import { BC1 } from "../../../global-styles/typography.css"
 
 const EventsModule = ({ data }) => {
-
-  const path1 = "/events/" + data[1].eventName.toLowerCase().replace(" ", "-")
-  const path0 = "/events/" + data[0].eventName.toLowerCase().replace(" ", "-")
+  
   return (
     <LandingPageModuleContainer>
       <EventSectionWrapper column style={{marginBottom: "3.25rem"}}>
@@ -38,7 +36,7 @@ const EventsModule = ({ data }) => {
           <HeadingAndIntroWrapper>
             <Heading1 marginBottom="md">{data[0].eventName}</Heading1>
             <Renderer node={data[0].eventDescription} />
-            <Link to={path0}>
+            <Link to={"/events/" + data[0].eventName.toLowerCase().replace(" ", "-")}>
               <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
             </Link>
           </HeadingAndIntroWrapper>
@@ -56,7 +54,7 @@ const EventsModule = ({ data }) => {
           <BreakLine none />
           <Heading1 marginBottom="md">{data[1].eventName}</Heading1>
           <Renderer node={data[1].eventDescription} />
-          <Link to={path1}>
+          <Link to={"/events/" + data[1].eventName.toLowerCase().replace(" ", "-")}>
             <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
           </Link>
         </TextContainer>
