@@ -1,9 +1,18 @@
-import React from "react"
-import { AnimationWrapper, HeroWrapper } from "./Hero.css"
+import React, { useState, useEffect } from "react"
+import {
+  AnimationWrapper,
+  HeroWrapper,
+  HeroText,
+  HeroContainer,
+} from "./Hero.css"
 import LongsongVideo from "./LongsongVideo/LongsongVideo"
 import ScrollToCalender from "./Intro/ScrollToCalender"
 import Intro from "./Intro/Intro"
-const Hero = ({ excuteScroll }) => {
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+const Hero = ({ heroImage, heroTextOverImage, excuteScroll }) => {
+  const [loading, setLoading] = useState(true)
+
   return (
     <HeroWrapper>
       <AnimationWrapper>
@@ -12,6 +21,10 @@ const Hero = ({ excuteScroll }) => {
       <Intro />
       <ScrollToCalender excuteScroll={excuteScroll} />
     </HeroWrapper>
+    // <HeroContainer>
+    //   <GatsbyImage image={getImage(heroImage)} />
+    //   <HeroText style={{ position: "absolute" }}>{heroTextOverImage}</HeroText>
+    // </HeroContainer>
   )
 }
 
