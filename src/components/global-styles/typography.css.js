@@ -130,7 +130,7 @@ export const Heading3 = styled.h3`
   color: ${props =>
     props.month === props.currentMonth + props.month && props.day < props.date
       ? "#6A6A6A"
-      : props.dayOfWeek == "Sunday"
+      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday"
       ? "#6A6A6A"
       : props.month === props.currentMonth + props.month &&
         props.i === props.date - 1
@@ -186,7 +186,7 @@ export const Number1 = styled.h3`
   color: ${props =>
     props.month === props.currentMonth + props.month && props.day < props.date
       ? "#6A6A6A"
-      : props.dayOfWeek == "Sunday"
+      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday"
       ? "#6A6A6A"
       : props.month === props.currentMonth + props.month &&
         props.i === props.date - 1

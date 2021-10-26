@@ -84,7 +84,7 @@ export const DayContainer = styled.div`
   border-top: ${props =>
     props.month === props.currentMonth + props.month && props.day < props.date
       ? ".5px solid #6A6A6A"
-      : props.dayOfWeek == "Sunday"
+      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday"
       ? ".5px solid #6A6A6A"
       : (props.month === props.currentMonth + props.month &&
           props.i === props.date - 1) ||
@@ -99,11 +99,11 @@ export const DayContainer = styled.div`
       : ".5px solid white"};
 
   border-bottom: ${props =>
-    props.dayOfWeek == "Sunday" && props.i > 22
+    props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" && props.i > 22
       ? "1px #6A6A6A solid"
       : props.i > 22
       ? "1px solid white"
-      : props.dayOfWeek == "Sunday" && props.i > 27
+      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" && props.i > 27
       ? "none"
       : "none"};
   //#457E5C

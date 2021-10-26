@@ -77,6 +77,9 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
       <MenuItem onClick={() => setActivePage(2)} active={activePage} item={2}>
         <BC1>Bar</BC1>
       </MenuItem>
+      <MenuItem onClick={() => setActivePage(6)} active={activePage} item={6}>
+        <BC1>What's on</BC1>
+      </MenuItem>
       <MenuItem onClick={() => setActivePage(3)} active={activePage} item={3}>
         <BC1>Private Events</BC1>
       </MenuItem>

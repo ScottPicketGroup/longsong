@@ -16,10 +16,13 @@ import {
   MenuSlideOutWrapper,
   PageContentContainer,
   RightMenuContainer,
+  WhatsOnCalendarContainer,
 } from "./MenuSlideOutContianer.css"
 import GroupBookings from "../../Pages/SlideOutMenuPages/GiftVouchersAndGroupBookings/GroupBookings"
 import ContactUs from "../../Pages/SlideOutMenuPages/ContactUs/ContactUs"
 import Footer from "../../Footer/Footer"
+import WhatsOn from "../../Pages/SlideOutMenuPages/WhatsOn/WhatsOn"
+import Calender from "../../Pages/Landing/Caleneder/Calender"
 const MenuSlideOutContainer = ({
   menuOpen,
   setMenuOpen,
@@ -40,6 +43,7 @@ const MenuSlideOutContainer = ({
             <PageContentContainer>
               <SlideOutLanding activePage={activePage} />
               <Space activePage={activePage} />
+              <WhatsOn activePage={activePage} />
               <GroupBookings activePage={activePage} />
               <GiftVouchers activePage={activePage} />
               <ContactUs activePage={activePage} />
@@ -51,6 +55,10 @@ const MenuSlideOutContainer = ({
               />
             </RightMenuContainer>
           </SectionContainer>
+          <WhatsOnCalendarContainer marginBottom="xl" marginTop="lg" activePage={activePage} page={6}>
+            <Calender />
+          </WhatsOnCalendarContainer>
+
           <Footer />
         </PageWrapper>
       </PageContainer>

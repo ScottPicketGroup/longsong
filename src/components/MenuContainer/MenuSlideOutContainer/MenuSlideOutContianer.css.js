@@ -59,7 +59,7 @@ export const SlideOutSideBarWrapper = styled.div`
 
     position: sticky;
     top: 0;
-    background: #2B3C31;
+    background: #2b3c31;
     z-index: 1000;
   }
 `
@@ -86,5 +86,64 @@ export const RightMenuContainer = styled.div`
     margin-top: 56px;
     width: 100%;
     display: ${props => (props.activePage > 1 ? "none" : "100%")};
+  }
+`
+
+export const WhatsOnCalendarContainer = styled.div`
+  display: ${props => (props.activePage === props.page ? "flex" : "none")};
+  padding: 2.25rem 6% 0 3%;
+
+  width: 100%;
+  /* padding: ${props =>
+    props.overflow === "true"
+      ? "0 3.55rem"
+      : props.full
+      ? "0 3.75rem  0 2.35rem "
+      : "0 4rem 0 3.5rem"};
+  background: ${props => (props.background ? props.background : "")}; */
+
+  margin-bottom: ${props => {
+    switch (props.marginBottom) {
+      case "xs":
+        return ".25rem"
+      case "sm":
+        return "1rem"
+      case "md":
+        return "1.5rem"
+      case "lg":
+        return "3.75rem"
+      case "xl":
+        return "9.63rem"
+      case "xxl":
+        return "100%"
+      default:
+        return "0"
+    }
+  }};
+  margin-top: ${props => {
+    switch (props.marginTop) {
+      case "xs":
+        return ".25rem"
+      case "sm":
+        return "1rem"
+      case "md":
+        return "1.5rem"
+      case "lg":
+        return "3.75rem"
+      case "xl":
+        return "8rem"
+      case "xxl":
+        return "100%"
+      default:
+        return "0"
+    }
+  }};
+  overflow: hidden;
+  @media (max-width: 450px) {
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 5.9rem;
+    background: none;
+    flex-direction: column;
   }
 `
