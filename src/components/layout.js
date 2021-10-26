@@ -37,7 +37,7 @@ const Layout = ({ children, fd, heroImage }) => {
           />
 
           <PageWrapper>
-            <LongrainLink/>
+            <LongrainLink heroImage/>
             {heroImage ? (
               <SectionRow marginBottom="xl">{children}</SectionRow>
             ) : (

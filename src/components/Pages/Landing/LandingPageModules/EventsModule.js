@@ -7,6 +7,7 @@ import {
   ImageWrapper,
   TextContainer,
   SectionWrapper,
+  EventSectionWrapper
 } from "../../SlideOutMenuPages/Space/Space.css"
 import Slider from "../../../ImageSlider"
 import Renderer from "../../../rich-text-renderers/sample"
@@ -20,10 +21,13 @@ import { Button } from "../../../global-styles/GlobalStyles.css"
 import { BC1 } from "../../../global-styles/typography.css"
 
 const EventsModule = ({ data }) => {
+
+  const path1 = "/events/" + data[1].eventName.toLowerCase().replace(" ", "-")
+  const path0 = "/events/" + data[0].eventName.toLowerCase().replace(" ", "-")
   return (
     <LandingPageModuleContainer>
-      <SectionWrapper column>
-        <SectionWrapper style={{ justifyContent: "space-between" }}>
+      <EventSectionWrapper column>
+        <EventSectionWrapper style={{ justifyContent: "space-between" }}>
           <TimeAndButtonWrapper>
             <Time style={{ margin: "0 0 3rem 0" }}>{data[0].eventDate}</Time>
             <Button marginBottom="lg" style={{ width: "80%" }}>
@@ -34,15 +38,15 @@ const EventsModule = ({ data }) => {
           <HeadingAndIntroWrapper>
             <Heading1 marginBottom="md">{data[0].eventName}</Heading1>
             <Renderer node={data[0].eventDescription} />
-            <Link to="/">
+            <Link to={path0}>
               <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
             </Link>
           </HeadingAndIntroWrapper>
-        </SectionWrapper>
+        </EventSectionWrapper>
         <ImageWrapper style={{ width: "100%" }} horizontal>
           <Slider imageData={data[0].eventMedia[0]} />
         </ImageWrapper>
-      </SectionWrapper>
+      </EventSectionWrapper>
       <SectionWrapper>
         <TextContainer>
           <Time style={{ margin: "0 0 3rem 0" }}>{data[1].eventDate}</Time>
@@ -52,7 +56,7 @@ const EventsModule = ({ data }) => {
           <BreakLine none />
           <Heading1 marginBottom="md">{data[1].eventName}</Heading1>
           <Renderer node={data[1].eventDescription} />
-          <Link to="/">
+          <Link to={path1}>
             <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
           </Link>
         </TextContainer>

@@ -25,7 +25,8 @@ const IndexPage = ({ data }) => {
       {/* <Hero excuteScroll={excuteScroll} />
       <Calender setCalenderRef={setCalenderRef} /> */}
       <HeroBackground
-        heroImage={heroImage.file.url}
+        // heroImage={heroImage.file.url}
+        heroImage={heroImage}
         heroTextOverImage={heroTextOverImage}
         excuteScroll={excuteScroll}
       />
@@ -44,7 +45,11 @@ export const landingPageData = graphql`
           heroImage {
             file {
               url
+              details {
+                size
+              }
             }
+            gatsbyImageData(placeholder: BLURRED)
           }
           heroTextOverImage
           landingPageModules {
@@ -70,6 +75,16 @@ export const landingPageData = graphql`
               drinksMenuHeading
               foodMenuIntro
               drinksMenuIntro
+              drinksMenuPdf {
+                file {
+                  url
+                }
+              }
+              foodMenuPdf {
+                file {
+                  url
+                }
+              }
             }
             ... on ContentfulLandingPageEventsModule {
               id

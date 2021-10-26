@@ -14,6 +14,7 @@ import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOut
 import { Heading1, BC1 } from "../../../global-styles/typography.css"
 
 const MenusModule = ({ data }) => {
+
   return (
     <LandingPageModuleContainer>
       <MenusModuleWrapper>
@@ -26,7 +27,7 @@ const MenusModule = ({ data }) => {
               <BreakLine none />
               <Heading1 marginBottom="md">{data.foodMenuHeading}</Heading1>
               <BC1 marginBottom="md">{data.foodMenuIntro}</BC1>
-              <Link to="/">
+              <Link to={data.foodMenuPdf.file.url}>
                 <BC1 style={{ color: "#457E5C" }}>View more.</BC1>
               </Link>
             </TextContainer>
@@ -42,7 +43,7 @@ const MenusModule = ({ data }) => {
               <BreakLine none />
               <Heading1 marginBottom="md">{data.foodMenuHeading}</Heading1>
               <BC1 marginBottom="md">{data.foodMenuIntro}</BC1>
-              <Link to="/">
+              <Link to={data.drinksMenuPdf.file.url}>
                 <BC1 style={{ color: "#457E5C" }}>View more.</BC1>
               </Link>
             </TextContainer>

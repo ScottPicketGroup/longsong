@@ -53,7 +53,7 @@ export const SectionRow = styled.div`
   @media (max-width: 450px) {
     width: 100%;
     padding: 0 1rem;
-    margin-bottom: 5.9rem;
+    margin-bottom: 3rem;
     background: none;
     flex-direction: column;
   }

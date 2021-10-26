@@ -54,6 +54,7 @@ export const TextContainer = styled.div`
   margin-top: ${props => (props.first ? "56px" : "")};
   @media (max-width: 450px) {
     width: 100%;
+    margin-bottom: 2rem;
   }
 `
 
@@ -63,5 +64,15 @@ export const ImageWrapper = styled.div`
     width: 100%;
 
     margin-bottom: ${props => props.marginRequired ? '3.5rem': ''};
+  }
+`
+
+
+export const EventSectionWrapper = styled(SectionWrapper)`
+  @media (max-width: 450px) {
+    :first-child {
+      margin-bottom: 2rem;
+      margin-top: 0;
+    }
   }
 `
