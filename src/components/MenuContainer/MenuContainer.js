@@ -1,4 +1,5 @@
 import React, { useRef } from "react"
+import { Link } from "gatsby"
 import { BC2 } from "../global-styles/typography.css"
 import LongsongIcon from "./Icons/LongsongIcon"
 import MenuIcon from "./Icons/MenuIcon"
@@ -34,7 +35,7 @@ const MenuContainer = ({
     setMenuOpen(true)
     setMenuPage(3)
   }
-  
+
   return (
     <MenuWrapper ref={menuRef}>
       <MainWrapper>
@@ -51,11 +52,15 @@ const MenuContainer = ({
               />
             )}
             {scrollPosition <= 530 && (
-              <LongsongIcon setActivePage={setActivePage} />
+              <Link to="/">
+                <LongsongIcon />
+              </Link>
             )}
           </>
         ) : (
-          <LongsongIcon setActivePage={setActivePage} />
+          <Link to="/">
+            <LongsongIcon />
+          </Link>
         )}
       </MainWrapper>
       <EventsWrapper>

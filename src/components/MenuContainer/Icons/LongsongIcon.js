@@ -1,13 +1,17 @@
 import React from "react"
 
 const LongsongIcon = ({setActivePage}) => {
+  const handleClick = (e) => {
+    console.log("CLICKED!!!!!!!!!!!!!")
+    if(setActivePage) setActivePage(1);
+  }
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="27.796"
       height="28.1"
       viewBox="0 0 27.796 28.1"
-      onClick={() => setActivePage(1)}
+      onClick={handleClick}
     >
       <g id="L_White" transform="translate(-13.822 -8.163)">
         <path
