@@ -23,7 +23,7 @@ import { Button } from "../../components/global-styles/GlobalStyles.css"
 import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import Slider from "../../components/ImageSlider"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Renderer from "../../components/rich-text-renderers/sample"
+import EventPageRenderer from "../../components/rich-text-renderers/eventPageRenderer"
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
@@ -81,13 +81,13 @@ const EventTemplate = ({ pageContext }) => {
       </EventHeroContainer>
       <EventContentContainer>
         <TextContainer marginBottom="lg">
-          <BreakLine none />
-          <Heading1 marginBottom="lg">{eventData.eventName}</Heading1>
-          <Renderer node={eventData.eventDescription} />
-          <Heading1 marginBottom="lg">{eventData.drinksSpecialTitle}</Heading1>
-          <Renderer node={eventData.drinksSpecialDetails} />
-          <Heading1 marginBottom="lg">{eventData.foodSpecialTitle}</Heading1>
-          <Renderer node={eventData.foodSpecialDetails} />
+          <BreakLine none style={{marginBottom: 56}} />
+          <Heading1 marginBottom="md">{eventData.eventName}</Heading1>
+          <EventPageRenderer node={eventData.eventDescription} />
+          <Heading1 marginBottom="md">{eventData.drinksSpecialTitle}</Heading1>
+          <EventPageRenderer node={eventData.drinksSpecialDetails} />
+          <Heading1 marginBottom="md">{eventData.foodSpecialTitle}</Heading1>
+          <EventPageRenderer node={eventData.foodSpecialDetails} />
           <Link to="/">
             <Button>RETURN TO CALENDAR OVERVIEW</Button>
           </Link>

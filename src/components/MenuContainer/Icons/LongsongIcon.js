@@ -1,8 +1,7 @@
 import React from "react"
 
 const LongsongIcon = ({setActivePage}) => {
-  const handleClick = (e) => {
-    console.log("CLICKED!!!!!!!!!!!!!")
+  const handleClick = () => {
     if(setActivePage) setActivePage(1);
   }
   return (
