@@ -188,6 +188,7 @@ export const HeroContainer = styled.div`
 `
 export const HeroImage = styled(GatsbyImage)`
   position: absolute;
+  height: 100vh
 `
 export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
