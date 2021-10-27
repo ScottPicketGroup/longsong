@@ -28,6 +28,7 @@ const Calender = ({ setCalenderRef }) => {
       allContentfulLongsongEvents {
         edges {
           node {
+            slug
             drinksSpecialDetails {
               raw
             }

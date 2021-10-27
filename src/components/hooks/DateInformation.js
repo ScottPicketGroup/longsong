@@ -43,7 +43,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
             m = event
           }
         })
-
+        console.log(m)
         days.push({
           day: date.toLocaleDateString("au-EN", day),
           date: date.toLocaleDateString("au-EN", dat),

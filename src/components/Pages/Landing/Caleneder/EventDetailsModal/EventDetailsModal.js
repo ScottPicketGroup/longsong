@@ -91,11 +91,7 @@ useEffect(() => {
         </EventContents>
         <EventFooterWrapper>
           {
-<<<<<<< HEAD
-            eventDetails.eventName &&   <Link to={`events/${eventDetails.slug`}>VIEW DETAILS</Link>
-=======
             eventDetails.eventName &&   <Link to={`events/${eventDetails.slug}`}>VIEW DETAILS</Link>
->>>>>>> 022b2d8c819e0e0a5260c441923dd86443633f23
           }
       
         

@@ -6,17 +6,9 @@ import Seo from "../components/seo"
 import HeroBackground from "../components/Pages/Landing/Hero/HeroBackgound"
 import LandingPageModules from "../components/Pages/Landing/LandingPageModules"
 
-<<<<<<< HEAD
-//import components you have made for those sections
-
-const IndexPage = () => {
-  const [calenderRef, setCalenderRef] = useState(null);
-  const excuteScroll = () => calenderRef.current.scrollIntoView({behavior: "smooth", inline: "nearest"});
-=======
 const IndexPage = ({ data }) => {
   const { heroImage, heroTextOverImage, landingPageModules } =
     data.allContentfulLongsongLandingPageContent.edges[0].node
->>>>>>> 022b2d8c819e0e0a5260c441923dd86443633f23
 
   //components state
 
@@ -31,18 +23,12 @@ const IndexPage = ({ data }) => {
   return (
     <Layout fd="column" heroImage={heroImage}>
       <Seo title="Home" />
-<<<<<<< HEAD
-      <Hero excuteScroll={excuteScroll} />
-      {/* <Calender setCalenderRef={setCalenderRef} /> */}
-
-  {/* modules.map((module, i) => <BlankComponnet component={component.name} props={props}) */}
-=======
       <HeroBackground
-        heroImage={heroImage}
+    
+    heroImage={heroImage}
         heroTextOverImage={heroTextOverImage}
       />
       <LandingPageModules data={landingPageModules} />
->>>>>>> 022b2d8c819e0e0a5260c441923dd86443633f23
     </Layout>
   )
 }
@@ -103,6 +89,7 @@ export const landingPageData = graphql`
               landingPageEventsList {
                 eventDate(formatString: "HH.mm")
                 eventName
+                slug
                 eventDescription {
                   raw
                 }
