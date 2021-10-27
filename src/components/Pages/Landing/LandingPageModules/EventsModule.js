@@ -54,7 +54,7 @@ const EventsModule = ({ data }) => {
           <BreakLine none />
           <Heading1 marginBottom="md">{data[1].eventName}</Heading1>
           <Renderer node={data[1].eventDescription} />
-          <Link to={"/events/" + data[1].eventName.toLowerCase().replace(" ", "-")}>
+          <Link to={"/events/" + data[1].slug}>
             <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
           </Link>
         </TextContainer>
