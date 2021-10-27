@@ -7,8 +7,9 @@ import EventsModule from "./EventsModule"
 const LandingEventsContainer = ({ data }) => {
   return (
     <>
+    <MenusModule data={data[0]} />
       <PrivateEventModule data={data[2]} />
-      <MenusModule data={data[0]} />
+      
       <EventsModule data={data[1].landingPageEventsList} />
     </>
   )
