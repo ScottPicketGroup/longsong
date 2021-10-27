@@ -83,10 +83,10 @@ const EventTemplate = ({ pageContext }) => {
           <BreakLine none style={{marginBottom: 56}} />
           <Heading1 marginBottom="md">{eventData.eventName}</Heading1>
           <EventPageRenderer node={eventData.eventDescription} />
-          <Heading1 marginBottom="md">{eventData.drinksSpecialTitle}</Heading1>
+          {/* <Heading1 marginBottom="md">{eventData.drinksSpecialTitle}</Heading1>
           <EventPageRenderer node={eventData.drinksSpecialDetails} />
           <Heading1 marginBottom="md">{eventData.foodSpecialTitle}</Heading1>
-          <EventPageRenderer node={eventData.foodSpecialDetails} />
+          <EventPageRenderer node={eventData.foodSpecialDetails} /> */}
           <Link to="/">
             <Button>RETURN TO CALENDAR OVERVIEW</Button>
           </Link>

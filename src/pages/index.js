@@ -10,11 +10,22 @@ const IndexPage = ({ data }) => {
   const { heroImage, heroTextOverImage, landingPageModules } =
     data.allContentfulLongsongLandingPageContent.edges[0].node
 
+  //components state
+
+  //  use effect 
+  // let modulesToPush = []
+  // map landingPageModules => modulesToPush.push({name: arrayname.firstlettertocapital, props: props})
+  // setmodules (modulestopush)
+
+
+
+
   return (
     <Layout fd="column" heroImage={heroImage}>
       <Seo title="Home" />
       <HeroBackground
-        heroImage={heroImage}
+    
+    heroImage={heroImage}
         heroTextOverImage={heroTextOverImage}
       />
       <LandingPageModules data={landingPageModules} />
@@ -78,6 +89,7 @@ export const landingPageData = graphql`
               landingPageEventsList {
                 eventDate(formatString: "HH.mm")
                 eventName
+                slug
                 eventDescription {
                   raw
                 }
