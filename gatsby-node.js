@@ -9,6 +9,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             eventName
+            slug
             eventMedia {
               title
             }
