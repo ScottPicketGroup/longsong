@@ -32,7 +32,7 @@ const Calender = ({ setCalenderRef }) => {
               raw
             }
             drinksSpecialTitle
-            eventDate(formatString: "DDMMYY")
+            eventDate(formatString: "DDMMYY HH.mm")
             eventDescription {
               raw
             }

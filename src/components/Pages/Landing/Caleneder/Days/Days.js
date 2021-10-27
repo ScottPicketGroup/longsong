@@ -37,6 +37,7 @@ const Days = ({ daysView, currentMonth, nextMonth, events }) => {
               openModel={openModel}
               setOpenModel={setOpenModel}
               events={events}
+              daysView={daysView}
             />
           ) : !daysView ? (
             <CalanderView

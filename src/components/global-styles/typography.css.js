@@ -431,7 +431,8 @@ export const BC3 = styled.p`
   font-family: normal;
 
   font-size: 1.25rem;
-  color: ${props => (props.imageControls ? "#6A6A6A" : "white")};
+  color: ${props =>
+    props.imageControls ? "#6A6A6A" : "white"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":
