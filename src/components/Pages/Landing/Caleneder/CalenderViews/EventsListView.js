@@ -17,6 +17,8 @@ import {
 } from "../Calender.css"
 import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
 import { MobileWrapper } from "../../../../global-styles/containers.css"
+import useActivePage from "../../../../hooks/ActivePage"
+
 const EventsListView = ({
   day,
   i,
@@ -36,6 +38,7 @@ const EventsListView = ({
   const [event, setEvent] = React.useState({})
 
   const [elementWidth, setElementWidth] = useState(0)
+  const { handleOpenMenuClick } = useActivePage()
 
   useEffect(() => {
     if (dayContainerRef.current)

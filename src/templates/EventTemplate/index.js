@@ -23,6 +23,7 @@ import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/
 import Slider from "../../components/ImageSlider"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import EventPageRenderer from "../../components/rich-text-renderers/eventPageRenderer"
+import useActivePage from "../../components/hooks/ActivePage"
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
@@ -43,6 +44,8 @@ const EventTemplate = ({ pageContext }) => {
       }
     }
   `)
+
+  const { handleOpenMenuClick } = useActivePage()
 
   useEffect(() => {
     data.allContentfulLongsongEvents.edges.forEach(({ node }) => {
@@ -73,23 +76,22 @@ const EventTemplate = ({ pageContext }) => {
             <Time>{eventDateTime[1]}</Time>
           </DateWrapper>
           <ButtonWrapper>
-            <Button>VIEW NEXT DAY</Button>
-            <Button>VIEW PREVIOUS DAY</Button>
+            {eventData.bookNowData && <Button>BOOK NOW</Button>}
+            <Link to="/">
+              <Button onClick={()=>handleOpenMenuClick(1)}>RETURN TO CALENDAR OVERVIEW</Button>
+            </Link>
           </ButtonWrapper>
         </DateContainer>
       </EventHeroContainer>
       <EventContentContainer>
         <TextContainer marginBottom="lg">
-          <BreakLine none style={{marginBottom: 56}} />
+          <BreakLine none style={{ marginBottom: 56 }} />
           <Heading1 marginBottom="md">{eventData.eventName}</Heading1>
           <EventPageRenderer node={eventData.eventDescription} />
           {/* <Heading1 marginBottom="md">{eventData.drinksSpecialTitle}</Heading1>
           <EventPageRenderer node={eventData.drinksSpecialDetails} />
           <Heading1 marginBottom="md">{eventData.foodSpecialTitle}</Heading1>
           <EventPageRenderer node={eventData.foodSpecialDetails} /> */}
-          <Link to="/">
-            <Button>RETURN TO CALENDAR OVERVIEW</Button>
-          </Link>
         </TextContainer>
       </EventContentContainer>
     </Layout>
