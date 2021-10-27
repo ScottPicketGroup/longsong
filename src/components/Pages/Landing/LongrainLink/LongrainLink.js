@@ -2,9 +2,9 @@ import React from "react"
 import { BC4 } from "../../../global-styles/typography.css"
 import { LongrainLinkWrapper, Underline } from "./LongrainLink.css"
 
-const LongrainLink = () => {
+const LongrainLink = ({ heroImage }) => {
   return (
-    <LongrainLinkWrapper>
+    <LongrainLinkWrapper heroImage>
       <BC4 marginBottom="sm">
         <a
           href="https://longrainmelbourne.com/"

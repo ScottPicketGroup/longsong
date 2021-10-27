@@ -1,4 +1,5 @@
 import React, { useRef } from "react"
+import { Link } from "gatsby"
 import { BC2 } from "../global-styles/typography.css"
 import LongsongIcon from "./Icons/LongsongIcon"
 import MenuIcon from "./Icons/MenuIcon"
@@ -25,18 +26,16 @@ const MenuContainer = ({
     handleNextMonthChange,
   } = useChangeMonth()
   const scrollPosition = useScrollPosition()
- 
-// state
 
-const [menuPage, setMenuPage]  = React.useState(0)
- 
+  // state
 
+  const [menuPage, setMenuPage] = React.useState(0)
 
-const handleOpenEvents = () => {
-  setMenuOpen(true)
-  setMenuPage(3)
-}
-console.log(menuPage)
+  const handleOpenEvents = () => {
+    setMenuOpen(true)
+    setMenuPage(3)
+  }
+
   return (
     <MenuWrapper ref={menuRef}>
       <MainWrapper>
@@ -53,21 +52,26 @@ console.log(menuPage)
               />
             )}
             {scrollPosition <= 530 && (
-              <LongsongIcon setActivePage={setActivePage} />
+              <Link to="/">
+                <LongsongIcon />
+              </Link>
             )}
           </>
         ) : (
-          <LongsongIcon setActivePage={setActivePage} />
+          <Link to="/">
+            <LongsongIcon />
+          </Link>
         )}
       </MainWrapper>
-      <EventsWrapper
-    
-      >
+      <EventsWrapper>
         <BC2
-        onClick={() => {
-          setActivePage(3) 
-          setMenuOpen(true)}}
-        >Private Events</BC2>
+          onClick={() => {
+            setActivePage(3)
+            setMenuOpen(true)
+          }}
+        >
+          Private Events
+        </BC2>
       </EventsWrapper>
       <MenuSlideOutContainer
         menuOpen={menuOpen}

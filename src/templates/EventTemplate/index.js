@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
@@ -23,11 +22,12 @@ import { Button } from "../../components/global-styles/GlobalStyles.css"
 import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import Slider from "../../components/ImageSlider"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import EventPageRenderer from "../../components/rich-text-renderers/eventPageRenderer"
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
   const eventDateTime = eventData.eventDate.split(" ")
-  const [imageData, setImageData] = useState([]);
+  const [imageData, setImageData] = useState([])
   const data = useStaticQuery(graphql`
     query MyQuery {
       allContentfulLongsongEvents {
@@ -45,8 +45,8 @@ const EventTemplate = ({ pageContext }) => {
   `)
 
   useEffect(() => {
-    data.allContentfulLongsongEvents.edges.forEach(({node}) => {
-      if(node.id === eventData.id) setImageData(node.eventMedia)
+    data.allContentfulLongsongEvents.edges.forEach(({ node }) => {
+      if (node.id === eventData.id) setImageData(node.eventMedia)
     })
   }, [eventData, data])
 
@@ -80,16 +80,16 @@ const EventTemplate = ({ pageContext }) => {
       </EventHeroContainer>
       <EventContentContainer>
         <TextContainer marginBottom="lg">
-          <BreakLine none />
-          <Heading1 marginBottom="lg">{eventData.eventName}</Heading1>
-          {renderRichText(eventData.eventDescription)}
-          <Heading1 marginBottom="lg">{eventData.drinksSpecialTitle}</Heading1>
-          {renderRichText(eventData.drinksSpecialDetails)}
-          <Heading1 marginBottom="lg">{eventData.foodSpecialTitle}</Heading1>
-          {renderRichText(eventData.foodSpecialDetails)}
-         <Link to ="/">
-         <Button>RETURN TO CALENDAR OVERVIEW</Button>
-         </Link>
+          <BreakLine none style={{marginBottom: 56}} />
+          <Heading1 marginBottom="md">{eventData.eventName}</Heading1>
+          <EventPageRenderer node={eventData.eventDescription} />
+          <Heading1 marginBottom="md">{eventData.drinksSpecialTitle}</Heading1>
+          <EventPageRenderer node={eventData.drinksSpecialDetails} />
+          <Heading1 marginBottom="md">{eventData.foodSpecialTitle}</Heading1>
+          <EventPageRenderer node={eventData.foodSpecialDetails} />
+          <Link to="/">
+            <Button>RETURN TO CALENDAR OVERVIEW</Button>
+          </Link>
         </TextContainer>
       </EventContentContainer>
     </Layout>

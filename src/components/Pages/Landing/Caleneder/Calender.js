@@ -67,9 +67,9 @@ const Calender = ({ setCalenderRef }) => {
 
 
 
-  useEffect(() => {
-    setCalenderRef(calenderRef)
-  }, [calenderRef])
+  // useEffect(() => {
+  //   setCalenderRef(calenderRef)
+  // }, [calenderRef])
 
   return (
     <CalanderWrapper ref={calenderRef}>

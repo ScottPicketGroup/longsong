@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const LogoAnimation = keyframes`
   0% {
@@ -114,7 +115,6 @@ export const HeroWrapper = styled.div`
 export const AnimationWrapper = styled.div`
   animation: ${LogoAnimation} 2s linear;
   transform: scale(0.8);
-
   display: flex;
   justify-content: center;
   margin-bottom: -2rem;
@@ -162,4 +162,43 @@ export const DownArrow = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+`
+
+export const HeroText = styled.p`
+  font-size: 28px;
+  text-align: center;
+  max-width: 800px;
+  left: calc(50% - 450px);
+  bottom: 30%;
+  animation: ${TextFadeIn} 4s ease;
+`
+
+export const HeroContainer = styled.div`
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+  
+  @media (max-width: 451px) {
+    // margin-top: 2.5rem;
+  }
+`
+export const HeroImage = styled(GatsbyImage)`
+  position: absolute;
+  height: 100vh;
+  @media(max-width: 450px){
+    margin-left: -2rem;
+  }
+  
+`
+export const AnimationImgWrapper = styled(AnimationWrapper)`
+  margin-top: 4.25rem;
+`
+export const AnimationIntroContainer = styled.div`
+  animation: ${ScrollTotFadeIn} 2.5s ease;
+  max-width: 700px;
+  text-align: center;
+  margin: auto;
 `

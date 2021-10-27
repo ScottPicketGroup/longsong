@@ -14,6 +14,7 @@ width: 0;
 
 export const LongrainLinkWrapper = styled.div`
   position: absolute;
+  z-index: ${props => props.heroImage ? 1 : "auto"};
   top: 30px;
   right: 30px;
   font-size: 40px;
