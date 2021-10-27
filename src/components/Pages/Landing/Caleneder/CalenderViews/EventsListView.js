@@ -12,12 +12,11 @@ import {
   EventDayContainer,
   EventHeading2,
   EventBC3,
+  OnlyDesktopWrapper,
+  OnlyMobileWrapper,
 } from "../Calender.css"
 import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
-import {
-  DesktopWrapper,
-  MobileWrapper,
-} from "../../../../global-styles/containers.css"
+import { MobileWrapper } from "../../../../global-styles/containers.css"
 const EventsListView = ({
   day,
   i,
@@ -46,36 +45,36 @@ const EventsListView = ({
   events.map(e => {
     if (e.node.eventDate.slice(0, 2) === componentDate) console.log(e)
   })
-  console.log("ELEMENT====", elementWidth)
+
   return (
     <>
-      <DesktopWrapper>
-        {events.map((e, index) => {
-          if (e.node.eventDate.slice(0, 2) === componentDate)
-            return (
-              <EventDayContainer
-                key={index}
-                i={i}
-                ref={dayContainerRef}
+      {events.map((e, index) => {
+        if (e.node.eventDate.slice(0, 2) === componentDate)
+          return (
+            <EventDayContainer
+              key={index}
+              i={i}
+              ref={dayContainerRef}
+              currentMonth={currentMonth}
+              month={month}
+              dayOfWeek={item.day}
+              day={day}
+              date={todaysDate}
+              height={elementWidth / 3.5}
+              events
+            >
+              <EventsDateDisplayContainer
+                events
                 currentMonth={currentMonth}
                 month={month}
                 dayOfWeek={item.day}
                 day={day}
                 date={todaysDate}
+                i={i}
                 height={elementWidth / 3.5}
-                events
+                width={elementWidth / 7 - 10}
               >
-                <EventsDateDisplayContainer
-                  events
-                  currentMonth={currentMonth}
-                  month={month}
-                  dayOfWeek={item.day}
-                  day={day}
-                  date={todaysDate}
-                  i={i}
-                  height={elementWidth / 3.5}
-                  width={elementWidth / 7 - 10}
-                >
+                <OnlyDesktopWrapper>
                   <Heading3 dayOfWeek={day} day={day} date={todaysDate} i={i}>
                     {asdf === todaysDate + 1
                       ? "TOMORROW"
@@ -88,16 +87,38 @@ const EventsListView = ({
                   <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i}>
                     {item.date}
                   </Number1>
-                </EventsDateDisplayContainer>
-                <EventsListDetailsWrapper
-                  month={month}
-                  currentMonth={currentMonth}
-                  calander
-                  dayOfWeek={item.day}
-                  day={day}
-                  date={todaysDate}
-                  i={i}
-                >
+                </OnlyDesktopWrapper>
+                <MobileWrapper>
+                  <EventHeading2
+                    dayOfWeek={day}
+                    day={day}
+                    date={todaysDate}
+                    i={i}
+                    style={{ paddingLeft: "16px" }}
+                  >
+                    {asdf === todaysDate + 1
+                      ? "TOMORROW"
+                      : asdf === todaysDate
+                      ? "TODAY"
+                      : item.day === "Sunday"
+                      ? "CLOSED"
+                      : item.day}
+                  </EventHeading2>
+                  <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i}>
+                    {item.date}
+                  </Number1>
+                </MobileWrapper>
+              </EventsDateDisplayContainer>
+              <EventsListDetailsWrapper
+                month={month}
+                currentMonth={currentMonth}
+                calander
+                dayOfWeek={item.day}
+                day={day}
+                date={todaysDate}
+                i={i}
+              >
+                <OnlyDesktopWrapper>
                   {item.day === "Sunday" ? (
                     <EventBC3>Closed</EventBC3>
                   ) : e.node.isTheVenueOpenToThePublic === false ? (
@@ -145,90 +166,8 @@ const EventsListView = ({
                       </EventBC3>
                     </EventsListPerformerDetailsWrapper>
                   )}
-                </EventsListDetailsWrapper>
-                <EventsListDetailsViewDetailsLink
-                  currentMonth={currentMonth}
-                  calander
-                  month={month}
-                  currentMonth={currentMonth}
-                  calander
-                  dayOfWeek={item.day}
-                  day={day}
-                  date={todaysDate}
-                  i={i}
-                >
-                  {e.node.isTheVenueOpenToThePublic === false ? (
-                    <Link
-                      to={`events/${e.node.eventName
-                        .toLowerCase()
-                        .replace(" ", "-")}`}
-                    >
-                      VIEW DETAILS
-                    </Link>
-                  ) : (
-                    "CLOSED"
-                  )}
-                </EventsListDetailsViewDetailsLink>
-              </EventDayContainer>
-            )
-        })}
-      </DesktopWrapper>
-      <MobileWrapper>
-        {events.map((e, index) => {
-          if (e.node.eventDate.slice(0, 2) === componentDate)
-            return (
-              <EventDayContainer
-                key={index}
-                i={i}
-                ref={dayContainerRef}
-                currentMonth={currentMonth}
-                month={month}
-                dayOfWeek={item.day}
-                day={day}
-                date={todaysDate}
-                i={i}
-                height={elementWidth / 3.5}
-                events
-              >
-                <EventsDateDisplayContainer
-                  events
-                  currentMonth={currentMonth}
-                  month={month}
-                  dayOfWeek={item.day}
-                  day={day}
-                  date={todaysDate}
-                  i={i}
-                  height={elementWidth / 3.5}
-                  width={elementWidth / 7 - 10}
-                >
-                  <EventHeading2
-                    dayOfWeek={day}
-                    day={day}
-                    date={todaysDate}
-                    i={i}
-                    style={{ paddingLeft: "16px" }}
-                  >
-                    {asdf === todaysDate + 1
-                      ? "TOMORROW"
-                      : asdf === todaysDate
-                      ? "TODAY"
-                      : item.day === "Sunday"
-                      ? "CLOSED"
-                      : item.day}
-                  </EventHeading2>
-                  <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i}>
-                    {item.date}
-                  </Number1>
-                </EventsDateDisplayContainer>
-                <EventsListDetailsWrapper
-                  month={month}
-                  currentMonth={currentMonth}
-                  calander
-                  dayOfWeek={item.day}
-                  day={day}
-                  date={todaysDate}
-                  i={i}
-                >
+                </OnlyDesktopWrapper>
+                <OnlyMobileWrapper>
                   {item.day === "Sunday" ? (
                     <EventHeading2>Closed</EventHeading2>
                   ) : e.node.isTheVenueOpenToThePublic === false ? (
@@ -276,18 +215,33 @@ const EventsListView = ({
                       </EventHeading2>
                     </EventsListPerformerDetailsWrapper>
                   )}
-                </EventsListDetailsWrapper>
-                <EventsListDetailsViewDetailsLink
-                  currentMonth={currentMonth}
-                  calander
-                  month={month}
-                  currentMonth={currentMonth}
-                  calander
-                  dayOfWeek={item.day}
-                  day={day}
-                  date={todaysDate}
-                  i={i}
-                >
+                </OnlyMobileWrapper>
+              </EventsListDetailsWrapper>
+              <EventsListDetailsViewDetailsLink
+                currentMonth={currentMonth}
+                calander
+                month={month}
+                currentMonth={currentMonth}
+                calander
+                dayOfWeek={item.day}
+                day={day}
+                date={todaysDate}
+                i={i}
+              >
+                <OnlyDesktopWrapper>
+                  {e.node.isTheVenueOpenToThePublic === false ? (
+                    <Link
+                      to={`events/${e.node.eventName
+                        .toLowerCase()
+                        .replace(" ", "-")}`}
+                    >
+                      VIEW DETAILS
+                    </Link>
+                  ) : (
+                    "CLOSED"
+                  )}
+                </OnlyDesktopWrapper>
+                <OnlyMobileWrapper>
                   <EventHeading2>
                     {e.node.isTheVenueOpenToThePublic === false ? (
                       <Link
@@ -302,11 +256,11 @@ const EventsListView = ({
                     )}
                   </EventHeading2>
                   <LongsongIcon />
-                </EventsListDetailsViewDetailsLink>
-              </EventDayContainer>
-            )
-        })}
-      </MobileWrapper>
+                </OnlyMobileWrapper>
+              </EventsListDetailsViewDetailsLink>
+            </EventDayContainer>
+          )
+      })}
     </>
   )
 }

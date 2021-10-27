@@ -1,7 +1,10 @@
 import styled, { keyframes } from "styled-components"
 import { fadeIn } from "../../../global-styles/animations"
-import  { BC3, Heading2 } from "../../../global-styles/typography.css"
-
+import { BC3, Heading2 } from "../../../global-styles/typography.css"
+import {
+  DesktopWrapper,
+  MobileWrapper,
+} from "../../../global-styles/containers.css"
 
 export const CalanderWrapper = styled.div`
   width: 100%;
@@ -184,9 +187,11 @@ export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
   border-top: 0;
   border-left: 0;
   color: black !important;
+  flex-direction: row;
 
   @media (max-width: 450px) {
     height: 140px;
+    border-right: none;
   }
 `
 
@@ -306,10 +311,14 @@ export const EventsListDetailsWrapper = styled.div`
         props.i === props.date
       ? "#314638"
       : ""};
+  @media (max-width: 450px) {
+    margin-left: 0rem;
+    border-right: none;
+  }
 `
 
 export const EventsListPerformerDetailsWrapper = styled.div`
-  width: 50%;
+  width: 100%;
   margin-left: 2rem;
   @media (max-width: 450px) {
     margin-left: 0rem;
@@ -357,33 +366,48 @@ export const EventHeading2 = styled(Heading2)`
     color: ${props =>
       props.month === props.currentMonth + props.month && props.day < props.date
         ? "#6A6A6A"
-        : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
+        : props.dayOfWeek == "Sunday" ||
+          props.dayOfWeek == "Tuesday" ||
+          props.dayOfWeek == "Monday"
         ? "#6A6A6A"
-        : props.month === props.currentMonth + props.month &&
-          props.i === props.date - 1
-        ? "#457E5C"
-        : props.month === props.currentMonth + props.month &&
-          props.i === props.date
-        ? "#314638"
-        : props.month === props.currentMonth + props.month &&
-          props.i === props.date - 2
-        ? "#314638"
         : "white"};
   }
 `
 export const EventBC3 = styled(BC3)`
-  color: : ${props=>props.month === props.currentMonth + props.month && props.day < props.date
-  ? "#6A6A6A"
-  : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
-  ? "#6A6A6A"
-  : props.month === props.currentMonth + props.month &&
-    props.i === props.date - 1
-  ? "#457E5C"
-  : props.month === props.currentMonth + props.month &&
-    props.i === props.date
-  ? "#314638"
-  : props.month === props.currentMonth + props.month &&
-    props.i === props.date - 2
-  ? "#314638"
-  : "white"};
+  color: : ${props =>
+    props.month === props.currentMonth + props.month && props.day < props.date
+      ? "#6A6A6A"
+      : props.dayOfWeek == "Sunday" ||
+        props.dayOfWeek == "Tuesday" ||
+        props.dayOfWeek == "Monday"
+      ? "#6A6A6A"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date - 1
+      ? "#457E5C"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date
+      ? "#314638"
+      : props.month === props.currentMonth + props.month &&
+        props.i === props.date - 2
+      ? "#314638"
+      : "white"};
+`
+
+export const OnlyDesktopWrapper = styled(DesktopWrapper)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 450px) {
+    display: none;
+  }
+`
+
+export const OnlyMobileWrapper = styled(MobileWrapper)`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (min-width: 450px) {
+    display: none;
+  }
 `
