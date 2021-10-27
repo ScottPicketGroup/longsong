@@ -183,6 +183,7 @@ export const Heading3 = styled.h3`
 `
 
 export const Number1 = styled.h3`
+font-family: bold;
   margin-left: 1rem;
   letter-spacing: 3px;
   font-weight: 100;
