@@ -5,7 +5,6 @@ import EventDetailsModal from "../EventDetailsModal/EventDetailsModal"
 
 import { Heading3, Number1 } from "../../../../global-styles/typography.css"
 
-import useGetElementSize from "../../../../hooks/ItemSizing"
 import useActivePage from "../../../../hooks/ActivePage"
 
 const CalanderView = ({

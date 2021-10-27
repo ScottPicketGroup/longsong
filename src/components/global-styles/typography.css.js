@@ -183,6 +183,7 @@ export const Heading3 = styled.h3`
 `
 
 export const Number1 = styled.h3`
+font-family: bold;
   margin-left: 1rem;
   letter-spacing: 3px;
   font-weight: 100;
@@ -431,7 +432,8 @@ export const BC3 = styled.p`
   font-family: normal;
 
   font-size: 1.25rem;
-  color: ${props => (props.imageControls ? "#6A6A6A" : "white")};
+  color: ${props =>
+    props.imageControls ? "#6A6A6A" : "white"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":

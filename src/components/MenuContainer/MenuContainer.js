@@ -40,7 +40,10 @@ const MenuContainer = ({
     <MenuWrapper ref={menuRef}>
       <MainWrapper>
         <MenuIcon setMenuOpen={setMenuOpen} setActivePage={setActivePage} />
-        {elementWidth > 250 ? (
+        <Link to="/">
+          <LongsongIcon />
+        </Link>
+        {/* {elementWidth > 250 ? (
           <>
             {scrollPosition >= 530 && (
               <Month
@@ -61,7 +64,7 @@ const MenuContainer = ({
           <Link to="/">
             <LongsongIcon />
           </Link>
-        )}
+        )} */}
       </MainWrapper>
       <EventsWrapper>
         <BC2
