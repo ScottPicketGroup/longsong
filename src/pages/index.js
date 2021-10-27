@@ -7,7 +7,7 @@ import HeroBackground from "../components/Pages/Landing/Hero/HeroBackgound"
 import LandingPageModules from "../components/Pages/Landing/LandingPageModules"
 
 const IndexPage = ({ data }) => {
-  const { heroImage, heroTextOverImage, landingPageModules } =
+  const { heroImage, textOverHeroImage, landingPageModules } =
     data.allContentfulLongsongLandingPageContent.edges[0].node
 
   //components state
@@ -24,9 +24,7 @@ const IndexPage = ({ data }) => {
     <Layout fd="column" heroImage={heroImage}>
       <Seo title="Home" />
       <HeroBackground
-    
-    heroImage={heroImage}
-        heroTextOverImage={heroTextOverImage}
+        heroTextOverImage={textOverHeroImage}
       />
       <LandingPageModules data={landingPageModules} />
     </Layout>
@@ -49,7 +47,9 @@ export const landingPageData = graphql`
             }
             gatsbyImageData(placeholder: BLURRED)
           }
-          heroTextOverImage
+          textOverHeroImage {
+            raw
+          }
           landingPageModules {
             ... on ContentfulLongsongLandingPagePrivateDiningSection {
               id

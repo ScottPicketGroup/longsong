@@ -229,28 +229,23 @@ const EventsListView = ({
                 i={i}
               >
                 <OnlyDesktopWrapper>
-                  {e.node.isTheVenueOpenToThePublic === false ? (
-                    <Link
-                      to={`events/${e.node.eventName
-                        .toLowerCase()
-                        .replace(" ", "-")}`}
-                    >
-                      VIEW DETAILS
-                    </Link>
+                  {e.node.isTheVenueOpenToThePublic === true ? (
+                    // <Link
+                    //   to={`events/${e.node.eventName
+                    //     .toLowerCase()
+                    //     .replace(" ", "-")}`}
+                    // >
+                    //   VIEW DETAILS
+                    // </Link>
+                    <Link to="/">VIEW DETAILS</Link>
                   ) : (
                     "CLOSED"
                   )}
                 </OnlyDesktopWrapper>
                 <OnlyMobileWrapper>
                   <EventHeading2>
-                    {e.node.isTheVenueOpenToThePublic === false ? (
-                      <Link
-                        to={`events/${e.node.eventName
-                          .toLowerCase()
-                          .replace(" ", "-")}`}
-                      >
-                        VIEW DETAILS
-                      </Link>
+                    {e.node.isTheVenueOpenToThePublic === true ? (
+                      <Link to="/">VIEW DETAILS</Link>
                     ) : (
                       "CLOSED"
                     )}

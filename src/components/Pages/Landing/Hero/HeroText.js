@@ -5,15 +5,16 @@ import {
   MobileWrapper,
 } from "../../../global-styles/containers.css"
 import { AnimationIntroContainer } from "./Hero.css"
+import Renderer from "../../../rich-text-renderers/sample"
 
-const HeroText = ({text}) => {
+const HeroText = ({ text }) => {
   return (
     <AnimationIntroContainer>
       <DesktopWrapper>
-        <BC1>{text}</BC1>
+        <Renderer node={text} />
       </DesktopWrapper>
       <MobileWrapper>
-        <BC2>{text}</BC2>
+        <Renderer node={text} />
       </MobileWrapper>
     </AnimationIntroContainer>
   )

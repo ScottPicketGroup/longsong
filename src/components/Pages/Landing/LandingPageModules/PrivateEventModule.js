@@ -22,11 +22,11 @@ const PrivateEventModule = ({ data }) => {
     <LandingPageModuleContainer>
       <ImageWrapper>
         <Slider imageData={data.gallery}></Slider>
-        <StaticImage
+        {/* <StaticImage
           className="fullscreen-button"
           src="../../../../images/EventTemplate/fullscreenbutton.png"
           alt="fullscreen-button"
-        />
+        /> */}
       </ImageWrapper>
       <EventContentContainer>
         <TextContainer>

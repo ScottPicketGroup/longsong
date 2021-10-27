@@ -61,11 +61,11 @@ const EventTemplate = ({ pageContext }) => {
             src="../../images/EventTemplate/playbutton.png"
             alt="play-button"
           />
-          <StaticImage
+          {/* <StaticImage
             className="fullscreen-button"
             src="../../images/EventTemplate/fullscreenbutton.png"
             alt="fullscreen-button"
-          />
+          /> */}
         </ImageWrapper>
         <DateContainer>
           <DateWrapper>
