@@ -13,10 +13,10 @@ const IndexPage = () => {
 
   //components state
 
-   use effect 
-  let modulesToPush = []
-  map landingPageModules => modulesToPush.push({name: arrayname.firstlettertocapital, props: props})
-  setmodules (modulestopush)
+  //  use effect 
+  // let modulesToPush = []
+  // map landingPageModules => modulesToPush.push({name: arrayname.firstlettertocapital, props: props})
+  // setmodules (modulestopush)
 
 
 

@@ -91,7 +91,7 @@ useEffect(() => {
         </EventContents>
         <EventFooterWrapper>
           {
-            eventDetails.eventName &&   <Link to={`events/${eventDetails.eventName.toLowerCase().replace(" ", "-")}`}>VIEW DETAILS</Link>
+            eventDetails.eventName &&   <Link to={`events/${eventDetails.slug`}>VIEW DETAILS</Link>
           }
       
         
