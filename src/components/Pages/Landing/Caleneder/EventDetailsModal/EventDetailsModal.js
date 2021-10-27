@@ -80,13 +80,9 @@ useEffect(() => {
          ) : <></>
         
         } 
+          
           <Heading2>
-            
-         Happy Hour
-
-          </Heading2>
-          <Heading2>
-            5 - 7 PM
+          Open 6pm–late
           </Heading2>
         </EventContents>
         <EventFooterWrapper>

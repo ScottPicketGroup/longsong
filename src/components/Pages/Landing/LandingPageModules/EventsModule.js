@@ -21,16 +21,16 @@ import { Button } from "../../../global-styles/GlobalStyles.css"
 import { BC1 } from "../../../global-styles/typography.css"
 
 const EventsModule = ({ data }) => {
-  
+  console.log(data)
   return (
     <LandingPageModuleContainer>
       <EventSectionWrapper column style={{marginBottom: "3.25rem"}}>
         <EventSectionWrapper style={{ justifyContent: "space-between" }}>
           <TimeAndButtonWrapper>
             <Time style={{ margin: "0 0 3rem 0" }}>{data[0].eventDate}</Time>
-            <Button marginBottom="lg" style={{ width: "80%" }}>
+            {data[0].bookNowButtonLink && <Button marginBottom="lg" style={{ width: "80%" }}>
               BOOK NOW
-            </Button>
+            </Button>}
           </TimeAndButtonWrapper>
 
           <HeadingAndIntroWrapper>
