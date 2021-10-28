@@ -33,7 +33,7 @@ const StallsAndYard = ({ data }) => {
       </SectionWrapper>
       <SectionWrapper column mobInvert>
         <ImageWrapper full>
-          <Slider imageData={data.thirdSection.imageData} />
+          {/* <Slider imageData={data.thirdSection.imageData} /> */}
         </ImageWrapper>
         <TextContainer right full first topMarginNotRequiredMob>
           <BreakLine none />
