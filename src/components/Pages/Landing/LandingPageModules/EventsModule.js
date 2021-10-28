@@ -25,9 +25,12 @@ const EventsModule = () => {
 
   const data = useStaticQuery(graphql`
   query landingEventsQuery {
-    allContentfulLandingPageEventsModule {
+    allContentfulLandingPageEventsModule(
+      filter: {id: {eq: "00760aef-4841-5f1b-ad1a-a1f2336506ae"}}
+    ) {
       edges {
         node {
+          id
           landingPageEventsList {
             id
             eventDate(formatString: "DD.MM")
@@ -44,6 +47,7 @@ const EventsModule = () => {
       }
     }
   }
+  
   
   
   `)

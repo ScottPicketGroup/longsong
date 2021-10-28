@@ -10,8 +10,8 @@ const LandingEventsContainer = () => {
     <>
       
       <MenusModule />
-      {/* <EventsModule/>
-      <PrivateEventModule  />  */}
+      <EventsModule/>
+     {/*  <PrivateEventModule  />  */}
     </>
   )
 }
