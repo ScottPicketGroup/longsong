@@ -21,8 +21,13 @@ const IndexPage = ({ data }) => {
 
 
   return (
-   <>
-   </>
+    <Layout fd="column" heroImage={heroImage}>
+      <Seo title="Home" />
+      <HeroBackground
+        heroTextOverImage={textOverHeroImage}
+      />
+     
+    </Layout>
   )
 }
 
