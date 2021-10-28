@@ -1,18 +1,27 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { FooterLink, FooterLinksColumn } from "../../Footer.css"
 
 const FooterNavigation = ({
   menuOpen,
   setMenuOpen,
+  activePage,
   setActivePage,
   foodMenu,
   drinksMenu
 }) => {
+console.log(menuOpen)
+const [open, setOpen] = React.useState(menuOpen)
+
+
+useEffect(() => {
+
+alert(open)
+}, [open])
 
   const handleFooterLink = () => {
-    console.log(`menuOpen`, menuOpen)
-  
-  
+    setOpen(!menuOpen)
+  setActivePage(5)
+  console.log(activePage)
     // setActivePage(3)
     //       setMenuOpen(true)
   }

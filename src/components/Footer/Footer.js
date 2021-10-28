@@ -4,6 +4,7 @@ import FooterItems from './FooterItems/FooterItems'
 import LogoSlider from './LogoSlider'
 
 const Footer = ({menuOpen, setMenuOpen, activePage, setActivePage}) => {
+    console.log(menuOpen)
     return (
         <FooterWrapper>
             <LogoSlider />
