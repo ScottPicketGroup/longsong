@@ -21,7 +21,7 @@ const FooterContactDetails = () => {
         44 Little Bourke Street VIC 3000 <br />
         <a href="mailto:info@longsong.com.au">info@longsong.com.au</a>
         <br />
-        03 9653 1600
+        03 9653 1611
       </BC4>
       <BC4 >
         Opening hours: <br />
