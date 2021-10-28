@@ -28,7 +28,7 @@ const MenusModule = ({ data }) => {
               <Heading1 marginBottom="md">{data.foodMenuHeading}</Heading1>
               <BC1 marginBottom="md">{data.foodMenuIntro}</BC1>
               <Link to={data.foodMenuPdf.file.url}>
-                <BC1 style={{ color: "#457E5C" }}>View more.</BC1>
+                <BC1 style={{ color: "#457E5C" }}>View menu</BC1>
               </Link>
             </TextContainer>
           </EventContentContainer>
@@ -44,7 +44,7 @@ const MenusModule = ({ data }) => {
               <Heading1 marginBottom="md">{data.drinksMenuHeading}</Heading1>
               <BC1 marginBottom="md">{data.drinksMenuIntro}</BC1>
               <Link to={data.drinksMenuPdf.file.url}>
-                <BC1 style={{ color: "#457E5C" }}>View more.</BC1>
+                <BC1 style={{ color: "#457E5C" }}>View drinks list</BC1>
               </Link>
             </TextContainer>
           </EventContentContainer>
