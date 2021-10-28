@@ -36,7 +36,7 @@ const Renderer = ({ node }) => {
     return (
         <>
 
-            {renderRichText(node, options)}
+            {node && renderRichText(node, options)}
         </>
     )
 }

@@ -5,12 +5,13 @@ import MenusModule from "./MenusModule"
 import EventsModule from "./EventsModule"
 
 const LandingEventsContainer = ({ data }) => {
+  console.log(data)
   return (
     <>
-    <MenusModule data={data[0]} />
-      <PrivateEventModule data={data[2]} />
       
-      <EventsModule data={data[1].landingPageEventsList} />
+      <MenusModule data={data[0]} />
+      <EventsModule data={data[2].landingPageEventsList} />
+      <PrivateEventModule data={data[1]} />
     </>
   )
 }

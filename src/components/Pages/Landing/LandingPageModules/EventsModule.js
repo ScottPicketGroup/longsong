@@ -46,25 +46,7 @@ const EventsModule = ({ data }) => {
           <Slider imageData={data[0].eventMedia[0]} />
         </ImageWrapper>
       </EventSectionWrapper>
-      <SectionWrapper>
-        <TextContainer>
-          <Time style={{ margin: "0 0 3rem 0" }}>{data[1].eventDate}</Time>
-          {data[1].bookNowButtonLink && (
-            <Button marginBottom="lg" style={{ width: "80%" }}>
-              BOOK NOW
-            </Button>
-          )}
-          <BreakLine none />
-          <Heading1 marginBottom="md">{data[1].eventName}</Heading1>
-          <Renderer node={data[1].eventDescription} />
-          <Link to={"/events/" + data[1].slug}>
-            <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
-          </Link>
-        </TextContainer>
-        <ImageWrapper>
-          <Slider imageData={data[1].eventMedia[0]} aspectRatio="3/4" />
-        </ImageWrapper>
-      </SectionWrapper>
+      
     </LandingPageModuleContainer>
   )
 }

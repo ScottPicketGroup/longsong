@@ -18,6 +18,7 @@ import useActivePage from "../../../hooks/ActivePage"
 
 const PrivateEventModule = ({ data }) => {
   const { handleOpenMenuClick } = useActivePage();
+
   return (
     <LandingPageModuleContainer>
       <ImageWrapper>
