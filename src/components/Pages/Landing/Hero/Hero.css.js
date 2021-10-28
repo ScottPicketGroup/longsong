@@ -5,51 +5,22 @@ export const LogoAnimation = keyframes`
   0% {
     display: none;
     opacity: 0;
-    transform: scale(1.2);
-    transform: translateY(20vh)
+ 
    
   }
-  10% {
-    opacity: 1;
-    display: flex;
-    transform: scale(1.2);
-    transform: translateY(20vh);
-  }
-  65% {
-      opacity: 1;
-      display: none;
-  }
- 67% {
-     opacity: 0;
-     display: none;
- }
-  70% {
-      
-    transform: scale(1.2);
-    transform: translateY(20vh);
-   
-    
-   
-  }
-  71% {
-
-    transform: translateY(0);
-    transform: scale(.8);
-  }
-
+  
+ 
+ 
   75% {
     display: none;
       opacity: 0;
   }
 
-  80% {
+  100% {
     display: flex;
       opacity: 1;
   }
-  100% {
-    
-
-  }
+  
 `
 
 export const TextFadeIn = keyframes`
