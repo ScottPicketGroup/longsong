@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import { Button } from "../../../global-styles/GlobalStyles.css"
 export const SectionRow = styled.div`
   display: flex;
   flex-direction: ${props => props.flex ? 'row' : 'column'};
@@ -141,3 +141,8 @@ export const MenusModuleHalfWrapper = styled.div`
     margin-bottom: 2rem;
   }
 `
+export const LearnMoreButton = styled(Button)`
+  :hover {
+    cursor: pointer;
+  }
+`;

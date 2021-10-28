@@ -10,6 +10,7 @@ import {
   TextContainer,
   LandingPageModuleContainer,
   ImageWrapper,
+  LearnMoreButton,
 } from "./index.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import { Button } from "../../../global-styles/GlobalStyles.css"
@@ -41,7 +42,7 @@ const PrivateEventModule = () => {
   
   `)
 
-const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[1].node
+const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[0].node
 console.log(data)
 
   return (
@@ -62,7 +63,9 @@ console.log(data)
           </Heading1>
           <Renderer node={intro} />
           {/* <Link to="/"> */}
-            { <Button marginTop="md"  onClick={() => handleOpenMenuClick(3)}>LEARN MORE</Button>}
+            { <LearnMoreButton marginTop="md"  
+            
+            onClick={() => handleOpenMenuClick(3)}>LEARN MORE</LearnMoreButton>}
           {/* </Link> */}
         </TextContainer>
       </EventContentContainer>
