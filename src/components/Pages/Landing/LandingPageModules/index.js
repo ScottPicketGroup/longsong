@@ -10,10 +10,11 @@ const LandingEventsContainer = ({ data }) => {
     <>
       
       <MenusModule data={data[0]} />
-      {/* <EventsModule data={data[2].landingPageEventsList} /> */}
+      <EventsModule data={data[1].landingPageEventsList} />
       <PrivateEventModule data={data[2]} />
     </>
   )
 }
 
 export default LandingEventsContainer
+
