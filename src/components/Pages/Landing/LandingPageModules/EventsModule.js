@@ -50,7 +50,7 @@ const EventsModule = () => {
 
   
 
-const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allContentfulLandingPageEventsModule.edges[0].node.landingPageEventsList[0]
+const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allContentfulLandingPageEventsModule.edges[1].node.landingPageEventsList[0]
 
   return (
     <LandingPageModuleContainer>
