@@ -6,11 +6,8 @@ export const LogoAnimation = keyframes`
     display: none;
     opacity: 0;
  
-   
   }
   
- 
- 
   75% {
     display: none;
       opacity: 0;
@@ -28,12 +25,10 @@ export const TextFadeIn = keyframes`
     display: none;
     opacity: 0;
    
-   
   }
   50% {
     display: none;
     opacity: 0;
-   
    
   }
   55% {
@@ -51,12 +46,10 @@ export const ScrollTotFadeIn = keyframes`
     display: none;
     opacity: 0;
    
-   
   }
   85% {
     display: none;
     opacity: 0;
-   
    
   }
   90% {
@@ -90,6 +83,9 @@ export const AnimationWrapper = styled.div`
   justify-content: center;
   margin-bottom: -2rem;
   align-self: space-around;
+  @media (max-width:450px) {
+    margin-top: -6rem;
+  }
 `
 
 export const IntroContainerWrapper = styled.div`
@@ -101,6 +97,7 @@ export const IntroContainerWrapper = styled.div`
   text-align: center;
   @media (max-width: 450px) {
     margin: 1rem;
+    
   }
 `
 export const IntroTextWrapper = styled.div`
@@ -151,7 +148,7 @@ export const HeroContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-content: space-between;
-  
+
   @media (max-width: 451px) {
     // margin-top: 2.5rem;
   }
@@ -159,10 +156,9 @@ export const HeroContainer = styled.div`
 export const HeroImage = styled(StaticImage)`
   position: absolute;
   height: 100vh;
-  @media(max-width: 450px){
+  @media (max-width: 450px) {
     margin-left: -2rem;
   }
-  
 `
 export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
@@ -172,4 +168,7 @@ export const AnimationIntroContainer = styled.div`
   max-width: 700px;
   text-align: center;
   margin: auto;
+  @media  (max-width: 450px) {
+    margin-bottom: 12rem;
+  }
 `
