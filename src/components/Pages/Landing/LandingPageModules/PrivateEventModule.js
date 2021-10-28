@@ -23,7 +23,7 @@ console.log(data)
   return (
     <LandingPageModuleContainer>
       <ImageWrapper>
-        {/* <Slider imageData={data.gallery}></Slider> */}
+        <Slider imageData={data.gallery}></Slider>
         {/* <StaticImage
           className="fullscreen-button"
           src="../../../../images/EventTemplate/fullscreenbutton.png"
