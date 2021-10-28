@@ -183,12 +183,12 @@ const ContactUsForm = () => {
               </InputContainer>
               <TixboxContainer>
                 <div
-                  onClick={() =>{
-                    setInputs(inputs => ({ ...inputs, newsletter: true }))}
+                  onClick={() =>
+                    setInputs(inputs => ({ ...inputs, newsletter: true }))
                   }
                   aria-hidden="true"
                 >
-                  <CheckBox onClick={() => console.log('beep')}/>
+                  <CheckBox />
                 </div>
                 <Label bc2 style={{ width: `90%` }}>
                 I would like to receive communications about Scott Pickett Group venues, events and other exciting news.
