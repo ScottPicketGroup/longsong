@@ -56,7 +56,7 @@ const MenusModule = () => {
           foodMenuPdf,
           foodMenuImage
 
-   } = data.allContentfulLongsongLandingPageMenuSection.edges[0].node  
+   } = data.allContentfulLongsongLandingPageMenuSection.edges[1].node  
 
   return (
     <LandingPageModuleContainer>
