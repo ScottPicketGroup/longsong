@@ -191,8 +191,7 @@ const ContactUsForm = () => {
                   <CheckBox onClick={() => console.log('beep')}/>
                 </div>
                 <Label bc2 style={{ width: `90%` }}>
-                  I would like to receive communications about Scott Pickett
-                  Group services, events and matters of relevant interest.
+                I would like to receive communications about Scott Pickett Group venues, events and other exciting news.
                 </Label>
               </TixboxContainer>
               <Button
