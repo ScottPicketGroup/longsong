@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
       <HeroBackground 
         textOverHeroImage={textOverHeroImage}
       />
-      <LandingPageModules data={landingPageSections} />
+      {/* <LandingPageModules data={landingPageSections} /> */}
     </Layout>
   )
 }
