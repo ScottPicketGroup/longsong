@@ -27,10 +27,7 @@ const Space = ({ activePage }) => {
         featuredPerformerDescription {
           raw
         }
-        featuredPerformerMedia {
-          gatsbyImageData
-          title
-        }
+        
       }
     }
   `)
@@ -49,7 +46,7 @@ const Space = ({ activePage }) => {
     thirdSection: {
       title: data.contentfulLongsongPageContent.featuredPerformerTitle,
       content: data.contentfulLongsongPageContent.featuredPerformerDescription,
-      imageData: data.contentfulLongsongPageContent.featuredPerformerMedia
+      
     }
   }
 
