@@ -19,7 +19,7 @@ import useActivePage from "../../../hooks/ActivePage"
 const PrivateEventModule = ({ data }) => {
 
   const { handleOpenMenuClick } = useActivePage();
-
+console.log(data)
   return (
     <LandingPageModuleContainer>
       <ImageWrapper>
@@ -38,7 +38,7 @@ const PrivateEventModule = ({ data }) => {
           </Heading1>
           <Renderer node={data.intro} />
           {/* <Link to="/"> */}
-            <Button marginTop="md"  onClick={() => handleOpenMenuClick(3)}>LEARN MORE</Button>
+            { <Button marginTop="md"  onClick={() => handleOpenMenuClick(3)}>LEARN MORE</Button>}
           {/* </Link> */}
         </TextContainer>
       </EventContentContainer>
