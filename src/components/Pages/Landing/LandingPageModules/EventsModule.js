@@ -36,7 +36,7 @@ const EventsModule = () => {
             }
             slug
             eventMedia {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, aspectRatio: 0.8)
             }
           }
         }
@@ -54,12 +54,14 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
   return (
     <LandingPageModuleContainer>
       <EventSectionWrapper style={{ marginBottom: "3.25rem" }}>
-       
+       <TextContainer full>
           <TimeAndButtonWrapper>
             <Time style={{ margin: "0 0 3rem 0" }}>{eventDate}</Time>
          
           </TimeAndButtonWrapper>
-
+          <BreakLine first
+          style={{width: `85%`}}
+          />
           <HeadingAndIntroWrapper>
             <Heading1 marginBottom="md">{eventName}</Heading1>
             <Renderer node={eventDescription} />
@@ -67,9 +69,11 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
               <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
             </Link>
           </HeadingAndIntroWrapper>
-       
-        <ImageWrapper style={{ width: "100%" }} horizontal>
-          <Slider imageData={eventMedia[0]} />
+          </TextContainer>
+        <ImageWrapper style={{ width: "50%", height: `100%`, aspectRatio:"9/16" }}  >
+          <Slider 
+          style={{ width: "50%", minHeight: `100%`, aspectRatio:"9/16" }}
+          imageData={eventMedia[0]} aspcetRatio="9/16"/>
         </ImageWrapper>
       </EventSectionWrapper>
       

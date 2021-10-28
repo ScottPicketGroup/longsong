@@ -119,7 +119,7 @@ export const TimeAndButtonWrapper = styled.div`
   }
 `
 export const HeadingAndIntroWrapper = styled.div`
-  width: 58%;
+  width: 90%;
   @media (max-width: 450px) {
     width: 100%;
   }
