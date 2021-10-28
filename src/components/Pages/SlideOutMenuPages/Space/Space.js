@@ -4,21 +4,7 @@ import StallsAndYard from "../StallsAndYard"
 import { SlideOutPageWrapper } from "./Space.css"
 
 const Space = ({ activePage }) => {
-  const data = useStaticQuery(graphql`
-  query MyQuery {
-    allContentfulLongsongPageContent {
-      edges {
-        node {
-          id
-          featuredPerformerMedia {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-          }
-        }
-      }
-    }
-  }
-  
-  `)
+
 
   // const newData = {
   //   firstSection: {
