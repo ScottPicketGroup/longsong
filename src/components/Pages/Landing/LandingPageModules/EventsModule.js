@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
+import styled from 'styled-components';
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import {
@@ -70,9 +71,9 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
             </Link>
           </HeadingAndIntroWrapper>
           </TextContainer>
-        <ImageWrapper style={{ width: "50%",  aspectRatio:"3/4" }}  >
+        <ImageWrapper  >
           <Slider 
-          style={{ width: "50%", minHeight: `100%`, aspectRatio:"9/16" }}
+          
           imageData={eventMedia[0]} aspcetRatio="9/16"/>
         </ImageWrapper>
       </EventSectionWrapper>
@@ -82,3 +83,12 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
 }
 
 export default EventsModule
+
+export const EventsImageWrapper = styled(ImageWrapper)`
+  aspect-ratio: 3/4;
+  width: 50%;
+
+  @media (min-width: 451px) {
+    width: 100%;
+  }
+`;
