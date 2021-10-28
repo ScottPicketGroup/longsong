@@ -10,6 +10,7 @@ import {
   TextContainer,
   LandingPageModuleContainer,
   ImageWrapper,
+  LearnMoreButton,
 } from "./index.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import { Button } from "../../../global-styles/GlobalStyles.css"
