@@ -9,19 +9,23 @@ import Renderer from "../../../rich-text-renderers/sample"
 import { graphql, useStaticQuery } from "gatsby"
 const HeroText = () => {
   const data = useStaticQuery(graphql`
-    query heroText {
-      allContentfulLongsongLandingPageContent {
-        edges {
-          node {
-            textOverHeroImage {
-              raw
-            }
+  query heroText {
+    allContentfulLongsongLandingPageContent(
+      filter: {id: {eq: "4a312602-defe-550a-b9b5-2393ed6dd3ee"}}
+    ) {
+      edges {
+        node {
+          textOverHeroImage {
+            raw
           }
+          id
         }
       }
     }
+  }
+  
   `)
-  console.log(data)
+
   return (
     <AnimationIntroContainer>
       <DesktopWrapper>
