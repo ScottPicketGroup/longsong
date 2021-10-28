@@ -2,11 +2,21 @@ import React from "react"
 import { FooterLink, FooterLinksColumn } from "../../Footer.css"
 
 const FooterNavigation = ({
+  menuOpen,
   setMenuOpen,
   setActivePage,
   foodMenu,
   drinksMenu
 }) => {
+
+  const handleFooterLink = () => {
+    console.log(`menuOpen`, menuOpen)
+  
+  
+    // setActivePage(3)
+    //       setMenuOpen(true)
+  }
+
   return (
     <FooterLinksColumn>
       <FooterLink marginBottom="md">LONGSONG</FooterLink>
@@ -24,10 +34,7 @@ const FooterNavigation = ({
         >Food</a></FooterLink>
       <FooterLink
         marginBottom="sm"
-        onClick={() => {
-          setActivePage(3)
-          setMenuOpen(true)
-        }}
+        onClick={handleFooterLink}
       >
         Private Events
       </FooterLink>
