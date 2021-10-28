@@ -23,7 +23,8 @@ const SlideOutSideBar = ({ setMenuOpen, menuOpen, activePage, setActivePage }) =
             > CLOSE </MenuText>
           )
         }
-         <LongsongSubMenuIcon onClick={() => setMenuOpen(true)} setActivePage={setActivePage} />
+         <LongsongSubMenuIcon onClick={() => setMenuOpen(false)} setActivePage={setActivePage} setMenuOpen={setMenuOpen} menuOpen={menuOpen}
+         />
       </MobileMenuIconWrapper>
     </SlideOutSideBarWrapper>
   )
