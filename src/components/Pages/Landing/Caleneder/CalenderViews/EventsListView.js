@@ -17,6 +17,8 @@ import {
 } from "../Calender.css"
 import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
 import { MobileWrapper } from "../../../../global-styles/containers.css"
+import useActivePage from "../../../../hooks/ActivePage"
+
 const EventsListView = ({
   day,
   i,
@@ -36,6 +38,7 @@ const EventsListView = ({
   const [event, setEvent] = React.useState({})
 
   const [elementWidth, setElementWidth] = useState(0)
+  const { setMenuOpen } = useActivePage()
 
   useEffect(() => {
     if (dayContainerRef.current)
@@ -229,28 +232,23 @@ const EventsListView = ({
                 i={i}
               >
                 <OnlyDesktopWrapper>
-                  {e.node.isTheVenueOpenToThePublic === false ? (
-                    <Link
-                      to={`events/${e.node.eventName
-                        .toLowerCase()
-                        .replace(" ", "-")}`}
-                    >
-                      VIEW DETAILS
-                    </Link>
+                  {e.node.isTheVenueOpenToThePublic === true ? (
+                    // <Link
+                    //   to={`events/${e.node.eventName
+                    //     .toLowerCase()
+                    //     .replace(" ", "-")}`}
+                    // >
+                    //   VIEW DETAILS
+                    // </Link>
+                    <Link onClick={()=>setMenuOpen(false)} to="/">VIEW DETAILS</Link>
                   ) : (
                     "CLOSED"
                   )}
                 </OnlyDesktopWrapper>
                 <OnlyMobileWrapper>
                   <EventHeading2>
-                    {e.node.isTheVenueOpenToThePublic === false ? (
-                      <Link
-                        to={`events/${e.node.eventName
-                          .toLowerCase()
-                          .replace(" ", "-")}`}
-                      >
-                        VIEW DETAILS
-                      </Link>
+                    {e.node.isTheVenueOpenToThePublic === true ? (
+                      <Link to="/">VIEW DETAILS</Link>
                     ) : (
                       "CLOSED"
                     )}

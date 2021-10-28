@@ -7,7 +7,7 @@ import {
   ImageWrapper,
   TextContainer,
   SectionWrapper,
-  EventSectionWrapper
+  EventSectionWrapper,
 } from "../../SlideOutMenuPages/Space/Space.css"
 import Slider from "../../../ImageSlider"
 import Renderer from "../../../rich-text-renderers/sample"
@@ -21,16 +21,17 @@ import { Button } from "../../../global-styles/GlobalStyles.css"
 import { BC1 } from "../../../global-styles/typography.css"
 
 const EventsModule = ({ data }) => {
-  console.log(data)
   return (
     <LandingPageModuleContainer>
-      <EventSectionWrapper column style={{marginBottom: "3.25rem"}}>
+      <EventSectionWrapper column style={{ marginBottom: "3.25rem" }}>
         <EventSectionWrapper style={{ justifyContent: "space-between" }}>
           <TimeAndButtonWrapper>
             <Time style={{ margin: "0 0 3rem 0" }}>{data[0].eventDate}</Time>
-            {data[0].bookNowButtonLink && <Button marginBottom="lg" style={{ width: "80%" }}>
-              BOOK NOW
-            </Button>}
+            {data[0].bookNowButtonLink && (
+              <Button marginBottom="lg" style={{ width: "80%" }}>
+                BOOK NOW
+              </Button>
+            )}
           </TimeAndButtonWrapper>
 
           <HeadingAndIntroWrapper>
@@ -48,13 +49,15 @@ const EventsModule = ({ data }) => {
       <SectionWrapper>
         <TextContainer>
           <Time style={{ margin: "0 0 3rem 0" }}>{data[1].eventDate}</Time>
-          <Button marginBottom="lg" style={{ width: "60%" }}>
-            BOOK NOW
-          </Button>
+          {data[1].bookNowButtonLink && (
+            <Button marginBottom="lg" style={{ width: "80%" }}>
+              BOOK NOW
+            </Button>
+          )}
           <BreakLine none />
           <Heading1 marginBottom="md">{data[1].eventName}</Heading1>
           <Renderer node={data[1].eventDescription} />
-          <Link to={"/events/" + data[1].eventName.toLowerCase().replace(" ", "-")}>
+          <Link to={"/events/" + data[1].slug}>
             <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
           </Link>
         </TextContainer>

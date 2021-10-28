@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 export const LogoAnimation = keyframes`
   0% {
@@ -185,7 +185,7 @@ export const HeroContainer = styled.div`
     // margin-top: 2.5rem;
   }
 `
-export const HeroImage = styled(GatsbyImage)`
+export const HeroImage = styled(StaticImage)`
   position: absolute;
   height: 100vh;
   @media(max-width: 450px){

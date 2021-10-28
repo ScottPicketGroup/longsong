@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useRef, useState, useEffect } from "react"
 
 import useGetDaysOfMonth from "../../../../hooks/DateInformation"
 
@@ -6,8 +6,8 @@ import CalanderView from "../CalenderViews/CalanderView"
 import EventsListView from "../CalenderViews/EventsListView"
 
 import { DaysWrapper } from "../Calender.css"
-import useGetElementSize from "../../../../hooks/ItemSizing"
 import useScrollPosition from "../../../../hooks/ScrollPosition"
+import useActivePage from "../../../../hooks/ActivePage"
 const Days = ({ daysView, currentMonth, nextMonth, events }) => {
   const { daysToDisplay, day, date, todaysDate, month } = useGetDaysOfMonth(
     currentMonth,
@@ -15,11 +15,23 @@ const Days = ({ daysView, currentMonth, nextMonth, events }) => {
     events
   )
   const daysWrapperRef = useRef(null)
-  const { elementWidth } = useGetElementSize(daysWrapperRef)
+  const { activePage } = useActivePage()
+  const [elementWidth, setElementWidth] = useState(0)
+
+  useEffect(() => {
+    if (daysWrapperRef.current)
+      setElementWidth(daysWrapperRef.current.clientWidth)
+  }, [activePage, daysWrapperRef])
+
   const [openModel, setOpenModel] = useState(null)
-  const scrollPosition = useScrollPosition();
+  const scrollPosition = useScrollPosition()
+
   return (
-    <DaysWrapper cols={daysView ? "true" : "false"} ref={daysWrapperRef} scrollPosition={scrollPosition}>
+    <DaysWrapper
+      cols={daysView ? "true" : "false"}
+      ref={daysWrapperRef}
+      scrollPosition={scrollPosition}
+    >
       {daysToDisplay &&
         daysToDisplay.map((item, i) =>
           daysView && date.getDate() < i + 2 ? (
