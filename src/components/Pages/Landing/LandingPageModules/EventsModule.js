@@ -53,8 +53,8 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
 
   return (
     <LandingPageModuleContainer>
-      <EventSectionWrapper column style={{ marginBottom: "3.25rem" }}>
-        <EventSectionWrapper style={{ justifyContent: "space-between" }}>
+      <EventSectionWrapper style={{ marginBottom: "3.25rem" }}>
+       
           <TimeAndButtonWrapper>
             <Time style={{ margin: "0 0 3rem 0" }}>{eventDate}</Time>
          
@@ -67,7 +67,7 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
               <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
             </Link>
           </HeadingAndIntroWrapper>
-        </EventSectionWrapper>
+       
         <ImageWrapper style={{ width: "100%" }} horizontal>
           <Slider imageData={eventMedia[0]} />
         </ImageWrapper>
