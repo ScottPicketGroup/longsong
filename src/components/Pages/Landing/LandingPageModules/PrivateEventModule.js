@@ -22,7 +22,26 @@ const PrivateEventModule = ({ data }) => {
 
   return (
     <LandingPageModuleContainer>
-      I am a private event
+      <ImageWrapper>
+        {/* <Slider imageData={data.gallery}></Slider> */}
+        {/* <StaticImage
+          className="fullscreen-button"
+          src="../../../../images/EventTemplate/fullscreenbutton.png"
+          alt="fullscreen-button"
+        /> */}
+      </ImageWrapper>
+      <EventContentContainer>
+        <TextContainer>
+          <BreakLine none />
+          <Heading1 marginBottom="md" style={{ marginTop: "0px" }}>
+            {data.title}
+          </Heading1>
+          <Renderer node={data.intro} />
+          {/* <Link to="/"> */}
+            <Button marginTop="md"  onClick={() => handleOpenMenuClick(3)}>LEARN MORE</Button>
+          {/* </Link> */}
+        </TextContainer>
+      </EventContentContainer>
     </LandingPageModuleContainer>
   )
 }
