@@ -20,7 +20,7 @@ const GroupBookings = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query PrivateEvent {
       contentfulLongsongPageContent(
-        contentful_id: { eq: "7aRmLZ6sUc9SbpIPPRRj7A" }
+        contentful_id: { eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e" }
       ) {
         privateEventsHeroImage {
           title
