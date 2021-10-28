@@ -4,8 +4,8 @@ import LongsongVideo from "./LongsongVideo/LongsongVideo"
 import HeroText from "./HeroText"
 import { StaticImage } from "gatsby-plugin-image"
 
-const HeroBackground = ({ heroTextOverImage }) => {
-  console.log(heroTextOverImage)
+const HeroBackground = ({ textOverHeroImage }) => {
+  console.log(textOverHeroImage)
   return (
     <>
       <StaticImage
@@ -18,7 +18,7 @@ const HeroBackground = ({ heroTextOverImage }) => {
         <AnimationImgWrapper>
           <LongsongVideo />
         </AnimationImgWrapper>
-        <HeroText text={heroTextOverImage} />
+        <HeroText text={textOverHeroImage} />
       </HeroContainer>
     </>
   )
