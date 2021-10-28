@@ -60,7 +60,7 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
          
           </TimeAndButtonWrapper>
           <BreakLine first
-          style={{width: `85%`}}
+          style={{width: `86%`}}
           />
           <HeadingAndIntroWrapper>
             <Heading1 marginBottom="md">{eventName}</Heading1>
