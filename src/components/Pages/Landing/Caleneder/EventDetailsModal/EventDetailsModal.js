@@ -10,10 +10,12 @@ import {
 import { Heading3, Number1, Heading2 } from "../../../../global-styles/typography.css"
 import { DateDisplayContainer } from "../Calender.css"
 import { Link } from 'gatsby'
+import useActivePage from '../../../../hooks/ActivePage'
 
 
-const EventDetailsModal = ({ open, setOpenModel, height, width, i, setOpen, day, dayOfWeek, todaysDate, item, month }) => {
+const EventDetailsModal = ({ eventData, open, setOpenModel, height, width, i, setOpen, day, dayOfWeek, todaysDate, item, month }) => {
 const [eventDetails, setEventDetails] = React.useState({})
+const {setMenuOpen} = useActivePage()
 
 useEffect(() => {
   item.event && setEventDetails(item.event.node)
@@ -87,7 +89,7 @@ useEffect(() => {
         </EventContents>
         <EventFooterWrapper>
           {
-            eventDetails.eventName &&   <Link to={`events/${eventDetails.slug}`}>VIEW DETAILS</Link>
+            eventDetails.eventName &&   <Link onClick={()=>setMenuOpen(false)} to={`events/${eventDetails.slug}`}>VIEW DETAILS</Link>
           }
       
         
