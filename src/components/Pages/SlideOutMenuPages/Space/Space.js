@@ -27,6 +27,34 @@ const Space = ({ activePage }) => {
         featuredPerformerDescription {
           raw
         }
+        query MyQuery {
+          contentfulLongsongPageContent(id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}) {
+            theStallsTitle
+            theStallsMedia {
+              gatsbyImageData
+              title
+            }
+            theStallsDescription {
+              raw
+            }
+            theYardTitle
+            theYardMedia {
+              gatsbyImageData
+              title
+            }
+            theYardContent {
+              raw
+            }
+            featuredPerformerTitle
+            featuredPerformerDescription {
+              raw
+            }
+            featuredPerformerMedia {
+              gatsbyImageData
+              title
+            }
+          }
+        }
         
       }
     }
