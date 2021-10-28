@@ -12,19 +12,19 @@ import ContactUsForm from "./ContactUsForm"
 import Renderer from "../../../rich-text-renderers/sample"
 
 const ContactUs = ({ activePage }) => {
-  const data = useStaticQuery(graphql`
-    query ContactUs {
-      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
-        contactUsDescription {
-          raw
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query ContactUs {
+  //     contentfulLongsongPageContent(contentful_id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}) {
+  //       contactUsDescription {
+  //         raw
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <SlideOutPageWrapper activePage={activePage} page={5} contact>
-      <BreakLine first />
+      {/* <BreakLine first />
       <SectionWrapper>
         <TextContainer>
           <Heading1>Contact Us</Heading1>
@@ -40,7 +40,7 @@ const ContactUs = ({ activePage }) => {
         <TextContainer sixty>
           <ContactUsForm />
         </TextContainer>
-      </SectionWrapper>
+      </SectionWrapper> */}
     </SlideOutPageWrapper>
   )
 }

@@ -18,7 +18,7 @@ import Renderer from "../../../rich-text-renderers/sample"
 const GiftVouchers = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query GiftVouchers {
-      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
+      contentfulLongsongPageContent(contentful_id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}) {
         giftVouchersHeroImge {
           title
           gatsbyImageData
