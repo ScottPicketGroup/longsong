@@ -138,6 +138,7 @@ overflow: hidden;
   font-size: 150%;
 }
 :valid {
+  color: white;
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
