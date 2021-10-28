@@ -19,7 +19,7 @@ const [open, setOpen] = React.useState(menuOpen)
 // }, [open])
 
   const handleFooterLink = (activePage) => {
- 
+
   }
 
   return (
@@ -39,7 +39,10 @@ const [open, setOpen] = React.useState(menuOpen)
         >Food</a></FooterLink>
       <FooterLink
         marginBottom="sm"
-        onClick={() => handleFooterLink(activePage)}
+        onClick={() => {
+          setActivePage(3)
+          setMenuOpen(true)
+        }}
       >
         Private Events
       </FooterLink>

@@ -255,7 +255,14 @@ const EventsListView = ({
                 <OnlyMobileWrapper>
                   <EventHeading2>
                     {e.node.isTheVenueOpenToThePublic === true ? (
-                      <Link to="/">VIEW DETAILS</Link>
+                      <Link
+                        onClick={() => setMenuOpen(false)}
+                        to={`events/${e.node.eventName
+                          .toLowerCase()
+                          .replace(" ", "-")}`}
+                      >
+                        VIEW DETAILS
+                      </Link>
                     ) : (
                       "CLOSED"
                     )}

@@ -107,6 +107,10 @@ export const DayContainer = styled.div`
         (props.month === props.currentMonth + props.month &&
           props.i === props.date + 5)
       ? ".5px solid #314638"
+      : props.dayOfWeek == "Sunday" ||
+        props.dayOfWeek == "Tuesday" ||
+        (props.dayOfWeek == "Monday" && props.i > 27)
+      ? "none"
       : ".5px solid white"};
 
   border-bottom: ${props =>

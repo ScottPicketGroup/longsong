@@ -39,7 +39,7 @@ useEffect(() => {
           <Heading3
             calander
             dayOfWeek={day} day={day} date={todaysDate} i={i} key={i + 1}>
-            {item.date === todaysDate + 1 ? 'Tomorrow' : item.day}
+            {item.date === todaysDate + 1 ? 'TOMORROW' : item.day.toUpperCase()}
           </Heading3>
           <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i} key={i + 2}>
             {item.date}

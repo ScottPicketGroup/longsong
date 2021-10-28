@@ -59,7 +59,9 @@ const MenuSlideOutContainer = ({
           <WhatsOnCalendarContainer marginBottom="xl" marginTop="lg" activePage={activePage} page={6}>
             <Calender />
           </WhatsOnCalendarContainer>
-          <Footer />
+          <Footer setMenuOpen={setMenuOpen}
+                setActivePage={setActivePage}
+                activePage={activePage} />
         </PageWrapper>
       </PageContainer>
     </MenuSlideOutWrapper>
