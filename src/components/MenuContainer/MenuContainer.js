@@ -68,6 +68,7 @@ const MenuContainer = ({
       </MainWrapper>
       <EventsWrapper>
         <BC2
+        style={{cursor: `pointer`}}
           onClick={() => {
             setActivePage(3)
             setMenuOpen(true)

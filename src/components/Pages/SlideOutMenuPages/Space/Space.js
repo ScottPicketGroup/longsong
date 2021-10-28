@@ -52,7 +52,7 @@ const Space = ({ activePage }) => {
 
   return (
     <SlideOutPageWrapper activePage={activePage} page={2}>
-       <StallsAndYard data={newData} />
+       {/* <StallsAndYard data={newData} /> */}
     </SlideOutPageWrapper>
   )
 }
