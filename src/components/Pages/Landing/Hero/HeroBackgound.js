@@ -5,6 +5,7 @@ import HeroText from "./HeroText"
 import { StaticImage } from "gatsby-plugin-image"
 
 const HeroBackground = ({ heroTextOverImage }) => {
+  console.log(heroTextOverImage)
   return (
     <>
       <StaticImage

@@ -42,8 +42,8 @@ const PrivateEventModule = () => {
   
   `)
 
-const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[0].node
-console.log(data)
+const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[1].node
+
 
   return (
     <LandingPageModuleContainer>
