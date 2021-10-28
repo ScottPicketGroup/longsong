@@ -94,53 +94,7 @@ const GroupBookings = ({ activePage }) => {
 
   return (
     <SlideOutPageWrapper activePage={activePage} page={3}>
-      <SectionWrapper column>
-        <ImageWrapper full>
-          <Slider hero
-            imageData={
-              data.contentfulLongsongPageContent.privateEventsHeroImage
-            }
-          />
-        </ImageWrapper>
-        <TextContainer right full marginBottom="lg" first>
-          <BreakLine none />
-          <Heading1 marginBottom="md">
-            {data.contentfulLongsongPageContent.groupBookingTitle}
-          </Heading1>
-         
-          <Renderer node={data.contentfulLongsongPageContent.groupBookingsDescription} />
-         
-          <Button marginBottom="" style={{ marginRight: `2rem` }}>
-            <a
-              href={data.contentfulLongsongPageContent.sampleMenuOne.file.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              FUNCTIONS PACKAGE 
-            </a>
-          </Button>
-          <Button>
-            <a
-              href={data.contentfulLongsongPageContent.sampleMenuTwo.file.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              WEDDING PACKAGE
-            </a>
-          </Button>
-        </TextContainer>
-      </SectionWrapper>
-      <StallsAndYard data={newData} />
-      <FirstModule />
-      <BreakLine first />
-      <SectionWrapper>
-        <TextContainer>
-          <Heading1>Enquiry Form</Heading1>
-        </TextContainer>
-        <TextContainer sixty>
-          <ContactUsForm />
-        </TextContainer>
-      </SectionWrapper>
+     
     </SlideOutPageWrapper>
   )
 }
