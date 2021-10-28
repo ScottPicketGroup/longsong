@@ -23,26 +23,29 @@ const PrivateEventModule = () => {
 
   const data = useStaticQuery(graphql`
   query landingPrivateEvent {
-    allContentfulLongsongLandingPagePrivateDiningSection {
+    allContentfulLongsongLandingPagePrivateDiningSection(
+      filter: {id: {eq: "4af70453-ae05-593d-9722-bdb85b745ace"}}
+    ) {
       edges {
         node {
           id
-              gallery {
-                gatsbyImageData
-                title
-              }
-              intro {
-                raw
-              }
-              title
+          gallery {
+            gatsbyImageData
+            title
+          }
+          intro {
+            raw
+          }
+          title
         }
       }
     }
   }
   
+  
   `)
 
-const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[1].node
+const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[0].node
 console.log(data)
 
   return (

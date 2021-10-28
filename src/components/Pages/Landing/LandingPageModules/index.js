@@ -11,7 +11,7 @@ const LandingEventsContainer = () => {
       
       <MenusModule />
       <EventsModule/>
-     {/*  <PrivateEventModule  />  */}
+      <PrivateEventModule  /> 
     </>
   )
 }
