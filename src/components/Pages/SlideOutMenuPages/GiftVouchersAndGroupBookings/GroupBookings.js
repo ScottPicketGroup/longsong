@@ -105,7 +105,7 @@ const GroupBookings = ({ activePage }) => {
         <TextContainer right full marginBottom="lg" first>
           <BreakLine none />
           <Heading1 marginBottom="md">
-            {data.contentfulLongsongPageContent.groupBookingTitle}
+          Enquiry Form
           </Heading1>
          
           <Renderer node={data.contentfulLongsongPageContent.groupBookingsDescription} />
@@ -135,7 +135,7 @@ const GroupBookings = ({ activePage }) => {
       <BreakLine first />
       <SectionWrapper>
         <TextContainer>
-          <Heading1>Contact Form</Heading1>
+          <Heading1>Enquiry Form</Heading1>
         </TextContainer>
         <TextContainer sixty>
           <ContactUsForm />
