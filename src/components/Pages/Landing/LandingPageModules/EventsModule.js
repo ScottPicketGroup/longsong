@@ -70,7 +70,7 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
             </Link>
           </HeadingAndIntroWrapper>
           </TextContainer>
-        <ImageWrapper style={{ width: "50%", height: `100%`, aspectRatio:"9/16" }}  >
+        <ImageWrapper style={{ width: "50%",  aspectRatio:"9/16" }}  >
           <Slider 
           style={{ width: "50%", minHeight: `100%`, aspectRatio:"9/16" }}
           imageData={eventMedia[0]} aspcetRatio="9/16"/>
