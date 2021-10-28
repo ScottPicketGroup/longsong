@@ -7,19 +7,21 @@ import { Button } from '../global-styles/GlobalStyles.css'
 
 const Renderer = ({ node }) => {
 
-
+    const Bold = ({ children }) => <span 
+                                    style={{fontFamily: `bold`}}
+                                    >{children}</span>
 
     const website_url = 'https://'
 
     const options = {
-        // renderMark: {
-        //     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
-        //   },
+        renderMark: {
+            [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+          },
         renderNode: {
             [BLOCKS.HEADING_1]: (node, children) => <Heading1>{children}</Heading1>,
             [BLOCKS.HEADING_2]: (node, children) => <Heading2>{children}</Heading2>,
             [BLOCKS.HEADING_3]: (node, children) => <Heading3>{children}</Heading3>,
-            [BLOCKS.PARAGRAPH]: (node, children) => <BC1 marginBottom="sm">{children}</BC1>,
+            [BLOCKS.PARAGRAPH]: (node, children) => <BC1 marginBottom="sm" >{children}</BC1>,
             [INLINES.HYPERLINK]: ({ data }, children) => (
                 <Button marginTop="md">
                 <a

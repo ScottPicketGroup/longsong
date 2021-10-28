@@ -344,6 +344,7 @@ export const Month2 = styled.h3`
 `
 
 export const BC1 = styled.p`
+font-family: ${props => props.bold ? 'bold' : ''};
   font-size: 1.44rem !important;
   line-height: 1.13;
   letter-spacing: 10;

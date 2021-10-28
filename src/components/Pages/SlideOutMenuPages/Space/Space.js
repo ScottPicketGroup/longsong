@@ -5,34 +5,34 @@ import { SlideOutPageWrapper } from "./Space.css"
 
 const Space = ({ activePage }) => {
   const data = useStaticQuery(graphql`
-    query StallsAndYard {
-      contentfulLongsongPageContent(contentful_id: {eq: "7aRmLZ6sUc9SbpIPPRRj7A"}) {
-        theStallsTitle
-        theStallsMedia {
-          gatsbyImageData
-          title
-        }
-        theStallsDescription {
-          raw
-        }
-        theYardTitle
-        theYardMedia {
-          gatsbyImageData
-          title
-        }
-        theYardContent {
-          raw
-        }
-        featuredPerformerTitle
-        featuredPerformerDescription {
-          raw
-        }
-        featuredPerformerMedia {
-          gatsbyImageData
-          title
-        }
-      }
+  query stallsAndYard {
+    contentfulLongsongPageContent(id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}) {
+  theStallsTitle
+          theStallsMedia {
+            gatsbyImageData
+            title
+          }
+          theStallsDescription {
+            raw
+          }
+          theYardTitle
+          theYardMedia {
+            gatsbyImageData
+            title
+          }
+          theYardContent {
+            raw
+          }
+          featuredPerformerTitle
+          featuredPerformerDescription {
+            raw
+          }
+          featuredPerformerMedia {
+            gatsbyImageData
+            title
+          }
     }
+  }
   `)
 
   const newData = {
@@ -55,7 +55,7 @@ const Space = ({ activePage }) => {
 
   return (
     <SlideOutPageWrapper activePage={activePage} page={2}>
-      <StallsAndYard data={newData} />
+       <StallsAndYard data={newData} />
     </SlideOutPageWrapper>
   )
 }
