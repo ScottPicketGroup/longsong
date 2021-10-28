@@ -6,15 +6,39 @@ import {
 } from "../../../global-styles/containers.css"
 import { AnimationIntroContainer } from "./Hero.css"
 import Renderer from "../../../rich-text-renderers/sample"
-
-const HeroText = ({ text }) => {
+import { graphql, useStaticQuery } from "gatsby"
+const HeroText = () => {
+  const data = useStaticQuery(graphql`
+    query heroText {
+      allContentfulLongsongLandingPageContent {
+        edges {
+          node {
+            textOverHeroImage {
+              raw
+            }
+          }
+        }
+      }
+    }
+  `)
+  console.log(data)
   return (
     <AnimationIntroContainer>
       <DesktopWrapper>
-        <Renderer node={text} />
+        <Renderer
+          node={
+            data.allContentfulLongsongLandingPageContent.edges[0].node
+              .textOverHeroImage
+          }
+        />
       </DesktopWrapper>
       <MobileWrapper>
-        <Renderer node={text} />
+        <Renderer
+          node={
+            data.allContentfulLongsongLandingPageContent.edges[0].node
+              .textOverHeroImage
+          }
+        />
       </MobileWrapper>
     </AnimationIntroContainer>
   )
