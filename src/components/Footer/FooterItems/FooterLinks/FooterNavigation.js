@@ -13,17 +13,13 @@ console.log(menuOpen)
 const [open, setOpen] = React.useState(menuOpen)
 
 
-useEffect(() => {
+// useEffect(() => {
 
-alert(open)
-}, [open])
+// alert(open)
+// }, [open])
 
-  const handleFooterLink = () => {
-    setOpen(!menuOpen)
-  setActivePage(5)
-  console.log(activePage)
-    // setActivePage(3)
-    //       setMenuOpen(true)
+  const handleFooterLink = (activePage) => {
+ console.log(activePage)
   }
 
   return (
@@ -43,7 +39,7 @@ alert(open)
         >Food</a></FooterLink>
       <FooterLink
         marginBottom="sm"
-        onClick={handleFooterLink}
+        onClick={() => handleFooterLink(activePage)}
       >
         Private Events
       </FooterLink>
