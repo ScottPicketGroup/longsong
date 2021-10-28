@@ -50,6 +50,7 @@ const MenuSlideOutContainer = ({
             </PageContentContainer>
             <RightMenuContainer activePage={activePage}>
               <SlideOutMenuNavigation
+              setMenuOpen={setMenuOpen}
                 setActivePage={setActivePage}
                 activePage={activePage}
               />

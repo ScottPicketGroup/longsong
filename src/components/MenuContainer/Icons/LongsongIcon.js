@@ -1,10 +1,14 @@
+import { Link } from "gatsby";
 import React from "react"
 
-const LongsongIcon = ({setActivePage}) => {
+const LongsongIcon = ({setActivePage, setMenuOpen}) => {
   const handleClick = () => {
-    if(setActivePage) setActivePage(1);
+    if(setActivePage) setActivePage(1)
+    setMenuOpen(false)
+    ;
   }
   return (
+    <Link to='/'>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="27.796"
@@ -49,6 +53,7 @@ const LongsongIcon = ({setActivePage}) => {
         </g>
       </g>
     </svg>
+    </Link>
   )
 }
 
