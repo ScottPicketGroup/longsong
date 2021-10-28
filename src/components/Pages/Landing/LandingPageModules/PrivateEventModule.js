@@ -10,7 +10,6 @@ import {
   TextContainer,
   LandingPageModuleContainer,
   ImageWrapper,
-  LearnMoreButton,
 } from "./index.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import { Button } from "../../../global-styles/GlobalStyles.css"
@@ -43,7 +42,7 @@ const PrivateEventModule = () => {
   `)
 
 const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[1].node
-
+console.log(data)
 
   return (
     <LandingPageModuleContainer>
