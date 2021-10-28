@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import { graphql, useStaticQuery } from "gatsby"
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import {
@@ -20,30 +20,54 @@ import { Time } from "../../../../templates/EventTemplate/index.css"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { BC1 } from "../../../global-styles/typography.css"
 
-const EventsModule = ({ data }) => {
+const EventsModule = () => {
+
+  const data = useStaticQuery(graphql`
+  query landingEventsQuery {
+    allContentfulLandingPageEventsModule {
+      edges {
+        node {
+          landingPageEventsList {
+            id
+            eventDate(formatString: "DD.MM")
+            eventName
+            eventDescription {
+              raw
+            }
+            slug
+            eventMedia {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+  `)
+
+const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allContentfulLandingPageEventsModule.edges[0].node.landingPageEventsList[0]
+console.log(data.allContentfulLandingPageEventsModule.edges[0].node.landingPageEventsList[0])
   return (
     <LandingPageModuleContainer>
       <EventSectionWrapper column style={{ marginBottom: "3.25rem" }}>
         <EventSectionWrapper style={{ justifyContent: "space-between" }}>
           <TimeAndButtonWrapper>
-            <Time style={{ margin: "0 0 3rem 0" }}>{data[0].eventDate}</Time>
-            {data[0].bookNowButtonLink && (
-              <Button marginBottom="lg" style={{ width: "80%" }}>
-                BOOK NOW
-              </Button>
-            )}
+            <Time style={{ margin: "0 0 3rem 0" }}>{eventDate}</Time>
+         
           </TimeAndButtonWrapper>
 
           <HeadingAndIntroWrapper>
-            <Heading1 marginBottom="md">{data[0].eventName}</Heading1>
-            <Renderer node={data[0].eventDescription} />
-            <Link to={"/events/" + data[0].slug}>
+            <Heading1 marginBottom="md">{eventName}</Heading1>
+            <Renderer node={eventDescription} />
+            <Link to={"/events/" + slug}>
               <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
             </Link>
           </HeadingAndIntroWrapper>
         </EventSectionWrapper>
         <ImageWrapper style={{ width: "100%" }} horizontal>
-          <Slider imageData={data[0].eventMedia[0]} />
+          <Slider imageData={eventMedia[0]} />
         </ImageWrapper>
       </EventSectionWrapper>
       

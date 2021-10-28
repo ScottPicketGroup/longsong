@@ -4,14 +4,14 @@ import PrivateEventModule from "./PrivateEventModule"
 import MenusModule from "./MenusModule"
 import EventsModule from "./EventsModule"
 
-const LandingEventsContainer = ({ data }) => {
-  console.log(data)
+const LandingEventsContainer = () => {
+ 
   return (
     <>
       
-      {/* <MenusModule data={data[0]} /> */}
-      {/* <EventsModule data={data[1].landingPageEventsList} />
-      <PrivateEventModule data={data[2]} /> */}
+      {/* <MenusModule /> */}
+      <EventsModule/>
+      <PrivateEventModule  /> 
     </>
   )
 }

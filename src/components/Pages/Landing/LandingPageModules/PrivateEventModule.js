@@ -1,5 +1,5 @@
 import React from "react"
-
+import { graphql, useStaticQuery } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import Slider from "../../../ImageSlider"
@@ -16,14 +16,38 @@ import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
 import useActivePage from "../../../hooks/ActivePage"
 
-const PrivateEventModule = ({ data }) => {
+const PrivateEventModule = () => {
 
   const { handleOpenMenuClick } = useActivePage();
+
+  const data = useStaticQuery(graphql`
+  query landingPrivateEvent {
+    allContentfulLongsongLandingPagePrivateDiningSection {
+      edges {
+        node {
+          id
+              gallery {
+                gatsbyImageData
+                title
+              }
+              intro {
+                raw
+              }
+              title
+        }
+      }
+    }
+  }
+  
+  `)
+
+const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[0].node
+
 console.log(data)
   return (
     <LandingPageModuleContainer>
       <ImageWrapper>
-        <Slider imageData={data.gallery}></Slider>
+        <Slider imageData={gallery}></Slider>
         {/* <StaticImage
           className="fullscreen-button"
           src="../../../../images/EventTemplate/fullscreenbutton.png"
@@ -34,9 +58,9 @@ console.log(data)
         <TextContainer>
           <BreakLine none />
           <Heading1 marginBottom="md" style={{ marginTop: "0px" }}>
-            {data.title}
+            {title}
           </Heading1>
-          <Renderer node={data.intro} />
+          <Renderer node={intro} />
           {/* <Link to="/"> */}
             { <Button marginTop="md"  onClick={() => handleOpenMenuClick(3)}>LEARN MORE</Button>}
           {/* </Link> */}
