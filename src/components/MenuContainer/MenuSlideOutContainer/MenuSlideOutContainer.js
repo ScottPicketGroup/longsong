@@ -44,7 +44,7 @@ const MenuSlideOutContainer = ({
               <SlideOutLanding activePage={activePage} />
               <Space activePage={activePage} />
               <WhatsOn activePage={activePage} />
-              {/* <GroupBookings activePage={activePage} /> */}
+              <GroupBookings activePage={activePage} />
               <GiftVouchers activePage={activePage} />
              <ContactUs activePage={activePage} /> 
             </PageContentContainer>
