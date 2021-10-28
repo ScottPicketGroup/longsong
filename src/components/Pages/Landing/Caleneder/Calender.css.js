@@ -159,6 +159,11 @@ export const EventDayContainer = styled(DayContainer)`
   border: 1px solid white;
 `
 
+export const EmptyDayContainer = styled(DayContainer)`
+  border: none;
+  height: 0;
+`
+
 export const DateDisplayContainer = styled.div`
   animation: ${fadeIn} 500ms ease-in-out;
   position: relative;
