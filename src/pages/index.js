@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout fd="column" heroImage={heroImage}>
       <Seo title="Home" />
-      <HeroBackground
+      <HeroBackground 
         textOverHeroImage={textOverHeroImage}
       />
       <LandingPageModules data={landingPageSections} />

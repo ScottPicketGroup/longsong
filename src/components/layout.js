@@ -39,7 +39,7 @@ const Layout = ({ children, fd, heroImage }) => {
           <PageWrapper>
             <LongrainLink heroImage/>
             {heroImage ? (
-              <SectionRow marginBottom="xl">{children}</SectionRow>
+              <SectionRow marginBottom="xl" >{children}</SectionRow>
             ) : (
               <SectionContainer marginBottom="xl">{children}</SectionContainer>
             )}

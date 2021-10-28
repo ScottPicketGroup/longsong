@@ -12,7 +12,7 @@ const HeroBackground = () => {
         src="../../../../images/HeroBackgroundImage.jpg"
         placeholder="blurred"
         alt="Hero Image"
-        style={{ position: "absolute", height: "100vh"}}
+        style={{ position: "absolute", height: "100vh", marginLeft: "-1rem"}}
       />
       <HeroContainer>
         <AnimationImgWrapper>

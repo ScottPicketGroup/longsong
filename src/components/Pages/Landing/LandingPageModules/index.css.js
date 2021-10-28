@@ -52,7 +52,7 @@ export const SectionRow = styled.div`
   overflow: hidden;
   @media (max-width: 450px) {
     width: 100%;
-    padding: 0 1rem;
+    padding: ${props => props.noPadding ? '0' : '0 1rem'};
     margin-bottom: 3rem;
     background: none;
     flex-direction: column;
