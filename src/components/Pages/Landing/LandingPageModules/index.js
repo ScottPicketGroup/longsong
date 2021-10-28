@@ -9,7 +9,7 @@ const LandingEventsContainer = ({ data }) => {
   return (
     <>
       
-      <MenusModule data={data[0]} />
+      {/* <MenusModule data={data[0]} /> */}
       {/* <EventsModule data={data[1].landingPageEventsList} />
       <PrivateEventModule data={data[2]} /> */}
     </>
