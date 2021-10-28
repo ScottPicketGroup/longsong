@@ -29,12 +29,12 @@ const Layout = ({ children, fd, heroImage }) => {
         <> </>
       ) : (
         <PageContainer fd={fd}>
-          {/* <MenuContainer
+          <MenuContainer
             menuOpen={menuOpen}
             setMenuOpen={setMenuOpen}
             activePage={activePage}
             setActivePage={setActivePage}
-          /> */}
+          />
 
           <PageWrapper>
             <LongrainLink heroImage/>
