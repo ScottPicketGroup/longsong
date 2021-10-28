@@ -27,7 +27,7 @@ const HeroText = () => {
       <DesktopWrapper>
         <Renderer
           node={
-            data.allContentfulLongsongLandingPageContent.edges[1].node
+            data.allContentfulLongsongLandingPageContent.edges[0].node
               .textOverHeroImage
           }
         />
@@ -35,7 +35,7 @@ const HeroText = () => {
       <MobileWrapper>
         <Renderer
           node={
-            data.allContentfulLongsongLandingPageContent.edges[1].node
+            data.allContentfulLongsongLandingPageContent.edges[0].node
               .textOverHeroImage
           }
         />

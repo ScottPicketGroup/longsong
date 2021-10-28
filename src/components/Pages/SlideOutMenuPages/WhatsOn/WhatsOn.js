@@ -20,7 +20,7 @@ const WhatsOn = ({ activePage }) => {
     }
   `)
 
-  const newData = data.allContentfulLongsongPageContent.nodes[0]
+  const newData = data.allContentfulLongsongPageContent.nodes[1]
 
   return (
     <SlideOutPageWrapper activePage={activePage} page={6} contact>
