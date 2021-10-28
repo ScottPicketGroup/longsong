@@ -13,7 +13,7 @@ const CheckBox = () => {
   )
 }
 
-console.log('beep')
+
 
 const Checkbox = ({ className, checked, ...props }) => (
   <CheckboxContainer className={className}>

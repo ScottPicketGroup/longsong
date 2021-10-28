@@ -45,9 +45,9 @@ const EventsListView = ({
       setElementWidth(dayContainerRef.current.clientWidth)
   }, [dayContainerRef, daysView])
 
-  events.map(e => {
-    if (e.node.eventDate.slice(0, 2) === componentDate) console.log(e)
-  })
+  // events.map(e => {
+  //   if (e.node.eventDate.slice(0, 2) === componentDate) console.log(e)
+  // })
 
   return (
     <>

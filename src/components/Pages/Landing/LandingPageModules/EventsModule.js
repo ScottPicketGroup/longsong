@@ -47,8 +47,10 @@ const EventsModule = () => {
   
   `)
 
+  
+
 const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allContentfulLandingPageEventsModule.edges[0].node.landingPageEventsList[0]
-console.log(data.allContentfulLandingPageEventsModule.edges[0].node.landingPageEventsList[0])
+
   return (
     <LandingPageModuleContainer>
       <EventSectionWrapper column style={{ marginBottom: "3.25rem" }}>

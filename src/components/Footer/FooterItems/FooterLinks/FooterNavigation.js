@@ -9,7 +9,7 @@ const FooterNavigation = ({
   foodMenu,
   drinksMenu
 }) => {
-console.log(menuOpen)
+
 const [open, setOpen] = React.useState(menuOpen)
 
 
@@ -19,7 +19,7 @@ const [open, setOpen] = React.useState(menuOpen)
 // }, [open])
 
   const handleFooterLink = (activePage) => {
- console.log(activePage)
+ 
   }
 
   return (
