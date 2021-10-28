@@ -9,6 +9,7 @@ import useScrollPosition from "../hooks/ScrollPosition"
 import Month from "../Pages/Landing/Caleneder/Navigation/Month"
 import useChangeMonth from "../hooks/ChangeMonth"
 import useGetElementSize from "../hooks/ItemSizing"
+import ScrollToPlugin from "gsap/ScrollToPlugin"
 
 const MenuContainer = ({
   menuOpen,
