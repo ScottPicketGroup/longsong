@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import {
   PageContainer,
   PageWrapper,
@@ -17,18 +17,22 @@ import {
   PageContentContainer,
   RightMenuContainer,
   WhatsOnCalendarContainer,
+  ScrollToTopMenu,
 } from "./MenuSlideOutContianer.css"
 import GroupBookings from "../../Pages/SlideOutMenuPages/GiftVouchersAndGroupBookings/GroupBookings"
 import ContactUs from "../../Pages/SlideOutMenuPages/ContactUs/ContactUs"
 import Footer from "../../Footer/Footer"
 import WhatsOn from "../../Pages/SlideOutMenuPages/WhatsOn/WhatsOn"
 import Calender from "../../Pages/Landing/Caleneder/Calender"
+import LandingDownArrow from "../../Pages/Landing/Hero/Intro/LandingDownArrow"
 const MenuSlideOutContainer = ({
   menuOpen,
   setMenuOpen,
   activePage,
   setActivePage,
 }) => {
+  const ref = useRef(null)
+
   return (
     <MenuSlideOutWrapper menuOpen={menuOpen}>
       <PageContainer fd="row">
@@ -39,29 +43,42 @@ const MenuSlideOutContainer = ({
           activePage={activePage}
         />
         <PageWrapper>
-          <SectionContainer flex>
+          <SectionContainer ref={ref} flex>
             <PageContentContainer>
               <SlideOutLanding activePage={activePage} />
               <Space activePage={activePage} />
               <WhatsOn activePage={activePage} />
               <GroupBookings activePage={activePage} />
               <GiftVouchers activePage={activePage} />
-             <ContactUs activePage={activePage} /> 
+              <ContactUs activePage={activePage} />
             </PageContentContainer>
             <RightMenuContainer activePage={activePage}>
               <SlideOutMenuNavigation
-              setMenuOpen={setMenuOpen}
+                setMenuOpen={setMenuOpen}
                 setActivePage={setActivePage}
                 activePage={activePage}
               />
             </RightMenuContainer>
           </SectionContainer>
-          <WhatsOnCalendarContainer marginBottom="xl" marginTop="lg" activePage={activePage} page={6}>
+          <WhatsOnCalendarContainer
+            marginBottom="xl"
+            marginTop="lg"
+            activePage={activePage}
+            page={6}
+          >
             <Calender />
           </WhatsOnCalendarContainer>
-          <Footer setMenuOpen={setMenuOpen}
-                setActivePage={setActivePage}
-                activePage={activePage} />
+          <Footer
+            setMenuOpen={setMenuOpen}
+            setActivePage={setActivePage}
+            activePage={activePage}
+          />
+          <ScrollToTopMenu
+            onClick={() => ref.current.scrollIntoView({ behavior: "smooth" })}
+            menuOpen={menuOpen}
+          >
+            <LandingDownArrow />
+          </ScrollToTopMenu>
         </PageWrapper>
       </PageContainer>
     </MenuSlideOutWrapper>

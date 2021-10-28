@@ -146,3 +146,15 @@ export const WhatsOnCalendarContainer = styled.div`
     flex-direction: column;
   }
 `
+
+export const ScrollToTopMenu = styled.div`
+  display: ${props => props.menuOpen ? "block" : "none"};
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  transform: rotate(180deg);
+  @media(max-width: 451px){
+    right: 2rem;
+    bottom: 2rem;
+  }
+`
