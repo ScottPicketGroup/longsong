@@ -96,7 +96,7 @@ export const ImageWrapper = styled.div`
 export const EventContentContainer = styled.div`
   margin-top: 3rem;
   display: flex;
-  justify-content: end;
+  justify-content: ${props => props.start ? '' : 'end'};
   @media (max-width: 451px) {
   }
 `

@@ -17,59 +17,52 @@ import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
 import useActivePage from "../../../hooks/ActivePage"
 
-const PrivateEventModule = () => {
+const LandingImageGallery = () => {
 
   const { handleOpenMenuClick } = useActivePage();
 
   const data = useStaticQuery(graphql`
-  query landingPrivateEvent {
-    allContentfulLongsongLandingPagePrivateDiningSection(
-      filter: {id: {eq: "4af70453-ae05-593d-9722-bdb85b745ace"}}
+  query landingGallery {
+    allContentfulLongsongLandingPageGallery(
+      filter: {id: {eq: "6360b07b-e6f0-5f56-bdb0-a795901937cb"}}
     ) {
       edges {
         node {
           id
           gallery {
-            gatsbyImageData
             title
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
-          intro {
-            raw
-          }
-          title
         }
       }
     }
   }
   
   
+  
   `)
 
-const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[0].node
+const {gallery, intro, title } = data.allContentfulLongsongLandingPageGallery.edges[0].node
 console.log(data)
 
   return (
     <LandingPageModuleContainer>
-        <ImageWrapper horizontal >
-        <Slider imageData={gallery}></Slider>
-      </ImageWrapper>
-      <EventContentContainer style={{marginBottom: `3.25rem`}} >
+      <EventContentContainer style={{marginBottom: `3.25rem`}} start>
         <TextContainer>
           <BreakLine none />
           <Heading1 marginBottom="md" style={{ marginTop: "0px" }}>
-            {title}
+            {/* {title} */} Venue Gallery
           </Heading1>
-          <Renderer node={intro} />
-          {/* <Link to="/"> */}
-            { <LearnMoreButton marginTop="md"  
-            
-            onClick={() => handleOpenMenuClick(3)}>LEARN MORE</LearnMoreButton>}
-          {/* </Link> */}
+          
         </TextContainer>
       </EventContentContainer>
-    
+      <ImageWrapper>
+        <Slider imageData={gallery} aspectRatio="3/2"></Slider>
+      
+      </ImageWrapper>
+      
     </LandingPageModuleContainer>
   )
 }
 
-export default PrivateEventModule
+export default LandingImageGallery
