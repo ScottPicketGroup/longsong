@@ -128,7 +128,8 @@ export const Heading3 = styled.h3`
   font-size: 1rem;
   line-height: 1.2;
   color: ${props =>
-    props.month === props.currentMonth && props.day < props.date
+    props.eventList ? "white"
+      :  props.month === props.currentMonth && props.day < props.date
       ? "#6A6A6A"
       : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
       ? "#6A6A6A"
@@ -188,7 +189,8 @@ font-family: bold;
   letter-spacing: 3px;
   font-weight: 100;
   color: ${props =>
-    props.month === props.currentMonth && props.day < props.date
+    props.eventList ? "white"
+      : props.month === props.currentMonth && props.day < props.date
       ? "#6A6A6A"
       : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
       ? "#6A6A6A"

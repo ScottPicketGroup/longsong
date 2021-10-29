@@ -174,9 +174,9 @@ export const DateDisplayContainer = styled.div`
 
 export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
   background: ${props =>
-    props.month == props.currentMonth + props.month && props.i == props.date - 1
+    props.month == props.currentMonth && props.day == props.date
       ? "#457E5C"
-      : props.month == props.currentMonth + props.month && props.i == props.date
+      : props.month == props.currentMonth && props.day == props.date + 1
       ? "#314638"
       : props.dayOfWeek == "Sunday" ||
         props.dayOfWeek == "Tuesday" ||
@@ -302,9 +302,9 @@ export const EventsListDetailsWrapper = styled.div`
   display: flex;
   padding: 1rem;
   background: ${props =>
-    props.month == props.currentMonth + props.month && props.i == props.date - 1
+    props.month == props.currentMonth && props.day == props.date
       ? "#457E5C"
-      : props.month == props.currentMonth + props.month && props.i == props.date
+      : props.month == props.currentMonth && props.day == props.date + 1
       ? "#314638"
       : ""};
   @media (max-width: 450px) {
@@ -333,17 +333,16 @@ export const EventsListDetailsViewDetailsLink = styled.div`
   text-orientation: mixed;
   transform: rotate(180deg);
   padding: 1rem;
+  background: ${props =>
+    props.month == props.currentMonth &&
+    props.day == props.date
+      ? "#457E5C"
+      : props.month == props.currentMonth &&
+        props.day == props.date + 1
+      ? "#314638"
+      : ""};
 
   @media (max-width: 450px) {
-    background: ${props =>
-      props.month == props.currentMonth + props.month &&
-      props.i == props.date - 1
-        ? "#457E5C"
-        : props.month == props.currentMonth + props.month &&
-          props.i == props.date
-        ? "#314638"
-        : ""};
-
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -360,7 +359,8 @@ export const EventHeading2 = styled(Heading2)`
     font-size: 1.25rem;
     line-height: 1.2;
     color: ${props =>
-      props.month == props.currentMonth + props.month && props.day < props.date
+      props.eventList ? "white"
+        : props.month == props.currentMonth && props.day < props.date
         ? "#6A6A6A"
         : props.dayOfWeek == "Sunday" ||
           props.dayOfWeek == "Tuesday" ||

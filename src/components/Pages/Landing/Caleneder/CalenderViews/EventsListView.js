@@ -78,7 +78,7 @@ const EventsListView = ({
                 width={elementWidth / 7 - 10}
               >
                 <OnlyDesktopWrapper>
-                  <Heading3 dayOfWeek={day} day={day} date={todaysDate} i={i}>
+                  <Heading3 dayOfWeek={day} day={day} date={todaysDate} i={i} eventList={true}>
                     {asdf === todaysDate + 1
                       ? "TOMORROW"
                       : asdf === todaysDate
@@ -87,7 +87,7 @@ const EventsListView = ({
                       ? "CLOSED"
                       : item.day.toUpperCase()}
                   </Heading3>
-                  <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i}>
+                  <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i} eventList={true}>
                     {item.date}
                   </Number1>
                 </OnlyDesktopWrapper>
@@ -97,6 +97,7 @@ const EventsListView = ({
                     day={day}
                     date={todaysDate}
                     i={i}
+                    eventList={true}
                     style={{ paddingLeft: "16px" }}
                   >
                     {asdf === todaysDate + 1
@@ -105,9 +106,9 @@ const EventsListView = ({
                       ? "TODAY"
                       : item.day === "Sunday"
                       ? "CLOSED"
-                      : item.day}
+                      : item.day.toUpperCase()}
                   </EventHeading2>
-                  <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i}>
+                  <Number1 dayOfWeek={day} day={day} date={todaysDate} i={i} eventList={true}>
                     {item.date}
                   </Number1>
                 </MobileWrapper>
@@ -123,7 +124,7 @@ const EventsListView = ({
               >
                 <OnlyDesktopWrapper>
                   {item.day === "Sunday" ? (
-                    <EventBC3>Closed</EventBC3>
+                    <EventBC3>CLOSED</EventBC3>
                   ) : e.node.isTheVenueOpenToThePublic === false ? (
                     <EventBC3 style={{ paddingLeft: "2.5rem" }}>
                       LONGSING BAR IS CLOSD FOR PRIVATE EVENTS
@@ -172,7 +173,7 @@ const EventsListView = ({
                 </OnlyDesktopWrapper>
                 <OnlyMobileWrapper>
                   {item.day === "Sunday" ? (
-                    <EventHeading2>Closed</EventHeading2>
+                    <EventHeading2>CLOSED</EventHeading2>
                   ) : e.node.isTheVenueOpenToThePublic === false ? (
                     <EventHeading2>
                       LONGSING BAR IS CLOSD FOR PRIVATE EVENTS
@@ -242,9 +243,7 @@ const EventsListView = ({
                     // </Link>
                     <Link
                       onClick={() => setMenuOpen(false)}
-                      to={`events/${e.node.eventName
-                        .toLowerCase()
-                        .replace(" ", "-")}`}
+                      to={`events/${e.node.slug}`}
                     >
                       VIEW DETAILS
                     </Link>
@@ -257,9 +256,7 @@ const EventsListView = ({
                     {e.node.isTheVenueOpenToThePublic === true ? (
                       <Link
                         onClick={() => setMenuOpen(false)}
-                        to={`events/${e.node.eventName
-                          .toLowerCase()
-                          .replace(" ", "-")}`}
+                        to={`events/${e.node.slug}`}
                       >
                         VIEW DETAILS
                       </Link>

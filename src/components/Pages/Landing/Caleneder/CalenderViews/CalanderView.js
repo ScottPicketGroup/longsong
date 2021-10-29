@@ -68,7 +68,7 @@ const CalanderView = ({
           i={i}
           key={i + 1}
         >
-          {item.date == todaysDate + 1 ? "Tomorrow" : item.day}
+          {item.date == todaysDate ? "TODAY" :item.date == todaysDate + 1 ? "TOMORROW" : item.day.toUpperCase()}
         </Heading3>
         <Number1
           month={month}
