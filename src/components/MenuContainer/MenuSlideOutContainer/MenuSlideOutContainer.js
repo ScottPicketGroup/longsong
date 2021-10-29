@@ -72,6 +72,7 @@ const MenuSlideOutContainer = ({
             setMenuOpen={setMenuOpen}
             setActivePage={setActivePage}
             activePage={activePage}
+            refElement={ref.current}
           />
           <ScrollToTopMenu
             onClick={() => ref.current.scrollIntoView({ behavior: "smooth" })}
