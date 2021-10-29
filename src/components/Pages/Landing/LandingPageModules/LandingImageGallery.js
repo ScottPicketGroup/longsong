@@ -22,30 +22,27 @@ const LandingImageGallery = () => {
   const { handleOpenMenuClick } = useActivePage();
 
   const data = useStaticQuery(graphql`
-  query landingImagestff {
-    allContentfulLongsongLandingPagePrivateDiningSection(
-      filter: {id: {eq: "4af70453-ae05-593d-9722-bdb85b745ace"}}
+  query landingGallery {
+    allContentfulLongsongLandingPageGallery(
+      filter: {id: {eq: "6360b07b-e6f0-5f56-bdb0-a795901937cb"}}
     ) {
       edges {
         node {
           id
           gallery {
-            gatsbyImageData
             title
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
-          intro {
-            raw
-          }
-          title
         }
       }
     }
   }
   
   
+  
   `)
 
-const {gallery, intro, title } = data.allContentfulLongsongLandingPagePrivateDiningSection.edges[0].node
+const {gallery, intro, title } = data.allContentfulLongsongLandingPageGallery.edges[0].node
 console.log(data)
 
   return (
