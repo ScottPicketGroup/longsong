@@ -99,11 +99,13 @@ border-bottom: 1px solid ${props => props.err ? '#CB0000' : 'white'};
   font-family: normal;
   height: 3rem;
   font-size: 150%;
+  color: white;
 }
 :valid {
   font-size: 1rem;
   background: transperant;
   font-family: normal;
+  color: white;
 }
 ::-moz-focus-outer {
   color: white;
