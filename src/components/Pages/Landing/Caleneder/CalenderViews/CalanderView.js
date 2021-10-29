@@ -32,6 +32,12 @@ const CalanderView = ({
   useEffect(() => {
     openModel === i ? setOpen(true) : setOpen(false)
   }, [openModel])
+  // console.log("month" +month)
+  // console.log("cccmonth" +currentMonth)
+  // console.log("today" +todaysDate)
+  // console.log("i" +i)
+  // console.log("day" +day)
+  // console.log("itemday" + item.day)
 
   return item.day === "" && item.date === "" ? (
     <EmptyDayContainer />
@@ -71,7 +77,6 @@ const CalanderView = ({
           dayOfWeek={item.day}
           day={day}
           date={todaysDate}
-          i={i}
           i={i}
           key={i + 2}
         >
