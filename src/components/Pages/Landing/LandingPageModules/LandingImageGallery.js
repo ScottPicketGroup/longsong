@@ -57,7 +57,7 @@ console.log(data)
         </TextContainer>
       </EventContentContainer>
       <ImageWrapper>
-        <Slider imageData={gallery}></Slider>
+        <Slider imageData={gallery} aspectRatio="3/2"></Slider>
       
       </ImageWrapper>
       
