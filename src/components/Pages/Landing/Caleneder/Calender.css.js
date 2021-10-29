@@ -140,6 +140,7 @@ export const DayContainer = styled.div`
 
   flex-direction: ${props => (props.events ? "" : "column")};
   justify-content: space-between;
+  cursor: pointer;
 
   @media (max-width: 450px) {
     display: ${props => (props.day < props.date ? "none" : "flex")};
