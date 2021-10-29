@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
-import styled from 'styled-components';
+import styled from "styled-components"
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import {
@@ -22,51 +22,40 @@ import { Button } from "../../../global-styles/GlobalStyles.css"
 import { BC1 } from "../../../global-styles/typography.css"
 
 const EventsModule = () => {
-
   const data = useStaticQuery(graphql`
-  query landingEventsQuery {
-    allContentfulLandingPageEventsModule(
-      filter: {id: {eq: "00760aef-4841-5f1b-ad1a-a1f2336506ae"}}
-    ) {
-      edges {
-        node {
-          id
-          landingPageEventsList {
-            id
-            eventDate(formatString: "DD.MM")
-            eventName
-            eventDescription {
-              raw
-            }
-            slug
-            eventMedia {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, aspectRatio: 0.8)
-            }
-          }
+    query landingPageEvent {
+      contentfulLongsongEvents(
+        contentful_id: { eq: "2moqCMMNF4ESkrDxslzcVB" }
+      ) {
+        id
+        eventDate(formatString: "DD.MM")
+        eventName
+        eventDescription {
+          raw
+        }
+        slug
+        eventMedia {
+          gatsbyImageData(
+            placeholder: BLURRED
+            layout: FULL_WIDTH
+            aspectRatio: 0.8
+          )
         }
       }
     }
-  }
-  
-  
-  
   `)
 
-  
-
-const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allContentfulLandingPageEventsModule.edges[0].node.landingPageEventsList[0]
-
+  const { slug, eventMedia, eventDate, eventName, eventDescription } =
+    data.contentfulLongsongEvents
+console.log(eventDescription)
   return (
     <LandingPageModuleContainer>
       <EventSectionWrapper style={{ marginBottom: "3.25rem" }}>
-       <TextContainer full>
+        <TextContainer full>
           <TimeAndButtonWrapper>
             <Time style={{ margin: "0 0 3rem 0" }}>{eventDate}</Time>
-         
           </TimeAndButtonWrapper>
-          <BreakLine first
-          style={{width: `86%`}}
-          />
+          <BreakLine first style={{ width: `86%` }} />
           <HeadingAndIntroWrapper>
             <Heading1 marginBottom="md">{eventName}</Heading1>
             <Renderer node={eventDescription} />
@@ -74,14 +63,11 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
               <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
             </Link>
           </HeadingAndIntroWrapper>
-          </TextContainer>
-        <ImageWrapper  >
-          <Slider 
-          
-          imageData={eventMedia[0]} aspcetRatio="9/16"/>
+        </TextContainer>
+        <ImageWrapper>
+          <Slider imageData={eventMedia[0]} aspcetRatio="9/16" />
         </ImageWrapper>
       </EventSectionWrapper>
-      
     </LandingPageModuleContainer>
   )
 }
@@ -95,4 +81,4 @@ export const EventsImageWrapper = styled(ImageWrapper)`
   @media (min-width: 451px) {
     width: 100%;
   }
-`;
+`
