@@ -16,32 +16,31 @@ import { Heading1, BC1 } from "../../../global-styles/typography.css"
 const MenusModule = () => {
   const data = useStaticQuery(graphql`
   query menusModuleData {
-    allContentfulLongsongLandingPageMenuSection {
-      edges {
-        node {
-          id
-          foodMenuImage {
-            gatsbyImageData(aspectRatio: 1)
-          }
-          drinksMenuImage {
-            gatsbyImageData(aspectRatio: 1)
-          }
-          foodMenuHeading
-          drinksMenuHeading
-          foodMenuIntro
-          drinksMenuIntro
-          drinksMenuPdf {
-            file {
-              url
+    contentfulLongsongLandingPageMenuSection(
+      id: {eq: "397f50bd-3167-5a45-95b0-214c0950a168"}
+      
+    ) {
+      id
+            foodMenuImage {
+              gatsbyImageData(aspectRatio: 1)
             }
-          }
-          foodMenuPdf {
-            file {
-              url
+            drinksMenuImage {
+              gatsbyImageData(aspectRatio: 1)
             }
-          }
-        }
-      }
+            foodMenuHeading
+            drinksMenuHeading
+            foodMenuIntro
+            drinksMenuIntro
+            drinksMenuPdf {
+              file {
+                url
+              }
+            }
+            foodMenuPdf {
+              file {
+                url
+              }
+            }
     }
   }
   `)
@@ -56,7 +55,7 @@ const MenusModule = () => {
           foodMenuPdf,
           foodMenuImage
 
-   } = data.allContentfulLongsongLandingPageMenuSection.edges[0].node  
+   } = data.contentfulLongsongLandingPageMenuSection   
 
   return (
     <LandingPageModuleContainer>
