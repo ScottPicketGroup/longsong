@@ -7,7 +7,8 @@ const FooterNavigation = ({
   activePage,
   setActivePage,
   foodMenu,
-  drinksMenu
+  drinksMenu,
+  refElement
 }) => {
 
 const [open, setOpen] = React.useState(menuOpen)
@@ -19,7 +20,7 @@ const [open, setOpen] = React.useState(menuOpen)
 // }, [open])
 
   const handleFooterLink = (activePage) => {
- 
+
   }
 
   return (
@@ -39,7 +40,11 @@ const [open, setOpen] = React.useState(menuOpen)
         >Food</a></FooterLink>
       <FooterLink
         marginBottom="sm"
-        onClick={() => handleFooterLink(activePage)}
+        onClick={() => {
+          setActivePage(3)
+          setMenuOpen(true)
+          refElement.scrollIntoView({ behavior: "smooth" })
+        }}
       >
         Private Events
       </FooterLink>
@@ -48,6 +53,7 @@ const [open, setOpen] = React.useState(menuOpen)
         onClick={() => {
           setActivePage(4)
           setMenuOpen(true)
+          refElement.scrollIntoView({ behavior: "smooth" })
         }}
       >
         Gift Vouchers
@@ -57,6 +63,7 @@ const [open, setOpen] = React.useState(menuOpen)
         onClick={() => {
           setActivePage(5)
           setMenuOpen(true)
+          refElement.scrollIntoView({ behavior: "smooth" })
         }}
       >
         Contact

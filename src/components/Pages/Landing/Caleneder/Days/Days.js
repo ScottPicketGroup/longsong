@@ -8,8 +8,11 @@ import EventsListView from "../CalenderViews/EventsListView"
 import { DaysWrapper } from "../Calender.css"
 import useScrollPosition from "../../../../hooks/ScrollPosition"
 import useActivePage from "../../../../hooks/ActivePage"
-const Days = ({ daysView, currentMonth, nextMonth, events }) => {
-  const { daysToDisplay, day, date, todaysDate, month } = useGetDaysOfMonth(
+import useChangeMonth from "../../../../hooks/ChangeMonth"
+
+const Days = ({ daysView, events }) => {
+  const { currentMonth, nextMonth } = useChangeMonth()
+  const { daysToDisplay, date, todaysDate, month } = useGetDaysOfMonth(
     currentMonth,
     nextMonth,
     events

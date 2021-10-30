@@ -7,8 +7,8 @@ const CheckBox = () => {
     setChecked(!checked)
   }
   return (
-    <label htmlFor="checkbox">
-      <Checkbox id={'checkbox'} checked={checked} onChange={handleChecked} />
+    <label htmlFor="checkbox1">
+      <Checkbox id={'checkbox1'} checked={checked} onChange={handleChecked} />
     </label>
   )
 }

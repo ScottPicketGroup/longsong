@@ -7,7 +7,7 @@ import FooterNavigation from "./FooterLinks/FooterNavigation"
 import FooterSocials from "./FooterSocials/FooterSocials"
 import FooterLongrain from "./Longgrain/Longrain"
 
-const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage }) => {
+const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage, refElement }) => {
 
   const data = useStaticQuery(graphql`
   query menuLink {
@@ -41,7 +41,7 @@ const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage }) => {
           setActivePage={setActivePage}
           foodMenu={data.contentfulLongsongPageContent.foodMenu}
           drinksMenu={data.contentfulLongsongPageContent.drinksMenu}
-
+          refElement={refElement}
         />
       </DesktopWrapper>
       <FooterContactDetails />
