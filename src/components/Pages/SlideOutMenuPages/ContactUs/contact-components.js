@@ -101,6 +101,7 @@ border-bottom: 1px solid ${props => props.err ? '#CB0000' : 'white'};
   font-size: 150%;
 }
 :valid {
+  color: white;
   font-size: 1rem;
   background: transperant;
   font-family: normal;

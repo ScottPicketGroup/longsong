@@ -16,7 +16,7 @@ const StallsAndYard = ({ data }) => {
           <Renderer node={data.firstSection.content} />
           
         </TextContainer>
-        <ImageWrapper horizontal>
+        <ImageWrapper horizontal first>
           <Slider imageData={data.firstSection.imageData} />
         </ImageWrapper>
       </SectionWrapper>
