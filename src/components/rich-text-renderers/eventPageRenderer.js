@@ -33,6 +33,12 @@ const EventPageRenderer = ({ node }) => {
                 >{children}</a></Button>)
 
         },
+        renderText: text => {
+            return text
+              .split("\n")
+              .map(i => [i, <br />])
+              .flat()
+          },
     }
 
     return (

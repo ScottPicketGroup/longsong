@@ -32,12 +32,6 @@ const CalanderView = ({
   useEffect(() => {
     openModel === i ? setOpen(true) : setOpen(false)
   }, [openModel])
-  // console.log("month" +month)
-  // console.log("cccmonth" +currentMonth)
-  // console.log("today" +todaysDate)
-  // console.log("i" +i)
-  // console.log("day" +day)
-  // console.log("itemday" + item.day)
 
   return item.day === "" && item.date === "" ? (
     <EmptyDayContainer />
@@ -68,7 +62,7 @@ const CalanderView = ({
           i={i}
           key={i + 1}
         >
-          {item.date == todaysDate ? "TODAY" :item.date == todaysDate + 1 ? "TOMORROW" : item.day.toUpperCase()}
+          { (month == currentMonth && item.date == todaysDate) ? "TODAY" : (month == currentMonth &&item.date == todaysDate + 1) ? "TOMORROW" : item.day.toUpperCase()}
         </Heading3>
         <Number1
           month={month}
@@ -85,7 +79,7 @@ const CalanderView = ({
 
         <EventDetailsModal
           eventData={item.event}
-          dayOfWeek={day}
+          dayOfWeek={item.day}
           day={day}
           date={todaysDate}
           i={i}

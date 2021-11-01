@@ -91,7 +91,7 @@ const EventDetailsModal = ({
               <></>
             )}
 
-            <Heading2>Open 6pm–late</Heading2>
+            <Heading2>{dayOfWeek == "Sunday" || dayOfWeek == "Monday" || dayOfWeek == "Tuesday" ? "CLOSED" : "Open 5pm–late" }</Heading2>
           </EventContents>
           <EventFooterWrapper>
             {eventDetails.eventName && (
