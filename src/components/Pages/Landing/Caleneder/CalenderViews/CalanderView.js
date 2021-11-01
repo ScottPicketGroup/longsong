@@ -85,7 +85,7 @@ const CalanderView = ({
 
         <EventDetailsModal
           eventData={item.event}
-          dayOfWeek={day}
+          dayOfWeek={item.day}
           day={day}
           date={todaysDate}
           i={i}
