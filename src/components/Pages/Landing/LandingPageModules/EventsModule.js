@@ -70,9 +70,7 @@ const {slug, eventMedia, eventDate, eventName, eventDescription } = data.allCont
           <HeadingAndIntroWrapper>
             <Heading1 marginBottom="md">{eventName}</Heading1>
             <Renderer node={eventDescription} />
-          //  <Link to={"/events/" + slug}>
-           //   <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
-           // </Link>
+        
           </HeadingAndIntroWrapper>
           </TextContainer>
         <ImageWrapper>
