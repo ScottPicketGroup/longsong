@@ -84,12 +84,18 @@ export const DaysWrapper = styled.div`
     grid-gap: 1rem;
   }
 `
+const monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
 export const DayContainer = styled.div`
   border-top: ${props =>
     props.month === props.currentMonth && props.day == props.date
       ? ".5px solid #457E5C"
+      : props.month === props.currentMonth && props.day == props.date + 7
+      ? "none"
       : props.month === props.currentMonth && props.day == props.date + 1
       ? ".5px solid #314638"
+      : props.month === props.currentMonth && props.day == props.date + 8
+      ? "none"
       : props.month === props.currentMonth && props.day < props.date
       ? ".5px solid #6A6A6A"
       : props.dayOfWeek === "Sunday" ||
@@ -103,27 +109,12 @@ export const DayContainer = styled.div`
       ? ".5px solid #457E5C"
       : props.month === props.currentMonth && props.day == props.date + 1
       ? ".5px solid #314638"
-      : props.month === props.currentMonth && props.day > props.date - 5
-      ? ".5px solid #6A6A6A"
-      : props.month === props.currentMonth &&
-        props.dayOfWeek !== "Sunday" &&
-        props.dayOfWeek !== "Tuesday" &&
-        props.dayOfWeek !== "Monday" &&
-        props.day > props.date - 5
-      ? ".5px solid white"
-      : props.month !== props.currentMonth &&
-        props.dayOfWeek !== "Sunday" &&
-        props.dayOfWeek !== "Tuesday" &&
-        props.dayOfWeek !== "Monday" &&
-        props.day > 24
-      ? ".5px solid white"
-      : props.month !== props.currentMonth &&
+      : props.day > monthDays[props.currentMonth%12] - 7 &&
         (props.dayOfWeek === "Sunday" ||
           props.dayOfWeek === "Tuesday" ||
-          props.dayOfWeek === "Monday") &&
-        props.day > 24
+          props.dayOfWeek === "Monday")
       ? ".5px solid #6A6A6A"
-      : props.currentMonth == 10 && props.day == 24
+      : props.day > monthDays[props.currentMonth%12] - 7
       ? ".5px solid white"
       : "none"};
   //#457E5C
@@ -297,7 +288,7 @@ export const MonthIconWrapper = styled.svg`
 export const EventsListDetailsWrapper = styled.div`
   flex: 1;
   border-right: ${props =>
-    props.isTheVenueOpenToThePublic ? "1px solid white" : "1px solid #6A6A6A"};;
+    props.isTheVenueOpenToThePublic ? "1px solid white" : "1px solid #6A6A6A"};
   display: flex;
   padding: 1rem;
   background: ${props =>
@@ -357,8 +348,8 @@ export const EventHeading2 = styled(Heading2)`
     line-height: 1.2;
     color: ${props =>
       props.isTheVenueOpenToThePublic === false
-      ? "#6A6A6A"
-      :props.eventList
+        ? "#6A6A6A"
+        : props.eventList
         ? "white"
         : props.month == props.currentMonth && props.day < props.date
         ? "#6A6A6A"
@@ -373,7 +364,18 @@ export const EventBC3 = styled(BC3)`
   color: ${props =>
     props.isTheVenueOpenToThePublic === false
       ? "#6A6A6A"
-    
+      : props.month == props.currentMonth && props.day < props.date
+      ? "#6A6A6A"
+      : props.dayOfWeek == "Sunday" ||
+        props.dayOfWeek == "Tuesday" ||
+        props.dayOfWeek == "Monday"
+      ? "#6A6A6A"
+      : props.month == props.currentMonth && props.i == props.date - 1
+      ? "#457E5C"
+      : props.month == props.currentMonth && props.i == props.date
+      ? "#314638"
+      : props.month == props.currentMonth && props.i == props.date - 2
+      ? "#314638"
       : "white"};
 `
 

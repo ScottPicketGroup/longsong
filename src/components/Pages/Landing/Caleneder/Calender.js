@@ -9,42 +9,43 @@ import useWindowDimensions from "../../../hooks/useWindowDimensions"
 
 const Calender = () => {
   const [daysView, setDaysView] = React.useState(false)
-  const [events, setEvents] = React.useState([])
+  // const [events, setEvents] = React.useState([])
   const calenderRef = useRef(null)
   const { isFade, setIsFade, currentMonth } = useChangeMonth()
 
   const { width } = useWindowDimensions()
-  const data = useStaticQuery(graphql`
-    query allEvents {
-      allContentfulLongsongEvents {
-        edges {
-          node {
-            slug
-            drinksSpecialDetails {
-              raw
-            }
-            drinksSpecialTitle
-            eventDate(formatString: "DDMMYY HH.mm")
-            eventDescription {
-              raw
-            }
-            eventMedia {
-              gatsbyImageData
-            }
-            eventName
-            foodSpecialDetails {
-              raw
-            }
-            isTheVenueOpenToThePublic
-            foodSpecialTitle
-          }
-        }
-      }
-    }
-  `)
-  useEffect(() => {
-    data && setEvents(data.allContentfulLongsongEvents.edges)
-  }, [data])
+//   const data = useStaticQuery(graphql`
+//     query allEvents {
+//       allContentfulLongsongEvents {
+//         edges {
+//           node {
+//             slug
+//             drinksSpecialDetails {
+//               raw
+//             }
+//             drinksSpecialTitle
+//             eventDate(formatString: "DDMMYY HH.mm")
+//             eventDescription {
+//               raw
+//             }
+//             eventMedia {
+//               gatsbyImageData
+//             }
+//             eventName
+//             foodSpecialDetails {
+//               raw
+//             }
+//             isTheVenueOpenToThePublic
+//             foodSpecialTitle
+//           }
+//         }
+//       }
+//     }
+//   `
+// )
+  // useEffect(() => {
+  //   data && setEvents(data.allContentfulLongsongEvents.edges)
+  // }, [data])
 
   useEffect(() => {
     setIsFade(true)
@@ -59,7 +60,8 @@ const Calender = () => {
   return (
     <CalanderWrapper ref={calenderRef}>
       <Navigation daysView={daysView} setDaysView={setDaysView} />
-      {isFade && <Days events={events} daysView={daysView} />}
+      {/* {isFade && <Days events={events} daysView={daysView} />} */}
+      <Days daysView={daysView} />
     </CalanderWrapper>
   )
 }
