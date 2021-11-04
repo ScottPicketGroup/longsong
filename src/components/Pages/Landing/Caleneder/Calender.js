@@ -22,7 +22,7 @@ const Calender = ({ setCalenderRef }) => {
     handlePreviousMonthChange,
     handleNextMonthChange,
   } = useChangeMonth()
-  const { height, width } = useWindowDimensions();
+  const { height, width } = useWindowDimensions()
   const data = useStaticQuery(graphql`
     query allEvents {
       allContentfulLongsongEvents {
@@ -41,11 +41,7 @@ const Calender = ({ setCalenderRef }) => {
               gatsbyImageData
             }
             eventName
-            foodSpecialDetails {
-              raw
-            }
             isTheVenueOpenToThePublic
-            foodSpecialTitle
           }
         }
       }
@@ -62,11 +58,8 @@ const Calender = ({ setCalenderRef }) => {
   useEffect(() => {
     if (width <= 450) {
       setDaysView(true)
-      
     }
   }, [daysView])
-
-
 
   // useEffect(() => {
   //   setCalenderRef(calenderRef)
