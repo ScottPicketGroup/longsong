@@ -10,15 +10,24 @@ const IndexPage = ({ data }) => {
   const { heroImage, textOverHeroImage, landingPageSections } =
     data.allContentfulLongsongLandingPageContent.edges[0].node
 
+  //components state
 
+  //  use effect 
+  // let modulesToPush = []
+  // map landingPageModules => modulesToPush.push({name: arrayname.firstlettertocapital, props: props})
+  // setmodules (modulestopush)
 
 
 
 
   return (
- <>
- hi 
- </>
+    <Layout fd="column" >
+      <Seo title="Home" />
+      {/* <HeroBackground 
+        
+      />
+      <LandingPageModules data={landingPageSections} /> */}
+    </Layout>
   )
 }
 
