@@ -19,7 +19,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
     while (date.getUTCMonth() - 1 === monthtoIt) {
       let iterator = date.getDate()
       let m
-      if (iterator < 10) {
+      if (iterator < 10 && events) {
         const eventToPush = events.map(event => {
           if (
             "0" + date.toLocaleDateString("au-EN", dat) ==
@@ -36,14 +36,14 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
           event: m,
         })
       } else {
-        const eventToPush = events.map(event => {
+        const eventToPush = events && events.map(event => {
           if (
           date.toLocaleDateString("au-EN", dat) ==
             event.node.eventDate.split(1)[0]
           ) {
             m = event
           }
-        })
+        }) 
        
         days.push({
           dayIndex: date.getDay(),
