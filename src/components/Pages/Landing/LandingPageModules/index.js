@@ -9,10 +9,10 @@ const LandingEventsContainer = () => {
   return (
     <>
       
-      {/* <MenusModule />
+      <MenusModule />
       <EventsModule/>
       <PrivateEventModule  /> 
-      <LandingImageGallery /> */}
+      <LandingImageGallery />
     </>
   )
 }
