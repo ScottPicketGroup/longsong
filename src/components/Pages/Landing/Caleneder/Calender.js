@@ -32,9 +32,7 @@ const Calender = () => {
               gatsbyImageData
             }
             eventName
-            foodSpecialDetails {
-              raw
-            }
+           
             isTheVenueOpenToThePublic
             foodSpecialTitle
           }

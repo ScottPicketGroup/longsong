@@ -22,9 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               raw
             }
             foodSpecialTitle
-            foodSpecialDetails {
-              raw
-            }
+           
           }
         }
       }
