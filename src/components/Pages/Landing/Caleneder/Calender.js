@@ -11,47 +11,6 @@ const Calender = () => {
   const [daysView, setDaysView] = React.useState(false)
   // const [events, setEvents] = React.useState([])
   const calenderRef = useRef(null)
-<<<<<<< HEAD
-  const { elementWidth } = useGetElementSize(calenderRef)
-  const {
-    isFade,
-    setIsFade,
-    currentMonth,
-    setCurrentMonth,
-    nextMonth,
-    setNextMonth,
-    handlePreviousMonthChange,
-    handleNextMonthChange,
-  } = useChangeMonth()
-  const { height, width } = useWindowDimensions()
-  const data = useStaticQuery(graphql`
-    query allEvents {
-      allContentfulLongsongEvents {
-        edges {
-          node {
-            slug
-            drinksSpecialDetails {
-              raw
-            }
-            drinksSpecialTitle
-            eventDate(formatString: "DDMMYY HH.mm")
-            eventDescription {
-              raw
-            }
-            eventMedia {
-              gatsbyImageData
-            }
-            eventName
-            isTheVenueOpenToThePublic
-          }
-        }
-      }
-    }
-  `)
-  useEffect(() => {
-    data && setEvents(data.allContentfulLongsongEvents.edges)
-  }, [data])
-=======
   const { isFade, setIsFade, currentMonth } = useChangeMonth()
 
   const { width } = useWindowDimensions()
@@ -83,7 +42,6 @@ const Calender = () => {
   // useEffect(() => {
   //   data && setEvents(data.allContentfulLongsongEvents.edges)
   // }, [data])
->>>>>>> 2163e1b9eb77d6af65acbaeeaddb3a5b1328e969
 
   useEffect(() => {
     setIsFade(true)
@@ -95,13 +53,6 @@ const Calender = () => {
     }
   }, [daysView])
 
-<<<<<<< HEAD
-  // useEffect(() => {
-  //   setCalenderRef(calenderRef)
-  // }, [calenderRef])
-
-=======
->>>>>>> 2163e1b9eb77d6af65acbaeeaddb3a5b1328e969
   return (
     <CalanderWrapper ref={calenderRef}>
       <Navigation daysView={daysView} setDaysView={setDaysView} />
