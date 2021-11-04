@@ -60,6 +60,7 @@ export const TextContainer = styled.div`
 
 export const ImageWrapper = styled.div`
   width: ${props => (props.full ? "100%" : props.horizontal ? "80%" : "50%")};
+  margin-top: ${props => props.first ? '2.65rem' : ''};
   @media (max-width: 450px) {
     width: 100%;
 

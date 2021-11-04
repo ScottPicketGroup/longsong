@@ -8,12 +8,18 @@ import EventsListView from "../CalenderViews/EventsListView"
 import { DaysWrapper } from "../Calender.css"
 import useScrollPosition from "../../../../hooks/ScrollPosition"
 import useActivePage from "../../../../hooks/ActivePage"
-const Days = ({ daysView, currentMonth, nextMonth, events }) => {
-  const { daysToDisplay, day, date, todaysDate, month } = useGetDaysOfMonth(
+import useChangeMonth from "../../../../hooks/ChangeMonth"
+
+const Days = ({ daysView, events }) => {
+  const { currentMonth, nextMonth } = useChangeMonth()
+  const { daysToDisplay, todaysDate, month } = useGetDaysOfMonth(
     currentMonth,
     nextMonth,
-    events
+    // events
   )
+
+  console.log(daysToDisplay)
+
   const daysWrapperRef = useRef(null)
   const { activePage } = useActivePage()
   const [elementWidth, setElementWidth] = useState(0)
@@ -34,30 +40,31 @@ const Days = ({ daysView, currentMonth, nextMonth, events }) => {
     >
       {daysToDisplay &&
         daysToDisplay.map((item, i) =>
-          daysView && date.getDate() < i + 2 ? (
-            <EventsListView
-              day={item.date}
-              i={i}
-              day={item.date}
-              todaysDate={todaysDate}
-              date={date}
-              item={item}
-              modalWidth={elementWidth}
-              currentMonth={currentMonth}
-              month={month}
-              key={i + 4}
-              openModel={openModel}
-              setOpenModel={setOpenModel}
-              events={events}
-              daysView={daysView}
-            />
+          daysView ? (
+            // <EventsListView
+            //   day={item.date}
+            //   i={i}
+            //   day={item.date}
+            //   todaysDate={todaysDate}
+            //   date={date}
+            //   item={item}
+            //   modalWidth={elementWidth}
+            //   currentMonth={currentMonth}
+            //   month={month}
+            //   key={i + 4}
+            //   openModel={openModel}
+            //   setOpenModel={setOpenModel}
+            //   // events={events}
+            //   daysView={daysView}
+            // />
+            console.log("d")
           ) : !daysView ? (
             <CalanderView
               key={i + 5}
               i={i}
               day={item.date}
               todaysDate={todaysDate}
-              date={date}
+              // date={date}
               item={item}
               modalWidth={elementWidth}
               currentMonth={currentMonth}

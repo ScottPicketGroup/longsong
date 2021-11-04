@@ -141,9 +141,6 @@ const Slider = ({ imageData, hero, aspectRatio }) => {
             <BC3 style={{ color: `grey` }} marginTop="md">
               {imageNumber}/{images.length}
             </BC3>
-            <BC3 style={{ color: `grey` }} marginTop="md">
-              VIEW FULLSCREEN
-            </BC3>
           </MobileWrapper>
         </>
       )}

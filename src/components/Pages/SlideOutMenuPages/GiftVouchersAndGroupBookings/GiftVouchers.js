@@ -49,7 +49,7 @@ const GiftVouchers = ({ activePage }) => {
         </ImageWrapper>
 
         <TextContainer right full marginBottom="mx  d" >
-          <BreakLine none />
+          <BreakLine first />
           <Heading1 marginBottom="md">
           {data.contentfulLongsongPageContent.longsongGiftVoucher}
 

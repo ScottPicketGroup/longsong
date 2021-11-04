@@ -128,19 +128,23 @@ export const Heading3 = styled.h3`
   font-size: 1rem;
   line-height: 1.2;
   color: ${props =>
-    props.month === props.currentMonth + props.month && props.day < props.date
+     props.isTheVenueOpenToThePublic === false
+      ? "#6A6A6A"
+    :props.eventList ? "white"
+    : props.month === props.currentMonth &&
+        props.day == props.date
+      ? "#457E5C"
+      : props.month == props.currentMonth &&
+        props.day == props.date + 1
+      ? "#314638"
+      :  props.month === props.currentMonth && props.day < props.date
       ? "#6A6A6A"
       : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
       ? "#6A6A6A"
-      : props.month === props.currentMonth + props.month &&
-        props.i === props.date - 1
-      ? "#457E5C"
-      : props.month === props.currentMonth + props.month &&
-        props.i === props.date
+      : props.month === props.currentMonth &&
+        props.day == props.date - 1
       ? "#314638"
-      : props.month === props.currentMonth + props.month &&
-        props.i === props.date - 2
-      ? "#314638"
+      
       : "white"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -188,18 +192,23 @@ font-family: bold;
   letter-spacing: 3px;
   font-weight: 100;
   color: ${props =>
-    props.month === props.currentMonth + props.month && props.day < props.date
+     props.isTheVenueOpenToThePublic === false
+      ? "#6A6A6A"
+    :props.eventList ? "white"
+    : props.month === props.currentMonth &&
+        props.day == props.date
+      ? "#457E5C"
+      : props.month == props.currentMonth &&
+        props.day == props.date + 1
+      ? "#314638"
+      : props.month === props.currentMonth && props.day < props.date
       ? "#6A6A6A"
       : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
       ? "#6A6A6A"
-      : props.month === props.currentMonth + props.month &&
-        props.i === props.date - 1
-      ? "#457E5C"
-      : props.month === props.currentMonth + props.month &&
-        props.i === props.date
+      : props.month === props.currentMonth &&
+        props.day == props.date - 1
       ? "#314638"
-      : props.month === props.currentMonth + props.month &&
-        props.i === props.date - 2
+      : props.isTheVenueOpenToThePublic
       ? "#314638"
       : "white"};
 

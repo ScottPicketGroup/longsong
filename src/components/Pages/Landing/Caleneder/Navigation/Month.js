@@ -7,20 +7,17 @@ import {
   MonthsContainer,
 } from "../Calender.css"
 
-import useMonthsInfo from "../../../../hooks/monthInfo"
+import useChangeMonth from "../../../../hooks/ChangeMonth"
 import useScrollPosition from "../../../../hooks/ScrollPosition"
 
-const Month = ({
-  currentMonth,
-  nextMonth,
-  handlePreviousMonthChange,
-  handleNextMonthChange,
-  menu,
-}) => {
-  const { thisMonthInfo, nextMonthInfo } = useMonthsInfo(
-    currentMonth,
-    nextMonth
-  )
+const Month = ({ menu }) => {
+  const {
+    thisMonthInfo,
+    nextMonthInfo,
+    handlePreviousMonthChange,
+    handleNextMonthChange,
+  } = useChangeMonth()
+
   const scrollPosition = useScrollPosition()
 
   return menu ? (

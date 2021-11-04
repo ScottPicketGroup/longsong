@@ -16,7 +16,7 @@ const StallsAndYard = ({ data }) => {
           <Renderer node={data.firstSection.content} />
           
         </TextContainer>
-        <ImageWrapper horizontal>
+        <ImageWrapper horizontal first>
           <Slider imageData={data.firstSection.imageData} />
         </ImageWrapper>
       </SectionWrapper>
@@ -28,7 +28,7 @@ const StallsAndYard = ({ data }) => {
           
         </TextContainer>
         <ImageWrapper>
-          <Slider imageData={data.secondSection.imageData} aspectRatio="3/4" />
+          <Slider imageData={data.secondSection.imageData} aspectRatio="9/14" />
         </ImageWrapper>
       </SectionWrapper>
       <SectionWrapper column mobInvert>
