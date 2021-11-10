@@ -23,7 +23,7 @@ const CalanderView = ({
   const { activePage } = useActivePage()
 
   const [elementWidth, setElementWidth] = useState(0)
-
+console.log(item)
   useEffect(() => {
     if (dayContainerRef.current)
       setElementWidth(dayContainerRef.current.clientWidth)

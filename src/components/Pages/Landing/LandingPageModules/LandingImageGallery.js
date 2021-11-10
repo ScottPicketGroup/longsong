@@ -43,7 +43,7 @@ const LandingImageGallery = () => {
   `)
 
 const {gallery, intro, title } = data.allContentfulLongsongLandingPageGallery.edges[0].node
-console.log(data)
+
 
   return (
     <LandingPageModuleContainer>

@@ -19,27 +19,24 @@ const Calender = () => {
       allContentfulLongsongEvents {
         edges {
           node {
+            id
+            eventName
             slug
-            drinksSpecialDetails {
-              raw
+            eventMedia {
+              title
             }
-            drinksSpecialTitle
-            eventDate(formatString: "DDMMYY HH.mm")
             eventDescription {
               raw
             }
-            eventMedia {
-              gatsbyImageData
-            }
-            eventName
+            eventDate(formatString: "YYYY-MM-DD HH.mm")
+          
            
-            isTheVenueOpenToThePublic
-            foodSpecialTitle
           }
         }
       }
     }
-  `)
+  `
+)
   useEffect(() => {
     data && setEvents(data.allContentfulLongsongEvents.edges)
   }, [data])
@@ -57,7 +54,8 @@ const Calender = () => {
   return (
     <CalanderWrapper ref={calenderRef}>
       <Navigation daysView={daysView} setDaysView={setDaysView} />
-      {isFade && <Days events={events} daysView={daysView} />}
+      {/* {isFade && <Days events={events} daysView={daysView} />} */}
+      <Days daysView={daysView} events={events}/>
     </CalanderWrapper>
   )
 }

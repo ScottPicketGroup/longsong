@@ -17,6 +17,9 @@ const Days = ({ daysView, events }) => {
     nextMonth,
     events
   )
+
+  console.log(events)
+
   const daysWrapperRef = useRef(null)
   const { activePage } = useActivePage()
   const [elementWidth, setElementWidth] = useState(0)
@@ -36,39 +39,23 @@ const Days = ({ daysView, events }) => {
       scrollPosition={scrollPosition}
     >
       {daysToDisplay &&
-        daysToDisplay.map((item, i) =>
-          daysView && date.getDate() < i + 2 ? (
-            <EventsListView
-              day={item.date}
-              i={i}
-              day={item.date}
-              todaysDate={todaysDate}
-              date={date}
-              item={item}
-              modalWidth={elementWidth}
-              currentMonth={currentMonth}
-              month={month}
-              key={i + 4}
-              openModel={openModel}
-              setOpenModel={setOpenModel}
-              events={events}
-              daysView={daysView}
-            />
-          ) : !daysView ? (
-            <CalanderView
-              key={i + 5}
-              i={i}
-              day={item.date}
-              todaysDate={todaysDate}
-              date={date}
-              item={item}
-              modalWidth={elementWidth}
-              currentMonth={currentMonth}
-              month={month}
-              openModel={openModel}
-              setOpenModel={setOpenModel}
-            />
-          ) : null
+        daysToDisplay.map(
+          (item, i) =>
+            !daysView && (
+              <CalanderView
+                key={i + 5}
+                i={i}
+                day={item.date}
+                todaysDate={todaysDate}
+                // date={date}
+                item={item}
+                modalWidth={elementWidth}
+                currentMonth={currentMonth}
+                month={month}
+                openModel={openModel}
+                setOpenModel={setOpenModel}
+              />
+            )
         )}
     </DaysWrapper>
   )

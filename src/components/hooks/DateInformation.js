@@ -11,8 +11,9 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
   const dat = { day: "numeric" }
 
   useEffect(() => {
+    console.log(events)
     let date = new Date(Date.UTC(year, currentMonth, 1))
-    console.log(monthtoIt)
+   
     const day = { weekday: "long" }
     const dat = { day: "numeric" }
     let days = []
