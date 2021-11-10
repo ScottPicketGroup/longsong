@@ -69,9 +69,7 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-      <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquire.js"></script><script language="javascript">ftenquireinit(625,'longrain')</script><div id="ftenquire625"></div>
-      </Helmet>
+    />
   )
 }
 
