@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import Helmet from "react-helmet"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
@@ -94,6 +95,9 @@ const GroupBookings = ({ activePage }) => {
 
   return (
     <SlideOutPageWrapper activePage={activePage} page={3}>
+         <Helmet>
+         <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquire.js"></script><script language="javascript">ftenquireinit(625,'longrain')</script><div id="ftenquire625"></div>
+          </Helmet>
       <SectionWrapper column>
         <ImageWrapper full>
           <Slider hero

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import Footer from "./Footer/Footer"
+
 import {
   PageContainer,
   PageWrapper,
