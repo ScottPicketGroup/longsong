@@ -1,6 +1,11 @@
 import styled, { keyframes } from "styled-components"
 import { fadeIn } from "../../../global-styles/animations"
-import { BC3, Heading2 } from "../../../global-styles/typography.css"
+import {
+  BC3,
+  Heading2,
+  Number1,
+  Heading3,
+} from "../../../global-styles/typography.css"
 import {
   DesktopWrapper,
   MobileWrapper,
@@ -109,12 +114,12 @@ export const DayContainer = styled.div`
       ? ".5px solid #457E5C"
       : props.month === props.currentMonth && props.day == props.date + 1
       ? ".5px solid #314638"
-      : props.day > monthDays[props.currentMonth%12] - 7 &&
+      : props.day > monthDays[props.currentMonth % 12] - 7 &&
         (props.dayOfWeek === "Sunday" ||
           props.dayOfWeek === "Tuesday" ||
           props.dayOfWeek === "Monday")
       ? ".5px solid #6A6A6A"
-      : props.day > monthDays[props.currentMonth%12] - 7
+      : props.day > monthDays[props.currentMonth % 12] - 7
       ? ".5px solid white"
       : "none"};
   //#457E5C
@@ -255,7 +260,7 @@ export const EventContents = styled.div`
 
 export const EventFooterWrapper = styled.div`
   display: flex;
-
+  border-top: ${props => (props.bTop ? "1px solid" : "none")};
   justify-content: space-between;
   padding: 0.5rem;
   @media (max-width: 450px) {
@@ -347,7 +352,7 @@ export const EventHeading2 = styled(Heading2)`
     font-size: 1.25rem;
     line-height: 1.2;
     color: ${props =>
-      props.isTheVenueOpenToThePublic === false
+      props.isTheVenueOpenToThePublic !== true
         ? "#6A6A6A"
         : props.eventList
         ? "white"
@@ -362,7 +367,7 @@ export const EventHeading2 = styled(Heading2)`
 `
 export const EventBC3 = styled(BC3)`
   color: ${props =>
-    props.isTheVenueOpenToThePublic === false
+    props.isTheVenueOpenToThePublic !== true
       ? "#6A6A6A"
       : props.month == props.currentMonth && props.day < props.date
       ? "#6A6A6A"
@@ -396,4 +401,12 @@ export const OnlyMobileWrapper = styled(MobileWrapper)`
   @media (min-width: 450px) {
     display: none;
   }
+`
+export const EventHeading3 = styled(Heading3)`
+  color: ${props =>
+    props.isTheVenueOpenToThePublic !== true ? "#6A6A6A" : "white"};
+`
+export const EventNumber1 = styled(Number1)`
+  color: ${props =>
+    props.isTheVenueOpenToThePublic !== true ? "#6A6A6A" : "white"};
 `

@@ -95,9 +95,6 @@ const GroupBookings = ({ activePage }) => {
 
   return (
     <SlideOutPageWrapper activePage={activePage} page={3}>
-         <Helmet>
-         <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquire.js"></script><script language="javascript">ftenquireinit(625,'longrain')</script><div id="ftenquire625"></div>
-          </Helmet>
       <SectionWrapper column>
         <ImageWrapper full>
           <Slider hero

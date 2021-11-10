@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 // Usage
 function App() {
   const status = useScript(
-    "https://longrain.functiontracker.com/public/v4/enquire.js"
+    "https://longrain.functiontracker.com/public/v4/enquire.js" 
   );
   return (
     <div>

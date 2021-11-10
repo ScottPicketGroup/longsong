@@ -11,8 +11,9 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
   const dat = { day: "numeric" }
 
   useEffect(() => {
+   
     let date = new Date(Date.UTC(year, currentMonth, 1))
-    console.log(monthtoIt)
+   
     const day = { weekday: "long" }
     const dat = { day: "numeric" }
     let days = []
@@ -22,10 +23,10 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       if (iterator < 10 && events) {
         const eventToPush = events.map(event => {
           if (
-            "0" + date.toLocaleDateString("au-EN", dat) ==
-            event.node.eventDate.split(1)[0]
+              event.node.eventDate.slice(0,4) ===  date.toLocaleDateString("au-EN", monthtoIt).slice(0,4).replace("/", "0")
           ) {
             m = event
+            console.log(m)
           }
         })
 
@@ -36,12 +37,14 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
           event: m,
         })
       } else {
+      
         const eventToPush = events && events.map(event => {
+          console.log(event)
           if (
-          date.toLocaleDateString("au-EN", dat) ==
-            event.node.eventDate.split(1)[0]
+            event.node.eventDate.slice(0,4) === date.toLocaleDateString("au-EN", monthtoIt).slice(0,5).replace("/", "")
           ) {
             m = event
+            console.log(m)
           }
         }) 
        

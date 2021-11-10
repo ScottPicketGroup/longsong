@@ -15,10 +15,8 @@ const Days = ({ daysView, events }) => {
   const { daysToDisplay, todaysDate, month } = useGetDaysOfMonth(
     currentMonth,
     nextMonth,
-    // events
+    events
   )
-
-  console.log(daysToDisplay)
 
   const daysWrapperRef = useRef(null)
   const { activePage } = useActivePage()
@@ -41,38 +39,36 @@ const Days = ({ daysView, events }) => {
       {daysToDisplay &&
         daysToDisplay.map((item, i) =>
           daysView ? (
-            // <EventsListView
-            //   day={item.date}
-            //   i={i}
-            //   day={item.date}
-            //   todaysDate={todaysDate}
-            //   date={date}
-            //   item={item}
-            //   modalWidth={elementWidth}
-            //   currentMonth={currentMonth}
-            //   month={month}
-            //   key={i + 4}
-            //   openModel={openModel}
-            //   setOpenModel={setOpenModel}
-            //   // events={events}
-            //   daysView={daysView}
-            // />
-            console.log("d")
-          ) : !daysView ? (
-            <CalanderView
-              key={i + 5}
+            <EventsListView
               i={i}
               day={item.date}
               todaysDate={todaysDate}
-              // date={date}
               item={item}
               modalWidth={elementWidth}
               currentMonth={currentMonth}
               month={month}
+              key={i + 4}
               openModel={openModel}
               setOpenModel={setOpenModel}
+              events={events}
+              daysView={daysView}
             />
-          ) : null
+          ) : (
+            !daysView && (
+              <CalanderView
+                key={i + 5}
+                i={i}
+                day={item.date}
+                todaysDate={todaysDate}
+                item={item}
+                modalWidth={elementWidth}
+                currentMonth={currentMonth}
+                month={month}
+                openModel={openModel}
+                setOpenModel={setOpenModel}
+              />
+            )
+          )
         )}
     </DaysWrapper>
   )

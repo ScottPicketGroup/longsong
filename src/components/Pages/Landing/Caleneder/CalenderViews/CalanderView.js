@@ -16,7 +16,7 @@ const CalanderView = ({
   setOpenModel,
   currentMonth,
   modalWidth,
-  month,
+  month
 }) => {
   const [open, setOpen] = useState(false)
   const dayContainerRef = useRef(null)
@@ -33,9 +33,7 @@ const CalanderView = ({
     openModel === i ? setOpen(true) : setOpen(false)
   }, [openModel])
 
-  console.log("day-", day)
-  console.log("wid",elementWidth)
-  console.log("mon", currentMonth)
+ 
   return item.day === "" && item.date === "" ? (
     <EmptyDayContainer ref={dayContainerRef}/>
   ) : (

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react"
 import { Link } from "gatsby"
-import { Heading3, Number1 } from "../../../../global-styles/typography.css"
+// import { Heading3, Number1 } from "../../../../global-styles/typography.css"
 import {
   DayContainer,
   EventsDateDisplayContainer,
@@ -12,6 +12,8 @@ import {
   EventDayContainer,
   EventHeading2,
   EventBC3,
+  EventHeading3,
+  EventNumber1,
   OnlyDesktopWrapper,
   OnlyMobileWrapper,
 } from "../Calender.css"
@@ -48,7 +50,7 @@ const EventsListView = ({
   return (
     <>
       {events.map((e, index) => {
-        if (e.node.eventDate.slice(0, 2) === componentDate)
+        if (e.node.eventDate.slice(2, 4) === componentDate && e.node.eventDate.slice(0, 2) == currentMonth + 1)
           return (
             <EventDayContainer
               key={index}
@@ -76,7 +78,7 @@ const EventsListView = ({
                 width={elementWidth / 7 - 10}
               >
                 <OnlyDesktopWrapper>
-                  <Heading3
+                  <EventHeading3
                     dayOfWeek={day}
                     day={day}
                     date={todaysDate}
@@ -91,8 +93,8 @@ const EventsListView = ({
                       : item.day === "Sunday"
                       ? "CLOSED"
                       : item.day.toUpperCase()}
-                  </Heading3>
-                  <Number1
+                  </EventHeading3>
+                  <EventNumber1
                     dayOfWeek={day}
                     day={day}
                     date={todaysDate}
@@ -101,7 +103,7 @@ const EventsListView = ({
                     isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}
                   >
                     {item.date}
-                  </Number1>
+                  </EventNumber1>
                 </OnlyDesktopWrapper>
                 <MobileWrapper>
                   <EventHeading2
@@ -121,7 +123,7 @@ const EventsListView = ({
                       ? "CLOSED"
                       : item.day.toUpperCase()}
                   </EventHeading2>
-                  <Number1
+                  <EventNumber1
                     dayOfWeek={day}
                     day={day}
                     date={todaysDate}
@@ -130,7 +132,7 @@ const EventsListView = ({
                     isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}
                   >
                     {item.date}
-                  </Number1>
+                  </EventNumber1>
                 </MobileWrapper>
               </EventsDateDisplayContainer>
               <EventsListDetailsWrapper
@@ -306,7 +308,7 @@ const EventsListView = ({
                 </OnlyDesktopWrapper>
                 <OnlyMobileWrapper>
                   {e.node.isTheVenueOpenToThePublic === true ? (
-                    <EventHeading2>
+                    <EventHeading2 isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}>
                       <Link
                         onClick={() => setMenuOpen(false)}
                         to={`events/${e.node.slug}`}
