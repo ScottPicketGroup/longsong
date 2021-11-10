@@ -25,6 +25,7 @@ import Footer from "../../Footer/Footer"
 import WhatsOn from "../../Pages/SlideOutMenuPages/WhatsOn/WhatsOn"
 import Calender from "../../Pages/Landing/Caleneder/Calender"
 import LandingDownArrow from "../../Pages/Landing/Hero/Intro/LandingDownArrow"
+import TermsAndConditions from "../../Pages/SlideOutMenuPages/TermsAndConditions/TermsAndConditions"
 const MenuSlideOutContainer = ({
   menuOpen,
   setMenuOpen,
@@ -51,6 +52,7 @@ const MenuSlideOutContainer = ({
               <GroupBookings activePage={activePage} />
               <GiftVouchers activePage={activePage} />
               <ContactUs activePage={activePage} />
+              <TermsAndConditions activePage={activePage} />
             </PageContentContainer>
             <RightMenuContainer activePage={activePage}>
               <SlideOutMenuNavigation
