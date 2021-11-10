@@ -28,7 +28,7 @@ const Calender = () => {
             eventDescription {
               raw
             }
-            eventDate(formatString: "DD/MM/YYYY")
+            eventDate(formatString: "MMDDH")
           
            
           }

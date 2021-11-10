@@ -33,7 +33,7 @@ const CalanderView = ({
     openModel === i ? setOpen(true) : setOpen(false)
   }, [openModel])
 
- console.log(item.event)
+ 
   return item.day === "" && item.date === "" ? (
     <EmptyDayContainer ref={dayContainerRef}/>
   ) : (
