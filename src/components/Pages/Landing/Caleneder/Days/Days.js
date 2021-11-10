@@ -15,10 +15,10 @@ const Days = ({ daysView, events }) => {
   const { daysToDisplay, todaysDate, month } = useGetDaysOfMonth(
     currentMonth,
     nextMonth,
-    // events
+    events
   )
 
-  console.log(useGetDaysOfMonth().events)
+  console.log(events)
 
   const daysWrapperRef = useRef(null)
   const { activePage } = useActivePage()
