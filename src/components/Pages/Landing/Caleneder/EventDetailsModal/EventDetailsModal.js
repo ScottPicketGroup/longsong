@@ -90,8 +90,9 @@ const EventDetailsModal = ({
             ) : (
               <></>
             )}
-
-            <Heading2>{ eventDetails.eventName ? eventDetails.eventName +" "+ eventDetails.eventDate.slice(4,5) + "PM" : "CLOSED" }</Heading2>
+  
+             <Heading2>{dayOfWeek == "Sunday" || dayOfWeek == "Monday" || dayOfWeek == "Tuesday" ? "CLOSED" : eventDetails.eventName ? eventDetails.eventName +" "+ eventDetails.eventDate.slice(4,5) + "PM" : "OPEN 5PM-late" }</Heading2>
+       
           </EventContents>
           <EventFooterWrapper bTop={eventDetails.slug}>
             {eventDetails.slug && (
