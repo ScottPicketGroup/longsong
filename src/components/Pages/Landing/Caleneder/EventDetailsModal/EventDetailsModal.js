@@ -98,7 +98,7 @@ const EventDetailsModal = ({
             {eventDetails.slug && (
               <Link
                 onClick={() => setMenuOpen(false)}
-                to={`events/${eventDetails.slug}`}
+                to={`/events/${eventDetails.slug}`}
               >
                 VIEW DETAILS
               </Link>

@@ -50,7 +50,10 @@ const EventsListView = ({
   return (
     <>
       {events.map((e, index) => {
-        if (e.node.eventDate.slice(2, 4) === componentDate && e.node.eventDate.slice(0, 2) == currentMonth + 1)
+        if (
+          e.node.eventDate.slice(2, 4) === componentDate &&
+          e.node.eventDate.slice(0, 2) == currentMonth + 1
+        )
           return (
             <EventDayContainer
               key={index}
@@ -142,9 +145,7 @@ const EventsListView = ({
                 dayOfWeek={item.day}
                 day={day}
                 date={todaysDate}
-                isTheVenueOpenToThePublic={
-                  e.node.isTheVenueOpenToThePublic
-                }
+                isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}
                 i={i}
               >
                 <OnlyDesktopWrapper>
@@ -296,26 +297,44 @@ const EventsListView = ({
               >
                 <OnlyDesktopWrapper>
                   {e.node.isTheVenueOpenToThePublic === true ? (
-                    <Link
-                      onClick={() => setMenuOpen(false)}
-                      to={`events/${e.node.slug}`}
-                    >
-                      VIEW DETAILS
-                    </Link>
+                    e.node.slug ? (
+                      <Link
+                        onClick={() => setMenuOpen(false)}
+                        to={`/events/${e.node.slug}`}
+                      >
+                        VIEW DETAILS
+                      </Link>
+                    ) : (
+                      <p style={{ color: "#FFFFFF" }}>OPEN</p>
+                    )
                   ) : (
-                    <p style={{color: "#6A6A6A"}}>CLOSED</p>
+                    <p style={{ color: "#6A6A6A" }}>CLOSED</p>
                   )}
                 </OnlyDesktopWrapper>
                 <OnlyMobileWrapper>
                   {e.node.isTheVenueOpenToThePublic === true ? (
-                    <EventHeading2 isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}>
-                      <Link
-                        onClick={() => setMenuOpen(false)}
-                        to={`events/${e.node.slug}`}
+                    e.node.slug ? (
+                      <EventHeading2
+                        isTheVenueOpenToThePublic={
+                          e.node.isTheVenueOpenToThePublic
+                        }
                       >
-                        VIEW DETAILS
-                      </Link>
-                    </EventHeading2>
+                        <Link
+                          onClick={() => setMenuOpen(false)}
+                          to={`/events/${e.node.slug}`}
+                        >
+                          VIEW DETAILS
+                        </Link>
+                      </EventHeading2>
+                    ) : (
+                      <EventHeading2
+                        isTheVenueOpenToThePublic={
+                          e.node.isTheVenueOpenToThePublic
+                        }
+                      >
+                        OPEN
+                      </EventHeading2>
+                    )
                   ) : (
                     <EventHeading2
                       isTheVenueOpenToThePublic={
