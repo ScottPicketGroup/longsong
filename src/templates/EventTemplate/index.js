@@ -58,12 +58,19 @@ const EventTemplate = ({ pageContext }) => {
       <Seo title="Home" />
       <EventHeroContainer>
         <ImageWrapper>
-          {imageData.length > 0 && <Slider imageData={imageData} />}
-          <StaticImage
-            className="play-button"
-            src="../../images/EventTemplate/playbutton.png"
-            alt="play-button"
-          />
+          {imageData ? (
+            <>
+              <Slider imageData={imageData} />
+              <StaticImage
+                className="play-button"
+                src="../../images/EventTemplate/playbutton.png"
+                alt="play-button"
+              />
+            </>
+          ) : (
+            <Heading1>No Media</Heading1>
+          )}
+
           {/* <StaticImage
             className="fullscreen-button"
             src="../../images/EventTemplate/fullscreenbutton.png"
@@ -78,7 +85,9 @@ const EventTemplate = ({ pageContext }) => {
           <ButtonWrapper>
             {eventData.bookNowButtonLink && <Button>BOOK NOW</Button>}
             <Link to="/">
-              <Button onClick={()=> handleOpenMenuClick(6)}>RETURN TO CALENDAR OVERVIEW</Button>
+              <Button onClick={() => handleOpenMenuClick(6)}>
+                RETURN TO CALENDAR OVERVIEW
+              </Button>
             </Link>
           </ButtonWrapper>
         </DateContainer>
