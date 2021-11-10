@@ -12,10 +12,10 @@ import useChangeMonth from "../../../../hooks/ChangeMonth"
 
 const Days = ({ daysView, events }) => {
   const { currentMonth, nextMonth } = useChangeMonth()
-  const { daysToDisplay, date, todaysDate, month } = useGetDaysOfMonth(
+  const { daysToDisplay, todaysDate, month } = useGetDaysOfMonth(
     currentMonth,
     nextMonth,
-    events
+    // events
   )
 
   console.log(useGetDaysOfMonth().events)

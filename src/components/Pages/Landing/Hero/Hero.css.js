@@ -102,7 +102,7 @@ export const IntroContainerWrapper = styled.div`
 `
 export const IntroTextWrapper = styled.div`
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 2rem  auto 0;
   flex-direction: column;
   p {
     font-size: 1.44rem !important;

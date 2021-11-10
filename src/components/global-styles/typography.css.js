@@ -128,20 +128,23 @@ export const Heading3 = styled.h3`
   font-size: 1rem;
   line-height: 1.2;
   color: ${props =>
-    props.eventList ? "white"
-      :  props.month === props.currentMonth && props.day < props.date
+     props.isTheVenueOpenToThePublic === false
       ? "#6A6A6A"
-      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
-      ? "#6A6A6A"
-      : props.month === props.currentMonth &&
+    :props.eventList ? "white"
+    : props.month === props.currentMonth &&
         props.day == props.date
       ? "#457E5C"
       : props.month == props.currentMonth &&
         props.day == props.date + 1
       ? "#314638"
+      :  props.month === props.currentMonth && props.day < props.date
+      ? "#6A6A6A"
+      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
+      ? "#6A6A6A"
       : props.month === props.currentMonth &&
         props.day == props.date - 1
       ? "#314638"
+      
       : "white"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -189,19 +192,23 @@ font-family: bold;
   letter-spacing: 3px;
   font-weight: 100;
   color: ${props =>
-    props.eventList ? "white"
-      : props.month === props.currentMonth && props.day < props.date
+     props.isTheVenueOpenToThePublic === false
       ? "#6A6A6A"
-      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
-      ? "#6A6A6A"
-      : props.month === props.currentMonth &&
+    :props.eventList ? "white"
+    : props.month === props.currentMonth &&
         props.day == props.date
       ? "#457E5C"
       : props.month == props.currentMonth &&
         props.day == props.date + 1
       ? "#314638"
+      : props.month === props.currentMonth && props.day < props.date
+      ? "#6A6A6A"
+      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
+      ? "#6A6A6A"
       : props.month === props.currentMonth &&
         props.day == props.date - 1
+      ? "#314638"
+      : props.isTheVenueOpenToThePublic
       ? "#314638"
       : "white"};
 

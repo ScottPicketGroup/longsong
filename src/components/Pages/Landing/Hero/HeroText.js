@@ -28,7 +28,7 @@ const HeroText = () => {
 
   return (
     <AnimationIntroContainer>
-      <DesktopWrapper>
+      <DesktopWrapper style={{marginBottom: '-9rem'}}>
         <Renderer
           node={
             data.allContentfulLongsongLandingPageContent.edges[0].node

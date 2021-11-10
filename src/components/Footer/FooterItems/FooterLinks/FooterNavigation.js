@@ -1,4 +1,5 @@
 import React, {useEffect} from "react"
+import { Link } from "gatsby"
 import { FooterLink, FooterLinksColumn } from "../../Footer.css"
 
 const FooterNavigation = ({
@@ -68,15 +69,15 @@ const [open, setOpen] = React.useState(menuOpen)
       >
         Contact
       </FooterLink>
-      <FooterLink
-        marginBottom="sm"
-        //    onClick={() => {
-        //     setActivePage(5)
-        //     setMenuOpen(true)
-
-        //    }}
-      >
-        Terms and Conditions
+      <FooterLink marginBottom="sm">
+      <Link
+          to="/terms-conditions"
+          onClick={() => {
+            setMenuOpen(false)
+          }}
+        >
+          Terms and Conditions
+        </Link>
       </FooterLink>
     </FooterLinksColumn>
   )
