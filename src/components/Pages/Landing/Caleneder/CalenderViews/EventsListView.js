@@ -48,7 +48,7 @@ const EventsListView = ({
   return (
     <>
       {events.map((e, index) => {
-        if (e.node.eventDate.slice(0, 2) === componentDate)
+        if (e.node.eventDate.slice(2, 4) === componentDate && e.node.eventDate.slice(0, 2) == currentMonth + 1)
           return (
             <EventDayContainer
               key={index}

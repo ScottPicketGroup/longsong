@@ -255,7 +255,7 @@ export const EventContents = styled.div`
 
 export const EventFooterWrapper = styled.div`
   display: flex;
-
+  border-top: ${props=>props.bTop ? "1px solid" : "none"};
   justify-content: space-between;
   padding: 0.5rem;
   @media (max-width: 450px) {

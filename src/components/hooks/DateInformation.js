@@ -23,7 +23,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       if (iterator < 10 && events) {
         const eventToPush = events.map(event => {
           if (
-               event.node.eventDate.events[0].node.eventDate.slice(0,4) ===   "0" +  date.toLocaleDateString("au-EN", monthtoIt)
+              event.node.eventDate.slice(0,4) ===  date.toLocaleDateString("au-EN", monthtoIt).slice(0,4).replace("/", "0")
           ) {
             m = event
             console.log(m)
@@ -39,15 +39,11 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       } else {
       
         const eventToPush = events && events.map(event => {
-          // console.log(
-          // event.node.eventDate, date.toLocaleDateString("au-EN", monthtoIt))
           if (
-         
-       
-            event.node.eventDate.events[0].node.eventDate.slice(0,4) === date.toLocaleDateString("au-EN", monthtoIt)
+            event.node.eventDate.slice(0,4) === date.toLocaleDateString("au-EN", monthtoIt).slice(0,5).replace("/", "")
           ) {
             m = event
-      
+            console.log(m)
           }
         }) 
        
