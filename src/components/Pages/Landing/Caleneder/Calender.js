@@ -29,8 +29,7 @@ const Calender = () => {
               raw
             }
             eventDate(formatString: "MMDDH")
-          
-           
+            isTheVenueOpenToThePublic
           }
         }
       }

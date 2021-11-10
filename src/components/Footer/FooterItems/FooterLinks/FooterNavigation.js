@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import { FooterLink, FooterLinksColumn } from "../../Footer.css"
 
@@ -9,36 +9,30 @@ const FooterNavigation = ({
   setActivePage,
   foodMenu,
   drinksMenu,
-  refElement
+  refElement,
 }) => {
+  const [open, setOpen] = React.useState(menuOpen)
 
-const [open, setOpen] = React.useState(menuOpen)
+  // useEffect(() => {
 
+  // alert(open)
+  // }, [open])
 
-// useEffect(() => {
-
-// alert(open)
-// }, [open])
-
-  const handleFooterLink = (activePage) => {
-
-  }
+  const handleFooterLink = activePage => {}
 
   return (
     <FooterLinksColumn>
       <FooterLink marginBottom="md">LONGSONG</FooterLink>
-      <FooterLink marginBottom="sm"><a
-          href={drinksMenu.file.url}
-          target="_blank"
-          rel="noreferrer"
-        >
+      <FooterLink marginBottom="sm">
+        <a href={drinksMenu.file.url} target="_blank" rel="noreferrer">
           Drinks
-          </a></FooterLink>
-      <FooterLink marginBottom="sm"><a
-          href={foodMenu.file.url}
-          target="_blank"
-          rel="noreferrer"
-        >Food</a></FooterLink>
+        </a>
+      </FooterLink>
+      <FooterLink marginBottom="sm">
+        <a href={foodMenu.file.url} target="_blank" rel="noreferrer">
+          Food
+        </a>
+      </FooterLink>
       <FooterLink
         marginBottom="sm"
         onClick={() => {
@@ -69,15 +63,15 @@ const [open, setOpen] = React.useState(menuOpen)
       >
         Contact
       </FooterLink>
-      <FooterLink marginBottom="sm">
-      <Link
-          to="/terms-conditions"
-          onClick={() => {
-            setMenuOpen(false)
-          }}
-        >
-          Terms and Conditions
-        </Link>
+      <FooterLink
+        marginBottom="sm"
+        onClick={() => {
+          setActivePage(7)
+          setMenuOpen(true)
+          refElement.scrollIntoView({ behavior: "smooth" })
+        }}
+      >
+        Terms and Conditions
       </FooterLink>
     </FooterLinksColumn>
   )

@@ -16,7 +16,7 @@ const CalanderView = ({
   setOpenModel,
   currentMonth,
   modalWidth,
-  month,
+  month
 }) => {
   const [open, setOpen] = useState(false)
   const dayContainerRef = useRef(null)
