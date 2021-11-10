@@ -8,7 +8,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
   const year = date.getFullYear()
   const month = date.getMonth()
   let monthtoIt = currentMonth < 12 ? currentMonth - 1 : currentMonth % 12 - 1
-  const dat = { day: "numeric" }
+  // const dat = { day: "numeric" }
 
   useEffect(() => {
    

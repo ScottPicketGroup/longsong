@@ -7,7 +7,7 @@ import HeroBackground from "../components/Pages/Landing/Hero/HeroBackgound"
 import LandingPageModules from "../components/Pages/Landing/LandingPageModules"
 
 const IndexPage = ({ data }) => {
-  const { heroImage, textOverHeroImage, landingPageSections } =
+  const { heroImage, landingPageSections } =
     data.allContentfulLongsongLandingPageContent.edges[0].node
 
   //components state

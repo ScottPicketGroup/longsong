@@ -1,5 +1,4 @@
 import React, { useEffect } from "react"
-import styled from "styled-components"
 import Footer from "./Footer/Footer"
 
 import {
@@ -58,8 +57,3 @@ const Layout = ({ children, fd, heroImage }) => {
 }
 
 export default Layout
-
-const Big = styled.div`
-  height: 100vh;
-  width: 100vw;
-`
