@@ -17,9 +17,7 @@ import { Link } from "gatsby"
 import useActivePage from "../../../../hooks/ActivePage"
 
 const EventDetailsModal = ({
-  eventData,
   open,
-  setOpenModel,
   height,
   width,
   i,
@@ -28,7 +26,6 @@ const EventDetailsModal = ({
   dayOfWeek,
   todaysDate,
   item,
-  month,
 }) => {
   const [eventDetails, setEventDetails] = React.useState({})
   const { setMenuOpen } = useActivePage()
@@ -40,13 +37,13 @@ const EventDetailsModal = ({
   return (
     <EventDetailsWrapper
       open={open}
-      height={height * 3}
+      height={(height - 1) * 3}
       width={(width / 7) * 2 - 10}
       i={i}
       onClick={() => setOpen(false)}
     >
-      <EventListWrapper width={width} height={height} i={i}>
-        <DateDisplayContainer height={height} width={width} modal>
+      <EventListWrapper width={width} height={height - 1} i={i}>
+        <DateDisplayContainer height={height - 1} width={width} modal>
           <Heading3
             calander
             dayOfWeek={day}
@@ -90,11 +87,21 @@ const EventDetailsModal = ({
             ) : (
               <></>
             )}
-  
-             <Heading2>{dayOfWeek == "Sunday" || dayOfWeek == "Monday" || dayOfWeek == "Tuesday" ? "CLOSED" : eventDetails.eventName ? eventDetails.eventName +" "+ eventDetails.eventDate.slice(4,5) + "PM" : "OPEN 5PM-late" }</Heading2>
-       
+
+            <Heading2>
+              {dayOfWeek == "Sunday" ||
+              dayOfWeek == "Monday" ||
+              dayOfWeek == "Tuesday"
+                ? "CLOSED"
+                : eventDetails.eventName
+                ? eventDetails.eventName +
+                  " " +
+                  eventDetails.eventDate.slice(4, 5) +
+                  "PM"
+                : "OPEN 5PM-late"}
+            </Heading2>
           </EventContents>
-          <EventFooterWrapper bTop={eventDetails.slug}>
+          <EventFooterWrapper>
             {eventDetails.slug && (
               <Link
                 onClick={() => setMenuOpen(false)}
@@ -103,7 +110,6 @@ const EventDetailsModal = ({
                 VIEW DETAILS
               </Link>
             )}
-
             <LongsongIcon />
           </EventFooterWrapper>
         </EventInfoWrapper>

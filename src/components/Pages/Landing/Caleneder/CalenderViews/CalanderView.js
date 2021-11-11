@@ -1,6 +1,10 @@
 import React, { useRef, useState, useEffect } from "react"
 
-import { DayContainer, DateDisplayContainer, EmptyDayContainer } from "../Calender.css"
+import {
+  DayContainer,
+  DateDisplayContainer,
+  EmptyDayContainer,
+} from "../Calender.css"
 import EventDetailsModal from "../EventDetailsModal/EventDetailsModal"
 
 import { Heading3, Number1 } from "../../../../global-styles/typography.css"
@@ -16,7 +20,7 @@ const CalanderView = ({
   setOpenModel,
   currentMonth,
   modalWidth,
-  month
+  month,
 }) => {
   const [open, setOpen] = useState(false)
   const dayContainerRef = useRef(null)
@@ -33,14 +37,12 @@ const CalanderView = ({
     openModel === i ? setOpen(true) : setOpen(false)
   }, [openModel])
 
- 
   return item.day === "" && item.date === "" ? (
-    <EmptyDayContainer ref={dayContainerRef}/>
+    <EmptyDayContainer ref={dayContainerRef} />
   ) : (
     <DayContainer
       dayOfWeek={day}
       ref={dayContainerRef}
-      height={elementWidth}
       currentMonth={currentMonth}
       month={month}
       calander
@@ -63,7 +65,11 @@ const CalanderView = ({
           i={i}
           key={i + 1}
         >
-          { (month == currentMonth && item.date == todaysDate) ? "TODAY" : (month == currentMonth &&item.date == todaysDate + 1) ? "TOMORROW" : item.day.toUpperCase()}
+          {month == currentMonth && item.date == todaysDate
+            ? "TODAY"
+            : month == currentMonth && item.date == todaysDate + 1
+            ? "TOMORROW"
+            : item.day.toUpperCase()}
         </Heading3>
         <Number1
           month={month}

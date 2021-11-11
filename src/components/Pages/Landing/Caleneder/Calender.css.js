@@ -262,6 +262,7 @@ export const EventFooterWrapper = styled.div`
   display: flex;
   border-top: ${props => (props.bTop ? "1px solid" : "none")};
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
   @media (max-width: 450px) {
     display: flex;
