@@ -1,7 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
-import Helmet from "react-helmet"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
@@ -19,58 +17,59 @@ import FirstModule from "../FIrstModule"
 
 const GroupBookings = ({ activePage }) => {
   const data = useStaticQuery(graphql`
-  query PrivateEvent {
-    contentfulLongsongPageContent(id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}) {
-      privateEventsHeroImage {
-        title
-        gatsbyImageData
-      }
-      groupBookingTitle
-      groupBookingsDescription {
-        raw
-      }
-      privateEventSection1title
-      privateEventSection1description {
-        raw
-      }
-      privateEventsSection1media {
-        gatsbyImageData
-        title
-      }
-      privateEventsSection2title
-      privateEventsSection2description {
-        raw
-      }
-      privateEventsSection2media {
-        title
-        gatsbyImageData
-      }
-      privateEventsSection3title
-      privateEventsSection3description {
-        raw
-      }
-      privateEventsSection3media {
-        title
-        gatsbyImageData
-      }
-      sampleMenuOne {
-        title
-        file {
-          url
-          fileName
+    query PrivateEvent {
+      contentfulLongsongPageContent(
+        id: { eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e" }
+      ) {
+        privateEventsHeroImage {
+          title
+          gatsbyImageData
         }
-      }
-      sampleMenuTwo {
-        title
-        file {
-          url
-          fileName
+        groupBookingTitle
+        groupBookingsDescription {
+          raw
         }
+        privateEventSection1title
+        privateEventSection1description {
+          raw
+        }
+        privateEventsSection1media {
+          gatsbyImageData
+          title
+        }
+        privateEventsSection2title
+        privateEventsSection2description {
+          raw
+        }
+        privateEventsSection2media {
+          title
+          gatsbyImageData
+        }
+        privateEventsSection3title
+        privateEventsSection3description {
+          raw
+        }
+        privateEventsSection3media {
+          title
+          gatsbyImageData
+        }
+        sampleMenuOne {
+          title
+          file {
+            url
+            fileName
+          }
+        }
+        sampleMenuTwo {
+          title
+          file {
+            url
+            fileName
+          }
+        }
+        id
       }
-      id
     }
-  }
-  
   `)
   const newData = {
     firstSection: {
@@ -97,7 +96,8 @@ const GroupBookings = ({ activePage }) => {
     <SlideOutPageWrapper activePage={activePage} page={3}>
       <SectionWrapper column>
         <ImageWrapper full>
-          <Slider hero
+          <Slider
+            hero
             imageData={
               data.contentfulLongsongPageContent.privateEventsHeroImage
             }
@@ -108,16 +108,18 @@ const GroupBookings = ({ activePage }) => {
           <Heading1 marginBottom="md">
             {data.contentfulLongsongPageContent.groupBookingTitle}
           </Heading1>
-         
-          <Renderer node={data.contentfulLongsongPageContent.groupBookingsDescription} />
-         
+
+          <Renderer
+            node={data.contentfulLongsongPageContent.groupBookingsDescription}
+          />
+
           <Button marginBottom="" style={{ marginRight: `2rem` }}>
             <a
               href={data.contentfulLongsongPageContent.sampleMenuOne.file.url}
               target="_blank"
               rel="noreferrer"
             >
-              FUNCTIONS PACKAGE 
+              FUNCTIONS PACKAGE
             </a>
           </Button>
           <Button>

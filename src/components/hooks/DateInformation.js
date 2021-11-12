@@ -7,13 +7,11 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
   const day = date.getDay()
   const year = date.getFullYear()
   const month = date.getMonth()
-  let monthtoIt = currentMonth < 12 ? currentMonth - 1 : currentMonth % 12 - 1
-  // const dat = { day: "numeric" }
+  let monthtoIt = currentMonth < 12 ? currentMonth - 1 : (currentMonth % 12) - 1
 
   useEffect(() => {
-   
     let date = new Date(Date.UTC(year, currentMonth, 1))
-   
+
     const day = { weekday: "long" }
     const dat = { day: "numeric" }
     let days = []
@@ -21,9 +19,13 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       let iterator = date.getDate()
       let m
       if (iterator < 10 && events) {
-        const eventToPush = events.map(event => {
+        events.forEach(event => {
           if (
-              event.node.eventDate.slice(0,4) ===  date.toLocaleDateString("au-EN", monthtoIt).slice(0,4).replace("/", "0")
+            event.node.eventDate.slice(0, 4) ===
+            date
+              .toLocaleDateString("au-EN", monthtoIt)
+              .slice(0, 4)
+              .replace("/", "0")
           ) {
             m = event
           }
@@ -36,15 +38,19 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
           event: m,
         })
       } else {
-      
-        const eventToPush = events && events.map(event => {
-          if (
-            event.node.eventDate.slice(0,4) === date.toLocaleDateString("au-EN", monthtoIt).slice(0,5).replace("/", "")
-          ) {
-            m = event
-          }
-        }) 
-       
+        events &&
+          events.forEach(event => {
+            if (
+              event.node.eventDate.slice(0, 4) ===
+              date
+                .toLocaleDateString("au-EN", monthtoIt)
+                .slice(0, 5)
+                .replace("/", "")
+            ) {
+              m = event
+            }
+          })
+
         days.push({
           dayIndex: date.getDay(),
           day: date.toLocaleDateString("au-EN", day),
@@ -65,7 +71,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
           i++
         } else {
           daysForDisplay.push({
-            dayIndex: i % 7 + 1,
+            dayIndex: (i % 7) + 1,
             day: "",
             date: "",
             event: {},
@@ -75,8 +81,9 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       }
       return daysForDisplay
     }
-    const data = renderDates();
+    const data = renderDates()
     setDaysToDisplay(data)
+    // eslint-disable-next-line
   }, [currentMonth, nextMonth, events])
 
   return { day, year, month, daysToDisplay, date, todaysDate }

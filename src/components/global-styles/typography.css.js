@@ -128,23 +128,24 @@ export const Heading3 = styled.h3`
   font-size: 1rem;
   line-height: 1.2;
   color: ${props =>
-     props.isTheVenueOpenToThePublic === false
+    props.isTheVenueOpenToThePublic === false
       ? "#6A6A6A"
-    :props.eventList ? "white"
-    : props.month === props.currentMonth &&
-        props.day == props.date
+      : props.eventList
+      ? "white"
+      : props.month === props.currentMonth && parseInt(props.day) === props.date
       ? "#457E5C"
-      : props.month == props.currentMonth &&
-        props.day == props.date + 1
+      : props.month === props.currentMonth &&
+        parseInt(props.day) === props.date + 1
       ? "#314638"
-      :  props.month === props.currentMonth && props.day < props.date
+      : props.month === props.currentMonth && props.day < props.date
       ? "#6A6A6A"
-      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
+      : props.dayOfWeek === "Sunday" ||
+        props.dayOfWeek === "Tuesday" ||
+        props.dayOfWeek === "Monday"
       ? "#6A6A6A"
       : props.month === props.currentMonth &&
-        props.day == props.date - 1
+        parseInt(props.day) === props.date - 1
       ? "#314638"
-      
       : "white"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -187,26 +188,28 @@ export const Heading3 = styled.h3`
 `
 
 export const Number1 = styled.h3`
-font-family: bold;
+  font-family: bold;
   margin-left: 1rem;
   letter-spacing: 3px;
   font-weight: 100;
   color: ${props =>
-     props.isTheVenueOpenToThePublic === false
+    props.isTheVenueOpenToThePublic === false
       ? "#6A6A6A"
-    :props.eventList ? "white"
-    : props.month === props.currentMonth &&
-        props.day == props.date
+      : props.eventList
+      ? "white"
+      : props.month === props.currentMonth && parseInt(props.day) === props.date
       ? "#457E5C"
-      : props.month == props.currentMonth &&
-        props.day == props.date + 1
+      : props.month === props.currentMonth &&
+        parseInt(props.day) === props.date + 1
       ? "#314638"
       : props.month === props.currentMonth && props.day < props.date
       ? "#6A6A6A"
-      : props.dayOfWeek == "Sunday" || props.dayOfWeek == "Tuesday" || props.dayOfWeek == "Monday"
+      : props.dayOfWeek === "Sunday" ||
+        props.dayOfWeek === "Tuesday" ||
+        props.dayOfWeek === "Monday"
       ? "#6A6A6A"
       : props.month === props.currentMonth &&
-        props.day == props.date - 1
+        parseInt(props.day) === props.date - 1
       ? "#314638"
       : props.isTheVenueOpenToThePublic
       ? "#314638"
@@ -353,12 +356,12 @@ export const Month2 = styled.h3`
 `
 
 export const BC1 = styled.p`
-font-family: ${props => props.bold ? 'bold' : ''};
+  font-family: ${props => (props.bold ? "bold" : "")};
   font-size: 1.44rem !important;
   line-height: 1.13;
   letter-spacing: 10;
   font-size: 1.25rem;
-  font-weight: ${props => props.bold ? '900' : '100'};
+  font-weight: ${props => (props.bold ? "900" : "100")};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":
@@ -442,8 +445,7 @@ export const BC3 = styled.p`
   font-family: normal;
 
   font-size: 1.25rem;
-  color: ${props =>
-    props.imageControls ? "#6A6A6A" : "white"};
+  color: ${props => (props.imageControls ? "#6A6A6A" : "white")};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":

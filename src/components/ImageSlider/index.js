@@ -14,7 +14,6 @@ import PreviousIcon from "./Controls/PreviousIcon"
 import {
   DesktopWrapper,
   MobileWrapper,
-  aspectRatio,
 } from "../global-styles/containers.css"
 
 const Slider = ({ imageData, hero, aspectRatio }) => {

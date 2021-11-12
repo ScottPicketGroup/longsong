@@ -24,6 +24,7 @@ export const ChangeMonthProvider = ({ children }) => {
 
     setThisMonthInfo([thisMonth, thisMonthYear])
     setNextMonthInfo([nextMonth, nextMonthYear])
+    // eslint-disable-next-line
   }, [currentMonth])
 
   const handlePreviousMonthChange = () => {

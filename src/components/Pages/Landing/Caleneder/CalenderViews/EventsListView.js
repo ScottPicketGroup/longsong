@@ -1,14 +1,10 @@
 import React, { useRef, useState, useEffect } from "react"
 import { Link } from "gatsby"
-// import { Heading3, Number1 } from "../../../../global-styles/typography.css"
 import {
-  DayContainer,
   EventsDateDisplayContainer,
-  EventDetailsWrapper,
   EventsListDetailsWrapper,
   EventsListDetailsViewDetailsLink,
   EventsListPerformerDetailsWrapper,
-  EventsListMenusDetailsWrapper,
   EventDayContainer,
   EventHeading2,
   EventBC3,
@@ -28,16 +24,12 @@ const EventsListView = ({
   todaysDate,
   currentMonth,
   month,
-  date,
   events,
   daysView,
 }) => {
   const dayContainerRef = useRef(null)
   const asdf = parseInt(item.date, 10)
-  const thisFakeMonth = month + 2
   const componentDate = item.date
-
-  const [event, setEvent] = React.useState({})
 
   const [elementWidth, setElementWidth] = useState(0)
   const { setMenuOpen } = useActivePage()
@@ -50,11 +42,9 @@ const EventsListView = ({
   return (
     <>
       {events.map((e, index) => {
-        if (
+        return (
           e.node.eventDate.slice(2, 4) === componentDate &&
-          e.node.eventDate.slice(0, 2) == currentMonth + 1
-        )
-          return (
+          parseInt(e.node.eventDate.slice(0, 2)) === currentMonth + 1 && (
             <EventDayContainer
               key={index}
               i={i}
@@ -172,7 +162,6 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
-                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -187,7 +176,6 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
-                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -202,7 +190,6 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
-                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -239,7 +226,6 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
-                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -254,7 +240,6 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
-                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -269,7 +254,6 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
-                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -288,8 +272,6 @@ const EventsListView = ({
                 currentMonth={currentMonth}
                 calander
                 month={month}
-                currentMonth={currentMonth}
-                calander
                 dayOfWeek={item.day}
                 day={day}
                 date={todaysDate}
@@ -350,6 +332,7 @@ const EventsListView = ({
               </EventsListDetailsViewDetailsLink>
             </EventDayContainer>
           )
+        )
       })}
     </>
   )

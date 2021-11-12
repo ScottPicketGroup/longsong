@@ -34,27 +34,27 @@ const Calender = () => {
         }
       }
     }
-  `
-)
+  `)
   useEffect(() => {
     data && setEvents(data.allContentfulLongsongEvents.edges)
   }, [data])
 
   useEffect(() => {
     setIsFade(true)
+    // eslint-disable-next-line
   }, [currentMonth, isFade])
 
   useEffect(() => {
     if (width <= 450) {
       setDaysView(true)
     }
+    // eslint-disable-next-line
   }, [daysView])
 
   return (
     <CalanderWrapper ref={calenderRef}>
       <Navigation daysView={daysView} setDaysView={setDaysView} />
-      {/* {isFade && <Days events={events} daysView={daysView} />} */}
-      <Days daysView={daysView} events={events}/>
+      <Days daysView={daysView} events={events} />
     </CalanderWrapper>
   )
 }

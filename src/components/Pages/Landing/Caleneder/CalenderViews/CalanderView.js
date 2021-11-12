@@ -35,13 +35,13 @@ const CalanderView = ({
 
   useEffect(() => {
     openModel === i ? setOpen(true) : setOpen(false)
+    // eslint-disable-next-line
   }, [openModel])
 
   return item.day === "" && item.date === "" ? (
     <EmptyDayContainer ref={dayContainerRef} />
   ) : (
     <DayContainer
-      dayOfWeek={day}
       ref={dayContainerRef}
       currentMonth={currentMonth}
       month={month}
@@ -58,16 +58,15 @@ const CalanderView = ({
           calander
           month={month}
           currentMonth={currentMonth}
-          calander
           dayOfWeek={item.day}
           day={day}
           date={todaysDate}
           i={i}
           key={i + 1}
         >
-          {month == currentMonth && item.date == todaysDate
+          {month === currentMonth && parseInt(item.date) === todaysDate
             ? "TODAY"
-            : month == currentMonth && item.date == todaysDate + 1
+            : month === currentMonth && parseInt(item.date) === todaysDate + 1
             ? "TOMORROW"
             : item.day.toUpperCase()}
         </Heading3>
@@ -89,7 +88,6 @@ const CalanderView = ({
           dayOfWeek={item.day}
           day={day}
           date={todaysDate}
-          i={i}
           key={i}
           height={elementWidth}
           item={item}

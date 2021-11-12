@@ -1,24 +1,13 @@
-import React, { useEffect } from "react"
-import { Link } from "gatsby"
+import React from "react"
 import { FooterLink, FooterLinksColumn } from "../../Footer.css"
 
 const FooterNavigation = ({
-  menuOpen,
   setMenuOpen,
-  activePage,
   setActivePage,
   foodMenu,
   drinksMenu,
   refElement,
 }) => {
-  const [open, setOpen] = React.useState(menuOpen)
-
-  // useEffect(() => {
-
-  // alert(open)
-  // }, [open])
-
-  const handleFooterLink = activePage => {}
 
   return (
     <FooterLinksColumn>

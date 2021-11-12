@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fadeInBG } from "./animations"
+
 export const PageContainer = styled.div`
   width: 100%;
 

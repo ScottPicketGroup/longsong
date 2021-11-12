@@ -89,9 +89,9 @@ const EventDetailsModal = ({
             )}
 
             <Heading2>
-              {dayOfWeek == "Sunday" ||
-              dayOfWeek == "Monday" ||
-              dayOfWeek == "Tuesday"
+              {dayOfWeek === "Sunday" ||
+              dayOfWeek === "Monday" ||
+              dayOfWeek === "Tuesday"
                 ? "CLOSED"
                 : eventDetails.eventName
                 ? eventDetails.eventName +

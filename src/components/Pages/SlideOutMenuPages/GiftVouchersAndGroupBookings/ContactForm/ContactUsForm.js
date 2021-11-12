@@ -43,25 +43,25 @@ const ContactUsForm = () => {
     !inputs.email.includes(".") || !inputs.email.includes("@")
       ? setError(error => ({ ...error, email: true }))
       : setError(error => ({ ...error, email: false }))
-    inputs.fName == ""
+    inputs.fName === ""
       ? setError(error => ({ ...error, fName: true }))
       : setError(error => ({ ...error, fName: false }))
-    inputs.sName == ""
+    inputs.sName === ""
       ? setError(error => ({ ...error, sName: true }))
       : setError(error => ({ ...error, sName: false }))
-    inputs.number == ""
+    inputs.number === ""
       ? setError(error => ({ ...error, number: true }))
       : setError(error => ({ ...error, number: false }))
-    inputs.message == ""
+    inputs.message === ""
       ? setError(error => ({ ...error, message: true }))
       : setError(error => ({ ...error, message: false }))
-    inputs.eventType == ""
+    inputs.eventType === ""
       ? setError(error => ({ ...error, eventType: true }))
       : setError(error => ({ ...error, eventType: false }))
-    inputs.eventDate == ""
+    inputs.eventDate === ""
       ? setError(error => ({ ...error, eventDate: true }))
       : setError(error => ({ ...error, eventDate: false }))
-    inputs.guestNum == ""
+    inputs.guestNum === ""
       ? setError(error => ({ ...error, guestNum: true }))
       : setError(error => ({ ...error, guestNum: false }))
   }
