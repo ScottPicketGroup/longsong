@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
 import Slider from "../../../ImageSlider"
 import {
   EventContentContainer,
@@ -67,9 +66,9 @@ const MenusModule = () => {
               <BreakLine none />
               <Heading1 marginBottom="md">{foodMenuHeading}</Heading1>
               <BC1 marginBottom="md">{foodMenuIntro}</BC1>
-              <Link to={foodMenuPdf.file.url}>
+              <a href={foodMenuPdf.file.url} target="_blank" rel="noreferrer">
                 <BC1 style={{ color: "#457E5C" }}>View menu</BC1>
-              </Link>
+              </a>
             </TextContainer>
           </EventContentContainer>
         </MenusModuleHalfWrapper>
@@ -83,9 +82,9 @@ const MenusModule = () => {
               <BreakLine none />
               <Heading1 marginBottom="md">{drinksMenuHeading}</Heading1>
               <BC1 marginBottom="md">{drinksMenuIntro}</BC1>
-              <Link to={drinksMenuPdf.file.url}>
+              <a href={drinksMenuPdf.file.url} target="_blank" rel="noreferrer">
                 <BC1 style={{ color: "#457E5C" }}>View drinks list</BC1>
-              </Link>
+              </a>
             </TextContainer>
           </EventContentContainer>
         </MenusModuleHalfWrapper>

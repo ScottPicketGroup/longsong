@@ -1,5 +1,4 @@
 import React, { useRef } from "react"
-import { Link } from "gatsby"
 import { BC2 } from "../global-styles/typography.css"
 import LongsongIcon from "./Icons/LongsongIcon"
 import MenuIcon from "./Icons/MenuIcon"
@@ -13,14 +12,12 @@ const MenuContainer = ({
   setActivePage,
 }) => {
   const menuRef = useRef(null)
-  
+
   return (
     <MenuWrapper ref={menuRef}>
       <MainWrapper>
         <MenuIcon setMenuOpen={setMenuOpen} setActivePage={setActivePage} />
-        <Link to="/">
-          <LongsongIcon />
-        </Link>
+        <LongsongIcon />
       </MainWrapper>
       <EventsWrapper>
         <BC2

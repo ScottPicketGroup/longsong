@@ -34,7 +34,7 @@ const LandingImageGallery = () => {
 
   return (
     <LandingPageModuleContainer>
-      <EventContentContainer style={{ marginBottom: `3.25rem` }} start>
+      <EventContentContainer style={{ marginBottom: `3.25rem` }} start="true">
         <TextContainer>
           <BreakLine none />
           <Heading1 marginBottom="md" style={{ marginTop: "0px" }}>

@@ -49,7 +49,7 @@ const Renderer = ({ node }) => {
     renderText: text => {
       return text
         .split("\n")
-        .map(i => [i, <br />])
+        .map((i, index) => [i, <br key={index} />])
         .flat()
     },
   }

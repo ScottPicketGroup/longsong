@@ -11,10 +11,7 @@ import {
 import NextIcon from "./Controls/NextIcon"
 import PreviousIcon from "./Controls/PreviousIcon"
 
-import {
-  DesktopWrapper,
-  MobileWrapper,
-} from "../global-styles/containers.css"
+import { DesktopWrapper, MobileWrapper } from "../global-styles/containers.css"
 
 const Slider = ({ imageData, hero, aspectRatio }) => {
   const [images, setImages] = useState([])
@@ -114,7 +111,7 @@ const Slider = ({ imageData, hero, aspectRatio }) => {
             <SliderImage
               key={i}
               image={image.gatsbyImageData}
-              alt={image.title}
+              alt={image.title ? image.title : "slider-img"}
               id={i}
               activeimg={activeImg}
               aspectratio={aspectRatio}
@@ -132,7 +129,7 @@ const Slider = ({ imageData, hero, aspectRatio }) => {
                 |
               </BC3>
               <ControlButton onClick={nextImage}>
-                <NextIcon  />
+                <NextIcon />
               </ControlButton>
             </ControlsContainer>
           </DesktopWrapper>
