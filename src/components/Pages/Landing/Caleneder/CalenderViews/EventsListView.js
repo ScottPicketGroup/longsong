@@ -72,12 +72,13 @@ const EventsListView = ({
               >
                 <OnlyDesktopWrapper>
                   <EventHeading3
-                    dayOfWeek={day}
+                    month={month}
+                    currentMonth={currentMonth}
+                    dayOfWeek={item.day}
                     day={day}
                     date={todaysDate}
-                    i={i}
-                    eventList={true}
                     isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}
+                    i={i}
                   >
                     {asdf === todaysDate + 1
                       ? "TOMORROW"
@@ -287,10 +288,36 @@ const EventsListView = ({
                         VIEW DETAILS
                       </Link>
                     ) : (
-                      <p style={{ color: "#FFFFFF" }}>OPEN</p>
+                      <EventHeading3
+                        month={month}
+                        currentMonth={currentMonth}
+                        dayOfWeek={item.day}
+                        day={day}
+                        date={todaysDate}
+                        isTheVenueOpenToThePublic={
+                          e.node.isTheVenueOpenToThePublic
+                        }
+                        i={i}
+                        eventStatus
+                      >
+                        OPEN
+                      </EventHeading3>
                     )
                   ) : (
-                    <p style={{ color: "#6A6A6A" }}>CLOSED</p>
+                    <EventHeading3
+                      month={month}
+                      currentMonth={currentMonth}
+                      dayOfWeek={item.day}
+                      day={day}
+                      date={todaysDate}
+                      isTheVenueOpenToThePublic={
+                        e.node.isTheVenueOpenToThePublic
+                      }
+                      i={i}
+                      eventStatus
+                    >
+                      CLOSED
+                    </EventHeading3>
                   )}
                 </OnlyDesktopWrapper>
                 <OnlyMobileWrapper>

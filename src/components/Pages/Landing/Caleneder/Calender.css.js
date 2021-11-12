@@ -149,7 +149,15 @@ export const DayContainer = styled.div`
 
 export const EventDayContainer = styled(DayContainer)`
   border: ${props =>
-    props.isTheVenueOpenToThePublic ? "1px solid white" : "1px solid #6A6A6A"};
+    props.isTheVenueOpenToThePublic !== true
+      ? "1px solid #6A6A6A"
+      : props.day < props.date
+      ? "1px solid #6A6A6A"
+      : props.dayOfWeek === "Sunday" ||
+        props.dayOfWeek === "Tuesday" ||
+        props.dayOfWeek === "Monday"
+      ? "1px solid #6A6A6A"
+      : "1px solid white"};
 `
 
 export const EmptyDayContainer = styled(DayContainer)`
@@ -186,7 +194,11 @@ export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
       ? ""
       : ""};
   border: ${props =>
-    props.isTheVenueOpenToThePublic ? "1px solid white" : "1px solid #6A6A6A"};
+    props.day < props.date
+      ? "1px solid #6A6A6A"
+      : props.isTheVenueOpenToThePublic
+      ? "1px solid white"
+      : "1px solid #6A6A6A"};
   border-top: 0;
   border-left: 0;
   color: black !important;
@@ -232,7 +244,9 @@ export const EventDetailsWrapper = styled.div`
   top: ${props => (props.i <= 21 ? "0" : "")};
   bottom: ${props => (props.i > 21 ? "0" : "")};
   right: ${props =>
-    props.i === 7 || props.i === 14 || props.i === 21 || props.i === 28 ? "0" : ``};
+    props.i === 7 || props.i === 14 || props.i === 21 || props.i === 28
+      ? "0"
+      : ``};
   overflow: hidden;
   @media (max-width: 450px) {
     display: ${props => (props.open ? `flex` : `none`)};
@@ -303,7 +317,11 @@ export const MonthIconWrapper = styled.svg`
 export const EventsListDetailsWrapper = styled.div`
   flex: 1;
   border-right: ${props =>
-    props.isTheVenueOpenToThePublic ? "1px solid white" : "1px solid #6A6A6A"};
+    props.day < props.date
+      ? "1px solid #6A6A6A"
+      : props.isTheVenueOpenToThePublic
+      ? "1px solid white"
+      : "1px solid #6A6A6A"};
   display: flex;
   padding: 1rem;
   background: ${props =>
@@ -364,15 +382,9 @@ export const EventHeading2 = styled(Heading2)`
     font-size: 1.25rem;
     line-height: 1.2;
     color: ${props =>
-      props.isTheVenueOpenToThePublic !== true
+      props.day < props.date
         ? "#6A6A6A"
-        : props.eventList
-        ? "white"
-        : props.month === props.currentMonth && props.day < props.date
-        ? "#6A6A6A"
-        : props.dayOfWeek === "Sunday" ||
-          props.dayOfWeek === "Tuesday" ||
-          props.dayOfWeek === "Monday"
+        : props.isTheVenueOpenToThePublic !== true
         ? "#6A6A6A"
         : "white"};
   }
@@ -381,18 +393,12 @@ export const EventBC3 = styled(BC3)`
   color: ${props =>
     props.isTheVenueOpenToThePublic !== true
       ? "#6A6A6A"
-      : props.month === props.currentMonth && props.day < props.date
+      : props.day < props.date
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
         props.dayOfWeek === "Monday"
       ? "#6A6A6A"
-      : props.month === props.currentMonth && props.i === props.date - 1
-      ? "#457E5C"
-      : props.month === props.currentMonth && props.i === props.date
-      ? "#314638"
-      : props.month === props.currentMonth && props.i === props.date - 2
-      ? "#314638"
       : "white"};
 `
 
@@ -416,9 +422,26 @@ export const OnlyMobileWrapper = styled(MobileWrapper)`
 `
 export const EventHeading3 = styled(Heading3)`
   color: ${props =>
-    props.isTheVenueOpenToThePublic !== true ? "#6A6A6A" : "white"};
+    props.isTheVenueOpenToThePublic !== true
+      ? "#6A6A6A"
+      : props.day < props.date
+      ? "#6A6A6A"
+      : props.dayOfWeek === "Sunday" ||
+        props.dayOfWeek === "Tuesday" ||
+        props.dayOfWeek === "Monday"
+      ? "#6A6A6A"
+      : "white"};
+  margin-left: ${props=>props.eventStatus && "0"};
 `
 export const EventNumber1 = styled(Number1)`
   color: ${props =>
-    props.isTheVenueOpenToThePublic !== true ? "#6A6A6A" : "white"};
+    props.isTheVenueOpenToThePublic !== true
+      ? "#6A6A6A"
+      : props.day < props.date
+      ? "#6A6A6A"
+      : props.dayOfWeek === "Sunday" ||
+        props.dayOfWeek === "Tuesday" ||
+        props.dayOfWeek === "Monday"
+      ? "#6A6A6A"
+      : "white"};
 `
