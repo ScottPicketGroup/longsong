@@ -101,17 +101,22 @@ const EventDetailsModal = ({
                 : "OPEN 5PM-late"}
             </Heading2>
           </EventContents>
-          <EventFooterWrapper>
-            {eventDetails.slug && (
+
+          {eventDetails.slug ? (
+            <EventFooterWrapper bTop>
               <Link
                 onClick={() => setMenuOpen(false)}
                 to={`/events/${eventDetails.slug}`}
               >
                 VIEW DETAILS
               </Link>
-            )}
-            <LongsongIcon />
-          </EventFooterWrapper>
+              <LongsongIcon />
+            </EventFooterWrapper>
+          ) : (
+            <EventFooterWrapper>
+              <LongsongIcon />
+            </EventFooterWrapper>
+          )}
         </EventInfoWrapper>
       )}
     </EventDetailsWrapper>
