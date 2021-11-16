@@ -31,9 +31,9 @@ const EventDetailsModal = ({
   const { setMenuOpen } = useActivePage()
 
   useEffect(() => {
-    item.event && setEventDetails(item.event.node)
+    if(item.event ) setEventDetails(item.event.node)
   }, [item])
-console.log(eventDetails)
+
   return (
     <EventDetailsWrapper
       open={open}
@@ -94,8 +94,7 @@ console.log(eventDetails)
               dayOfWeek === "Tuesday"
                 ? "CLOSED"
                 : eventDetails.eventName
-                ? eventDetails.eventName +
-                  " " +
+                ? 
                   eventDetails.eventDate.slice(4, 5) +
                   "PM"
                 : "OPEN 6PM-late"}
@@ -103,7 +102,7 @@ console.log(eventDetails)
           </EventContents>
 
           {eventDetails.slug ? (
-            <EventFooterWrapper bTop>
+            <EventFooterWrapper >
               <Link
                 onClick={() => setMenuOpen(false)}
                 to={`/events/${eventDetails.slug}`}

@@ -28,13 +28,14 @@ const Calender = () => {
             eventDescription {
               raw
             }
-            eventDate(formatString: "MMDDH")
+            eventDate(formatString: "DDMMH")
             isTheVenueOpenToThePublic
           }
         }
       }
     }
   `)
+
   useEffect(() => {
     data && setEvents(data.allContentfulLongsongEvents.edges)
   }, [data])
