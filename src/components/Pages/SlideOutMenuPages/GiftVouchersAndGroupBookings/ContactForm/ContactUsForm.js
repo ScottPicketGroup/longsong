@@ -78,18 +78,18 @@ const ContactUsForm = () => {
         inputs.email.includes(".")) ||
       inputs.email.includes("@")
     )
-      // fetch(functionURL, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      //   // body: encode({ "form-name": "cont", ...inputs }),
-      //   body: encode({
-      //     fromEmail: inputs.email,
-      //     subject: "Longsong Contact Form",
-      //     body: inputs.message,
-      //   }),
-      // })
-      //   .then(setThankyou(true))
-      //   .catch(error => alert(error))
+      fetch(functionURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        // body: encode({ "form-name": "cont", ...inputs }),
+        body: encode({
+          fromEmail: inputs.email,
+          subject: "Longsong Contact Form",
+          body: inputs.message,
+        }),
+      })
+        .then(setThankyou(true))
+        .catch(error => console.log(error))
 
     if (
       (inputs.newsletter === true &&
