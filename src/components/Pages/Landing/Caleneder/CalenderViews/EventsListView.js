@@ -157,7 +157,7 @@ const EventsListView = ({
                       }
                       style={{ paddingLeft: "2.5rem" }}
                     >
-                      LONGSING BAR IS CLOSD FOR PRIVATE EVENTS
+                      {(e.node.eventName)}
                     </EventBC3>
                   ) : (
                     <EventsListPerformerDetailsWrapper>
