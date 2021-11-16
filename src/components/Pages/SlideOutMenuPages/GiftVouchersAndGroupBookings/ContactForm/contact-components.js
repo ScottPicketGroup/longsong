@@ -123,14 +123,14 @@ border: none;
 padding: 1.5rem 0;
 font-size: 0.75rem;
 line-height: none;
-border-bottom: 1px solid ${props => props.err ? '#CB0000' : 'white'};
+border-bottom: 1px solid ${props => props.err ? '#CB0000' : '#B1B1B1'};
 overflow: hidden;
 
 ::placeholder {
   font-family: normal;
   font-size: 1rem;
   margin-bottom: 10rem;
-  color: ${props => props.err ? '#CB0000' : 'rgba(21, 62, 53, 50%)'}
+  color: ${props => props.err ? '#CB0000' : '#B1B1B1'}
 }
 :focus {
   outline: none;

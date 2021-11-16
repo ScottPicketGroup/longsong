@@ -39,12 +39,13 @@ const EventsListView = ({
       setElementWidth(dayContainerRef.current.clientWidth)
   }, [dayContainerRef, daysView])
 
+
+
   return (
     <>
-      {events.map((e, index) => {
-        return (
-          e.node.eventDate.slice(2, 4) === componentDate &&
-          parseInt(e.node.eventDate.slice(0, 2)) === currentMonth + 1 && (
+    {events.map((e, index) => {
+        if (e.node.eventDate.slice(0, 2) === componentDate && e.node.eventDate.slice(2, 4) == currentMonth + 1)
+          return (
             <EventDayContainer
               key={index}
               i={i}
@@ -72,13 +73,12 @@ const EventsListView = ({
               >
                 <OnlyDesktopWrapper>
                   <EventHeading3
-                    month={month}
-                    currentMonth={currentMonth}
-                    dayOfWeek={item.day}
+                    dayOfWeek={day}
                     day={day}
                     date={todaysDate}
-                    isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}
                     i={i}
+                    eventList={true}
+                    isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}
                   >
                     {asdf === todaysDate + 1
                       ? "TOMORROW"
@@ -136,7 +136,9 @@ const EventsListView = ({
                 dayOfWeek={item.day}
                 day={day}
                 date={todaysDate}
-                isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}
+                isTheVenueOpenToThePublic={
+                  e.node.isTheVenueOpenToThePublic
+                }
                 i={i}
               >
                 <OnlyDesktopWrapper>
@@ -163,6 +165,7 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
+                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -177,6 +180,7 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
+                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -191,6 +195,7 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
+                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -227,6 +232,7 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
+                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -241,6 +247,7 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
+                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -255,6 +262,7 @@ const EventsListView = ({
                         calander
                         month={month}
                         currentMonth={currentMonth}
+                        calander
                         dayOfWeek={item.day}
                         day={day}
                         date={todaysDate}
@@ -273,6 +281,8 @@ const EventsListView = ({
                 currentMonth={currentMonth}
                 calander
                 month={month}
+                currentMonth={currentMonth}
+                calander
                 dayOfWeek={item.day}
                 day={day}
                 date={todaysDate}
@@ -280,70 +290,26 @@ const EventsListView = ({
               >
                 <OnlyDesktopWrapper>
                   {e.node.isTheVenueOpenToThePublic === true ? (
-                    e.node.slug ? (
-                      <Link
-                        onClick={() => setMenuOpen(false)}
-                        to={`/events/${e.node.slug}`}
-                      >
-                        VIEW DETAILS
-                      </Link>
-                    ) : (
-                      <EventHeading3
-                        month={month}
-                        currentMonth={currentMonth}
-                        dayOfWeek={item.day}
-                        day={day}
-                        date={todaysDate}
-                        isTheVenueOpenToThePublic={
-                          e.node.isTheVenueOpenToThePublic
-                        }
-                        i={i}
-                        eventStatus
-                      >
-                        OPEN
-                      </EventHeading3>
-                    )
-                  ) : (
-                    <EventHeading3
-                      month={month}
-                      currentMonth={currentMonth}
-                      dayOfWeek={item.day}
-                      day={day}
-                      date={todaysDate}
-                      isTheVenueOpenToThePublic={
-                        e.node.isTheVenueOpenToThePublic
-                      }
-                      i={i}
-                      eventStatus
+                    <Link
+                      onClick={() => setMenuOpen(false)}
+                      to={`events/${e.node.slug}`}
                     >
-                      CLOSED
-                    </EventHeading3>
+                      VIEW DETAILS
+                    </Link>
+                  ) : (
+                    <p style={{color: "#6A6A6A"}}>CLOSED</p>
                   )}
                 </OnlyDesktopWrapper>
                 <OnlyMobileWrapper>
                   {e.node.isTheVenueOpenToThePublic === true ? (
-                    e.node.slug ? (
-                      <EventHeading2
-                        isTheVenueOpenToThePublic={
-                          e.node.isTheVenueOpenToThePublic
-                        }
+                    <EventHeading2 isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}>
+                      <Link
+                        onClick={() => setMenuOpen(false)}
+                        to={`events/${e.node.slug}`}
                       >
-                        <Link
-                          onClick={() => setMenuOpen(false)}
-                          to={`/events/${e.node.slug}`}
-                        >
-                          VIEW DETAILS
-                        </Link>
-                      </EventHeading2>
-                    ) : (
-                      <EventHeading2
-                        isTheVenueOpenToThePublic={
-                          e.node.isTheVenueOpenToThePublic
-                        }
-                      >
-                        OPEN
-                      </EventHeading2>
-                    )
+                        VIEW DETAILS
+                      </Link>
+                    </EventHeading2>
                   ) : (
                     <EventHeading2
                       isTheVenueOpenToThePublic={
@@ -359,8 +325,8 @@ const EventsListView = ({
               </EventsListDetailsViewDetailsLink>
             </EventDayContainer>
           )
-        )
       })}
+    
     </>
   )
 }

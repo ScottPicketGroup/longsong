@@ -69,7 +69,7 @@ const EventDetailsModal = ({
       {eventDetails.isTheVenueOpenToThePublic === false ? (
         <EventInfoWrapper>
           <EventContents>
-            <Heading2>Longsong Bar is closed for a private function</Heading2>
+            <Heading2>CLOSED</Heading2>
           </EventContents>
           <EventFooterWrapper>
             <LongsongIcon />
