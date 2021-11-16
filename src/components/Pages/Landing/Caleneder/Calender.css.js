@@ -102,9 +102,7 @@ export const DayContainer = styled.div`
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date + 7
       ? "none"
-      : props.month === props.currentMonth &&
-        parseInt(props.day) === props.date + 1
-      ? ".5px solid #314638"
+      
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date + 8
       ? "none"
@@ -121,7 +119,7 @@ export const DayContainer = styled.div`
       ? ".5px solid #457E5C"
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date + 1
-      ? ".5px solid #314638"
+      ? ".5px solid white"
       : props.day >= getDaysInMonth(props.currentMonth % 12) - 7 &&
         (props.dayOfWeek === "Sunday" ||
           props.dayOfWeek === "Tuesday" ||

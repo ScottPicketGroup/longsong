@@ -136,7 +136,7 @@ export const Heading3 = styled.h3`
       ? "#457E5C"
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date + 1
-      ? "#314638"
+      ? "white"
       : props.month === props.currentMonth && props.day < props.date
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
@@ -145,7 +145,7 @@ export const Heading3 = styled.h3`
       ? "#6A6A6A"
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date - 1
-      ? "#314638"
+      ? "white"
       : "white"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -201,7 +201,7 @@ export const Number1 = styled.h3`
       ? "#457E5C"
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date + 1
-      ? "#314638"
+      ? "white"
       : props.month === props.currentMonth && props.day < props.date
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
@@ -210,9 +210,9 @@ export const Number1 = styled.h3`
       ? "#6A6A6A"
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date - 1
-      ? "#314638"
+      ? "white"
       : props.isTheVenueOpenToThePublic
-      ? "#314638"
+      ? "white"
       : "white"};
 
   font-size: 4.68rem;

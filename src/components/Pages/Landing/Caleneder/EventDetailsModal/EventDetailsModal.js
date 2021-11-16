@@ -33,7 +33,7 @@ const EventDetailsModal = ({
   useEffect(() => {
     item.event && setEventDetails(item.event.node)
   }, [item])
-
+console.log(eventDetails)
   return (
     <EventDetailsWrapper
       open={open}
@@ -78,7 +78,7 @@ const EventDetailsModal = ({
       ) : (
         <EventInfoWrapper>
           <EventContents>
-            {eventDetails.eventMedia ? (
+            {item.event && item.event.node.eventName ? (
               <>
                 <Heading2>{eventDetails.eventName}</Heading2>
                 <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>
