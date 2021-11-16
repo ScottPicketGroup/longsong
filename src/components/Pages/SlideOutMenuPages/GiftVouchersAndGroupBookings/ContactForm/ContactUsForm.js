@@ -40,6 +40,11 @@ const ContactUsForm = () => {
   const handleChange = e => {
     setInputs(inputs => ({ ...inputs, [e.target.name]: e.target.value }))
 
+    
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
     !inputs.email.includes(".") || !inputs.email.includes("@")
       ? setError(error => ({ ...error, email: true }))
       : setError(error => ({ ...error, email: false }))
@@ -64,10 +69,6 @@ const ContactUsForm = () => {
     inputs.guestNum === ""
       ? setError(error => ({ ...error, guestNum: true }))
       : setError(error => ({ ...error, guestNum: false }))
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
     const timestamp = Date.now()
 
     if (
@@ -226,7 +227,7 @@ const ContactUsForm = () => {
               <InputContainer>
                 <Label>MESSAGE</Label>
                 <InputMessage
-                  placeholder="Please enter your enquiry (1000 characters remaining)"
+                  placeholder="Please enter your enquirey (1000 characters remaining)"
                   name="message"
                   type="text"
                   value={inputs.message}
@@ -243,14 +244,9 @@ const ContactUsForm = () => {
                 ) : null}
               </InputContainer>
               <TixboxContainer>
-                <div
-                  onClick={() =>
-                    setInputs(inputs => ({ ...inputs, newsletter: true }))
-                  }
-                  aria-hidden="true"
-                >
+             
                   <CheckBox />
-                </div>
+             
                 <Label bc2 style={{ width: `90%` }}>
                   I would like to receive communications about Scott Pickett
                   Group services, events and matters of relevant interest.

@@ -115,6 +115,7 @@ border-bottom: 1px solid ${props => props.err ? '#CB0000' : 'white'};
 `
 
 export const InputMessage = styled.textarea `
+font-family: normal;
 width: 100%;
 height: 10rem;
 background: rgba(255,255,255,0);
@@ -126,7 +127,7 @@ border-bottom: 1px solid ${props => props.err ? '#CB0000' : 'white'};
 overflow: hidden;
 
 ::placeholder {
-
+  font-family: normal;
   font-size: 1rem;
   margin-bottom: 10rem;
   color: ${props => props.err ? '#CB0000' : 'rgba(21, 62, 53, 50%)'}

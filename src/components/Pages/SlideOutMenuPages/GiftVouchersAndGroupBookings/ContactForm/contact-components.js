@@ -127,7 +127,7 @@ border-bottom: 1px solid ${props => props.err ? '#CB0000' : 'white'};
 overflow: hidden;
 
 ::placeholder {
-
+  font-family: normal;
   font-size: 1rem;
   margin-bottom: 10rem;
   color: ${props => props.err ? '#CB0000' : 'rgba(21, 62, 53, 50%)'}

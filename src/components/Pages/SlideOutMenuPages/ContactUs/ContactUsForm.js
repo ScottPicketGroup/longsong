@@ -37,15 +37,36 @@ const ContactUsForm = () => {
   const handleChange = e => {
     setInputs(inputs => ({ ...inputs, [e.target.name]: e.target.value }))
 
-    !inputs.email.includes(".") || !inputs.email.includes("@")
-      ? setError(error => ({ ...error, email: true }))
-      : setError(error => ({ ...error, email: false }))
+    
   }
 
   const handleSubmit = e => {
     e.preventDefault()
     const timestamp = Date.now()
-
+    !inputs.email.includes(".") || !inputs.email.includes("@")
+    ? setError(error => ({ ...error, email: true }))
+    : setError(error => ({ ...error, email: false }))
+  inputs.fName === ""
+    ? setError(error => ({ ...error, fName: true }))
+    : setError(error => ({ ...error, fName: false }))
+  inputs.sName === ""
+    ? setError(error => ({ ...error, sName: true }))
+    : setError(error => ({ ...error, sName: false }))
+  inputs.number === ""
+    ? setError(error => ({ ...error, number: true }))
+    : setError(error => ({ ...error, number: false }))
+  inputs.message === ""
+    ? setError(error => ({ ...error, message: true }))
+    : setError(error => ({ ...error, message: false }))
+  inputs.eventType === ""
+    ? setError(error => ({ ...error, eventType: true }))
+    : setError(error => ({ ...error, eventType: false }))
+  inputs.eventDate === ""
+    ? setError(error => ({ ...error, eventDate: true }))
+    : setError(error => ({ ...error, eventDate: false }))
+  inputs.guestNum === ""
+    ? setError(error => ({ ...error, guestNum: true }))
+    : setError(error => ({ ...error, guestNum: false }))
     if (
       (inputs.fName &&
         inputs.sName &&
@@ -167,7 +188,7 @@ const ContactUsForm = () => {
               <InputContainer>
                 <Label>MESSAGE</Label>
                 <InputMessage
-                  placeholder="Please enter your enquiry (1000 characters remaining)"
+                  placeholder="Please enter your enquirey (1000 characters remaining)"
                   name="message"
                   type="text"
                   value={inputs.message}
@@ -184,14 +205,9 @@ const ContactUsForm = () => {
                 ) : null}
               </InputContainer>
               <TixboxContainer>
-                <div
-                  onClick={() =>
-                    setInputs(inputs => ({ ...inputs, newsletter: true }))
-                  }
-                  aria-hidden="true"
-                >
+            
                   <CheckBox />
-                </div>
+          
                 <Label bc2 style={{ width: `90%` }}>
                   I would like to receive communications about Scott Pickett
                   Group venues, events and other exciting news.
