@@ -1,19 +1,47 @@
 import React from "react"
-import { BC1, BC2, Heading2 } from "../../../global-styles/typography.css"
 import {
   DesktopWrapper,
   MobileWrapper,
 } from "../../../global-styles/containers.css"
 import { AnimationIntroContainer } from "./Hero.css"
+import Renderer from "../../../rich-text-renderers/sample"
+import { graphql, useStaticQuery } from "gatsby"
 
-const HeroText = ({text}) => {
+const HeroText = () => {
+  const data = useStaticQuery(graphql`
+    query heroText {
+      allContentfulLongsongLandingPageContent(
+        filter: { id: { eq: "4a312602-defe-550a-b9b5-2393ed6dd3ee" } }
+      ) {
+        edges {
+          node {
+            textOverHeroImage {
+              raw
+            }
+            id
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <AnimationIntroContainer>
-      <DesktopWrapper>
-        <BC1>{text}</BC1>
+      <DesktopWrapper style={{ marginBottom: "-9rem" }}>
+        <Renderer
+          node={
+            data.allContentfulLongsongLandingPageContent.edges[0].node
+              .textOverHeroImage
+          }
+        />
       </DesktopWrapper>
       <MobileWrapper>
-        <BC2>{text}</BC2>
+        <Renderer
+          node={
+            data.allContentfulLongsongLandingPageContent.edges[0].node
+              .textOverHeroImage
+          }
+        />
       </MobileWrapper>
     </AnimationIntroContainer>
   )

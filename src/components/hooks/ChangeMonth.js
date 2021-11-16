@@ -1,23 +1,40 @@
-import React, { createContext, useContext, useState } from "react"
+import React, { createContext, useContext, useState, useEffect } from "react"
 
 const ChangeMonthContext = createContext()
 
 export const ChangeMonthProvider = ({ children }) => {
-  const [currentMonth, setCurrentMonth] = useState(0)
-  const [nextMonth, setNextMonth] = useState(1)
+  const date = new Date()
+  const month = date.getMonth()
+  const year = date.getFullYear()
+  const [currentMonth, setCurrentMonth] = useState(month)
+  const [nextMonth, setNextMonth] = useState(month + 1)
   const [isFade, setIsFade] = useState(false)
 
+  const [thisMonthInfo, setThisMonthInfo] = useState([])
+  const [nextMonthInfo, setNextMonthInfo] = useState([])
+
+  useEffect(() => {
+    const newDate = new Date(Date.UTC(year, currentMonth, 1))
+    const options = { month: "short" }
+    const thisMonth = newDate.toLocaleDateString("en-EU", options)
+    const nextMonthDate = new Date(Date.UTC(year, currentMonth + 1, 1))
+    const nextMonth = nextMonthDate.toLocaleDateString("en-EU", options)
+    const thisMonthYear = newDate.getFullYear()
+    const nextMonthYear = nextMonthDate.getFullYear()
+
+    setThisMonthInfo([thisMonth, thisMonthYear])
+    setNextMonthInfo([nextMonth, nextMonthYear])
+    // eslint-disable-next-line
+  }, [currentMonth])
+
   const handlePreviousMonthChange = () => {
-    if (currentMonth === 0) {
-      setCurrentMonth(0)
-      setNextMonth(1)
-    } else if (currentMonth < 12) {
-      let next = nextMonth - 1
-      let current = currentMonth - 1
+    let next = nextMonth - 1
+    let current = currentMonth - 1
+    if (current >= month) {
       setCurrentMonth(current)
       setNextMonth(next)
+      setIsFade(false)
     }
-    setIsFade(false)
   }
 
   const handleNextMonthChange = () => {
@@ -30,7 +47,7 @@ export const ChangeMonthProvider = ({ children }) => {
 
   return (
     <ChangeMonthContext.Provider
-      value={{ 
+      value={{
         isFade,
         setIsFade,
         currentMonth,
@@ -38,7 +55,9 @@ export const ChangeMonthProvider = ({ children }) => {
         nextMonth,
         setNextMonth,
         handlePreviousMonthChange,
-        handleNextMonthChange
+        handleNextMonthChange,
+        thisMonthInfo,
+        nextMonthInfo,
       }}
     >
       {children}

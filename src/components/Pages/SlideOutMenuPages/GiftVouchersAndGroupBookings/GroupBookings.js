@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
@@ -20,7 +19,7 @@ const GroupBookings = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query PrivateEvent {
       contentfulLongsongPageContent(
-        contentful_id: { eq: "7aRmLZ6sUc9SbpIPPRRj7A" }
+        id: { eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e" }
       ) {
         privateEventsHeroImage {
           title
@@ -68,6 +67,7 @@ const GroupBookings = ({ activePage }) => {
             fileName
           }
         }
+        id
       }
     }
   `)
@@ -96,7 +96,8 @@ const GroupBookings = ({ activePage }) => {
     <SlideOutPageWrapper activePage={activePage} page={3}>
       <SectionWrapper column>
         <ImageWrapper full>
-          <Slider hero
+          <Slider
+            hero
             imageData={
               data.contentfulLongsongPageContent.privateEventsHeroImage
             }
@@ -107,16 +108,18 @@ const GroupBookings = ({ activePage }) => {
           <Heading1 marginBottom="md">
             {data.contentfulLongsongPageContent.groupBookingTitle}
           </Heading1>
-         
-          <Renderer node={data.contentfulLongsongPageContent.groupBookingsDescription} />
-         
+
+          <Renderer
+            node={data.contentfulLongsongPageContent.groupBookingsDescription}
+          />
+
           <Button marginBottom="" style={{ marginRight: `2rem` }}>
             <a
               href={data.contentfulLongsongPageContent.sampleMenuOne.file.url}
               target="_blank"
               rel="noreferrer"
             >
-              FUNCTIONS PACKAGE 
+              FUNCTIONS PACKAGE
             </a>
           </Button>
           <Button>
@@ -135,7 +138,7 @@ const GroupBookings = ({ activePage }) => {
       <BreakLine first />
       <SectionWrapper>
         <TextContainer>
-          <Heading1>Contact Form</Heading1>
+          <Heading1>Enquiry Form</Heading1>
         </TextContainer>
         <TextContainer sixty>
           <ContactUsForm />

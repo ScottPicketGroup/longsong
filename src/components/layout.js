@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import styled from "styled-components"
 import Footer from "./Footer/Footer"
+
 import {
   PageContainer,
   PageWrapper,
@@ -39,7 +39,7 @@ const Layout = ({ children, fd, heroImage }) => {
           <PageWrapper>
             <LongrainLink heroImage/>
             {heroImage ? (
-              <SectionRow marginBottom="xl">{children}</SectionRow>
+              <SectionRow marginBottom="xl" >{children}</SectionRow>
             ) : (
               <SectionContainer marginBottom="xl">{children}</SectionContainer>
             )}
@@ -57,8 +57,3 @@ const Layout = ({ children, fd, heroImage }) => {
 }
 
 export default Layout
-
-const Big = styled.div`
-  height: 100vh;
-  width: 100vw;
-`

@@ -1,55 +1,23 @@
 import styled, { keyframes } from "styled-components"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 export const LogoAnimation = keyframes`
   0% {
     display: none;
     opacity: 0;
-    transform: scale(1.2);
-    transform: translateY(20vh)
-   
+ 
   }
-  10% {
-    opacity: 1;
-    display: flex;
-    transform: scale(1.2);
-    transform: translateY(20vh);
-  }
-  65% {
-      opacity: 1;
-      display: none;
-  }
- 67% {
-     opacity: 0;
-     display: none;
- }
-  70% {
-      
-    transform: scale(1.2);
-    transform: translateY(20vh);
-   
-    
-   
-  }
-  71% {
-
-    transform: translateY(0);
-    transform: scale(.8);
-  }
-
+  
   75% {
     display: none;
       opacity: 0;
   }
 
-  80% {
+  100% {
     display: flex;
       opacity: 1;
   }
-  100% {
-    
-
-  }
+  
 `
 
 export const TextFadeIn = keyframes`
@@ -57,12 +25,10 @@ export const TextFadeIn = keyframes`
     display: none;
     opacity: 0;
    
-   
   }
   50% {
     display: none;
     opacity: 0;
-   
    
   }
   55% {
@@ -80,12 +46,10 @@ export const ScrollTotFadeIn = keyframes`
     display: none;
     opacity: 0;
    
-   
   }
   85% {
     display: none;
     opacity: 0;
-   
    
   }
   90% {
@@ -119,6 +83,9 @@ export const AnimationWrapper = styled.div`
   justify-content: center;
   margin-bottom: -2rem;
   align-self: space-around;
+  @media (max-width:450px) {
+    margin-top: -6rem;
+  }
 `
 
 export const IntroContainerWrapper = styled.div`
@@ -130,11 +97,12 @@ export const IntroContainerWrapper = styled.div`
   text-align: center;
   @media (max-width: 450px) {
     margin: 1rem;
+    
   }
 `
 export const IntroTextWrapper = styled.div`
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 2rem  auto 0;
   flex-direction: column;
   p {
     font-size: 1.44rem !important;
@@ -180,18 +148,17 @@ export const HeroContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-content: space-between;
-  
+
   @media (max-width: 451px) {
     // margin-top: 2.5rem;
   }
 `
-export const HeroImage = styled(GatsbyImage)`
+export const HeroImage = styled(StaticImage)`
   position: absolute;
   height: 100vh;
-  @media(max-width: 450px){
+  @media (max-width: 450px) {
     margin-left: -2rem;
   }
-  
 `
 export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
@@ -201,4 +168,7 @@ export const AnimationIntroContainer = styled.div`
   max-width: 700px;
   text-align: center;
   margin: auto;
+  @media  (max-width: 450px) {
+    margin-bottom: 12rem;
+  }
 `

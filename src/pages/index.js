@@ -7,7 +7,7 @@ import HeroBackground from "../components/Pages/Landing/Hero/HeroBackgound"
 import LandingPageModules from "../components/Pages/Landing/LandingPageModules"
 
 const IndexPage = ({ data }) => {
-  const { heroImage, heroTextOverImage, landingPageModules } =
+  const { heroImage, landingPageSections } =
     data.allContentfulLongsongLandingPageContent.edges[0].node
 
   //components state
@@ -23,12 +23,10 @@ const IndexPage = ({ data }) => {
   return (
     <Layout fd="column" heroImage={heroImage}>
       <Seo title="Home" />
-      <HeroBackground
-    
-    heroImage={heroImage}
-        heroTextOverImage={heroTextOverImage}
+       <HeroBackground 
+        
       />
-      <LandingPageModules data={landingPageModules} />
+      <LandingPageModules data={landingPageSections} /> 
     </Layout>
   )
 }
@@ -36,71 +34,77 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const landingPageData = graphql`
-  query landingPageQuery {
-    allContentfulLongsongLandingPageContent {
-      edges {
-        node {
-          heroImage {
-            file {
+query landing {
+  allContentfulLongsongLandingPageContent {
+    edges {
+      node {
+        id
+        landingPageSections {
+          ... on ContentfulLandingPageEventsModule {
+            id
+            landingPageEventsList {
+              id
+              eventDate(formatString: "DD.MM")
+              eventName
+              slug
+              eventDescription {
+                raw
+              }
+              eventMedia {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              }
+            }
+          }
+          ... on ContentfulLongsongLandingPagePrivateDiningSection {
+            id
+            gallery {
+              gatsbyImageData
+              title
+            }
+            intro {
+              raw
+            }
+            title
+          }
+          ... on ContentfulLongsongLandingPageMenuSection {
+            id
+            foodMenuImage {
+              gatsbyImageData(aspectRatio: 1)
+            }
+            drinksMenuImage {
+              gatsbyImageData(aspectRatio: 1)
+            }
+            foodMenuHeading
+            drinksMenuHeading
+            foodMenuIntro
+            drinksMenuIntro
+            drinksMenuPdf {
+              file {
+                url
+              }
+            }
+            foodMenuPdf {
+              file {
+                url
+              }
+            }
+          }
+        }
+        textOverHeroImage {
+            raw
+          }
+        heroImage {
+
+        file {
               url
               details {
                 size
               }
             }
-            gatsbyImageData(placeholder: BLURRED)
-          }
-          heroTextOverImage
-          landingPageModules {
-            ... on ContentfulLongsongLandingPagePrivateDiningSection {
-              id
-              title
-              intro {
-                raw
-              }
-              gallery {
-                gatsbyImageData
-              }
-            }
-            ... on ContentfulLongsongLandingPageMenuSection {
-              id
-              foodMenuImage {
-                gatsbyImageData(aspectRatio: 1)
-              }
-              drinksMenuImage {
-                gatsbyImageData(aspectRatio: 1)
-              }
-              foodMenuHeading
-              drinksMenuHeading
-              foodMenuIntro
-              drinksMenuIntro
-              drinksMenuPdf {
-                file {
-                  url
-                }
-              }
-              foodMenuPdf {
-                file {
-                  url
-                }
-              }
-            }
-            ... on ContentfulLandingPageEventsModule {
-              id
-              landingPageEventsList {
-                eventDate(formatString: "HH.mm")
-                eventName
-                slug
-                eventDescription {
-                  raw
-                }
-                eventMedia {
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-        }
+            gatsbyImageData(placeholder: BLURRED)}
       }
     }
   }
+}
+
 `

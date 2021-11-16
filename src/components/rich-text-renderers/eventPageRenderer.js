@@ -1,8 +1,7 @@
 import React from 'react'
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { Heading1, Heading2, Heading3, BC1, BC, BC3, SampleLink } from "../../components/global-styles/typography.css"
-import { Link } from 'gatsby'
+import { Heading1, Heading2, Heading3, BC1 } from "../../components/global-styles/typography.css"
 import { Button } from '../global-styles/GlobalStyles.css'
 
 const EventPageRenderer = ({ node }) => {
@@ -33,6 +32,12 @@ const EventPageRenderer = ({ node }) => {
                 >{children}</a></Button>)
 
         },
+        renderText: text => {
+            return text
+              .split("\n")
+              .map(i => [i, <br />])
+              .flat()
+          },
     }
 
     return (

@@ -17,14 +17,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               raw
             }
             eventDate(formatString: "YYYY-MM-DD HH.mm")
-            drinksSpecialTitle
-            drinksSpecialDetails {
-              raw
-            }
-            foodSpecialTitle
-            foodSpecialDetails {
-              raw
-            }
+          
+           
           }
         }
       }

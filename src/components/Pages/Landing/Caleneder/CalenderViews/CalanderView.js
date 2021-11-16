@@ -1,11 +1,14 @@
 import React, { useRef, useState, useEffect } from "react"
 
-import { DayContainer, DateDisplayContainer } from "../Calender.css"
+import {
+  DayContainer,
+  DateDisplayContainer,
+  EmptyDayContainer,
+} from "../Calender.css"
 import EventDetailsModal from "../EventDetailsModal/EventDetailsModal"
 
 import { Heading3, Number1 } from "../../../../global-styles/typography.css"
 
-import useGetElementSize from "../../../../hooks/ItemSizing"
 import useActivePage from "../../../../hooks/ActivePage"
 
 const CalanderView = ({
@@ -13,11 +16,10 @@ const CalanderView = ({
   i,
   item,
   todaysDate,
-  date,
-  modalWidth,
   openModel,
   setOpenModel,
   currentMonth,
+  modalWidth,
   month,
 }) => {
   const [open, setOpen] = useState(false)
@@ -33,13 +35,14 @@ const CalanderView = ({
 
   useEffect(() => {
     openModel === i ? setOpen(true) : setOpen(false)
+    // eslint-disable-next-line
   }, [openModel])
 
-  return (
+  return item.day === "" && item.date === "" ? (
+    <EmptyDayContainer ref={dayContainerRef} />
+  ) : (
     <DayContainer
-      dayOfWeek={day}
       ref={dayContainerRef}
-      height={elementWidth}
       currentMonth={currentMonth}
       month={month}
       calander
@@ -55,14 +58,17 @@ const CalanderView = ({
           calander
           month={month}
           currentMonth={currentMonth}
-          calander
           dayOfWeek={item.day}
           day={day}
           date={todaysDate}
           i={i}
           key={i + 1}
         >
-          {item.date == todaysDate + 1 ? "Tomorrow" : item.day}
+          {month === currentMonth && parseInt(item.date) === todaysDate
+            ? "TODAY"
+            : month === currentMonth && parseInt(item.date) === todaysDate + 1
+            ? "TOMORROW"
+            : item.day.toUpperCase()}
         </Heading3>
         <Number1
           month={month}
@@ -72,7 +78,6 @@ const CalanderView = ({
           day={day}
           date={todaysDate}
           i={i}
-          i={i}
           key={i + 2}
         >
           {item.date}
@@ -80,10 +85,9 @@ const CalanderView = ({
 
         <EventDetailsModal
           eventData={item.event}
-          dayOfWeek={day}
+          dayOfWeek={item.day}
           day={day}
           date={todaysDate}
-          i={i}
           key={i}
           height={elementWidth}
           item={item}

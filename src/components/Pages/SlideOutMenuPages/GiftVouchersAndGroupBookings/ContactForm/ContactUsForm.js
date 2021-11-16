@@ -14,7 +14,7 @@ import {
 import CheckBox from "./CheckBox"
 import { Button } from "../../../../global-styles/GlobalStyles.css"
 const ContactUsForm = () => {
-  const functionURL = "https://pear-cobra-4528.twil.io/send-email";
+  const functionURL = "https://pear-cobra-4528.twil.io/send-email"
   const [error, setError] = useState({
     fName: false,
   })
@@ -27,8 +27,8 @@ const ContactUsForm = () => {
     messageLength: 0,
     newsletter: false,
     eventType: "",
-    eventDate:"",
-    guestNum: ""
+    eventDate: "",
+    guestNum: "",
   })
 
   const [thankyou, setThankyou] = useState(false)
@@ -43,6 +43,27 @@ const ContactUsForm = () => {
     !inputs.email.includes(".") || !inputs.email.includes("@")
       ? setError(error => ({ ...error, email: true }))
       : setError(error => ({ ...error, email: false }))
+    inputs.fName === ""
+      ? setError(error => ({ ...error, fName: true }))
+      : setError(error => ({ ...error, fName: false }))
+    inputs.sName === ""
+      ? setError(error => ({ ...error, sName: true }))
+      : setError(error => ({ ...error, sName: false }))
+    inputs.number === ""
+      ? setError(error => ({ ...error, number: true }))
+      : setError(error => ({ ...error, number: false }))
+    inputs.message === ""
+      ? setError(error => ({ ...error, message: true }))
+      : setError(error => ({ ...error, message: false }))
+    inputs.eventType === ""
+      ? setError(error => ({ ...error, eventType: true }))
+      : setError(error => ({ ...error, eventType: false }))
+    inputs.eventDate === ""
+      ? setError(error => ({ ...error, eventDate: true }))
+      : setError(error => ({ ...error, eventDate: false }))
+    inputs.guestNum === ""
+      ? setError(error => ({ ...error, guestNum: true }))
+      : setError(error => ({ ...error, guestNum: false }))
   }
 
   const handleSubmit = e => {
@@ -60,7 +81,11 @@ const ContactUsForm = () => {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         // body: encode({ "form-name": "cont", ...inputs }),
-        body: encode({ fromEmail: inputs.email, subject: "Longsong Contact Form", body: inputs.message }),
+        body: encode({
+          fromEmail: inputs.email,
+          subject: "Longsong Contact Form",
+          body: inputs.message,
+        }),
       })
         .then(setThankyou(true))
         .catch(error => alert(error))

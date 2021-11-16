@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import { Button } from "../../../global-styles/GlobalStyles.css"
 export const SectionRow = styled.div`
   display: flex;
   flex-direction: ${props => props.flex ? 'row' : 'column'};
@@ -52,7 +52,7 @@ export const SectionRow = styled.div`
   overflow: hidden;
   @media (max-width: 450px) {
     width: 100%;
-    padding: 0 1rem;
+    padding: ${props => props.noPadding ? '0' : '0 1rem'};
     margin-bottom: 3rem;
     background: none;
     flex-direction: column;
@@ -96,7 +96,7 @@ export const ImageWrapper = styled.div`
 export const EventContentContainer = styled.div`
   margin-top: 3rem;
   display: flex;
-  justify-content: end;
+  justify-content: ${props => props.start ? '' : 'end'};
   @media (max-width: 451px) {
   }
 `
@@ -119,7 +119,7 @@ export const TimeAndButtonWrapper = styled.div`
   }
 `
 export const HeadingAndIntroWrapper = styled.div`
-  width: 58%;
+  width: 90%;
   @media (max-width: 450px) {
     width: 100%;
   }
@@ -141,3 +141,8 @@ export const MenusModuleHalfWrapper = styled.div`
     margin-bottom: 2rem;
   }
 `
+export const LearnMoreButton = styled(Button)`
+  :hover {
+    cursor: pointer;
+  }
+`;

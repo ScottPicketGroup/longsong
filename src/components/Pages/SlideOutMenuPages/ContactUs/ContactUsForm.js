@@ -14,10 +14,7 @@ import {
 import CheckBox from "./CheckBox"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 const ContactUsForm = () => {
-
-
-
-  const functionURL = "https://pear-cobra-4528.twil.io/send-email";
+  const functionURL = "https://pear-cobra-4528.twil.io/send-email"
   const [error, setError] = useState({
     fName: false,
   })
@@ -60,7 +57,11 @@ const ContactUsForm = () => {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         // body: encode({ "form-name": "cont", ...inputs }),
-        body: encode({ fromEmail: inputs.email, subject: "Longsong Contact Form", body: inputs.message }),
+        body: encode({
+          fromEmail: inputs.email,
+          subject: "Longsong Contact Form",
+          body: inputs.message,
+        }),
       })
         .then(setThankyou(true))
         .catch(error => alert(error))
@@ -82,6 +83,7 @@ const ContactUsForm = () => {
       var raw = JSON.stringify({
         data: {
           email: inputs.email,
+          tags: ["Longsong"],
         },
       })
 
@@ -183,16 +185,16 @@ const ContactUsForm = () => {
               </InputContainer>
               <TixboxContainer>
                 <div
-                  onClick={() =>{
-                    setInputs(inputs => ({ ...inputs, newsletter: true }))}
+                  onClick={() =>
+                    setInputs(inputs => ({ ...inputs, newsletter: true }))
                   }
                   aria-hidden="true"
                 >
-                  <CheckBox onClick={() => console.log('beep')}/>
+                  <CheckBox />
                 </div>
                 <Label bc2 style={{ width: `90%` }}>
                   I would like to receive communications about Scott Pickett
-                  Group services, events and matters of relevant interest.
+                  Group venues, events and other exciting news.
                 </Label>
               </TixboxContainer>
               <Button

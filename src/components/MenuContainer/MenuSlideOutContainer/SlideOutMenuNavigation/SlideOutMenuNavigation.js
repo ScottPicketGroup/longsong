@@ -12,7 +12,7 @@ import { BC1 } from "../../../global-styles/typography.css"
 import FBIcon from "../../Icons/FBIcon"
 import InstaIcon from "../../Icons/InstaIcon"
 import { DesktopMenuIconWrapper } from "../../MenuContainer.css"
-const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
+const SlideOutMenuNavigation = ({ setActivePage, activePage, setMenuOpen}) => {
   const data = useStaticQuery(graphql`
     query DrinkAndFoodLink {
       contentfulLongsongPageContent(
@@ -37,7 +37,8 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage }) => {
   return (
     <SlideOutMenuNavWrapper>
       <DesktopMenuIconWrapper>
-        <LongsongIcon setActivePage={setActivePage} />
+        
+        <LongsongIcon setActivePage={setActivePage} setMenuOpen={setMenuOpen}/>
 
         <BreakLine />
       </DesktopMenuIconWrapper>

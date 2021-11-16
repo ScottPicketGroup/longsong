@@ -1,13 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { graphql, useStaticQuery } from "gatsby"
+import styled from "styled-components"
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import {
   ImageWrapper,
   TextContainer,
-  SectionWrapper,
-  EventSectionWrapper
+  EventSectionWrapper,
 } from "../../SlideOutMenuPages/Space/Space.css"
 import Slider from "../../../ImageSlider"
 import Renderer from "../../../rich-text-renderers/sample"
@@ -17,53 +16,70 @@ import {
   TimeAndButtonWrapper,
 } from "./index.css"
 import { Time } from "../../../../templates/EventTemplate/index.css"
-import { Button } from "../../../global-styles/GlobalStyles.css"
-import { BC1 } from "../../../global-styles/typography.css"
 
-const EventsModule = ({ data }) => {
-  
+const EventsModule = () => {
+  const data = useStaticQuery(graphql`
+    query landingEventsQuery {
+      allContentfulLandingPageEventsModule(
+        filter: { id: { eq: "00760aef-4841-5f1b-ad1a-a1f2336506ae" } }
+      ) {
+        edges {
+          node {
+            id
+            landingPageEventsList {
+              id
+              eventDate(formatString: "DD.MM")
+              eventName
+              eventDescription {
+                raw
+              }
+              slug
+              eventMedia {
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  layout: FULL_WIDTH
+                  aspectRatio: 0.8
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const { eventMedia, eventDate, eventName, eventDescription } =
+    data.allContentfulLandingPageEventsModule.edges[0].node
+      .landingPageEventsList[0]
+
   return (
     <LandingPageModuleContainer>
-      <EventSectionWrapper column style={{marginBottom: "3.25rem"}}>
-        <EventSectionWrapper style={{ justifyContent: "space-between" }}>
+      <EventSectionWrapper style={{ marginBottom: "3.25rem" }}>
+        <TextContainer full>
           <TimeAndButtonWrapper>
-            <Time style={{ margin: "0 0 3rem 0" }}>{data[0].eventDate}</Time>
-            <Button marginBottom="lg" style={{ width: "80%" }}>
-              BOOK NOW
-            </Button>
+            <Time style={{ margin: "0 0 3rem 0" }}>{eventDate}</Time>
           </TimeAndButtonWrapper>
-
+          <BreakLine first style={{ width: `86%` }} />
           <HeadingAndIntroWrapper>
-            <Heading1 marginBottom="md">{data[0].eventName}</Heading1>
-            <Renderer node={data[0].eventDescription} />
-            <Link to={"/events/" + data[0].eventName.toLowerCase().replace(" ", "-")}>
-              <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
-            </Link>
+            <Heading1 marginBottom="md">{eventName}</Heading1>
+            <Renderer node={eventDescription} />
           </HeadingAndIntroWrapper>
-        </EventSectionWrapper>
-        <ImageWrapper style={{ width: "100%" }} horizontal>
-          <Slider imageData={data[0].eventMedia[0]} />
-        </ImageWrapper>
-      </EventSectionWrapper>
-      <SectionWrapper>
-        <TextContainer>
-          <Time style={{ margin: "0 0 3rem 0" }}>{data[1].eventDate}</Time>
-          <Button marginBottom="lg" style={{ width: "60%" }}>
-            BOOK NOW
-          </Button>
-          <BreakLine none />
-          <Heading1 marginBottom="md">{data[1].eventName}</Heading1>
-          <Renderer node={data[1].eventDescription} />
-          <Link to={"/events/" + data[1].eventName.toLowerCase().replace(" ", "-")}>
-            <BC1 style={{ color: "#457E5C" }}>Learn more.</BC1>
-          </Link>
         </TextContainer>
         <ImageWrapper>
-          <Slider imageData={data[1].eventMedia[0]} aspectRatio="3/4" />
+          <Slider imageData={eventMedia[0]} aspcetRatio="9/16" />
         </ImageWrapper>
-      </SectionWrapper>
+      </EventSectionWrapper>
     </LandingPageModuleContainer>
   )
 }
 
 export default EventsModule
+
+export const EventsImageWrapper = styled(ImageWrapper)`
+  aspect-ratio: 3/4;
+  width: 50%;
+
+  @media (min-width: 451px) {
+    width: 100%;
+  }
+`

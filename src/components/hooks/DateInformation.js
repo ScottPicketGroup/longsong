@@ -7,11 +7,10 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
   const day = date.getDay()
   const year = date.getFullYear()
   const month = date.getMonth()
-  let monthtoIt = month + currentMonth - 1
-  const dat = { day: "numeric" }
+  let monthtoIt = currentMonth < 12 ? currentMonth - 1 : (currentMonth % 12) - 1
 
   useEffect(() => {
-    let date = new Date(Date.UTC(year, currentMonth + 9, 1))
+    let date = new Date(Date.UTC(year, currentMonth, 1))
 
     const day = { weekday: "long" }
     const dat = { day: "numeric" }
@@ -19,32 +18,41 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
     while (date.getUTCMonth() - 1 === monthtoIt) {
       let iterator = date.getDate()
       let m
-      if (iterator < 10) {
-        const eventToPush = events.map(event => {
+      if (iterator < 10 && events) {
+        events.forEach(event => {
           if (
-            "0" + date.toLocaleDateString("au-EN", dat) ==
-            event.node.eventDate.split(1)[0]
+            event.node.eventDate.slice(0, 4) ===
+            date
+              .toLocaleDateString("au-EN", monthtoIt)
+              .slice(0, 4)
+              .replace("/", "0")
           ) {
             m = event
           }
         })
 
         days.push({
+          dayIndex: date.getDay(),
           day: date.toLocaleDateString("au-EN", day),
           date: "0" + date.toLocaleDateString("au-EN", dat),
           event: m,
         })
       } else {
-        const eventToPush = events.map(event => {
-          if (
-          date.toLocaleDateString("au-EN", dat) ==
-            event.node.eventDate.split(1)[0]
-          ) {
-            m = event
-          }
-        })
-        console.log(m)
+        events &&
+          events.forEach(event => {
+            if (
+              event.node.eventDate.slice(0, 4) ===
+              date
+                .toLocaleDateString("au-EN", monthtoIt)
+                .slice(0, 5)
+                .replace("/", "")
+            ) {
+              m = event
+            }
+          })
+
         days.push({
+          dayIndex: date.getDay(),
           day: date.toLocaleDateString("au-EN", day),
           date: date.toLocaleDateString("au-EN", dat),
           event: m,
@@ -52,7 +60,30 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       }
       date.setUTCDate(date.getUTCDate() + 1)
     }
-    setDaysToDisplay(days)
+    const renderDates = () => {
+      if (days.length === 0) return
+      let daysForDisplay = []
+      const startDiff = days[0].dayIndex
+      let i = 1
+      while (i < 43) {
+        if (i >= startDiff && i <= days.length + startDiff - 1) {
+          daysForDisplay.push(days[i - startDiff])
+          i++
+        } else {
+          daysForDisplay.push({
+            dayIndex: (i % 7) + 1,
+            day: "",
+            date: "",
+            event: {},
+          })
+          i++
+        }
+      }
+      return daysForDisplay
+    }
+    const data = renderDates()
+    setDaysToDisplay(data)
+    // eslint-disable-next-line
   }, [currentMonth, nextMonth, events])
 
   return { day, year, month, daysToDisplay, date, todaysDate }
