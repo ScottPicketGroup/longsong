@@ -98,7 +98,7 @@ const EventDetailsModal = ({
                   " " +
                   eventDetails.eventDate.slice(4, 5) +
                   "PM"
-                : "OPEN 5PM-late"}
+                : "OPEN 6PM-late"}
             </Heading2>
           </EventContents>
 
