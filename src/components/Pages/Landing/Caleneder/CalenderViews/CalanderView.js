@@ -51,7 +51,7 @@ const CalanderView = ({
       date={todaysDate}
       i={i}
       key={i + 1}
-      onClick={() => setOpenModel(i)}
+      onMouseOver={() => setOpenModel(i)}
     >
       <DateDisplayContainer height={elementWidth}>
         <Heading3
