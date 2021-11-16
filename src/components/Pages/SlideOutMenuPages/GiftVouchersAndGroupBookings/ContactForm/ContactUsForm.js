@@ -108,7 +108,7 @@ const ContactUsForm = () => {
       var raw = JSON.stringify({
         data: {
           email: inputs.email,
-          tags: ['Longsong Contact Form']
+          tags: ['Longsong Private Events Contact Form']
         },
       })
 
