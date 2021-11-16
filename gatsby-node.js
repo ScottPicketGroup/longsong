@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             eventDescription {
               raw
             }
-            eventDate(formatString: "YYYY-MM-DD HH.mm")
+            eventDate(formatString: "YYYY-MM-DD HH")
           
            
           }

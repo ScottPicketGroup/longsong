@@ -28,6 +28,7 @@ import useActivePage from "../../components/hooks/ActivePage"
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
   const eventDateTime = eventData.eventDate.split(" ")
+  console.log(eventDateTime)
   const [imageData, setImageData] = useState([])
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -79,8 +80,8 @@ const EventTemplate = ({ pageContext }) => {
         </ImageWrapper>
         <DateContainer>
           <DateWrapper>
-            <Heading2>{eventDateTime[0]}</Heading2>
-            <Time>{eventDateTime[1]}</Time>
+            <Heading2>{eventDateTime[0]}<br/></Heading2>
+            <Time>{eventDateTime[1] }</Time>
           </DateWrapper>
           <ButtonWrapper>
             {eventData.bookNowButtonLink && <Button>BOOK NOW</Button>}

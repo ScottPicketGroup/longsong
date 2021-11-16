@@ -133,7 +133,7 @@ const GroupBookings = ({ activePage }) => {
           </Button>
         </TextContainer>
       </SectionWrapper>
-      <StallsAndYard data={newData} />
+      <StallsAndYard data={newData} margin="normal"/>
       <FirstModule />
       <BreakLine first />
       <SectionWrapper>
