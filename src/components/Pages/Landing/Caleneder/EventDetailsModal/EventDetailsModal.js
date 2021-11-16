@@ -80,6 +80,7 @@ const EventDetailsModal = ({
           <EventContents>
             {item.event && item.event.node.eventName ? (
               <>
+                  {eventDetails.eventName && <Heading2>OPEN 6PM-late</Heading2>} 
                 <Heading2>{eventDetails.eventName}</Heading2>
                 <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>
                 <Heading2>{eventDetails.foodSpecialTitle}</Heading2>
@@ -87,7 +88,7 @@ const EventDetailsModal = ({
             ) : (
               <></>
             )}
-
+        
             <Heading2>
               {dayOfWeek === "Sunday" ||
               dayOfWeek === "Monday" ||
