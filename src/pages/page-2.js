@@ -18,7 +18,7 @@ const SecondPage = () => (
                         script.src = "https://forms.contacta.io/619389b6eaba730a77d3a6a1.js";
                         document.getElementsByTagName("head")[0].appendChild(script);
                     </script> */}
-                    <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquire.js"></script><script language="javascript">setTimeout(function(){ ftenquireinit(625,'longrain')}, 3000)</script><div id="ftenquire625"></div>
+                    {/* <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquire.js"></script><script language="javascript">setTimeout(function(){ ftenquireinit(625,'longrain')}, 3000)</script><div id="ftenquire625"></div> */}
         </Helmet>
   </Layout>
 )
