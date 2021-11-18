@@ -96,6 +96,7 @@ const CalanderView = ({
           width={modalWidth}
           month={month}
           onClick={() => setOpen(false)}
+          setOpenModel={setOpenModel}
           setOpen={setOpen}
         />
       </DateDisplayContainer>

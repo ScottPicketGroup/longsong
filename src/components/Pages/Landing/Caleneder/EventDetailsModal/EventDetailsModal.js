@@ -26,6 +26,7 @@ const EventDetailsModal = ({
   dayOfWeek,
   todaysDate,
   item,
+  setOpenModel
 }) => {
   const [eventDetails, setEventDetails] = React.useState({})
   const { setMenuOpen } = useActivePage()
@@ -41,6 +42,7 @@ const EventDetailsModal = ({
       width={(width / 7) * 2 - 10}
       i={i}
       onClick={() => setOpen(false)}
+      onMouseLeave={() => setOpenModel(null)}
     >
       <EventListWrapper width={width} height={height - 1} i={i}>
         <DateDisplayContainer height={height - 1} width={width} modal>
