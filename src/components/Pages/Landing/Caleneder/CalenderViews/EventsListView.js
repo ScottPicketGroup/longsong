@@ -35,11 +35,10 @@ const EventsListView = ({
   const { setMenuOpen } = useActivePage()
 
   useEffect(() => {
-    if (dayContainerRef.current)
-      setElementWidth(dayContainerRef.current.clientWidth)
+    // if (dayContainerRef.current)
+      // setElementWidth(dayContainerRef.current.clientWidth)
+      setElementWidth(window.innerWidth * 0.423)
   }, [dayContainerRef, daysView])
-
-
 
   return (
     <>

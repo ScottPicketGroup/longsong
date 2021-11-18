@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://www.longsong.com.au`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {

@@ -1,7 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset'
 import { fadeInBG } from './animations';
 
 const GlobalStyles = createGlobalStyle`
+
   * {
     margin: 0;
     padding: 0;

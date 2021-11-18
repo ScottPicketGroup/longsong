@@ -29,7 +29,6 @@ const Days = ({ daysView, events }) => {
 
   const [openModel, setOpenModel] = useState(null)
   const scrollPosition = useScrollPosition()
-
   return (
     <DaysWrapper
       cols={daysView ? "true" : "false"}
@@ -44,12 +43,9 @@ const Days = ({ daysView, events }) => {
               day={item.date}
               todaysDate={todaysDate}
               item={item}
-              modalWidth={elementWidth}
               currentMonth={currentMonth}
               month={month}
               key={i + 4}
-              openModel={openModel}
-              setOpenModel={setOpenModel}
               events={events}
               daysView={daysView}
             />

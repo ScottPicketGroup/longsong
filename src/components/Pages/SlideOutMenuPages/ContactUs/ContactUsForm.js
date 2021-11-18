@@ -58,15 +58,6 @@ const ContactUsForm = () => {
   inputs.message === ""
     ? setError(error => ({ ...error, message: true }))
     : setError(error => ({ ...error, message: false }))
-  inputs.eventType === ""
-    ? setError(error => ({ ...error, eventType: true }))
-    : setError(error => ({ ...error, eventType: false }))
-  inputs.eventDate === ""
-    ? setError(error => ({ ...error, eventDate: true }))
-    : setError(error => ({ ...error, eventDate: false }))
-  inputs.guestNum === ""
-    ? setError(error => ({ ...error, guestNum: true }))
-    : setError(error => ({ ...error, guestNum: false }))
     if (
       (inputs.fName &&
         inputs.sName &&

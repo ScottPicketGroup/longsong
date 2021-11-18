@@ -97,7 +97,7 @@ const EventTemplate = ({ pageContext }) => {
         <TextContainer marginBottom="lg">
           <BreakLine none style={{ marginBottom: 56 }} />
           <Heading1 marginBottom="md">{eventData.eventName}</Heading1>
-          <EventPageRenderer node={eventData.eventDescription} />
+          {eventData.eventDescription ? <EventPageRenderer node={eventData.eventDescription} /> : <Heading1>No Description</Heading1>}
           {/* <Heading1 marginBottom="md">{eventData.drinksSpecialTitle}</Heading1>
           <EventPageRenderer node={eventData.drinksSpecialDetails} />
           <Heading1 marginBottom="md">{eventData.foodSpecialTitle}</Heading1>

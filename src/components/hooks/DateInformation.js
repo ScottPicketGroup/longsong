@@ -42,10 +42,10 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       } else {
         events &&
           events.forEach(event => {
-            console.log(event.node.eventDate.slice(0, 4), date
-            .toLocaleDateString("au-EN", date)
-            .slice(0, 5)
-            .replace("/", ""))
+            // console.log(event.node.eventDate.slice(0, 4), date
+            // .toLocaleDateString("au-EN", date)
+            // .slice(0, 5)
+            // .replace("/", ""))
             if (
               event.node.eventDate.slice(0, 4) ===
               date

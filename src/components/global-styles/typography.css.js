@@ -1,9 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components"
+import reset from "styled-reset"
 import normal from "../../assetts/fonts/normal.woff"
 import heavy from "../../assetts/fonts/heavy.woff2"
 import bold from "../../assetts/fonts/bold.woff"
 
 export const Typography = createGlobalStyle`
+
   @font-face {
     font-family: 'normal';
     src: url(${normal});
