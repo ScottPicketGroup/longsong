@@ -7,7 +7,6 @@ import {
   SectionWrapper,
   TextContainer,
 } from "../Space/Space.css"
-import ContactUsForm from "./ContactUsForm"
 import styled from "styled-components"
 import Renderer from "../../../rich-text-renderers/sample"
 import { Helmet } from "react-helmet"

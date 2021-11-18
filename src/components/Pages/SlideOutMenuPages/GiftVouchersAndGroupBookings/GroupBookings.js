@@ -10,7 +10,6 @@ import {
   SectionWrapper,
   TextContainer,
 } from "../Space/Space.css"
-import ContactUsForm from "./ContactForm/ContactUsForm"
 import StallsAndYard from "../StallsAndYard"
 import Slider from "../../../ImageSlider"
 import Renderer from "../../../rich-text-renderers/sample"

@@ -10,24 +10,10 @@ const SecondPage = () => (
     <h1>Hi from the second page</h1>
     <p>Welcome to page 2</p>
     <Link to="/">Go back to the homepage</Link>
-    <ExternalForm id="CONTACTA_619389b6eaba730a77d3a6a1">
-    </ExternalForm>
+    {/* <ExternalForm id="CONTACTA_619389b6eaba730a77d3a6a1">
+    </ExternalForm> */}
     <Helmet>
       {/* <script type="text/javascript" async>
-        var script = document.createElement("script"); script.type =
-        "text/javascript"; script.src =
-        "https://forms.contacta.io/619389b6eaba730a77d3a6a1.js";
-        document.getElementsByTagName("head")[0].appendChild(script);
-      </script>
-      <script
-        language="javascript"
-        src="https://longrain.functiontracker.com/public/v4/enquire.js"
-      ></script>
-      <script language="javascript">
-        setTimeout(function(){ftenquireinit(625, "longrain")}, 3000)
-      </script>
-      <div id="ftenquire625"></div> */}
-      <script type="text/javascript" async>
         var script = document.createElement("script"); script.type =
         "text/javascript"; script.src =
         "https://forms.contacta.io/61960d1629fed0387a8dae7f.js";
@@ -42,7 +28,7 @@ const SecondPage = () => (
         "https://forms.contacta.io/61960f035e0c880c5a61ab16.js";
         document.getElementsByTagName("head")[0].appendChild(script);
       </script>
-      <div id="CONTACTA_61960f035e0c880c5a61ab16"></div>
+      <div id="CONTACTA_61960f035e0c880c5a61ab16"></div> */}
     </Helmet>
   </Layout>
 )
