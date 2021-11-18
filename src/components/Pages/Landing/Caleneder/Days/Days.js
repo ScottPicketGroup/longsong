@@ -45,14 +45,14 @@ const Days = ({ daysView, events }) => {
               item={item}
               currentMonth={currentMonth}
               month={month}
-              key={i + 4}
+              key={i}
               events={events}
               daysView={daysView}
             />
           ) : (
             !daysView && (
               <CalanderView
-                key={i + 5}
+                key={i}
                 i={i}
                 day={item.date}
                 todaysDate={todaysDate}

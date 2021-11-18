@@ -81,7 +81,7 @@ const EventTemplate = ({ pageContext }) => {
         <DateContainer>
           <DateWrapper>
             <Heading2>{eventDateTime[0]}<br/></Heading2>
-            <Time>{eventDateTime[1] }</Time>
+            <Time>{eventDateTime[1] + " : 00" }</Time>
           </DateWrapper>
           <ButtonWrapper>
             {eventData.bookNowButtonLink && <Button>BOOK NOW</Button>}

@@ -28,7 +28,7 @@ const Calender = () => {
             eventDescription {
               raw
             }
-            eventDate(formatString: "DDMMH")
+            eventDate(formatString: "MMDDHH")
             isTheVenueOpenToThePublic
           }
         }

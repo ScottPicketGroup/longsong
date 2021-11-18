@@ -19,7 +19,6 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       let iterator = date.getDate()
       let m
       if (iterator < 10 && events) {
-        
         events.forEach(event => {
           if (
             event.node.eventDate.slice(0, 4) ===

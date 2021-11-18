@@ -37,7 +37,6 @@ const CalanderView = ({
     openModel === i ? setOpen(true) : setOpen(false)
     // eslint-disable-next-line
   }, [openModel])
-
   return item.day === "" && item.date === "" ? (
     <EmptyDayContainer ref={dayContainerRef} />
   ) : (

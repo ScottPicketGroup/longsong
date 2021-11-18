@@ -34,7 +34,6 @@ const EventDetailsModal = ({
   useEffect(() => {
     if(item.event ) setEventDetails(item.event.node)
   }, [item])
-
   return (
     <EventDetailsWrapper
       open={open}
@@ -98,8 +97,7 @@ const EventDetailsModal = ({
                 ? "CLOSED"
                 : eventDetails.eventName
                 ? 
-                  eventDetails.eventDate.slice(4, 5) +
-                  "PM"
+                  eventDetails.eventDate.slice(4) + " : 00"
                 : "OPEN 6PM-late"}
             </Heading2>
           </EventContents>
