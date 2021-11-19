@@ -62,11 +62,11 @@ const EventTemplate = ({ pageContext }) => {
           {imageData ? (
             <>
               <Slider imageData={imageData} />
-              <StaticImage
+              {/* <StaticImage
                 className="play-button"
                 src="../../images/EventTemplate/playbutton.png"
                 alt="play-button"
-              />
+              /> */}
             </>
           ) : (
             <Heading1>No Media</Heading1>
@@ -81,7 +81,7 @@ const EventTemplate = ({ pageContext }) => {
         <DateContainer>
           <DateWrapper>
             <Heading2>{eventDateTime[0]}<br/></Heading2>
-            <Time>{eventDateTime[1] + " : 00" }</Time>
+            <Time>{`${ parseInt(eventDateTime[1]) + 11}` + ":00"}</Time>
           </DateWrapper>
           <ButtonWrapper>
             {eventData.bookNowButtonLink && <Button>BOOK NOW</Button>}
