@@ -162,6 +162,29 @@ const GroupBookings = ({ activePage }) => {
 export default GroupBookings
 
 export const ExternalForm = styled.div`
+ .checkbox-option {
+   margin-top: -.75rem;
+   margin-left: -1rem;
+	-webkit-appearance: none;
+	background-color: transparent;
+	border: 1px solid #cacece;
+	transform: scale(.4);
+	padding: 25px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+
+.checkbox-option:checked {
+	background-color: #0f231d;
+  border: none;
+}
+
+
+
+
+
   .contacta-webform-table {
     width: 100%;
     table-layout: fixed;
@@ -175,30 +198,17 @@ export const ExternalForm = styled.div`
     :first-child {
       width: 0;
     }
+  
     :nth-child(5) {
-      width: 50%;
-      color: black;
-    }
-    :nth-child(6) {
-      width: 50%;
-    }
-    :nth-child(7) {
-      width: 50%;
-    }
-    :nth-child(8) {
-      width: 50%;
+      width: 50% !important;
     }
     :nth-child(9) {
       width: 100%;
+      display: flex;
     }
     :nth-child(10) {
       width: 100%;
-    }
-    :nth-child(11) {
-      width: 100%;
-    }
-    :nth-child(12) {
-      width: 100%;
+      display: flex;
     }
   }
 
@@ -284,16 +294,21 @@ export const ExternalForm = styled.div`
     }
   }
 
-  button {
-    background: transparent;
+  button .btn, .btn-primary{
+    font-family: normal;
+    font-size: 1rem !important;
+    background: transparent !important;
+    text-transform: uppercase !important;
+    line-height: 46px !important;
+    border-radius: 0px !important;
     border: 1px solid white;
-    width: 35%;
+    width: 225px !important;
     color: white;
-    padding: 0.5rem 0.75rem;
+    padding: 0rem 2.75rem !important;
     transition: all 0.2s ease-in-out;
     :hover {
-      color: #2b3c31;
-      background: white;
+      color: #2b3c31 !important;
+      background: white !important;
     }
   }
 `
