@@ -48,12 +48,12 @@ const ContactUs = ({ activePage }) => {
         </TextContainer>
       </SectionWrapper>
       <Helmet>
-        <script type="text/javascript" async>
-          var script = document.createElement("script"); script.type =
-          "text/javascript"; script.src =
-          "https://forms.contacta.io/61960d1629fed0387a8dae7f.js";
-          document.getElementsByTagName("head")[0].appendChild(script);
-        </script>
+      <script type="text/javascript" async>
+                        var script = document.createElement("script");
+                        script.type = "text/javascript";
+                        script.src = "https://forms.contacta.io/61960d1629fed0387a8dae7f.js";
+                        document.getElementsByTagName("head")[0].appendChild(script);
+                    </script>
         <div id="CONTACTA_61960d1629fed0387a8dae7f"></div>
       </Helmet>
     </SlideOutPageWrapper>
@@ -63,6 +63,29 @@ const ContactUs = ({ activePage }) => {
 export default ContactUs
 
 export const ExternalForm = styled.div`
+ .checkbox-option {
+   margin-top: -.75rem;
+   margin-left: -1rem;
+	-webkit-appearance: none;
+	background-color: transparent;
+	border: 1px solid #cacece;
+	transform: scale(.4);
+	padding: 25px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+
+.checkbox-option:checked {
+	background-color: #0f231d;
+  border: none;
+}
+
+
+
+
+
   .contacta-webform-table {
     width: 100%;
     table-layout: fixed;
@@ -76,14 +99,11 @@ export const ExternalForm = styled.div`
     :first-child {
       width: 0;
     }
+  
     :nth-child(5) {
-      width: 50%;
-      color: black;
-    }
-    :nth-child(6) {
       width: 100%;
     }
-    :nth-child(7) {
+    :nth-child(6) {
       width: 100%;
       display: flex;
     }
@@ -171,16 +191,21 @@ export const ExternalForm = styled.div`
     }
   }
 
-  button {
-    background: transparent;
+  button .btn, .btn-primary{
+    font-family: normal;
+    font-size: 1rem !important;
+    background: transparent !important;
+    text-transform: uppercase !important;
+    line-height: 46px !important;
+    border-radius: 0px !important;
     border: 1px solid white;
-    width: 35%;
+    width: 225px !important;
     color: white;
-    padding: 0.5rem 0.75rem;
+    padding: 0rem 2.75rem !important;
     transition: all 0.2s ease-in-out;
     :hover {
-      color: #2b3c31;
-      background: white;
+      color: #2b3c31 !important;
+      background: white !important;
     }
   }
 `
