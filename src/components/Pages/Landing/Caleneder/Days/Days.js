@@ -17,7 +17,7 @@ const Days = ({ daysView, events }) => {
     nextMonth,
     events
   )
-console.log(events)
+
   const daysWrapperRef = useRef(null)
   const { activePage } = useActivePage()
   const [elementWidth, setElementWidth] = useState(0)

@@ -40,10 +40,12 @@ const EventsListView = ({
       setElementWidth(window.innerWidth * 0.423)
   }, [dayContainerRef, daysView])
 
+console.log(   events[4].node.eventDate.slice(0, 2),componentDate, 'boob')
+
   return (
     <>
     {events.map((e, index) => {
-        if (e.node.eventDate.slice(2, 4) === componentDate && e.node.eventDate.slice(0, 2) == currentMonth + 1)
+        if (e.node.eventDate.slice(0, 2) === componentDate && e.node.eventDate.slice(2, 4) == currentMonth + 1)
           return (
             <EventDayContainer
               key={index}
