@@ -83,7 +83,7 @@ const EventDetailsModal = ({
           <EventContents>
             {item.event && item.event.node.eventName ? (
               <>
-                  {eventDetails.eventName && <Heading2>OPEN 6PM-late</Heading2>} 
+                  {eventDetails.eventName && <Heading2>OPEN 5PM-late</Heading2>} 
                 <Heading2>{eventDetails.eventName}</Heading2>
                 <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>
                 <Heading2>{eventDetails.foodSpecialTitle}</Heading2>
@@ -100,7 +100,7 @@ const EventDetailsModal = ({
                 : eventDetails.eventName
                 ? 
                  `${ parseInt(eventDetails.eventDate.slice(5,6)) - 1}` + "PM"
-                : "OPEN 6PM-late"}
+                : "OPEN 5PM-late"}
              
             </Heading2>
           </EventContents>

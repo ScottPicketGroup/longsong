@@ -190,7 +190,7 @@ console.log(   events[4].node.eventDate.slice(0, 2),componentDate, 'boob')
                         }
                         i={i}
                       >
-                        {e.node.eventDate.slice(7, e.node.eventDate.length)}
+                        {parseInt(e.node.eventDate.slice(5))}
                       </EventBC3>
                       <EventBC3
                         calander
