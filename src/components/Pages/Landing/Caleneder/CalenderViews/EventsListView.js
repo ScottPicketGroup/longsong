@@ -17,40 +17,45 @@ import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
 import { MobileWrapper } from "../../../../global-styles/containers.css"
 import useActivePage from "../../../../hooks/ActivePage"
 import useGetDaysOfMonth from "../../../../hooks/DateInformation"
+import useChangeMonth from "../../../../hooks/ChangeMonth"
 
 const EventsListView = ({
   day,
   i,
   item,
   todaysDate,
-  currentMonth,
   month,
   events,
   daysView,
 }) => {
   const dayContainerRef = useRef(null)
   const asdf = parseInt(item.date, 10)
-  const componentDate = item.date
+ 
 
   const [elementWidth, setElementWidth] = useState(0)
   const { setMenuOpen } = useActivePage()
-
+ 
+  const { year, currentMonth } = useChangeMonth()
+  const componentDate = `${year}${currentMonth < 10 ? "0" + (currentMonth + 1) : currentMonth + 1}${item.date}`
   useEffect(() => {
-    // if (dayContainerRef.current)
-      // setElementWidth(dayContainerRef.current.clientWidth)
-      setElementWidth(window.innerWidth * 0.423)
+    setElementWidth(window.innerWidth * 0.423)
   }, [dayContainerRef, daysView])
 
-  console.log(events[1].node.eventDate)
+  console.log(
+    events[3].node.eventDate.slice(0,4).replace("-", "").replace("-", "").replace("T", "") + "--" +
+    events[3].node.eventDate.slice(5,7) + "--" + events[3].node.eventDate.slice(8,10), componentDate
+  )
 
   return (
     <>
-    {events.map((e, index) => {
-        if (e.node.eventDate
-          .replace("-", "")
-          .replace("-", "")
-          .replace("T", "")
-          .slice(4, 8) === (currentMonth+1) + componentDate)
+      {events.map((e, index) => {
+        
+        let eventDate = e.node.eventDate.slice(0,4).replace("-", "").replace("-", "").replace("T", "") + 
+        e.node.eventDate.slice(5,7) + e.node.eventDate.slice(8,10)
+       
+        if (
+          eventDate === componentDate
+        )
           return (
             <EventDayContainer
               key={index}
@@ -142,9 +147,7 @@ const EventsListView = ({
                 dayOfWeek={item.day}
                 day={day}
                 date={todaysDate}
-                isTheVenueOpenToThePublic={
-                  e.node.isTheVenueOpenToThePublic
-                }
+                isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}
                 i={i}
               >
                 <OnlyDesktopWrapper>
@@ -163,7 +166,7 @@ const EventsListView = ({
                       }
                       style={{ paddingLeft: "2.5rem" }}
                     >
-                      {(e.node.eventName)}
+                      {e.node.eventName}
                     </EventBC3>
                   ) : (
                     <EventsListPerformerDetailsWrapper>
@@ -195,7 +198,7 @@ const EventsListView = ({
                         }
                         i={i}
                       >
-                        {parseInt(e.node.eventDate.slice(11)) + ":00" }
+                        {parseInt(e.node.eventDate.slice(11)) + ":00"}
                       </EventBC3>
                       <EventBC3
                         calander
@@ -295,20 +298,25 @@ const EventsListView = ({
                 i={i}
               >
                 <OnlyDesktopWrapper>
-                  {e.node.isTheVenueOpenToThePublic === true ? (
+                  {e.node.eventName &&
+                  e.node.isTheVenueOpenToThePublic === true ? (
                     <Link
                       onClick={() => setMenuOpen(false)}
-                      to={`events/${e.node.slug}`}
+                      to={`events/${e.node.eventName.replace(" ", "-")}`}
                     >
                       VIEW DETAILS
                     </Link>
                   ) : (
-                    <p style={{color: "#6A6A6A"}}>CLOSED</p>
+                    <p style={{ color: "#6A6A6A" }}>CLOSED</p>
                   )}
                 </OnlyDesktopWrapper>
                 <OnlyMobileWrapper>
                   {e.node.isTheVenueOpenToThePublic === true ? (
-                    <EventHeading2 isTheVenueOpenToThePublic={e.node.isTheVenueOpenToThePublic}>
+                    <EventHeading2
+                      isTheVenueOpenToThePublic={
+                        e.node.isTheVenueOpenToThePublic
+                      }
+                    >
                       <Link
                         onClick={() => setMenuOpen(false)}
                         to={`events/${e.node.slug}`}
@@ -332,7 +340,6 @@ const EventsListView = ({
             </EventDayContainer>
           )
       })}
-    
     </>
   )
 }

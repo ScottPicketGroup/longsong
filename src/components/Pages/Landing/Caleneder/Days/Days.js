@@ -11,7 +11,7 @@ import useActivePage from "../../../../hooks/ActivePage"
 import useChangeMonth from "../../../../hooks/ChangeMonth"
 
 const Days = ({ daysView, events }) => {
-  const { currentMonth, nextMonth } = useChangeMonth()
+  const { currentMonth, nextMonth, year } = useChangeMonth()
   const { daysToDisplay, todaysDate, month } = useGetDaysOfMonth(
     currentMonth,
     nextMonth,
@@ -21,7 +21,7 @@ const Days = ({ daysView, events }) => {
   const daysWrapperRef = useRef(null)
   const { activePage } = useActivePage()
   const [elementWidth, setElementWidth] = useState(0)
-
+  
   useEffect(() => {
     if (daysWrapperRef.current)
       setElementWidth(daysWrapperRef.current.clientWidth)
@@ -29,6 +29,9 @@ const Days = ({ daysView, events }) => {
 
   const [openModel, setOpenModel] = useState(null)
   const scrollPosition = useScrollPosition()
+
+
+
   return (
     <DaysWrapper
       cols={daysView ? "true" : "false"}
@@ -45,6 +48,7 @@ const Days = ({ daysView, events }) => {
               item={item}
               currentMonth={currentMonth}
               month={month}
+              year={year}
               key={i}
               events={events}
               daysView={daysView}

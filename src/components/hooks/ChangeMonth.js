@@ -5,7 +5,7 @@ const ChangeMonthContext = createContext()
 export const ChangeMonthProvider = ({ children }) => {
   const date = new Date()
   const month = date.getMonth()
-  const year = date.getFullYear()
+  const [year, setYear] = useState(date.getFullYear())
   const [currentMonth, setCurrentMonth] = useState(month)
   const [nextMonth, setNextMonth] = useState(month + 1)
   const [isFade, setIsFade] = useState(false)
@@ -27,22 +27,35 @@ export const ChangeMonthProvider = ({ children }) => {
     // eslint-disable-next-line
   }, [currentMonth])
 
+  // compile variable with DDMMYY
+  // compare against actual DDMMYY
+  //
+
+  const todaysMonthYear = `${date.getMonth()}` + `${year - 2000}`
+  const currentMonthYear = `${currentMonth}` + `${thisMonthInfo[1] - 2000}`
+
+  console.log(currentMonthYear, todaysMonthYear)
   const handlePreviousMonthChange = () => {
-    let next = nextMonth - 1
-    let current = currentMonth - 1
-    if (current >= month) {
-      setCurrentMonth(current)
-      setNextMonth(next)
-      setIsFade(false)
+    if ( currentMonth === 0 ) {
+      setYear(year - 1)
+      setCurrentMonth(11)
+      setNextMonth(1)
+    } 
+    else if  (currentMonthYear > todaysMonthYear) {
+      setCurrentMonth(currentMonth - 1)
+      setNextMonth(nextMonth - 1)
     }
   }
 
   const handleNextMonthChange = () => {
-    let next = nextMonth + 1
-    let current = currentMonth + 1
-    setNextMonth(next)
-    setCurrentMonth(current)
-    setIsFade(false)
+    if (currentMonth === 11) {
+      setYear(year + 1)
+      setCurrentMonth(0)
+      setNextMonth(1)
+    } else {
+      setCurrentMonth(currentMonth + 1)
+      setNextMonth(nextMonth + 1)
+    }
   }
 
   return (
@@ -54,6 +67,8 @@ export const ChangeMonthProvider = ({ children }) => {
         setCurrentMonth,
         nextMonth,
         setNextMonth,
+        year,
+        setYear,
         handlePreviousMonthChange,
         handleNextMonthChange,
         thisMonthInfo,

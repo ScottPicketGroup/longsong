@@ -36,7 +36,7 @@ const EventDetailsModal = ({
     if(item.event ) setEventDetails(item.event.node)
   }, [item])
 
-  eventDetails.eventDate  && console.log( eventDetails.eventDate.slice(5,10).replace("-", ""),  (month + 1) + item.date)
+  
   
   return (
     <EventDetailsWrapper
