@@ -25,6 +25,7 @@ const EventDetailsModal = ({
   day,
   dayOfWeek,
   todaysDate,
+  month,
   item,
   setOpenModel
 }) => {
@@ -35,7 +36,7 @@ const EventDetailsModal = ({
     if(item.event ) setEventDetails(item.event.node)
   }, [item])
 
-  console.log(eventDetails)
+  eventDetails.eventDate  && console.log( eventDetails.eventDate.slice(5,10).replace("-", ""),  (month + 1) + item.date)
   
   return (
     <EventDetailsWrapper
@@ -98,7 +99,7 @@ const EventDetailsModal = ({
               dayOfWeek === "Monday" ||
               dayOfWeek === "Tuesday"
                 ? "CLOSED"
-                : eventDetails.eventName
+                : eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  (month + 1) + item.date
                 ? 
                  `${ parseInt(eventDetails.eventDate.slice(12,14)) - 2}` + "PM"
                 : "OPEN 5PM-late"}
