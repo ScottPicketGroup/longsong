@@ -28,7 +28,7 @@ const Calender = () => {
             eventDescription {
               raw
             }
-            eventDate(formatString: "DDMMHHmm")
+            eventDate
             isTheVenueOpenToThePublic
           }
         }
@@ -39,6 +39,8 @@ const Calender = () => {
   useEffect(() => {
     data && setEvents(data.allContentfulLongsongEvents.edges)
   }, [data])
+
+
 
   useEffect(() => {
     setIsFade(true)

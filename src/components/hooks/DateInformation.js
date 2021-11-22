@@ -21,13 +21,18 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       if (iterator < 10 && events) {
         events.forEach(event => {
           if (
-            event.node.eventDate.slice(0, 4) ===
+            event.node.eventDate
+              .replace("-", "")
+              .replace("-", "")
+              .replace("T", "")
+              .slice(4, 8) ===
             date
               .toLocaleDateString("au-EN", monthtoIt)
-              .slice(0, 4)
-              .replace("/", "0")
+              .replace("/", "")
+              .substring(2, 4) +
+              date.toLocaleDateString("au-EN", monthtoIt).substring(0, 2)
           ) {
-           
+            
             m = event
           }
         })
@@ -41,15 +46,18 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       } else {
         events &&
           events.forEach(event => {
-            
             if (
-              event.node.eventDate.slice(0, 4) ===
+              event.node.eventDate
+                .replace("-", "")
+                .replace("-", "")
+                .replace("T", "")
+                .slice(4, 8) ===
               date
                 .toLocaleDateString("au-EN", monthtoIt)
-                .slice(0, 5)
                 .replace("/", "")
+                .substring(2, 4) +
+                date.toLocaleDateString("au-EN", monthtoIt).substring(0, 2)
             ) {
-             
               m = event
             }
           })

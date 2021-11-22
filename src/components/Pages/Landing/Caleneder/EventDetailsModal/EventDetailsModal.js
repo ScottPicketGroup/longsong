@@ -35,6 +35,7 @@ const EventDetailsModal = ({
     if(item.event ) setEventDetails(item.event.node)
   }, [item])
 
+  console.log(eventDetails)
   
   return (
     <EventDetailsWrapper
@@ -99,7 +100,7 @@ const EventDetailsModal = ({
                 ? "CLOSED"
                 : eventDetails.eventName
                 ? 
-                 `${ parseInt(eventDetails.eventDate.slice(5,6)) - 1}` + "PM"
+                 `${ parseInt(eventDetails.eventDate.slice(12,14)) - 2}` + "PM"
                 : "OPEN 5PM-late"}
              
             </Heading2>

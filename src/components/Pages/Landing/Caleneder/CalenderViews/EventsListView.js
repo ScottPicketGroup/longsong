@@ -16,6 +16,7 @@ import {
 import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
 import { MobileWrapper } from "../../../../global-styles/containers.css"
 import useActivePage from "../../../../hooks/ActivePage"
+import useGetDaysOfMonth from "../../../../hooks/DateInformation"
 
 const EventsListView = ({
   day,
@@ -40,12 +41,15 @@ const EventsListView = ({
       setElementWidth(window.innerWidth * 0.423)
   }, [dayContainerRef, daysView])
 
-console.log(   events[4].node.eventDate.slice(0, 2),componentDate, 'boob')
 
   return (
     <>
     {events.map((e, index) => {
-        if (e.node.eventDate.slice(0, 2) === componentDate && e.node.eventDate.slice(2, 4) == currentMonth + 1)
+        if (e.node.eventDate
+          .replace("-", "")
+          .replace("-", "")
+          .replace("T", "")
+          .slice(4, 8) === (currentMonth+1) + componentDate)
           return (
             <EventDayContainer
               key={index}
@@ -190,7 +194,7 @@ console.log(   events[4].node.eventDate.slice(0, 2),componentDate, 'boob')
                         }
                         i={i}
                       >
-                        {parseInt(e.node.eventDate.slice(5,6)) + 11 + ':00'}
+                        {parseInt(e.node.eventDate.slice(5,7)) + ':00'}
                       </EventBC3>
                       <EventBC3
                         calander
