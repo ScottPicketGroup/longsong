@@ -107,7 +107,7 @@ const EventDetailsModal = ({
             </Heading2>
           </EventContents>
 
-          {eventDetails.eventName ? (
+          {eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  (month + 1) + item.date ? (
             <EventFooterWrapper >
               <Link
                 onClick={() => setMenuOpen(false)}

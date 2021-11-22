@@ -318,7 +318,7 @@ const EventsListView = ({
                     >
                       <Link
                         onClick={() => setMenuOpen(false)}
-                        to={`events/${e.node.slug}`}
+                        to={`events/${e.node.eventName.replace(/\s/g, '-')}${"-" + e.node.eventDate.slice(5,10) + "-" + e.node.eventDate.slice(0,4)}`}
                       >
                         VIEW DETAILS
                       </Link>
