@@ -41,6 +41,7 @@ const EventsListView = ({
       setElementWidth(window.innerWidth * 0.423)
   }, [dayContainerRef, daysView])
 
+  console.log(events[1].node.eventDate)
 
   return (
     <>
@@ -194,7 +195,7 @@ const EventsListView = ({
                         }
                         i={i}
                       >
-                        {parseInt(e.node.eventDate.slice(5,7)) + ':00'}
+                        {parseInt(e.node.eventDate.slice(11)) + ":00" }
                       </EventBC3>
                       <EventBC3
                         calander
