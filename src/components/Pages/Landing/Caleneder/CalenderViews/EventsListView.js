@@ -42,8 +42,7 @@ const EventsListView = ({
   }, [dayContainerRef, daysView])
 
   console.log(
-    events[3].node.eventDate.slice(0,4).replace("-", "").replace("-", "").replace("T", "") + "--" +
-    events[3].node.eventDate.slice(5,7) + "--" + events[3].node.eventDate.slice(8,10), componentDate
+    events[3].node.eventDate.slice(5,10) + "-" + events[3].node.eventDate.slice(0,4)
   )
 
   return (
@@ -302,7 +301,7 @@ const EventsListView = ({
                   e.node.isTheVenueOpenToThePublic === true ? (
                     <Link
                       onClick={() => setMenuOpen(false)}
-                      to={`events/${e.node.eventName.replace(" ", "-")}`}
+                      to={`events/${e.node.eventName.replace(/\s/g, '-')}${"-" + e.node.eventDate.slice(5,10) + "-" + e.node.eventDate.slice(0,4)}`}
                     >
                       VIEW DETAILS
                     </Link>

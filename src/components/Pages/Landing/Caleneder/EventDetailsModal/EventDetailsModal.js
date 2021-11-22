@@ -107,11 +107,11 @@ const EventDetailsModal = ({
             </Heading2>
           </EventContents>
 
-          {eventDetails.slug ? (
+          {eventDetails.eventName ? (
             <EventFooterWrapper >
               <Link
                 onClick={() => setMenuOpen(false)}
-                to={`/events/${eventDetails.slug}`}
+                to={`events/${eventDetails.eventName.replace(/\s/g, '-')}${"-" + eventDetails.eventDate.slice(5,10) + "-" + eventDetails.eventDate.slice(0,4)}`}
               >
                 VIEW DETAILS
               </Link>

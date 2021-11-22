@@ -17,3 +17,11 @@ const LongsongVideo = () => {
 }
 
 export default LongsongVideo
+
+// export const VideoContainer = styled.video`
+//   height: 10rem;
+//   width: 20rem;
+// `
+// <VideoContainer autoPlay loop muted>
+// <source src={video} type="video/mp4" />
+// </VideoContainer>

@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             eventDescription {
               raw
             }
-            eventDate(formatString: "YYYY-MM-DD HH")
+            eventDate
           
            
           }
@@ -34,7 +34,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create pages for each markdown file.
   const EventTemplate = path.resolve(`src/templates/EventTemplate/index.js`)
   result.data.allContentfulLongsongEvents.edges.forEach(({ node }) => {
-    const path = `/events/${node.eventName.replace(" ", "-")}`
+    const path = `/events/${node.eventName.replace(/\s/g, '-')}${"-" + node.eventDate.slice(5,10) + "-" + node.eventDate.slice(0,4)}`
     createPage({
       path,
       component: EventTemplate,
