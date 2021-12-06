@@ -43,6 +43,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
           date: "0" + date.toLocaleDateString("au-EN", dat),
           event: m,
         })
+        console.log("0" + date.toLocaleDateString("au-EN", dat))
       } else {
         events &&
           events.forEach(event => {
@@ -59,6 +60,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
                 date.toLocaleDateString("au-EN", monthtoIt).substring(0, 2)
             ) {
               m = event
+             
             }
           })
 

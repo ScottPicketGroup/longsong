@@ -32,12 +32,17 @@ const EventDetailsModal = ({
 }) => {
   const [eventDetails, setEventDetails] = React.useState({})
   const { setMenuOpen } = useActivePage()
-
+  const [actualMonth, setActualMonth] = React.useState()
   useEffect(() => {
     if(item.event ) setEventDetails(item.event.node)
+    if (item.date < 10) {
+      setActualMonth("0" + (currentMonth + 1))
+    } else {
+      setActualMonth(currentMonth + 1)
+    }
   }, [item])
 
-  console.log(eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", ""),  (currentMonth +1) + item.date)
+  console.log(eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", ""),  actualMonth + item.date)
   
   return (
     <EventDetailsWrapper
@@ -100,7 +105,7 @@ const EventDetailsModal = ({
               dayOfWeek === "Monday" ||
               dayOfWeek === "Tuesday"
                 ? "CLOSED"
-                : eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  (currentMonth + 1) + item.date
+                : eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  actualMonth + item.date
                 ? 
                  `${ parseInt(eventDetails.eventDate.slice(12,14)) - 2}` + "PM"
                 : "OPEN 5PM-late"}
@@ -108,7 +113,7 @@ const EventDetailsModal = ({
             </Heading2>
           </EventContents>
 
-          {eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  (currentMonth + 1) + item.date ? (
+          {eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  actualMonth + item.date ? (
             <EventFooterWrapper >
               <Link
                 onClick={() => setMenuOpen(false)}
