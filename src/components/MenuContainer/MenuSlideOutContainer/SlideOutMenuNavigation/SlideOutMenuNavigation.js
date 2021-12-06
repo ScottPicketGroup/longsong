@@ -59,7 +59,7 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage, setMenuOpen}) => {
           <DownloadIcon />
         </a>
       </MenuItem>
-      <MenuItem active={activePage} item={0}>
+      {/* <MenuItem active={activePage} item={0}>
       <a
           href={data.contentfulLongsongPageContent.foodMenu.file.url}
           target="_blank"
@@ -74,7 +74,7 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage, setMenuOpen}) => {
         >
           <DownloadIcon />
         </a>
-      </MenuItem>
+      </MenuItem> */}
       <MenuItem onClick={() => setActivePage(2)} active={activePage} item={2}>
         <BC1>Bar</BC1>
       </MenuItem>
