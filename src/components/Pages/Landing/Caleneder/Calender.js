@@ -30,6 +30,7 @@ const Calender = () => {
             }
             eventDate
             isTheVenueOpenToThePublic
+            venueOpenBeforeEventStart
           }
         }
       }

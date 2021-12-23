@@ -42,7 +42,7 @@ const EventDetailsModal = ({
     }
   }, [item])
 
-  console.log(eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", ""),  actualMonth + item.date)
+  console.log(eventDetails.eventDate && eventDetails.eventDate, eventDetails.venueOpenBeforeEventStart)
   
   return (
     <EventDetailsWrapper
@@ -91,7 +91,7 @@ const EventDetailsModal = ({
           <EventContents>
             {item.event && item.event.node.eventName ? (
               <>
-                  {eventDetails.eventName && <Heading2>OPEN 5PM-late</Heading2>} 
+                  {eventDetails.eventName && !eventDetails.venueOpenBeforeEventStart ?  <Heading2>OPEN { parseInt(eventDetails.eventDate.slice(11,14)) - 12}-LATE</Heading2> : <Heading2>OPEN 5PM-late</Heading2>  } 
                 <Heading2>{eventDetails.eventName}</Heading2>
                 <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>
                 <Heading2>{eventDetails.foodSpecialTitle}</Heading2>
@@ -107,7 +107,7 @@ const EventDetailsModal = ({
                 ? "CLOSED"
                 : eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  actualMonth + item.date
                 ? 
-                 `${ parseInt(eventDetails.eventDate.slice(12,14)) - 2}` + "PM"
+                 `${ parseInt(eventDetails.eventDate.slice(11,14)) - 12}` + "PM"
                 : "OPEN 5PM-late"}
              
             </Heading2>
