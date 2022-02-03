@@ -26,6 +26,11 @@ const Space = ({ activePage }) => {
       featuredPerformerTitle
       featuredPerformerDescription {
         raw
+        references {
+            file {
+              url
+            }
+          }
       }
       barSnacksGallery {
         gatsbyImageData
