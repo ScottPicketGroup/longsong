@@ -6,6 +6,7 @@ import Slider from "../../ImageSlider"
 import Renderer from "../../rich-text-renderers/sample"
 
 const StallsAndYard = ({ data }) => {
+
   return (
     <>
       <SectionWrapper column>
@@ -35,7 +36,7 @@ const StallsAndYard = ({ data }) => {
         <TextContainer right full first topMarginNotRequiredMob>
           <BreakLine none />
           <Heading1 marginBottom="md">{data.thirdSection.title}</Heading1>
-          <Renderer node={data.thirdSection.content} />
+          <Renderer node={data.thirdSection.content}/>
         </TextContainer>
       </SectionWrapper>
     </>

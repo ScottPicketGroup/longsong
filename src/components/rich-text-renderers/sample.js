@@ -10,6 +10,7 @@ import {
 import { Button } from "../global-styles/GlobalStyles.css"
 
 const Renderer = ({ node }) => {
+
   
   const Bold = ({ children }) => (
     <span style={{ fontFamily: `bold` }}>{children}</span>
@@ -31,7 +32,7 @@ const Renderer = ({ node }) => {
       [INLINES.HYPERLINK]: ({ data }, children) => (
         
         <Button marginTop="md">
-          {console.log(data, children)}
+    
           <a
             style={{ fontFamily: `inherit` }}
             href={`${
@@ -43,21 +44,34 @@ const Renderer = ({ node }) => {
             rel={`${
               data.uri.startsWith(website_url) ? "" : "noopener noreferrer"
             }`}
-          >
-            {/* {children} */}
+          > 
+           {children} 
           </a>
         </Button>
       ),
+      [INLINES.ASSET_HYPERLINK]: node => {
+        console.log('node', node.data.target.file ? node.data.target.file.url : '');
+        if(node.data.target.file)  return (
+          <Button marginTop="md">
+    
+          <a
+            style={{ fontFamily: `inherit` }}
+            href={`http://${node.data.target.file.url}`}
+            target="_blanc"
+            rel="noopener noreferrer"
+            
+          >
+            {node.content[0].value}
+          </a>
+        </Button>
+        ) 
+      },
     },
-    renderText: text => {
-      return text
-        .split("\n")
-        .map((i, index) => [i, <br key={index} />])
-        .flat()
-    },
+   
   }
 
   return <>{node && renderRichText(node, options)}</>
+  
 }
 
 export default Renderer

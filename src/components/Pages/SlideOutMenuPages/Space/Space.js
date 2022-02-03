@@ -22,10 +22,28 @@ const Space = ({ activePage }) => {
       }
       theYardContent {
         raw
+        references {
+          ... on ContentfulAsset {
+            contentful_id
+            __typename
+          }
+          file {
+            url
+          }
+        }
       }
       featuredPerformerTitle
       featuredPerformerDescription {
         raw
+        references {
+          ... on ContentfulAsset {
+            contentful_id
+            __typename
+          }
+          file {
+            url
+          }
+        }
       }
       barSnacksGallery {
         gatsbyImageData
@@ -44,6 +62,7 @@ const Space = ({ activePage }) => {
     secondSection: {
       title: data.contentfulLongsongPageContent.theYardTitle,
       content: data.contentfulLongsongPageContent.theYardContent,
+      
       imageData: data.contentfulLongsongPageContent.theYardMedia
     },
     thirdSection: {
@@ -52,7 +71,6 @@ const Space = ({ activePage }) => {
       imageData: data.contentfulLongsongPageContent.barSnacksGallery
     }
   }
-
   return (
     <SlideOutPageWrapper activePage={activePage} page={2}>
      <StallsAndYard data={newData} /> 
