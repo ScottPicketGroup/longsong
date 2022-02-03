@@ -14,7 +14,6 @@ const Space = ({ activePage }) => {
       }
       theStallsDescription {
         raw
-       
       }
       theYardTitle
       theYardMedia {
@@ -23,20 +22,10 @@ const Space = ({ activePage }) => {
       }
       theYardContent {
         raw
-        references {
-          file {
-            url
-          }
-        }
       }
       featuredPerformerTitle
       featuredPerformerDescription {
         raw
-        references {
-          file {
-            url
-          }
-        }
       }
       barSnacksGallery {
         gatsbyImageData
