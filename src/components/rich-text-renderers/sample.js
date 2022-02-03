@@ -28,6 +28,7 @@ const Renderer = ({ node }) => {
         <BC1 marginBottom="sm">{children}</BC1>
       ),
       [INLINES.HYPERLINK]: ({ data }, children) => (
+        {console.log(data, children)}
         <Button marginTop="md">
           <a
             style={{ fontFamily: `inherit` }}
@@ -41,7 +42,7 @@ const Renderer = ({ node }) => {
               data.uri.startsWith(website_url) ? "" : "noopener noreferrer"
             }`}
           >
-            {children}
+            {children}meh
           </a>
         </Button>
       ),
