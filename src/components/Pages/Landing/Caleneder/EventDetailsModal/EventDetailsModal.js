@@ -103,11 +103,9 @@ const EventDetailsModal = ({
                 ) : (
                   <>
                     <Heading2>OPEN 5PM-LATE</Heading2>
-                    {item.event && !item.event.node.happyHours ? (
+                  
                       <Heading2>HAPPY HOUR 5-7PM</Heading2>
-                    ) : (
-                      <></>
-                    )}
+                    
                   </>
                 )}
                 <Heading2>{eventDetails.eventName}</Heading2>
@@ -128,8 +126,19 @@ const EventDetailsModal = ({
                     actualMonth + item.date
                 ? `FROM ${parseInt(eventDetails.eventDate.slice(11, 14)) - 12}` +
                   "PM-LATE"
-                : "FROM 5PM-LATE"}
+                : "OPEN 5PM-LATE"}
             </Heading2>
+              <Heading2>
+              {dayOfWeek === "Sunday" ||
+              dayOfWeek === "Monday" ||
+              dayOfWeek === "Tuesday"
+                ? ""
+                : eventDetails.eventDate &&
+                  eventDetails.eventDate.slice(5, 10).replace("-", "") ==
+                    actualMonth + item.date
+                ? ""
+                : "HAPPY HOUR 5-7PM"}
+              </Heading2>
           </EventContents>
 
           {eventDetails.eventDate &&
