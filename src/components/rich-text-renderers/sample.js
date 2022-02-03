@@ -44,7 +44,7 @@ const Renderer = ({ node }) => {
               data.uri.startsWith(website_url) ? "" : "noopener noreferrer"
             }`}
           >
-            {children}
+            {/* {children} */}
           </a>
         </Button>
       ),
