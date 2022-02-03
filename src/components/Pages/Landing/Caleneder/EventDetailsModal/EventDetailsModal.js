@@ -28,22 +28,22 @@ const EventDetailsModal = ({
   month,
   currentMonth,
   item,
-  setOpenModel
+  setOpenModel,
 }) => {
   const [eventDetails, setEventDetails] = React.useState({})
   const { setMenuOpen } = useActivePage()
   const [actualMonth, setActualMonth] = React.useState()
   useEffect(() => {
-    if(item.event ) setEventDetails(item.event.node)
-    if (item.date < 10) {
+    if (item.event) setEventDetails(item.event.node)
+    if (currentMonth < 10) {
       setActualMonth("0" + (currentMonth + 1))
     } else {
       setActualMonth(currentMonth + 1)
     }
   }, [item])
 
-  console.log(eventDetails.eventDate && eventDetails.eventDate, eventDetails.venueOpenBeforeEventStart)
-  
+ 
+
   return (
     <EventDetailsWrapper
       open={open}
@@ -91,7 +91,25 @@ const EventDetailsModal = ({
           <EventContents>
             {item.event && item.event.node.eventName ? (
               <>
-                  {eventDetails.eventName && !eventDetails.venueOpenBeforeEventStart ?  <Heading2>OPEN { parseInt(eventDetails.eventDate.slice(11,14)) - 12}-LATE</Heading2> : <Heading2>OPEN 5PM-late</Heading2>  } 
+                {eventDetails.eventName &&
+                eventDetails.venueOpenBeforeEventStart === false ? (
+                  <Heading2>
+                    OPEN{" "}
+                    {parseInt(
+                      eventDetails.eventDate.replace("-", "").slice(11, 14)
+                    ) - 12}
+                    -LATE
+                  </Heading2>
+                ) : (
+                  <>
+                    <Heading2>OPEN 5PM-LATE</Heading2>
+                    {item.event && !item.event.node.happyHours ? (
+                      <Heading2>HAPPY HOUR 5-7PM</Heading2>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                )}
                 <Heading2>{eventDetails.eventName}</Heading2>
                 <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>
                 <Heading2>{eventDetails.foodSpecialTitle}</Heading2>
@@ -99,25 +117,33 @@ const EventDetailsModal = ({
             ) : (
               <></>
             )}
-        
+
             <Heading2>
               {dayOfWeek === "Sunday" ||
               dayOfWeek === "Monday" ||
               dayOfWeek === "Tuesday"
                 ? "CLOSED"
-                : eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  actualMonth + item.date
-                ? 
-                 `${ parseInt(eventDetails.eventDate.slice(11,14)) - 12}` + "PM"
-                : "OPEN 5PM-late"}
-             
+                : eventDetails.eventDate &&
+                  eventDetails.eventDate.slice(5, 10).replace("-", "") ==
+                    actualMonth + item.date
+                ? `FROM ${parseInt(eventDetails.eventDate.slice(11, 14)) - 12}` +
+                  "PM-LATE"
+                : "FROM 5PM-LATE"}
             </Heading2>
           </EventContents>
 
-          {eventDetails.eventDate && eventDetails.eventDate.slice(5,10).replace("-", "") ==  actualMonth + item.date ? (
-            <EventFooterWrapper >
+          {eventDetails.eventDate &&
+          eventDetails.eventDate.slice(5, 10).replace("-", "") ==
+            actualMonth + item.date ? (
+            <EventFooterWrapper>
               <Link
                 onClick={() => setMenuOpen(false)}
-                to={`events/${eventDetails.eventName.replace(/\s/g, '-')}${"-" + eventDetails.eventDate.slice(5,10) + "-" + eventDetails.eventDate.slice(0,4)}`}
+                to={`events/${eventDetails.eventName.replace(/\s/g, "-")}${
+                  "-" +
+                  eventDetails.eventDate.slice(5, 10) +
+                  "-" +
+                  eventDetails.eventDate.slice(0, 4)
+                }`}
               >
                 VIEW DETAILS
               </Link>

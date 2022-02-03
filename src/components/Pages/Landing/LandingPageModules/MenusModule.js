@@ -57,7 +57,7 @@ const MenusModule = () => {
   return (
     <LandingPageModuleContainer>
       <MenusModuleWrapper>
-        {/* <MenusModuleHalfWrapper>
+        <MenusModuleHalfWrapper>
           <ImageWrapper>
             <Slider imageData={foodMenuImage}></Slider>
           </ImageWrapper>
@@ -71,7 +71,7 @@ const MenusModule = () => {
               </a>
             </TextContainer>
           </EventContentContainer>
-        </MenusModuleHalfWrapper> */}
+        </MenusModuleHalfWrapper>
 
         <MenusModuleHalfWrapper>
           <ImageWrapper>

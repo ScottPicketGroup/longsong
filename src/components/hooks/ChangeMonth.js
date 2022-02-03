@@ -34,7 +34,7 @@ export const ChangeMonthProvider = ({ children }) => {
   const todaysMonthYear = `${date.getMonth()}` + `${year - 2000}`
   const currentMonthYear = `${currentMonth}` + `${thisMonthInfo[1] - 2000}`
 
-  console.log(currentMonthYear, todaysMonthYear)
+ // console.log(currentMonthYear, todaysMonthYear)
   const handlePreviousMonthChange = () => {
     if ( currentMonth === 0 ) {
       setYear(year - 1)
