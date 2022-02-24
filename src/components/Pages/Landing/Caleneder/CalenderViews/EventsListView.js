@@ -264,7 +264,7 @@ const EventsListView = ({
                         }
                         i={i}
                       >
-                        {e.node.eventDate.slice(7, e.node.eventDate.length)}
+                     {parseInt(e.node.eventDate.slice(11)) + ":00"}
                       </EventHeading2>
                       <EventHeading2
                         calander
