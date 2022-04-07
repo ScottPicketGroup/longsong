@@ -7,11 +7,11 @@ import { ActivePageProvider } from "./src/components/hooks/ActivePage"
 const App = ({ element }) => {
   return (
     <>
-      <GlobalStyles />
+      {/* <GlobalStyles />
       <Typography />
       <ActivePageProvider>
         <ChangeMonthProvider>{element}</ChangeMonthProvider>
-      </ActivePageProvider>
+      </ActivePageProvider> */}
     </>
   )
 }

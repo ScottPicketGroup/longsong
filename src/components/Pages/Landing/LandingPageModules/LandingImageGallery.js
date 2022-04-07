@@ -14,7 +14,7 @@ import { Heading1 } from "../../../global-styles/typography.css"
 const LandingImageGallery = () => {
   const data = useStaticQuery(graphql`
     query landingGallery {
-      allContentfulLongsongLandingPageGallery(
+      allContentfulLandingPageGallery(
         filter: { id: { eq: "6360b07b-e6f0-5f56-bdb0-a795901937cb" } }
       ) {
         edges {
@@ -30,7 +30,7 @@ const LandingImageGallery = () => {
     }
   `)
 
-  const { gallery } = data.allContentfulLongsongLandingPageGallery.edges[0].node
+  const { gallery } = data.allContentfulLandingPageGallery.edges[0].node
 
   return (
     <LandingPageModuleContainer>

@@ -11,7 +11,7 @@ const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage, refElem
 
   const data = useStaticQuery(graphql`
   query menuLink {
-    contentfulLongsongPageContent {
+    contentfulPageContent {
     
       foodMenu {
         file {
@@ -39,8 +39,8 @@ const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage, refElem
           setMenuOpen={setMenuOpen}
           activePage={activePage}
           setActivePage={setActivePage}
-          foodMenu={data.contentfulLongsongPageContent.foodMenu}
-          drinksMenu={data.contentfulLongsongPageContent.drinksMenu}
+          foodMenu={data.contentfulPageContent.foodMenu}
+          drinksMenu={data.contentfulPageContent.drinksMenu}
           refElement={refElement}
         />
       </DesktopWrapper>

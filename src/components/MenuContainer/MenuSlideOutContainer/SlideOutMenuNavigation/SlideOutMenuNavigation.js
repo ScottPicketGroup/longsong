@@ -15,7 +15,7 @@ import { DesktopMenuIconWrapper } from "../../MenuContainer.css"
 const SlideOutMenuNavigation = ({ setActivePage, activePage, setMenuOpen}) => {
   const data = useStaticQuery(graphql`
     query DrinkAndFoodLink {
-      contentfulLongsongPageContent(
+      contentfulPageContent(
         contentful_id: { eq: "7aRmLZ6sUc9SbpIPPRRj7A" }
       ) {
         drinksMenu {
@@ -45,14 +45,14 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage, setMenuOpen}) => {
       <MenuItem active={activePage} item={0}>
         <BC1>
         <a
-          href={data.contentfulLongsongPageContent.drinksMenu.file.url}
+          href={data.contentfulPageContent.drinksMenu.file.url}
           target="_blank"
           rel="noreferrer"
         >
           Drinks
           </a></BC1>
         <a
-          href={data.contentfulLongsongPageContent.drinksMenu.file.url}
+          href={data.contentfulPageContent.drinksMenu.file.url}
           target="_blank"
           rel="noreferrer"
         >
@@ -61,14 +61,14 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage, setMenuOpen}) => {
       </MenuItem>
       <MenuItem active={activePage} item={0}>
       <a
-          href={data.contentfulLongsongPageContent.foodMenu.file.url}
+          href={data.contentfulPageContent.foodMenu.file.url}
           target="_blank"
           rel="noreferrer"
         >
         <BC1>Food</BC1>
         </a>
         <a
-          href={data.contentfulLongsongPageContent.foodMenu.file.url}
+          href={data.contentfulPageContent.foodMenu.file.url}
           target="_blank"
           rel="noreferrer"
         >

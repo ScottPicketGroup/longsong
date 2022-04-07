@@ -15,7 +15,7 @@ import { Heading1, BC1 } from "../../../global-styles/typography.css"
 const MenusModule = () => {
   const data = useStaticQuery(graphql`
     query menusModuleData {
-      contentfulLongsongLandingPageMenuSection(
+      contentfulLandingPageMenuSection(
         id: { eq: "397f50bd-3167-5a45-95b0-214c0950a168" }
       ) {
         id
@@ -52,7 +52,7 @@ const MenusModule = () => {
     drinksMenuPdf,
     foodMenuPdf,
     foodMenuImage,
-  } = data.contentfulLongsongLandingPageMenuSection
+  } = data.contentfulLandingPageMenuSection
 
   return (
     <LandingPageModuleContainer>

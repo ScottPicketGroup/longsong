@@ -32,7 +32,7 @@ const EventTemplate = ({ pageContext }) => {
   const [imageData, setImageData] = useState([])
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allContentfulLongsongEvents {
+      allContentfulEvents {
         edges {
           node {
             id

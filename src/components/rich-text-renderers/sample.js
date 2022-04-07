@@ -13,7 +13,7 @@ const Renderer = ({ node }) => {
 
   
   const Bold = ({ children }) => (
-    <span style={{ fontFamily: `bold` }}>{children}</span>
+    <p style={{ fontFamily: `bold` }}>{children}</p>
   )
 
   const website_url = "https://"
@@ -26,6 +26,7 @@ const Renderer = ({ node }) => {
       [BLOCKS.HEADING_1]: (node, children) => <Heading1>{children}</Heading1>,
       [BLOCKS.HEADING_2]: (node, children) => <Heading2>{children}</Heading2>,
       [BLOCKS.HEADING_3]: (node, children) => <Heading3>{children}</Heading3>,
+      [BLOCKS.HEADING_4]: (node, children) => <Heading3>{children}</Heading3>,
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <BC1 marginBottom="sm">{children}</BC1>
       ),

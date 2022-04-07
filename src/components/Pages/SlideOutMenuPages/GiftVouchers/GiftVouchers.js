@@ -9,15 +9,15 @@ import {
   SlideOutPageWrapper,
   SectionWrapper,
   TextContainer,
-} from "../Space/Space.css"
+} from "../Bar/Space.css"
 import Renderer from "../../../rich-text-renderers/sample"
 
-
+import useGiftVoucherPageQuery from './useGiftVoucherQuery'
 
 const GiftVouchers = ({ activePage }) => {
   const data = useStaticQuery(graphql`
   query GiftVouchers {
-    contentfulLongsongPageContent(id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}) {
+    contentfulPageContent(id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}) {
       giftVouchersHeroImge {
         title
         gatsbyImageData
@@ -36,47 +36,48 @@ const GiftVouchers = ({ activePage }) => {
     }
   }
   `)
-
+  const pageData = useGiftVoucherPageQuery().contentfulGiftVouchers
+  
   return (
     <SlideOutPageWrapper activePage={activePage} page={4}>
       <SectionWrapper column>
         <ImageWrapper full marginRequired>
           <GatsbyImage
-            image={getImage(data.contentfulLongsongPageContent.giftVouchersHeroImge)}
-            alt={data.contentfulLongsongPageContent.giftVouchersHeroImge.title}
+            image={getImage(pageData.heroImage)}
+            alt="voucher image"
           />
         </ImageWrapper>
 
         <TextContainer right full marginBottom="mx  d" >
-          <BreakLine first />
+        <BreakLine first />
           <Heading1 marginBottom="md">
-          {data.contentfulLongsongPageContent.longsongGiftVoucher}
+          {pageData.longsongVoucherHeading}
 
           </Heading1>
-          <Renderer node={data.contentfulLongsongPageContent.longsongGiftVoucherDescription} />
+          <Renderer node={pageData.longsongVoucherDescription} />
 
           <Button marginBottom="xl">
           <a
-              href={data.contentfulLongsongPageContent.longsongGiftVoucherLink}
+              href={pageData.longsongVoucherLinkUrl}
               target="_blank"
               rel="noreferrer"
             >
-              PURCHASE VOUCHER
+              {pageData.longsongVoucherLinkLabel}
             </a>
             </Button>
         </TextContainer>
         <TextContainer right full marginBottom="md">
           <BreakLine none />
           <Heading1 marginBottom="md">
-            {data.contentfulLongsongPageContent.groupGiftVoucherHeading}
+            {pageData.groupVoucherHeading}
           </Heading1>
-          <Renderer node={data.contentfulLongsongPageContent.groupGiftVoucherDescription} />
+          <Renderer node={pageData.groupVoucherDescription} />
           <Button marginBottom="xl"><a
-              href={data.contentfulLongsongPageContent.groupGiftVoucherLink}
+              href={pageData.groupVoucherLinkUrl}
               target="_blank"
               rel="noreferrer"
             >
-              PURCHASE VOUCHER
+              {pageData.groupVoucherLinkLabel}
             </a></Button>
         </TextContainer>
       </SectionWrapper>

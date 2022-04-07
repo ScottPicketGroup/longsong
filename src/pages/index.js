@@ -8,7 +8,7 @@ import LandingPageModules from "../components/Pages/Landing/LandingPageModules"
 
 const IndexPage = ({ data }) => {
   const { heroImage, landingPageSections } =
-    data.allContentfulLongsongLandingPageContent.edges[0].node
+    data.contentfulLandingPageContent
 
   //components state
 
@@ -23,9 +23,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout fd="column" heroImage={heroImage}>
       <Seo title="Home" />
-       <HeroBackground 
-        
-      />
+       <HeroBackground />
       <LandingPageModules data={landingPageSections} /> 
     </Layout>
   )
@@ -35,12 +33,16 @@ export default IndexPage
 
 export const landingPageData = graphql`
 query landing {
-  allContentfulLongsongLandingPageContent {
-    edges {
-      node {
-        id
-        landingPageSections {
-          ... on ContentfulLandingPageEventsModule {
+  contentfulLandingPageContent(id: {eq: "4a312602-defe-550a-b9b5-2393ed6dd3ee"}) {
+    id
+    heroImage {
+      gatsbyImageData(placeholder: BLURRED)
+    }
+    textOverHeroImage {
+      raw
+    }
+    landingPageSections {
+     ... on ContentfulLandingPageEventsModule {
             id
             landingPageEventsList {
               id
@@ -55,18 +57,7 @@ query landing {
               }
             }
           }
-          ... on ContentfulLongsongLandingPagePrivateDiningSection {
-            id
-            gallery {
-              gatsbyImageData
-              title
-            }
-            intro {
-              raw
-            }
-            title
-          }
-          ... on ContentfulLongsongLandingPageMenuSection {
+      ... on ContentfulLandingPageMenuSection {
             id
             foodMenuImage {
               gatsbyImageData(aspectRatio: 1)
@@ -89,22 +80,20 @@ query landing {
               }
             }
           }
-        }
-        textOverHeroImage {
-            raw
-          }
-        heroImage {
-
-        file {
-              url
-              details {
-                size
-              }
+      ... on ContentfulLandingPagePrivateDiningSection {
+       id
+            gallery {
+              gatsbyImageData
+              title
             }
-            gatsbyImageData(placeholder: BLURRED)}
+            intro {
+              raw
+            }
+            title
       }
     }
   }
 }
+
 
 `

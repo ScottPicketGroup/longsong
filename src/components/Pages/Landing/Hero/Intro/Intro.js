@@ -11,13 +11,9 @@ import { IntroContainerWrapper, IntroTextWrapper } from "../Hero.css"
 const Intro = () => {
   const data = useStaticQuery(graphql`
     query landingIntro {
-      allContentfulLongsongPageContent {
-        edges {
-          node {
-            landingIntro {
-              raw
-            }
-          }
+      contentfulLandingPageContent(id: {eq: "4a312602-defe-550a-b9b5-2393ed6dd3ee"}) {
+        textOverHeroImage {
+          raw
         }
       }
     }
@@ -28,13 +24,13 @@ const Intro = () => {
       <DesktopWrapper>
         <IntroTextWrapper>
     
-          <Renderer node={data.allContentfulLongsongPageContent.edges[0].node.landingIntro} />
+          <Renderer node={data.contentfulLandingPageContent.textOverHeroImage.textOverHeroImage} />
         </IntroTextWrapper>
       </DesktopWrapper>
       <MobileWrapper>
         <IntroTextWrapper mobile>
          
-        <Renderer node={data.allContentfulLongsongPageContent.edges[0].node.landingIntro} />
+        <Renderer node={data.contentfulLandingPageContent.textOverHeroImage.textOverHeroImage}/>
         </IntroTextWrapper>
       </MobileWrapper>
     </IntroContainerWrapper>

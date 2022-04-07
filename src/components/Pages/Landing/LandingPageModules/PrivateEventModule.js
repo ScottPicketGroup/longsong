@@ -20,7 +20,7 @@ const PrivateEventModule = () => {
 
   const data = useStaticQuery(graphql`
     query landingPrivateEvent {
-      allContentfulLongsongLandingPagePrivateDiningSection(
+      allContentfulLandingPagePrivateDiningSection(
         filter: { id: { eq: "4af70453-ae05-593d-9722-bdb85b745ace" } }
       ) {
         edges {
@@ -41,7 +41,7 @@ const PrivateEventModule = () => {
   `)
 
   const { gallery, intro, title } =
-    data.allContentfulLongsongLandingPagePrivateDiningSection.edges[0].node
+    data.allContentfulLandingPagePrivateDiningSection.edges[0].node
 
   return (
     <LandingPageModuleContainer>

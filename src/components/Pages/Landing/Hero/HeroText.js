@@ -10,7 +10,7 @@ import { graphql, useStaticQuery } from "gatsby"
 const HeroText = () => {
   const data = useStaticQuery(graphql`
     query heroText {
-      allContentfulLongsongLandingPageContent(
+      allContentfulLandingPageContent(
         filter: { id: { eq: "4a312602-defe-550a-b9b5-2393ed6dd3ee" } }
       ) {
         edges {
@@ -30,7 +30,7 @@ const HeroText = () => {
       <DesktopWrapper style={{ marginBottom: "-9rem" }}>
         <Renderer
           node={
-            data.allContentfulLongsongLandingPageContent.edges[0].node
+            data.allContentfulLandingPageContent.edges[0].node
               .textOverHeroImage
           }
         />
@@ -38,7 +38,7 @@ const HeroText = () => {
       <MobileWrapper>
         <Renderer
           node={
-            data.allContentfulLongsongLandingPageContent.edges[0].node
+            data.allContentfulLandingPageContent.edges[0].node
               .textOverHeroImage
           }
         />

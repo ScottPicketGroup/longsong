@@ -16,7 +16,7 @@ const Calender = () => {
   const { width } = useWindowDimensions()
   const data = useStaticQuery(graphql`
     query allEvents {
-      allContentfulLongsongEvents {
+      allContentfulEvents {
         edges {
           node {
             id
@@ -38,7 +38,7 @@ const Calender = () => {
   `)
 
   useEffect(() => {
-    data && setEvents(data.allContentfulLongsongEvents.edges)
+    data && setEvents(data.allContentfulEvents.edges)
   }, [data])
 
 

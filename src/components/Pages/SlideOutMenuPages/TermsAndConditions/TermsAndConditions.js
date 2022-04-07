@@ -12,7 +12,7 @@ import {
 const TermsAndConditions = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query termsAndConditions {
-      allContentfulLongsongPageContent {
+      allContentfulPageContent {
         nodes {
           termsAndConditions {
             raw
@@ -33,7 +33,7 @@ const TermsAndConditions = ({ activePage }) => {
           <Heading1>Terms & Conditions</Heading1>
         </TextContainer>
         <TextContainer sixty marginBottom="md">
-          <Renderer node={data.allContentfulLongsongPageContent.nodes[0].termsAndConditions} />
+          <Renderer node={data.allContentfulPageContent.nodes[0].termsAndConditions} />
         </TextContainer>
       </SectionWrapper>
       <BreakLine first />
@@ -42,7 +42,7 @@ const TermsAndConditions = ({ activePage }) => {
           <Heading1>Privacy Policy</Heading1>
         </TextContainer>
         <TextContainer sixty marginBottom="md">
-          <Renderer node={data.allContentfulLongsongPageContent.nodes[0].privacyPolicy} />
+          <Renderer node={data.allContentfulPageContent.nodes[0].privacyPolicy} />
         </TextContainer>
       </SectionWrapper>
     </SlideOutPageWrapper>

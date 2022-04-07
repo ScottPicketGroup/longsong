@@ -9,7 +9,7 @@ import Renderer from "../../../rich-text-renderers/sample"
 const WhatsOn = ({ activePage }) => {
   const data = useStaticQuery(graphql`
   query WhatsOnOPageQuery {
-    allContentfulLongsongPageContent(
+    allContentfulPageContent(
       filter: {id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}}
     ) {
       nodes {
@@ -24,7 +24,7 @@ const WhatsOn = ({ activePage }) => {
   
   `)
 
-  const newData = data.allContentfulLongsongPageContent.nodes[0]
+  const newData = data.allContentfulPageContent.nodes[0]
 
   return (
     <SlideOutPageWrapper activePage={activePage} page={6} contact>
