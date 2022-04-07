@@ -15,27 +15,7 @@ import Renderer from "../../../rich-text-renderers/sample"
 import useGiftVoucherPageQuery from './useGiftVoucherQuery'
 
 const GiftVouchers = ({ activePage }) => {
-  const data = useStaticQuery(graphql`
-  query GiftVouchers {
-    contentfulPageContent(id: {eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e"}) {
-      giftVouchersHeroImge {
-        title
-        gatsbyImageData
-      }
-      longsongGiftVoucher
-      longsongGiftVoucherDescription {
-        raw
-      }
-      longsongGiftVoucherLink
-      groupGiftVoucherHeading
-      groupGiftVoucherDescription {
-        raw
-      }
-      groupGiftVoucherLink
-      id
-    }
-  }
-  `)
+
   const pageData = useGiftVoucherPageQuery().contentfulGiftVouchers
   
   return (
