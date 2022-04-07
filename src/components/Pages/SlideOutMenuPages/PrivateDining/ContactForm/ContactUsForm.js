@@ -1,67 +1,33 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import { Heading1 } from "../../../global-styles/typography.css"
-import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
-import {
-  SlideOutPageWrapper,
-  SectionWrapper,
-  TextContainer,
-} from "../Bar/Space.css"
-import styled from "styled-components"
-import Renderer from "../../../rich-text-renderers/sample"
+import React from 'react'
+import styled from 'styled-components';
 import { Helmet } from "react-helmet"
-
-const ContactUs = ({ activePage }) => {
-  const data = useStaticQuery(graphql`
-    query ContactUs {
-      contentfulLongsongPageContent(
-        id: { eq: "a93d3e6e-66c6-56f3-870e-bbd14f35a26e" }
-      ) {
-        contactUsDescription {
-          raw
-        }
-        id
-      }
-    }
-  `)
-
+import { Heading1 } from '../../../../global-styles/typography.css'
+import { TextContainer } from '../../Bar/Space.css'
+const ContactUsForm = () => {
   return (
-    <SlideOutPageWrapper activePage={activePage} page={5} contact>
-      <BreakLine first />
-      <SectionWrapper>
-        <TextContainer>
-          <Heading1>Contact Us</Heading1>
-        </TextContainer>
-        <TextContainer sixty marginBottom="md">
-          <Renderer
-            node={data.contentfulLongsongPageContent.contactUsDescription}
-          />
-        </TextContainer>
-      </SectionWrapper>
-      <SectionWrapper>
-        <TextContainer>
-          <Heading1> Contact Form</Heading1>
-        </TextContainer>
-        <TextContainer sixty>
-          <ExternalForm id="CONTACTA_61960d1629fed0387a8dae7f" />
-          {/* <ContactUsForm /> */}
-        </TextContainer>
-      </SectionWrapper>
-      <Helmet>
-      <script type="text/javascript" async>
-                        var script = document.createElement("script");
-                        script.type = "text/javascript";
-                        script.src = "https://forms.contacta.io/61960d1629fed0387a8dae7f.js";
-                        document.getElementsByTagName("head")[0].appendChild(script);
-                    </script>
-        <div id="CONTACTA_61960d1629fed0387a8dae7f"></div>
-      </Helmet>
-    </SlideOutPageWrapper>
+<>
+    <TextContainer>
+      <Heading1>Enquiry Form</Heading1>
+    </TextContainer>
+    <TextContainer sixty>
+      <ExternalForm id="CONTACTA_61960f035e0c880c5a61ab16"/>
+      {/* <ContactUsForm /> */}
+    </TextContainer>
+
+  <Helmet>
+    <script type="text/javascript" async>
+      var script = document.createElement("script"); script.type =
+      "text/javascript"; script.src =
+      "https://forms.contacta.io/61960f035e0c880c5a61ab16.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    </script>
+    <div id="CONTACTA_61960f035e0c880c5a61ab16"></div>
+  </Helmet>
+  </>
   )
 }
 
-export default ContactUs
+export default ContactUsForm
 
 export const ExternalForm = styled.div`
  .checkbox-option {
@@ -102,9 +68,13 @@ export const ExternalForm = styled.div`
     }
   
     :nth-child(5) {
-      width: 100%;
+      width: 50% !important;
     }
-    :nth-child(6) {
+    :nth-child(9) {
+      width: 100%;
+      display: flex;
+    }
+    :nth-child(10) {
       width: 100%;
       display: flex;
     }

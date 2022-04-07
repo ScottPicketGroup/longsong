@@ -41,9 +41,9 @@ const EventsListView = ({
     setElementWidth(window.innerWidth * 0.423)
   }, [dayContainerRef, daysView])
 
-  console.log(
-    events[3].node.eventDate.slice(5,10) + "-" + events[3].node.eventDate.slice(0,4)
-  )
+  // console.log(
+  //   events[3].node.eventDate.slice(5,10) + "-" + events[3].node.eventDate.slice(0,4)
+  // )
 
   return (
     <>

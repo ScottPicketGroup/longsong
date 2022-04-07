@@ -1,11 +1,11 @@
 import React from "react"
 import { Heading1 } from "../../global-styles/typography.css"
 import { BreakLine } from "../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
-import { ImageWrapper, TextContainer, SectionWrapper } from "./Space/Space.css"
+import { ImageWrapper, TextContainer, SectionWrapper } from "./Bar/Space.css"
 import Slider from "../../ImageSlider"
 import Renderer from "../../rich-text-renderers/sample"
 
-const StallsAndYard = ({ data }) => {
+const PageSections = ({ data }) => {
 
   return (
     <>
@@ -43,4 +43,4 @@ const StallsAndYard = ({ data }) => {
   )
 }
 
-export default StallsAndYard
+export default PageSections

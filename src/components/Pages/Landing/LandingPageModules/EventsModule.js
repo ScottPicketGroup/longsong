@@ -7,7 +7,7 @@ import {
   ImageWrapper,
   TextContainer,
   EventSectionWrapper,
-} from "../../SlideOutMenuPages/Space/Space.css"
+} from "../../SlideOutMenuPages/Bar/Space.css"
 import Slider from "../../../ImageSlider"
 import Renderer from "../../../rich-text-renderers/sample"
 import {

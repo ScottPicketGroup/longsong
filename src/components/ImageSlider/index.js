@@ -24,6 +24,7 @@ const Slider = ({ imageData, hero, aspectRatio }) => {
   })
   const [activeImg, setActiveImg] = useState(0)
 
+
   useEffect(() => {
     if (imageData.length > 0) {
       setImages(imageData)

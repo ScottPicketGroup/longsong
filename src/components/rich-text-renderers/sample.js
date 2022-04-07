@@ -50,7 +50,7 @@ const Renderer = ({ node }) => {
         </Button>
       ),
       [INLINES.ASSET_HYPERLINK]: node => {
-        console.log('node', node.data.target.file ? node.data.target.file.url : '');
+        // console.log('node', node.data.target.file ? node.data.target.file.url : '');
         if(node.data.target.file)  return (
           <Button marginTop="md">
     

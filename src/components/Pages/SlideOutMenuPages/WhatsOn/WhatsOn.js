@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import { Heading1 } from "../../../global-styles/typography.css"
 import { BreakLine } from "../../../MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
-import { SlideOutPageWrapper, TextContainer, SectionWrapper } from "../Space/Space.css"
+import { SlideOutPageWrapper, TextContainer, SectionWrapper } from "../Bar/Space.css"
 import Renderer from "../../../rich-text-renderers/sample"
 
 const WhatsOn = ({ activePage }) => {

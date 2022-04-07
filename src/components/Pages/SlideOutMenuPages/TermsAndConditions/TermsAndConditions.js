@@ -7,7 +7,7 @@ import {
   SlideOutPageWrapper,
   SectionWrapper,
   TextContainer,
-} from "../Space/Space.css"
+} from "../Bar/Space.css"
 
 const TermsAndConditions = ({ activePage }) => {
   const data = useStaticQuery(graphql`

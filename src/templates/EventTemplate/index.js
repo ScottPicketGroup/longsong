@@ -17,7 +17,7 @@ import {
   ImageWrapper,
 } from "./index.css"
 
-import { TextContainer } from "../../components/Pages/SlideOutMenuPages/Space/Space.css"
+import { TextContainer } from "../../components/Pages/SlideOutMenuPages/Bar/Space.css"
 import { Button } from "../../components/global-styles/GlobalStyles.css"
 import { BreakLine } from "../../components/MenuContainer/MenuSlideOutContainer/SlideOutMenuNavigation/SlideOutMenuNavigation.css"
 import Slider from "../../components/ImageSlider"
@@ -28,7 +28,7 @@ import useActivePage from "../../components/hooks/ActivePage"
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
   const eventDateTime = eventData.eventDate
-  console.log(eventDateTime)
+  // console.log(eventDateTime)
   const [imageData, setImageData] = useState([])
   const data = useStaticQuery(graphql`
     query MyQuery {

@@ -9,8 +9,8 @@ import SlideOutSideBar from "./SlideOutSideBar"
 import SlideOutMenuNavigation from "./SlideOutMenuNavigation/SlideOutMenuNavigation"
 
 import SlideOutLanding from "../../Pages/SlideOutMenuPages/Landing/SlideOutLanding"
-import Space from "../../Pages/SlideOutMenuPages/Space/Space"
-import GiftVouchers from "../../Pages/SlideOutMenuPages/GiftVouchersAndGroupBookings/GiftVouchers"
+import Space from "../../Pages/SlideOutMenuPages/Bar/Bar"
+import PrivateDining from "../../Pages/SlideOutMenuPages/PrivateDining/PrivateDining"
 
 import {
   MenuSlideOutWrapper,
@@ -19,7 +19,6 @@ import {
   WhatsOnCalendarContainer,
   ScrollToTopMenu,
 } from "./MenuSlideOutContianer.css"
-import GroupBookings from "../../Pages/SlideOutMenuPages/GiftVouchersAndGroupBookings/GroupBookings"
 import ContactUs from "../../Pages/SlideOutMenuPages/ContactUs/ContactUs"
 import Footer from "../../Footer/Footer"
 import WhatsOn from "../../Pages/SlideOutMenuPages/WhatsOn/WhatsOn"
@@ -49,8 +48,8 @@ const MenuSlideOutContainer = ({
               <SlideOutLanding activePage={activePage} />
               <Space activePage={activePage} />
               <WhatsOn activePage={activePage} />
-              <GroupBookings activePage={activePage} />
-              <GiftVouchers activePage={activePage} />
+              {/* <GroupBookings activePage={activePage} /> */}
+              <PrivateDining activePage={activePage} />
               <ContactUs activePage={activePage} />
               <TermsAndConditions activePage={activePage} />
             </PageContentContainer>
