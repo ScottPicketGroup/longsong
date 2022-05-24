@@ -15,14 +15,14 @@ const ContactUsForm = () => {
     </TextContainer>
 
   <Helmet>
-  <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"></script><script language="javascript">{setTimeout(function(){ ftenquireinit(665,'longrain')}, 3000)}</script><div id="ftenquire665"></div>
-    {/* <script type="text/javascript" async>
+  {/* <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"></script><script language="javascript">{setTimeout(function(){ ftenquireinit(665,'longrain')}, 3000)}</script><div id="ftenquire665"></div> */}
+    <script type="text/javascript" async>
       var script = document.createElement("script"); script.type =
       "text/javascript"; script.src =
       "https://forms.contacta.io/61960f035e0c880c5a61ab16.js";
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
-    <div id="CONTACTA_61960f035e0c880c5a61ab16"></div> */}
+    <div id="CONTACTA_61960f035e0c880c5a61ab16"></div>
   </Helmet>
   </>
   )
