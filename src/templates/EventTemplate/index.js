@@ -49,8 +49,8 @@ const EventTemplate = ({ pageContext }) => {
   const { handleOpenMenuClick } = useActivePage()
 
   useEffect(() => {
-    data.allContentfulLongsongEvents.edges.forEach(({ node }) => {
-      if (node.id === eventData.id) setImageData(node.eventMedia)
+    data.allContentfulEvents.edges.forEach(({ node }) => {
+      if (node.id === eventData.id && node.eventMedia) setImageData(node.eventMedia) 
     })
   }, [eventData, data])
 
