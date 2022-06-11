@@ -1,5 +1,5 @@
 import React from "react"
-import { AnimationImgWrapper, HeroContainer } from "./Hero.css"
+import { AnimationImgWrapper, HeroBG, HeroContainer } from "./Hero.css"
 import LongsongVideo from "./LongsongVideo/LongsongVideo"
 import HeroText from "./HeroText"
 import { StaticImage } from "gatsby-plugin-image"
@@ -27,8 +27,3 @@ const HeroBackground = () => {
 
 export default HeroBackground
 
-export const HeroBG = styled.div`
-  @media (max-width: 451px) {
-    margin-left: -1rem;
-  }
-`

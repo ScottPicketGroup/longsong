@@ -3,19 +3,24 @@ import { StaticImage } from "gatsby-plugin-image"
 
 export const LogoAnimation = keyframes`
   0% {
-    display: none;
-    opacity: 0;
- 
+   
+    display: flex;
+      opacity: 1;
+    
   }
   
-  75% {
-    display: none;
-      opacity: 0;
+  90% {
+    display: flex;
+   visibilty: visible;
+   opacity: 1;
+   
   }
 
   100% {
-    display: flex;
-      opacity: 1;
+    display: none;
+    visibility: none;
+    opacity: 0;
+   
   }
   
 `
@@ -31,7 +36,7 @@ export const TextFadeIn = keyframes`
     opacity: 0;
    
   }
-  55% {
+  65% {
     opacity: 1;
     display: flex;
 
@@ -45,7 +50,7 @@ export const ScrollTotFadeIn = keyframes`
   0% {
     display: none;
     opacity: 0;
-   
+  
   }
   85% {
     display: none;
@@ -59,6 +64,54 @@ export const ScrollTotFadeIn = keyframes`
   }
   100% {
       
+  }
+`
+export const HeroFadeIn = keyframes`
+  0% {
+    display: none;
+    opacity: 0;
+  
+  }
+  85% {
+    display: none;
+    opacity: 0;
+   
+  }
+  90% {
+    opacity: 1;
+    display: flex;
+    visibility: visible;
+  }
+  100% {
+      
+  }
+`
+export const StaticLogoFadeIn = keyframes`
+0% {
+   
+  display: none;
+    opacity: 0;
+
+}
+
+40% {
+  display: none;
+ 
+ opacity: 0;
+}
+
+70% {
+  display: flex;
+  
+  opacity: 1;
+  
+}
+`
+export const HeroBG = styled.div`
+animation: ${HeroFadeIn} 5.5s linear;
+
+  @media (max-width: 451px) {
+    margin-left: -1rem;
   }
 `
 
@@ -75,6 +128,21 @@ export const HeroWrapper = styled.div`
     margin-top: -2.5rem;
   }
 `
+export const IntroGifImg = styled.img`
+animation: ${LogoAnimation} 4s forwards;
+animation-iteration-count: 1;
+visibility: none;
+transform: scale(1.1);
+
+`;
+
+export const StaticLogo = styled.svg`
+
+ animation: ${StaticLogoFadeIn} .5s forwards;
+
+ visibility: none;
+
+`;
 
 export const AnimationWrapper = styled.div`
   animation: ${LogoAnimation} 2s linear;
@@ -89,7 +157,7 @@ export const AnimationWrapper = styled.div`
 `
 
 export const IntroContainerWrapper = styled.div`
-  animation: ${TextFadeIn} 3s ease;
+  animation: ${TextFadeIn} 5s ease;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -164,7 +232,7 @@ export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
 `
 export const AnimationIntroContainer = styled.div`
-  animation: ${ScrollTotFadeIn} 2.5s ease;
+  animation: ${ScrollTotFadeIn} 6.5s ease;
   max-width: 700px;
   text-align: center;
   margin: auto;
