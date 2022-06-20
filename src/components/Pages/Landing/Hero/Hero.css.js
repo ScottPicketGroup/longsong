@@ -44,19 +44,17 @@ export const ScrollTotFadeIn = keyframes`
     opacity: 0;
   
   }
-  85% {
+  90% {
     display: none;
     opacity: 0;
    
   }
-  90% {
+  100% {
     opacity: 1;
     display: flex;
 
   }
-  100% {
-      
-  }
+  
 `
 export const HeroFadeIn = keyframes`
   0% {
@@ -222,7 +220,7 @@ export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
 `
 export const AnimationIntroContainer = styled.div`
-  animation: ${ScrollTotFadeIn} 9s ease;
+  animation: ${ScrollTotFadeIn} 8s ease;
   max-width: 700px;
   text-align: center;
   margin: auto;
