@@ -8,10 +8,10 @@ const LongsongVideo = () => {
     React.useEffect(() => {
         const timer = setTimeout(() => {
           setShow("loading");
-        }, 100);
+        }, 1800);
         const timerOut = setTimeout(() => {
             setShow("heading");
-          }, 5000);
+          }, 6000);
         return () => clearTimeout(timer);
       }, []);
    

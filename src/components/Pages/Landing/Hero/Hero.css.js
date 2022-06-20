@@ -31,18 +31,10 @@ export const TextFadeIn = keyframes`
     opacity: 0;
    
   }
-  50% {
-    display: none;
-    opacity: 0;
-   
-  }
-  65% {
-    opacity: 1;
-    display: flex;
-
-  }
+ 
   100% {
-      
+    opacity: 1;
+    display: flex; 
   }
 `
 
@@ -72,19 +64,17 @@ export const HeroFadeIn = keyframes`
     opacity: 0;
   
   }
-  85% {
+  95% {
     display: none;
     opacity: 0;
    
   }
-  90% {
+  100% {
     opacity: 1;
     display: flex;
     visibility: visible;
   }
-  100% {
-      
-  }
+ 
 `
 export const StaticLogoFadeIn = keyframes`
 0% {
@@ -108,7 +98,7 @@ export const StaticLogoFadeIn = keyframes`
 }
 `
 export const HeroBG = styled.div`
-animation: ${HeroFadeIn} 5.5s linear;
+animation: ${HeroFadeIn} 6.5s linear;
 
   @media (max-width: 451px) {
     margin-left: -1rem;
@@ -133,7 +123,10 @@ animation: ${LogoAnimation} 4s forwards;
 animation-iteration-count: 1;
 visibility: none;
 transform: scale(1.1);
-
+@media (max-width: 450px) {
+  max-width: 150%;
+  
+}
 `;
 
 export const StaticLogo = styled.svg`
@@ -157,16 +150,13 @@ export const AnimationWrapper = styled.div`
 `
 
 export const IntroContainerWrapper = styled.div`
-  animation: ${TextFadeIn} 5s ease;
+  animation: ${TextFadeIn} 2s ease;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: -2rem;
   text-align: center;
-  @media (max-width: 450px) {
-    margin: 1rem;
-    
-  }
+
 `
 export const IntroTextWrapper = styled.div`
   max-width: 1000px;
@@ -232,7 +222,7 @@ export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
 `
 export const AnimationIntroContainer = styled.div`
-  animation: ${ScrollTotFadeIn} 6.5s ease;
+  animation: ${ScrollTotFadeIn} 7.5s ease;
   max-width: 700px;
   text-align: center;
   margin: auto;

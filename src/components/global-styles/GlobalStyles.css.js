@@ -15,7 +15,9 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'normal', sans-serif;
     letter-spacing: 10;
     background: #231F20;
-    animation: ${fadeInBG} 2s ease-out;
+    animation: ${fadeInBG} 2s forwards;
+    visibility: 0;
+ 
     color: white;
   }
   a {
