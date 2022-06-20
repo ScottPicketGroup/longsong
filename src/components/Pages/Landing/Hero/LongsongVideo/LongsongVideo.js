@@ -11,7 +11,7 @@ const LongsongVideo = () => {
         }, 1800);
         const timerOut = setTimeout(() => {
             setShow("heading");
-          }, 7500);
+          }, 7000);
         return () => clearTimeout(timer);
       }, []);
    
