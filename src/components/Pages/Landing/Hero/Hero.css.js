@@ -222,7 +222,7 @@ export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
 `
 export const AnimationIntroContainer = styled.div`
-  animation: ${ScrollTotFadeIn} 7.5s ease;
+  animation: ${ScrollTotFadeIn} 9s ease;
   max-width: 700px;
   text-align: center;
   margin: auto;
