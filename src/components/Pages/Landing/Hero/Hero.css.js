@@ -131,7 +131,7 @@ transform: scale(1.1);
 
 export const StaticLogo = styled.svg`
 
- animation: ${StaticLogoFadeIn} .5s forwards;
+ animation: ${StaticLogoFadeIn} 1s forwards;
 
  visibility: none;
 
