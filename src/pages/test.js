@@ -10,7 +10,7 @@ const test = () => {
      test
      <Helmet>
 
-     <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquire.js"></script><script language="javascript">ftenquireinit(665,'longrain')</script><div id="ftenquire665"></div>
+     <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquire.js"></script><script language="javascript">setTimeout(function(){ ftenquireinit(665,'longrain')}, 3000)</script><div id="ftenquire665"></div>
      </Helmet>
   </Layout>
   )
