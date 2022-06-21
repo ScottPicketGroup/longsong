@@ -1,21 +1,25 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const test = () => {
-  const [form, setForm] = React.useState(false)
-  React.useEffect(() => {
-   setTimeout(() => {
-    setForm(true)
-   }, 100000);
-  }, [])
-  console.log(form)
+const Test = () => {
+//   const [form, setForm] = useState(false)
+//  useEffect(() => {
+//    setTimeout(() => {
+//     setForm(true)
+//    }, 100000);
+//   }, [])
+//   console.log(form)
+useEffect(() => {
+    console.log(window.ftenquireinit(665, "longrain"))
+    
+}, []);
   return (
     <Layout fd="column">
       <Seo title="Home" />
       test
-      <Helmet>
+      {/* <Helmet>
         {form ? (
           <>
             <script
@@ -28,9 +32,9 @@ const test = () => {
             <div id="ftenquire665"></div>
           </>
         ) : null}
-      </Helmet>
+      </Helmet> */}
     </Layout>
   )
 }
 
-export default test
+export default Test
