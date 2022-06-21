@@ -33,6 +33,7 @@ useEffect(() => {
           </>
         ) : null}
       </Helmet> */}
+       {window.enquirecustom.ftenquireinit(665, "longrain")}
     </Layout>
   )
 }
