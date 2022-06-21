@@ -6,8 +6,11 @@ import Seo from "../components/seo"
 const test = () => {
   const [form, setForm] = React.useState(false)
   React.useEffect(() => {
+   setTimeout(() => {
     setForm(true)
+   }, 100000);
   }, [])
+  console.log(form)
   return (
     <Layout fd="column">
       <Seo title="Home" />
@@ -20,7 +23,7 @@ const test = () => {
               src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"
             ></script>
             <script language="javascript">
-              setTimeout(function(){ftenquireinit(665, "longrain")}, 2000)
+            {ftenquireinit(665, "longrain")}
             </script>
             <div id="ftenquire665"></div>
           </>
