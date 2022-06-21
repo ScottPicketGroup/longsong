@@ -20,7 +20,7 @@ const App = ({ element }) => {
               src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"
             ></script>
             <script language="javascript">
-            {window.enquirecustom.ftenquireinit(665, "longrain")}
+         
             </script>
             <div id="ftenquire665"></div>
         
