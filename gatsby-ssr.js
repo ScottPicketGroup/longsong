@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet"
 const App = ({ element }) => {
   useEffect(() => {
  // set up and use external package as needed
- window.externalLibrary.method()
+window.ftenquireinit(665, "longrain")
    }, [])
   return (
     <>
