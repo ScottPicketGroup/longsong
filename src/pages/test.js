@@ -11,10 +11,10 @@ const Test = () => {
 //    }, 100000);
 //   }, [])
 //   console.log(form)
-useEffect(() => {
-    console.log(window.ftenquireinit(665, "longrain"))
+// useEffect(() => {
+//     console.log(window.ftenquireinit(665, "longrain"))
     
-}, []);
+// }, []);
   return (
     <Layout fd="column">
       <Seo title="Home" />
@@ -34,7 +34,7 @@ useEffect(() => {
         ) : null}
       </Helmet> */}
       
-       <div id="ftenquire665"></div>
+       {/* <div id="ftenquire665"></div> */}
     </Layout>
   )
 }

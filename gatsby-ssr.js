@@ -13,7 +13,7 @@ const App = ({ element }) => {
    }, [])
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         
             <script
               language="javascript"
@@ -25,7 +25,7 @@ const App = ({ element }) => {
             <div id="ftenquire665"></div>
         
         
-      </Helmet>
+      </Helmet> */}
       {/* <GlobalStyles />
       <Typography />
       <ActivePageProvider>
