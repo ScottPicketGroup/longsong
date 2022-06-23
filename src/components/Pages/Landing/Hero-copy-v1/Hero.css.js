@@ -96,7 +96,7 @@ export const StaticLogoFadeIn = keyframes`
 }
 `
 export const HeroBG = styled.div`
-animation: ${HeroFadeIn} 6.5s linear;
+animation: ${HeroFadeIn} 1.5s linear;
 
   @media (max-width: 451px) {
     margin-left: -1rem;
@@ -117,7 +117,7 @@ export const HeroWrapper = styled.div`
   }
 `
 export const IntroGifImg = styled.img`
-animation: ${LogoAnimation} 4s forwards;
+animation: ${LogoAnimation} 5s forwards;
 animation-iteration-count: 1;
 visibility: none;
 transform: scale(1.1);
