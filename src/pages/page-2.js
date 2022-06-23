@@ -1,116 +1,99 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { Helmet } from "react-helmet"
+import React from "react"
+import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import styled from "styled-components"
-const SecondPage = () => (
-  <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-    {/* <ExternalForm id="CONTACTA_619389b6eaba730a77d3a6a1">
-    </ExternalForm> */}
-    <Helmet>
-      {/* <script type="text/javascript" async>
-        var script = document.createElement("script"); script.type =
-        "text/javascript"; script.src =
-        "https://forms.contacta.io/61960d1629fed0387a8dae7f.js";
-        document.getElementsByTagName("head")[0].appendChild(script);
-      </script>
-      div for page
-      <div id="CONTACTA_61960d1629fed0387a8dae7f"></div>
-      Private events enquire form
-      <script type="text/javascript" async>
-        var script = document.createElement("script"); script.type =
-        "text/javascript"; script.src =
-        "https://forms.contacta.io/61960f035e0c880c5a61ab16.js";
-        document.getElementsByTagName("head")[0].appendChild(script);
-      </script>
-      <div id="CONTACTA_61960f035e0c880c5a61ab16"></div> */}
-    </Helmet>
-  </Layout>
-)
+import HeroBackground from "../components/Pages/Landing/Hero-copy-v1/HeroBackgound"
+import LandingPageModules from "../components/Pages/Landing/LandingPageModules"
 
-export default SecondPage
+const IndexPage = ({ data }) => {
+  const { heroImage, landingPageSections } =
+    data.contentfulLandingPageContent
 
-export const ExternalForm = styled.div`
-  .contacta-webform-table {
-    width: 100%;
-    table-layout: fixed;
-    display: flex;
-    flex-wrap: wrap;
-  }
+  //components state
 
-  .contacta-row {
-    width: 50%;
-    :first-child {
-      width: 0;
-    }
-    :nth-child(9) {
-      width: 100%;
-    }
-    :nth-child(10) {
-      width: 100%;
-    }
-    :nth-child(11) {
-      width: 100%;
-      flex-direction: column;
-    }
-  }
-  input {
-    height: 2rem;
-    background: rgba(255, 255, 255, 0);
-    border: none;
-    padding: 1.5rem 0;
-    font-size: 0.75rem;
-    line-height: none;
-    border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")};
-    ::placeholder {
-      color: ${props => (props.err ? "#CB0000" : "#B1B1B1")};
-      font-size: 1rem;
-      margin-bottom: 10rem;
-      background: transperant;
-      font-family: normal;
-    }
-    :focus {
-      outline: none;
-      background: transparent;
-      font-family: normal;
-      height: 3rem;
-      font-size: 150%;
-    }
-    :valid {
-      color: white;
-      font-size: 1rem;
-      background: transperant;
-      font-family: normal;
-    }
-    ::-moz-focus-outer {
-      color: white;
-    }
-    @media screen and (max-width: 450px) {
-      width: 100%;
-    }
-  }
-  input:-webkit-autofill,
-  input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
-  }
-  label {
-  }
+  //  use effect 
+  // let modulesToPush = []
+  // map landingPageModules => modulesToPush.push({name: arrayname.firstlettertocapital, props: props})
+  // setmodules (modulestopush)
 
-  textarea {
-    font-family: normal;
-    width: 100%;
-    height: 10rem;
-    background: rgba(255, 255, 255, 0);
-    border: none;
-    padding: 1.5rem 0;
-    font-size: 0.75rem;
-    line-height: none;
-    border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "#B1B1B1")};
-    overflow: hidden;
+
+
+
+  return (
+    <Layout fd="column" heroImage={heroImage}>
+      <Seo title="Home" />
+       <HeroBackground />
+      <LandingPageModules data={landingPageSections} /> 
+    </Layout>
+  )
+}
+
+export default IndexPage
+
+export const landingPageData = graphql`
+query landingv2 {
+  contentfulLandingPageContent(id: {eq: "4a312602-defe-550a-b9b5-2393ed6dd3ee"}) {
+    id
+    heroImage {
+      gatsbyImageData(placeholder: BLURRED)
+    }
+    textOverHeroImage {
+      raw
+    }
+    landingPageSections {
+     ... on ContentfulLandingPageEventsModule {
+            id
+            landingPageEventsList {
+              id
+              eventDate(formatString: "DD.MM")
+              eventName
+              slug
+              eventDescription {
+                raw
+              }
+              eventMedia {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              }
+            }
+          }
+      ... on ContentfulLandingPageMenuSection {
+            id
+            foodMenuImage {
+              gatsbyImageData(aspectRatio: 1)
+            }
+            drinksMenuImage {
+              gatsbyImageData(aspectRatio: 1)
+            }
+            foodMenuHeading
+            drinksMenuHeading
+            foodMenuIntro
+            drinksMenuIntro
+            drinksMenuPdf {
+              file {
+                url
+              }
+            }
+            foodMenuPdf {
+              file {
+                url
+              }
+            }
+          }
+      ... on ContentfulLandingPagePrivateDiningSection {
+       id
+            gallery {
+              gatsbyImageData
+              title
+            }
+            intro {
+              raw
+            }
+            title
+      }
+    }
   }
+}
+
+
 `

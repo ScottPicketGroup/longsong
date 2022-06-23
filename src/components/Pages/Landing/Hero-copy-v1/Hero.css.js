@@ -35,26 +35,6 @@ export const TextFadeIn = keyframes`
   100% {
     opacity: 1;
     display: flex; 
-    visibility: visible;
-  }
-`
-export const LogoFadeIn = keyframes`
-0% {
-  display: none;
-  opacity: 0;
- 
-} 
-90% {
-    display: none;
-    opacity: 0;
-   
-  }
-
- 
-  100% {
-    opacity: 1;
-    display: flex; 
-    visibility: visible;
   }
 `
 
@@ -116,7 +96,7 @@ export const StaticLogoFadeIn = keyframes`
 }
 `
 export const HeroBG = styled.div`
-animation: ${HeroFadeIn} .5s linear;
+animation: ${HeroFadeIn} 6.5s linear;
 
   @media (max-width: 451px) {
     margin-left: -1rem;
@@ -148,13 +128,15 @@ transform: scale(1.1);
 `;
 
 export const StaticLogo = styled.svg`
-animation: ${LogoFadeIn} 2s forwards;
-visibility: hidden;
+
+ animation: ${StaticLogoFadeIn} 1s forwards;
+
+ visibility: none;
 
 `;
 
 export const AnimationWrapper = styled.div`
-  // animation: ${LogoAnimation} 2s linear;
+  animation: ${LogoAnimation} 2s linear;
   transform: scale(0.8);
   display: flex;
   justify-content: center;
@@ -238,7 +220,7 @@ export const AnimationImgWrapper = styled(AnimationWrapper)`
   margin-top: 4.25rem;
 `
 export const AnimationIntroContainer = styled.div`
-  animation: ${ScrollTotFadeIn} 2.5s ease;
+  animation: ${ScrollTotFadeIn} 8s ease;
   max-width: 700px;
   text-align: center;
   margin: auto;

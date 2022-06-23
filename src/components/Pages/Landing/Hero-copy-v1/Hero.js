@@ -6,9 +6,9 @@ import Intro from "./Intro/Intro"
 const Hero = ({ excuteScroll }) => {
   return (
     <HeroWrapper>
-      {/* <AnimationWrapper>
+      <AnimationWrapper>
         <LongsongVideo />
-      </AnimationWrapper> */}
+      </AnimationWrapper>
       <Intro />
       <ScrollToCalender excuteScroll={excuteScroll} />
     </HeroWrapper>

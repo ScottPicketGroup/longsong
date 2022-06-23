@@ -11,7 +11,7 @@ const LongsongVideo = () => {
         }, 1800);
         const timerOut = setTimeout(() => {
             setShow("heading");
-          }, 1800);
+          }, 6500);
         return () => clearTimeout(timer);
       }, []);
    
@@ -19,7 +19,7 @@ const LongsongVideo = () => {
   return (
     <>
      {show === "loading" &&  <IntroGifImg src={heroGif} alt="Longsong Welcome" />}
-       <StaticLogo
+     {show === "heading" &&  <StaticLogo
         xmlns="http://www.w3.org/2000/svg"
         width="495.168"
         height="310.259"
