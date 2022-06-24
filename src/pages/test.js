@@ -18,7 +18,8 @@ const Test = () => {
   // setTimeout(() => {
   //   window.ftenquireinit(665, "longrain")
   // }, 3000)
-  console.log("window", window)
+  
+  console.log(window.ftenquireinit(665, "longrain"))
   return (
     <Layout fd="column">
       <Seo title="Home" />
