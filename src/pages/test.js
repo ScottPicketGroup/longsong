@@ -16,7 +16,7 @@ const Test = () => {
     
 // }, []);
 setTimeout(() => {
-  console.log('window', window.ftenquireinit(665,"longrain"))
+  window.ftenquireinit(665,"longrain")
 }, 3000);
 console.log('window', window)
   return (
@@ -24,7 +24,9 @@ console.log('window', window)
       <Seo title="Home" />
       <Helmet>
         
-      <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"></script><script language="javascript">{ window.ftenquireinit(665,'longrain')}</script><div id="ftenquire665"></div>
+      <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"></script><script language="javascript">{ setTimeout(() => {
+  window.ftenquireinit(665,"longrain")
+}, 3000)}</script><div id="ftenquire665"></div>
        
     
     
