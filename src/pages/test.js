@@ -21,13 +21,7 @@ console.log('window', window.ftenquireinit(665,"longrain"))
       <Seo title="Home" />
       <Helmet>
         
-        <script
-          language="javascript"
-          src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"
-        ></script>
-        <script language="javascript">
-     
-        </script>
+      <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"></script><script language="javascript">{ window.ftenquireinit(665,'longrain')}</script><div id="ftenquire665"></div>
        
     
     
