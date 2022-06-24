@@ -3,17 +3,18 @@ import GlobalStyles from "./src/components/global-styles/GlobalStyles.css"
 import { Typography } from "./src/components/global-styles/typography.css"
 import { ChangeMonthProvider } from "./src/components/hooks/ChangeMonth"
 import { ActivePageProvider } from "./src/components/hooks/ActivePage"
-
+import { Helmet } from "react-helmet"
 import React, {useState, useEffect} from "react"
 
 const App = ({ element }) => {
   useEffect(() => {
  // set up and use external package as needed
- window.externalLibrary.method()
+//  window.externalLibrary.method()
+ 
    }, [])
   return (
     <>
-      {/* <Helmet>
+      <Helmet>
         
             <script
               language="javascript"
@@ -22,10 +23,10 @@ const App = ({ element }) => {
             <script language="javascript">
          
             </script>
-            <div id="ftenquire665"></div>
+           
         
         
-      </Helmet> */}
+      </Helmet>
       {/* <GlobalStyles />
       <Typography />
       <ActivePageProvider>

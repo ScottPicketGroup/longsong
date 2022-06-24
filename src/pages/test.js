@@ -15,10 +15,23 @@ const Test = () => {
 //     console.log(window.ftenquireinit(665, "longrain"))
     
 // }, []);
+console.log('window', window.ftenquireinit(665,"longrain"))
   return (
     <Layout fd="column">
       <Seo title="Home" />
-      test
+      <Helmet>
+        
+        <script
+          language="javascript"
+          src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"
+        ></script>
+        <script language="javascript">
+     
+        </script>
+       
+    
+    
+  </Helmet>
       {/* <Helmet>
         {form ? (
           <>
