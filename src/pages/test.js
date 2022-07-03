@@ -167,4 +167,21 @@ input {
   background-color: white;
   color: inherit;
 }
+.ftbtn .ftbtn-primary {
+  font-family: normal !important;
+  font-size: 1rem !important;
+  background: transparent !important;
+  text-transform: uppercase !important;
+  line-height: 46px !important;
+  border-radius: 0px !important;
+  border: 1px solid white !important;
+  width: 225px !important;
+  color: white !important;
+  padding: 0rem 2.75rem !important;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    color: #2b3c31 !important;
+    background: white !important;
+  }
+}
 `
