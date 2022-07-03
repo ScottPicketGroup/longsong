@@ -28,6 +28,9 @@ export const FunctionTrackerForm = styled.div`
 color: white !important;
 text-transform: uppercase !important;
 }
+.ftform-control {
+  border-radium: none !important;
+}
 input {
   height: 2rem;
   background: rgba(255, 255, 255, 0) !important;
@@ -35,6 +38,7 @@ input {
   padding: 1.5rem 0 !important;
   font-size: 0.75rem !important;
   line-height: none !important;
+
   border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
   ::placeholder {
     color: ${props => (props.err ? "#CB0000" : "#B1B1B1")};
