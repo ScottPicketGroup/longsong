@@ -170,7 +170,7 @@ input {
 .select2-results__option select2-results__option--highlighted {
   background-color: white !important;
 }
-.ftbtn .ftbtn-primary {
+input .ftbtn .ftbtn-primary {
   font-family: normal !important;
   font-size: 1rem !important;
   background: transparent !important;
