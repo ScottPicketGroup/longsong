@@ -33,6 +33,10 @@ export const FunctionTrackerFormContainer = styled.div`
   display: flex;
   flex-direction: row !important;
 }
+
+#enquireform > div:nth-child(1) {
+  font-size: 2rem;
+}
 //*[@id="enquireform"]/div[9]/div
 .ftcontrol-label {
 color: white !important;
