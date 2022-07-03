@@ -21,7 +21,9 @@ export const FunctionTrackerForm = styled.div`
   .ftpage-container {
     background-color: inherit !important;
   }
-
+.ftform-group {
+  color: white !important;
+}
   .select2-selection__rendered {
     color: white;
     background-color: blue;
