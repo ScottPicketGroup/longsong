@@ -17,9 +17,9 @@ const Test = () => {
 export default Test
 
 export const FunctionTrackerForm = styled.div`
-  background-color: blue !important;
+  background-color: inherit !important;
   .ftpage-container {
-    background-color: blue !important;
+    background-color: inherit !important;
   }
 
   .select2-selection__rendered {
