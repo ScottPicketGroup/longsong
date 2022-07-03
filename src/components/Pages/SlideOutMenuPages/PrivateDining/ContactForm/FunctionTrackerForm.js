@@ -22,6 +22,8 @@ export const FunctionTrackerFormContainer = styled.div`
 .ftrow {
   margin-left: -100px !important;
   margin-right: -100px !important;
+  display: flex !important;
+  flex-direction: row !important;
 }
 
 .ftrow:nth-child(9) {
