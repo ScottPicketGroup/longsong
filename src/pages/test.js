@@ -29,8 +29,12 @@ color: white !important;
 text-transform: uppercase !important;
 }
 .ftform-control {
-  border-radius: 0 !important;
-  background-color: transperant !important;
+
+  border-radius: 0px !important;
+  background-color: transparent !important;
+  color: white !important;
+  box-shadow: none !important;
+
 }
 input {
   height: 2rem;
