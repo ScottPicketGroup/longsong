@@ -25,7 +25,10 @@ export const FunctionTrackerFormContainer = styled.div`
   display: flex !important;
   flex-direction: column !important;
 }
-
+#enquireform > div:nth-child(9) > div {
+  display: flex;
+  flex-direction: row !important;
+}
 .ftrow:nth-child(9) {
   display: flex !important;
   flex-direction: row !important;
