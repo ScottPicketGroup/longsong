@@ -172,7 +172,7 @@ input {
 }
 input .ftbtn .ftbtn-primary {
   font-family: normal !important;
-  font-size: 1rem !important;
+  font-size: 10rem !important;
   background: transparent !important;
   text-transform: uppercase !important;
   line-height: 46px !important;
