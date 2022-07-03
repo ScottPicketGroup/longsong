@@ -34,7 +34,8 @@ text-transform: uppercase !important;
   background-color: transparent !important;
   color: white !important;
   box-shadow: none !important;
-
+  border: none !important;
+  border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
 }
 input {
   height: 2rem;
