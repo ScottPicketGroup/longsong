@@ -162,4 +162,8 @@ input {
 ..select2-selection--single:not([class*=bg-]):not([class*=border-]) {
   border-color: transparent;
 }
+.select2-results__option[aria-selected=true] {
+  background-color: white;
+  color: inherit;
+}
 `
