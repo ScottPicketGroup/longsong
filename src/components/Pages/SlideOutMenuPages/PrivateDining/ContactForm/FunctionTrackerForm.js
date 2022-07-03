@@ -20,15 +20,13 @@ export const FunctionTrackerFormContainer = styled.div`
   color: white !important;
 }
 .ftrow {
-  margin-left: -10px;
-  display: flex !important;
-  margin-right: -10px;
-  flex-direction: column !important;
+  margin-left: -100px !important;
+  margin-right: -100px !important;
 }
 
-.ftrow:nth-child() {
-  display: flex;
-  flex-direction: row;
+.ftrow:nth-child(9) {
+  display: flex !important;
+  flex-direction: row !important;
 }
 //*[@id="enquireform"]/div[9]/div
 .ftcontrol-label {
