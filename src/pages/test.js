@@ -24,6 +24,11 @@ export const FunctionTrackerForm = styled.div`
 .ftform-group {
   color: white !important;
 }
+.ftcontrol-label {
+color: white !important;
+text-transform: uppercase !important;
+}
+
   .select2-selection__rendered {
     color: white;
     background-color: blue;
@@ -113,7 +118,5 @@ export const FunctionTrackerForm = styled.div`
   .picker__table {
     color: white;
   }
-  .ftcontrol-label {
-    color: white;
-  }
+
 `
