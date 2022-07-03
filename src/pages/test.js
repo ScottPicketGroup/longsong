@@ -11,26 +11,17 @@ const Test = () => {
     <Layout fd="column">
       <Seo title="Home" />
    
-      <FunctionTrackerForm id="ftenquire665" style={styles.section}></FunctionTrackerForm>
+      <FunctionTrackerForm id="ftenquire665" ></FunctionTrackerForm>
     
     </Layout>
   )
 }
 
 export default Test
-const styles = {
-  section: {
-    fontSize: "18px",
-    color: "#292b2c",
-    backgroundColor: "black",
-    padding: "0 20px"
-  },
-  wrapper: {
-    textAlign: "center",
-    margin: "0 auto",
-    marginTop: "50px"
-  }
-}
+
 export const FunctionTrackerForm = styled.div`
-  
+background-color: inherit;
+  .ftpage-container {
+    
+  }
 `;
