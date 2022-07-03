@@ -189,12 +189,15 @@ button, html input[type="button"], input[type="reset"], input[type="submit"]  {
   font-size: 1rem !important;
   background: transparent !important;
   text-transform: uppercase !important;
-  line-height: 46px !important;
+  // line-height: 46px !important;
   border-radius: 0px !important;
   border: 1px solid white !important;
   width: 225px !important;
-  color: white !important;
-  padding: 0rem 2.75rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.5rem 2.75rem !important;
+  justify-content: center !important;
+  align-items: center !important;
   transition: all 0.2s ease-in-out;
   :hover {
     color: #2b3c31 !important;
