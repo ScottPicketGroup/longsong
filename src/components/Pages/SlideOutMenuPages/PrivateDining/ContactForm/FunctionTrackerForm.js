@@ -4,7 +4,7 @@ import { TextContainer } from "../../Bar/Space.css"
 const FunctionTrackerForm = () => {
   return (
  
-      <FunctionTrackerFormContainer id="ftenquire665"></FunctionTrackerFormContainer>
+      <div id="ftenquire665"></div>
 
   )
 }
