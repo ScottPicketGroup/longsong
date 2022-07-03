@@ -55,9 +55,9 @@ input {
     font-size: 150% !important;
   }
   :valid {
+    box-shadow: none !important;
     color: white !important;
     font-size: 1rem !important;
-    background: transperant !important;
     font-family: normal !important;
   }
   ::-moz-focus-outer {
