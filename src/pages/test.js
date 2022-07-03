@@ -164,7 +164,7 @@ input {
   border-color: transparent !important;
 }
 .select2-results__option[aria-selected=true] {
-  background-color: white;
+  background-color: white !important;
   color: inherit;
 }
 .ftbtn .ftbtn-primary {
