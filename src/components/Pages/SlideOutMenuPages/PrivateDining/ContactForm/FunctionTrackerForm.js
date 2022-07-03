@@ -84,7 +84,7 @@ input {
   background: inherit !important;
 }
   .select2-selection__rendered {
-    color: white;
+    color: #231F20 !important;
     background-color: inherit;
   }
 
