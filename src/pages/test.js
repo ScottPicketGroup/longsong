@@ -19,7 +19,7 @@ const Test = () => {
   //   window.ftenquireinit(665, "longrain")
   // }, 3000)
   
-  console.log("form info:"window.ftenquireinit(665, "longrain"))
+  console.log("form info:", window.ftenquireinit(665, "longrain"))
   return (
     <Layout fd="column">
       <Seo title="Home" />
