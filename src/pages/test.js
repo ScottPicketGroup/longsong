@@ -26,16 +26,16 @@ background-color: inherit;
     background-color: blue;
   }
 
-.select2-selection__rendered {  ;color:white  ; background-color:#FFFFFF}
+.select2-selection__rendered {  ;color:white  ; background-color:blue}
 
 /* Around the search field */
-.select2-search { ;color:white  ; background-color:#FFFFFF }
+.select2-search { ;color:white  ; background-color:blue }
 
 /* Search field */
-.select2-search input { ;color:white  ; background-color:#FFFFFF }
+.select2-search input { ;color:white  ; background-color:blue }
 
 /* Each result */
-.select2-results { ;color:white  ; background-color:#FFFFFF }
+.select2-results { ;color:white  ; background-color:blue }
 
 /* Higlighted (hover) result */
 .select2-results__option--highlighted { ;color:white   }
@@ -45,11 +45,11 @@ background-color: inherit;
 
 .select2-container{  border:1px solid #dddddd; width: 100% !important ; }
 
-.select2-selection--single:not([class*="bg-"]) { ; background-color:#FFFFFF  }
+.select2-selection--single:not([class*="bg-"]) { ; background-color:blue  }
 
-.select2-selection--multiple:not([class*="bg-"]){ ; background-color:#FFFFFF }
+.select2-selection--multiple:not([class*="bg-"]){ ; background-color:blue }
 
-.select2-selection__arrow{ ; background-color:#FFFFFF }
+.select2-selection__arrow{ ; background-color:blue }
 .select2-selection__placeholder {
   color: white   !important;
 }
