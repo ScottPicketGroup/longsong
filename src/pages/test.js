@@ -28,7 +28,41 @@ export const FunctionTrackerForm = styled.div`
 color: white !important;
 text-transform: uppercase !important;
 }
-
+input {
+  height: 2rem;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 1.5rem 0;
+  font-size: 0.75rem;
+  line-height: none;
+  border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")};
+  ::placeholder {
+    color: ${props => (props.err ? "#CB0000" : "#B1B1B1")};
+    font-size: 1rem;
+    margin-bottom: 10rem;
+    background: transperant;
+    font-family: normal;
+  }
+  :focus {
+    outline: none;
+    background: transparent;
+    font-family: normal;
+    height: 3rem;
+    font-size: 150%;
+  }
+  :valid {
+    color: white;
+    font-size: 1rem;
+    background: transperant;
+    font-family: normal;
+  }
+  ::-moz-focus-outer {
+    color: white;
+  }
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
+}
   .select2-selection__rendered {
     color: white;
     background-color: blue;
