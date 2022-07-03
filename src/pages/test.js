@@ -30,6 +30,7 @@ text-transform: uppercase !important;
 }
 .ftform-control {
   border-radius: 0 !important;
+  background-color: transperant !imporant;
 }
 input {
   height: 2rem;
