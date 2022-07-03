@@ -20,6 +20,7 @@ const Test = () => {
 export default Test
 
 export const FunctionTrackerForm = styled.div`
+
 background-color: inherit;
   .ftpage-container {
     background-color: inherit;
