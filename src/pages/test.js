@@ -72,25 +72,25 @@ input {
 }
   .select2-selection__rendered {
     color: white;
-    background-color: blue;
+    background-color: inherit;
   }
 
   /* Around the search field */
   .select2-search {
     color: white;
-    background-color: blue;
+    background-color: inherit;
   }
 
   /* Search field */
   .select2-search input {
     color: white;
-    background-color: blue;
+    background-color: inherit;
   }
 
   /* Each result */
   .select2-results {
     color: white;
-    background-color: blue;
+    background-color: inherit;
   }
 
   /* Higlighted (hover) result */
@@ -109,15 +109,15 @@ input {
   }
 
   .select2-selection--single:not([class*="bg-"]) {
-    background-color: blue;
+    background-color: inherit;
   }
 
   .select2-selection--multiple:not([class*="bg-"]) {
-    background-color: blue;
+    background-color: inherit;
   }
 
   .select2-selection__arrow {
-    background-color: blue;
+    background-color: inherit;
   }
   .select2-selection__placeholder {
     color: white !important;
