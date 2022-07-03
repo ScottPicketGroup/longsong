@@ -20,10 +20,10 @@ export const FunctionTrackerFormContainer = styled.div`
   color: white !important;
 }
 .ftrow {
-  margin-left: -100px !important;
-  margin-right: -100px !important;
+  margin-left: -10px !important;
+  margin-right: -00px !important;
   display: flex !important;
-  flex-direction: row !important;
+  flex-direction: column !important;
 }
 
 .ftrow:nth-child(9) {
@@ -186,7 +186,7 @@ input {
 }
 button, html input[type="button"], input[type="reset"], input[type="submit"]  {
   font-family: normal !important;
-  font-size: 10rem !important;
+  font-size: 1rem !important;
   background: transparent !important;
   text-transform: uppercase !important;
   line-height: 46px !important;
