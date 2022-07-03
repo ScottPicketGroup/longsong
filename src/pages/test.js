@@ -29,7 +29,7 @@ color: white !important;
 text-transform: uppercase !important;
 }
 .ftform-control {
-  border-radium: none !important;
+  border-radium: 0 !important;
 }
 input {
   height: 2rem;
