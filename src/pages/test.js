@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Helmet } from "react-helmet"
+import styled from 'styled-components';
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -11,7 +11,7 @@ const Test = () => {
     <Layout fd="column">
       <Seo title="Home" />
    
-      <div id="ftenquire665" style={styles.section}></div>
+      <FunctionTrackerForm id="ftenquire665" style={styles.section}></FunctionTrackerForm>
     
     </Layout>
   )
@@ -31,3 +31,6 @@ const styles = {
     marginTop: "50px"
   }
 }
+export const FunctionTrackerForm = styled.div`
+  
+`;
