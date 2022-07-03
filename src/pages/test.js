@@ -6,12 +6,12 @@ import Seo from "../components/seo"
 const Test = () => {
 
 
-  
+  console.log("form info:", window.ftenquireinit(665, "longrain"))
   return (
     <Layout fd="column">
       <Seo title="Home" />
    
-      <div id="ftenquire665" ></div>
+      <div id="ftenquire665" style={styles.section}></div>
     
     </Layout>
   )
