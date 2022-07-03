@@ -25,7 +25,7 @@ export const Typography = createGlobalStyle`
   }
 
   a {
-    color: inherit;
+    color: inherit !important;
     text-decoration: none;
   }
  `
