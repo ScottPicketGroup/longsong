@@ -159,5 +159,7 @@ input {
   .picker__table {
     color: white;
   }
-
+..select2-selection--single:not([class*=bg-]):not([class*=border-]) {
+  border-color: transparent;
+}
 `
