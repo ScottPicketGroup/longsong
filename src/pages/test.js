@@ -33,8 +33,9 @@ const Test = () => {
             window.ftenquireinit(665, "longrain")
           }, 3000)}
         </script>
-        <div id="ftenquire665"></div>
+       
       </Helmet>
+      <div id="ftenquire665"></div>
       {/* <Helmet>
         {form ? (
           <>
