@@ -19,6 +19,11 @@ export const FunctionTrackerFormContainer = styled.div`
 .ftform-group {
   color: white !important;
 }
+.ftrow {
+  display: flex;
+  flex-direction: column;
+}
+//*[@id="enquireform"]/div[9]/div
 .ftcontrol-label {
 color: white !important;
 text-transform: uppercase !important;
@@ -109,6 +114,7 @@ input {
     width: 100% !important ;
     margin: 1rem 0 !important;
   }
+  element.style
 
   .select2-selection--single:not([class*="bg-"]) {
     background-color: inherit;
