@@ -19,7 +19,7 @@ export default Test
 export const FunctionTrackerForm = styled.div`
   background-color: blue !important;
   .ftpage-container {
-    background-color: blue;
+    background-color: blue !important;
   }
 
   .select2-selection__rendered {
