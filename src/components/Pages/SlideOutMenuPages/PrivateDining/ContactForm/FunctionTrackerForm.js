@@ -105,8 +105,9 @@ input {
   }
 
   .select2-container {
-    border: 1px solid #dddddd;
+    border: 0;
     width: 100% !important ;
+    margin: 1rem 0 !important;
   }
 
   .select2-selection--single:not([class*="bg-"]) {
