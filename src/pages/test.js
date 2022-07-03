@@ -19,11 +19,11 @@ const Test = () => {
   //   window.ftenquireinit(665, "longrain")
   // }, 3000)
   
-  console.log(window.ftenquireinit(665, "longrain"))
+  console.log("form info:", window.ftenquireinit(665, "longrain"))
   return (
     <Layout fd="column">
       <Seo title="Home" />
-      <Helmet>
+      {/* <Helmet>
         <script
           language="javascript"
           src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"
@@ -34,7 +34,7 @@ const Test = () => {
           }, 3000)}
         </script>
        
-      </Helmet>
+      </Helmet> */}
       <div id="ftenquire665"></div>
       {/* <Helmet>
         {form ? (
