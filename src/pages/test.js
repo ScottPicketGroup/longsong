@@ -11,7 +11,7 @@ const Test = () => {
     <Layout fd="column">
       <Seo title="Home" />
    
-      <div id="ftenquire665" style={styles.section}></div>
+      <div id="ftenquire665" ></div>
     
     </Layout>
   )
