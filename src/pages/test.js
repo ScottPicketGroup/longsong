@@ -22,7 +22,7 @@ const styles = {
   section: {
     fontSize: "18px",
     color: "#292b2c",
-    backgroundColor: "#fff",
+    backgroundColor: "black",
     padding: "0 20px"
   },
   wrapper: {
