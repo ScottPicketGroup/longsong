@@ -67,6 +67,9 @@ input {
     width: 100% !important;
   }
 }
+.eventadditionalnotesfield {
+  background: inherit !important;
+}
   .select2-selection__rendered {
     color: white;
     background-color: blue;
