@@ -44,23 +44,23 @@ input {
     font-family: normal;
   }
   :focus {
-    outline: none;
-    background: transparent;
-    font-family: normal;
-    height: 3rem;
-    font-size: 150%;
+    outline: none !important;
+    background: transparent !important;
+    font-family: normal !important;
+    height: 3rem !important;
+    font-size: 150% !important;
   }
   :valid {
-    color: white;
-    font-size: 1rem;
-    background: transperant;
-    font-family: normal;
+    color: white !important;
+    font-size: 1rem !important;
+    background: transperant !important;
+    font-family: normal !important;
   }
   ::-moz-focus-outer {
-    color: white;
+    color: white !important;
   }
   @media screen and (max-width: 450px) {
-    width: 100%;
+    width: 100% !important;
   }
 }
   .select2-selection__rendered {
