@@ -216,7 +216,7 @@ export const FunctionTrackerFormContainer = styled.div`
     width: 225px !important;
     display: flex !important;
     flex-direction: column !important;
-    padding: 1.5rem 2.75rem !important;
+    padding: 1rem 2.75rem !important;
     justify-content: center !important;
     align-items: center !important;
     transition: all 0.2s ease-in-out;
