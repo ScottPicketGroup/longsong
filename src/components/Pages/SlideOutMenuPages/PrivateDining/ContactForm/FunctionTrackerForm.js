@@ -102,19 +102,19 @@ export const FunctionTrackerFormContainer = styled.div`
   }
   .select2-selection__rendered {
     color: white !important;
-    background-color: inherit;
+    background-color: transparent !important;
   }
 
   /* Around the search field */
   .select2-search {
     color: white;
-    background-color: inherit;
+    background-color: transparent !important;
   }
 
   /* Search field */
   .select2-search input {
     color: white;
-    background-color: inherit;
+    background-color: transparent !important;
   }
 
   /* Each result */
