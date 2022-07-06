@@ -49,7 +49,7 @@ export const FunctionTrackerFormContainer = styled.div`
     border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
   }
   input {
-    height: 2rem;
+ 
     background: rgba(255, 255, 255, 0) !important;
     border: none !important;
     padding: 1.5rem 0 !important;
