@@ -3,9 +3,7 @@ import styled from "styled-components"
 import { TextContainer } from "../../Bar/Space.css"
 const FunctionTrackerForm = () => {
   return (
- 
     <FunctionTrackerFormContainer id="ftenquire665"></FunctionTrackerFormContainer>
-
   )
 }
 
@@ -16,82 +14,89 @@ export const FunctionTrackerFormContainer = styled.div`
   .ftpage-container {
     background-color: inherit !important;
   }
-.ftform-group {
-  color: white !important;
-}
-.ftrow {
-  margin-left: -10px !important;
-  margin-right: -00px !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-#enquireform > div:nth-child(9) > div > div > div {
-  display: flex;
-  flex-direction: row !important;
-}
-#enquireform > div:nth-child(10) > div > div > div {
-  display: flex;
-  flex-direction: row !important;
-}
-
-#enquireform > div:nth-child(1) {
-  font-size: 2rem;
-}
-//*[@id="enquireform"]/div[9]/div
-.ftcontrol-label {
-color: white !important;
-text-transform: uppercase !important;
-}
-.ftform-control {
-
-  border-radius: 0px !important;
-  background-color: transparent !important;
-  color: white !important;
-  box-shadow: none !important;
-  border: none !important;
-  border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
-}
-input {
-  height: 2rem;
-  background: rgba(255, 255, 255, 0) !important;
-  border: none !important;
-  padding: 1.5rem 0 !important;
-  font-size: 0.75rem !important;
-  line-height: none !important;
-
-  border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
-  ::placeholder {
-    color: ${props => (props.err ? "#CB0000" : "#B1B1B1")};
-    font-size: 1rem;
-    margin-bottom: 10rem;
-    background: transperant;
-    font-family: normal;
+  .ftform-group {
+    color: white !important;
   }
-  :focus {
-    outline: none !important;
-    background: transparent !important;
-    font-family: normal !important;
-    height: 3rem !important;
-    font-size: 150% !important;
+  .ftrow {
+    margin-left: -10px !important;
+    margin-right: -00px !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
-  :valid {
+  #enquireform > div:nth-child(9) > div > div > div {
+    display: flex;
+    flex-direction: row !important;
+  }
+  #enquireform > div:nth-child(10) > div > div > div {
+    display: flex;
+    flex-direction: row !important;
+  }
+
+  #enquireform > div:nth-child(1) {
+    font-size: 2rem;
+  }
+  //*[@id="enquireform"]/div[9]/div
+  .ftcontrol-label {
+    color: white !important;
+    text-transform: uppercase !important;
+  }
+  .ftform-control {
+    border-radius: 0px !important;
+    background-color: transparent !important;
+    color: white !important;
     box-shadow: none !important;
-    color: white !important;
-    font-size: 1rem !important;
-    font-family: normal !important;
+    border: none !important;
+    border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
   }
-  ::-moz-focus-outer {
-    color: white !important;
+  input {
+    height: 2rem;
+    background: rgba(255, 255, 255, 0) !important;
+    border: none !important;
+    padding: 1.5rem 0 !important;
+    font-size: 0.75rem !important;
+    line-height: none !important;
+
+    border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
+    ::placeholder {
+      color: ${props => (props.err ? "#CB0000" : "#B1B1B1")};
+      font-size: 1rem;
+      margin-bottom: 10rem;
+      background: transperant;
+      font-family: normal;
+    }
+    :focus {
+      outline: none !important;
+      background: transparent !important;
+      font-family: normal !important;
+      height: 3rem !important;
+      font-size: 150% !important;
+    }
+    :valid {
+      box-shadow: none !important;
+      color: white !important;
+      font-size: 1rem !important;
+      font-family: normal !important;
+    }
+    ::-moz-focus-outer {
+      color: white !important;
+    }
+    @media screen and (max-width: 450px) {
+      width: 100% !important;
+    }
   }
-  @media screen and (max-width: 450px) {
-    width: 100% !important;
+  .eventadditionalnotesfield {
+    background: inherit !important;
   }
-}
-.eventadditionalnotesfield {
-  background: inherit !important;
-}
+  .select2-selection--single:not([class*="bg-"]):not([class*="border-"]) {
+    border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+  }
   .select2-selection__rendered {
-    color: #231F20 !important;
+    color: white !important;
     background-color: inherit;
   }
 
@@ -128,14 +133,12 @@ input {
     width: 100% !important ;
     margin: 1rem 0 !important;
   }
-  element.style
-
-  .select2-selection--single:not([class*="bg-"]) {
-    background-color: inherit;
+  element.style .select2-selection--single:not([class*="bg-"]) {
+    background-color: transparent !important;
   }
 
   .select2-selection--multiple:not([class*="bg-"]) {
-    background-color: inherit;
+    background-color: transparent !important;
   }
 
   .select2-selection__arrow {
@@ -181,35 +184,37 @@ input {
   .picker__table {
     color: white;
   }
-..select2-selection--single:not([class*=bg-]):not([class*=border-]) {
-  border-color: transparent !important;
-}
-.select2-results__option[aria-selected=true] {
-  background-color: white !important;
-  color: inherit;
-}
-.select2-results__option select2-results__option--highlighted {
-  background-color: white !important;
-}
-button, html input[type="button"], input[type="reset"], input[type="submit"]  {
-  font-family: normal !important;
-  font-size: 1rem !important;
-  background: transparent !important;
-  text-transform: uppercase !important;
-  // line-height: 46px !important;
-  border-radius: 0px !important;
-  border: 1px solid white !important;
-  width: 225px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  padding: 1.5rem 2.75rem !important;
-  justify-content: center !important;
-  align-items: center !important;
-  transition: all 0.2s ease-in-out;
-  :hover {
-    color: #2b3c31 !important;
-    background: white !important;
+  ..select2-selection--single:not([class*="bg-"]):not([class*="border-"]) {
+    border-color: transparent !important;
   }
-}
+  .select2-results__option[aria-selected="true"] {
+    background-color: white !important;
+    color: inherit;
+  }
+  .select2-results__option select2-results__option--highlighted {
+    background-color: white !important;
+  }
+  button,
+  html input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    font-family: normal !important;
+    font-size: 1rem !important;
+    background: transparent !important;
+    text-transform: uppercase !important;
+    // line-height: 46px !important;
+    border-radius: 0px !important;
+    border: 1px solid white !important;
+    width: 225px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 1.5rem 2.75rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: all 0.2s ease-in-out;
+    :hover {
+      color: #2b3c31 !important;
+      background: white !important;
+    }
+  }
 `
-
