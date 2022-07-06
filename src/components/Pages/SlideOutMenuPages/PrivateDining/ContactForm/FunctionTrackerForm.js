@@ -96,7 +96,9 @@ export const FunctionTrackerFormContainer = styled.div`
     border-radius: 0;
   }
   .select2-selection--single:not([class*="bg-"]) {
-    background-color: transperant !important;
+
+
+    background-color: transparent !important;
   }
   .select2-selection__rendered {
     color: white !important;
@@ -137,6 +139,9 @@ export const FunctionTrackerFormContainer = styled.div`
     margin: 1rem 0 !important;
   }
   element.style .select2-selection--single:not([class*="bg-"]) {
+    background-color: transparent !important;
+  }
+  .select2-selection--single:not([class*="bg-"]) {
     background-color: transparent !important;
   }
 
