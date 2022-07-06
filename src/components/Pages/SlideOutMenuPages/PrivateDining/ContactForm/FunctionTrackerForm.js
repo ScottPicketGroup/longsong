@@ -95,6 +95,9 @@ export const FunctionTrackerFormContainer = styled.div`
     border-bottom: 1px solid white;
     border-radius: 0;
   }
+  .select2-selection--single:not([class*="bg-"]) {
+    background-color: transperant !important;
+  }
   .select2-selection__rendered {
     color: white !important;
     background-color: inherit;
