@@ -249,4 +249,7 @@ export const FunctionTrackerFormContainer = styled.div`
   border: 1px solid #F0E9D5;
   transition: all ease-in-out 300ms;
 }
+#uniform-subcribemailinglistfield > span {
+  background: blue;
+}
 `
