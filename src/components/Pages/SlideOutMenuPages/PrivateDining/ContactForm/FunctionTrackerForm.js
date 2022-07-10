@@ -250,6 +250,6 @@ export const FunctionTrackerFormContainer = styled.div`
   transition: all ease-in-out 300ms;
 }
 span.checked {
-  background: blue;
+  background: rgb(15, 35, 29);
 }
 `
