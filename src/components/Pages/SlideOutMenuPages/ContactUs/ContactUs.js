@@ -34,9 +34,7 @@ const ContactUs = ({ activePage }) => {
           <Heading1>Contact Us</Heading1>
         </TextContainer>
         <TextContainer sixty marginBottom="md">
-          <Renderer
-            node={data.contentfulPageContent.contactUsDescription}
-          />
+          <Renderer node={data.contentfulPageContent.contactUsDescription} />
         </TextContainer>
       </SectionWrapper>
       <SectionWrapper>
@@ -49,12 +47,12 @@ const ContactUs = ({ activePage }) => {
         </TextContainer>
       </SectionWrapper>
       <Helmet>
-      <script type="text/javascript" async>
-                        var script = document.createElement("script");
-                        script.type = "text/javascript";
-                        script.src = "https://forms.contacta.io/61960d1629fed0387a8dae7f.js";
-                        document.getElementsByTagName("head")[0].appendChild(script);
-                    </script>
+        <script type="text/javascript" async>
+          var script = document.createElement("script"); script.type =
+          "text/javascript"; script.src =
+          "https://forms.contacta.io/61960d1629fed0387a8dae7f.js";
+          document.getElementsByTagName("head")[0].appendChild(script);
+        </script>
         <div id="CONTACTA_61960d1629fed0387a8dae7f"></div>
       </Helmet>
     </SlideOutPageWrapper>
@@ -64,28 +62,23 @@ const ContactUs = ({ activePage }) => {
 export default ContactUs
 
 export const ExternalForm = styled.div`
- .checkbox-option {
-   margin-top: -.75rem;
-   margin-left: -1rem;
-	-webkit-appearance: none;
-	background-color: transparent;
-	border: 1px solid #cacece;
-	transform: scale(.4);
-	padding: 25px;
-	border-radius: 3px;
-	display: inline-block;
-	position: relative;
-}
+  .checkbox-option {
+    margin-top: -0.75rem;
+    margin-left: -1rem;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 1px solid #cacece;
+    transform: scale(0.4);
+    padding: 25px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+  }
 
-
-.checkbox-option:checked {
-	background-color: #0f231d;
-  border: none;
-}
-
-
-
-
+  .checkbox-option:checked {
+    background-color: #0f231d;
+    border: none;
+  }
 
   .contacta-webform-table {
     width: 100%;
@@ -100,7 +93,7 @@ export const ExternalForm = styled.div`
     :first-child {
       width: 0;
     }
-  
+
     :nth-child(5) {
       width: 100%;
     }
@@ -110,7 +103,7 @@ export const ExternalForm = styled.div`
     }
   }
 
-  .label-option{
+  .label-option {
     display: flex;
     gap: 1.5rem;
   }
@@ -192,7 +185,8 @@ export const ExternalForm = styled.div`
     }
   }
 
-  button .btn, .btn-primary{
+  button .btn,
+  .btn-primary {
     font-family: normal;
     font-size: 1rem !important;
     background: transparent !important;

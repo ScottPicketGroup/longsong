@@ -225,4 +225,28 @@ export const FunctionTrackerFormContainer = styled.div`
       background: white !important;
     }
   }
+  .checker input[type=checkbox], .choice input[type=radio] {
+    border: none;
+    background: none;
+    display: -moz-inline-box;
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    cursor: pointer;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: 2;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.checker span {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #F0E9D5;
+  transition: all ease-in-out 300ms;
+}
 `
