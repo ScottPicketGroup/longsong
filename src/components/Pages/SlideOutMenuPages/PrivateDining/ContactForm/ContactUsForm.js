@@ -1,58 +1,44 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 import { Helmet } from "react-helmet"
-import { Heading1 } from '../../../../global-styles/typography.css'
-import { TextContainer } from '../../Bar/Space.css'
+import { Heading1 } from "../../../../global-styles/typography.css"
+import { TextContainer } from "../../Bar/Space.css"
+import FunctionTrackerForm from "./FunctionTrackerForm"
 const ContactUsForm = () => {
+  console.log("form info:", window.ftenquireinit(665, "longrain"))
   return (
-<>
-    <TextContainer>
-      <Heading1>Enquiry Form</Heading1>
-    </TextContainer>
-    <TextContainer sixty>
-      <ExternalForm id="CONTACTA_61960f035e0c880c5a61ab16"/>
-      {/* <ContactUsForm /> */}
-    </TextContainer>
-
-  <Helmet>
-  {/* <script language="javascript" src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"></script><script language="javascript">{setTimeout(function(){ ftenquireinit(665,'longrain')}, 3000)}</script><div id="ftenquire665"></div> */}
-    <script type="text/javascript" async>
-      var script = document.createElement("script"); script.type =
-      "text/javascript"; script.src =
-      "https://forms.contacta.io/61960f035e0c880c5a61ab16.js";
-      document.getElementsByTagName("head")[0].appendChild(script);
-    </script>
-    <div id="CONTACTA_61960f035e0c880c5a61ab16"></div>
-  </Helmet>
-  </>
+    <>
+      <TextContainer>
+        <Heading1>Enquiry Form</Heading1>
+      </TextContainer>
+      <TextContainer sixty>
+        <FunctionTrackerForm />
+        {/* <ContactUsForm /> */}
+      </TextContainer>
+    </>
   )
 }
 
 export default ContactUsForm
 
 export const ExternalForm = styled.div`
- .checkbox-option {
-   margin-top: -.75rem;
-   margin-left: -1rem;
-	-webkit-appearance: none;
-	background-color: transparent;
-	border: 1px solid #cacece;
-	transform: scale(.4);
-	padding: 25px;
-	border-radius: 3px;
-	display: inline-block;
-	position: relative;
-}
+  .checkbox-option {
+    margin-top: -0.75rem;
+    margin-left: -1rem;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 1px solid #cacece;
+    transform: scale(0.4);
+    padding: 25px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+  }
 
-
-.checkbox-option:checked {
-	background-color: #0f231d;
-  border: none;
-}
-
-
-
-
+  .checkbox-option:checked {
+    background-color: #0f231d;
+    border: none;
+  }
 
   .contacta-webform-table {
     width: 100%;
@@ -67,7 +53,7 @@ export const ExternalForm = styled.div`
     :first-child {
       width: 0;
     }
-  
+
     :nth-child(5) {
       width: 50% !important;
     }
@@ -81,7 +67,7 @@ export const ExternalForm = styled.div`
     }
   }
 
-  .label-option{
+  .label-option {
     display: flex;
     gap: 1.5rem;
   }
@@ -163,7 +149,8 @@ export const ExternalForm = styled.div`
     }
   }
 
-  button .btn, .btn-primary{
+  button .btn,
+  .btn-primary {
     font-family: normal;
     font-size: 1rem !important;
     background: transparent !important;
