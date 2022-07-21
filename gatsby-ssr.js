@@ -21,13 +21,11 @@ const App = ({ element }) => {
               src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"
             ></script>
 
-            <script language="javascript"
-              src="https://www.google.com/recaptcha/api.js"
-            >
+          
          
-            </script>
+          
             
-        
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
         
       </Helmet>
       {/* <GlobalStyles />
