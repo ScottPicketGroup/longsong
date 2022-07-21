@@ -6,6 +6,7 @@ import { TextContainer } from "../../Bar/Space.css"
 import FunctionTrackerForm from "./FunctionTrackerForm"
 const ContactUsForm = () => {
   console.log("form info:", window.ftenquireinit(665, "longrain"))
+  console.log('window', window)
   return (
     <>
       <TextContainer>
