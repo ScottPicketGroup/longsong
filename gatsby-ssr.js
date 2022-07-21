@@ -20,10 +20,13 @@ const App = ({ element }) => {
               language="javascript"
               src="https://longrain.functiontracker.com/public/v4/enquirecustom.js"
             ></script>
-            <script language="javascript">
+
+            <script language="javascript"
+              src="https://www.google.com/recaptcha/api.js"
+            >
          
             </script>
-           
+            
         
         
       </Helmet>
