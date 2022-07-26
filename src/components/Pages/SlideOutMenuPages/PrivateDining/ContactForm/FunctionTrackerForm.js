@@ -202,10 +202,7 @@ export const FunctionTrackerFormContainer = styled.div`
   .select2-results__option select2-results__option--highlighted {
     background-color: white !important;
   }
-  button,
-  html input[type="button"],
-  input[type="reset"],
-  input[type="submit"] {
+  button, html input[type="button"], input[type="reset"], input[type="submit"] {
     font-family: normal !important;
     font-size: 1rem !important;
     background: transparent !important;
@@ -234,8 +231,8 @@ export const FunctionTrackerFormContainer = styled.div`
     vertical-align: top;
     cursor: pointer;
     position: absolute;
-    top: -2px;
-    left: -2px;
+    height: 30px;
+    width: 30px;
     z-index: 2;
     opacity: 0;
     filter: alpha(opacity=0);
