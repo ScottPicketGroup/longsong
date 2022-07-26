@@ -250,9 +250,13 @@ span.checked {
   background: rgb(15, 35, 29);
 }
 #enquireform > div:nth-child(14) > div {
-  flex-direction: row;
+  flex-direction: row !important;
 }
 #enquireform > div:nth-child(14) > div > div {
-  width: 10%;
+  width: 10% !important;
+}
+#enquireform > div:nth-child(14) > div > label {
+  order: 1 !important;
+  width: 70% !important;
 }
 `
