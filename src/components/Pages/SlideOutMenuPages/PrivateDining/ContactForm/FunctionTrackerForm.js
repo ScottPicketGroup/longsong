@@ -33,7 +33,7 @@ export const FunctionTrackerFormContainer = styled.div`
   }
 
   #enquireform > div:nth-child(1) {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   //*[@id="enquireform"]/div[9]/div
   .ftcontrol-label {
