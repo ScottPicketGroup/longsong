@@ -259,4 +259,7 @@ span.checked {
   order: 1 !important;
   width: 70% !important;
 }
+#enquireform > p:nth-child(1) {
+  margin-left: .25rem;
+}
 `
