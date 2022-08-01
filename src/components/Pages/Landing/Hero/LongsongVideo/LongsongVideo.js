@@ -81,7 +81,7 @@ const LongsongVideo = () => {
           transform="translate(222.516 -38.262)"
           fill="#fff"
         />
-      </StaticLogo>}
+      </StaticLogo>
     </>
   )
 }
