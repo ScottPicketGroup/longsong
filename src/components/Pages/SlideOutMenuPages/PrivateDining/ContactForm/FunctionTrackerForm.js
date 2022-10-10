@@ -264,4 +264,3 @@ span.checked {
   margin-left: .25rem;
 }
 `
-.ftbtn
