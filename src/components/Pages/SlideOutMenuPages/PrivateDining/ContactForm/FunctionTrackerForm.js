@@ -253,10 +253,10 @@ span.checked {
   flex-direction: row !important;
 }
 #enquireform > div:nth-child(14) > div > div {
-  width: 10% !important;
+  width: 70% !important;
 }
 #enquireform > div:nth-child(14) > div > label {
-  order: 1 !important;
+  /* order: 1 !important; */
   width: 70% !important;
 }
 #enquireform > p:nth-child(1) {
