@@ -249,16 +249,16 @@ export const FunctionTrackerFormContainer = styled.div`
 span.checked {
   background: rgb(15, 35, 29);
 }
-/* #enquireform > div:nth-child(14) > div {
+#enquireform > div:nth-child(15) > div {
   flex-direction: row !important;
 }
-#enquireform > div:nth-child(14x) > div > div {
+#enquireform > div:nth-child(15) > div > div {
   width: 10% !important;
 }
-#enquireform > div:nth-child(14) > div > label {
+#enquireform > div:nth-child(15) > div > label {
   order: 1 !important;
   width: 70% !important;
-} */
+}
 #enquireform > p:nth-child(1) {
   margin-left: .25rem;
 }
