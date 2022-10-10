@@ -202,7 +202,8 @@ export const FunctionTrackerFormContainer = styled.div`
   .select2-results__option select2-results__option--highlighted {
     background-color: white !important;
   }
-  #enquireform > div:nth-child(15) > input {
+  /* #enquireform > div:nth-child(15) > input */ 
+  .ftn { 
     font-family: normal !important;
     font-size: 1rem !important;
     background: transparent !important;
@@ -263,3 +264,4 @@ span.checked {
   margin-left: .25rem;
 }
 `
+.ftbtn
