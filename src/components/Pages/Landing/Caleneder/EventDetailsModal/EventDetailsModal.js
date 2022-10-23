@@ -91,23 +91,21 @@ const EventDetailsModal = ({
           <EventContents>
             {item.event && item.event.node.eventName ? (
               <>
-                {eventDetails.eventName &&
-                eventDetails.venueOpenBeforeEventStart === false ? (
+              {console.log(eventDetails.venueOpenBeforeEventStart)}
+                {eventDetails.eventDate &&
+                eventDetails.venueOpenBeforeEventStart === false  ? (
                   <Heading2>
-                    OPEN{" "}
+                    OPEN
                     {parseInt(
                       eventDetails.eventDate.replace("-", "").slice(11, 14)
                     ) - 12}
                     -LATE
                   </Heading2>
-                ) : (
+                ) : !eventDetails.eventDate ?(
                   <>
-                    <Heading2>OPEN 5PM-LATE</Heading2>
-                  
-                      <Heading2>HAPPY HOUR 5-7PM</Heading2>
-                    
+                    <Heading2>OPEN 5PM-LATE hi</Heading2> 
                   </>
-                )}
+                ): null}
                 <Heading2>{eventDetails.eventName}</Heading2>
                 <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>
                 <Heading2>{eventDetails.foodSpecialTitle}</Heading2>
@@ -121,6 +119,7 @@ const EventDetailsModal = ({
               dayOfWeek === "Monday" ||
               dayOfWeek === "Tuesday"
                 ? "CLOSED"
+                : dayOfWeek === "Friday" ? "OPEN 4PM-LATE"
                 : eventDetails.eventDate &&
                   eventDetails.eventDate.slice(5, 10).replace("-", "") ==
                     actualMonth + item.date
@@ -136,8 +135,7 @@ const EventDetailsModal = ({
                 : eventDetails.eventDate &&
                   eventDetails.eventDate.slice(5, 10).replace("-", "") ==
                     actualMonth + item.date
-                ? ""
-                : "HAPPY HOUR 5-7PM"}
+                }
               </Heading2>
           </EventContents>
 

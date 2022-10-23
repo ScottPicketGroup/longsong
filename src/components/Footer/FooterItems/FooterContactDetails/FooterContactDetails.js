@@ -26,7 +26,7 @@ const FooterContactDetails = () => {
       <BC4 >
         Opening hours: <br />
         Thursday & Saturday  <br />
-        5pm–late<br />
+        4pm–late<br />
         Friday<br/>
          4pm–late
       </BC4>
