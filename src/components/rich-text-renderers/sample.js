@@ -10,7 +10,7 @@ import {
 import { Button } from "../global-styles/GlobalStyles.css"
 
 const Renderer = ({ node }) => {
-console.log('node', node)
+
   
   const Bold = ({ children }) => (
     <p style={{ fontFamily: `bold` }}>{children}</p>

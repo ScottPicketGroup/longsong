@@ -34,17 +34,19 @@ export const ChangeMonthProvider = ({ children }) => {
   const todaysMonthYear = `${date.getMonth()}` + `${year - 2000}`
   const currentMonthYear = `${currentMonth}` + `${thisMonthInfo[1] - 2000}`
 
- console.log(currentMonthYear, todaysMonthYear, currentMonth)
+ 
   const handlePreviousMonthChange = () => {
     if ( currentMonth === 0 ) {
       setYear(year - 1)
       setCurrentMonth(11)
       setNextMonth(1)
     } 
-    else if  (currentMonthYear > todaysMonthYear) {
+    else if  (parseInt(currentMonthYear) > todaysMonthYear) {
+      console.log('backwards')
       setCurrentMonth(currentMonth - 1)
       setNextMonth(nextMonth - 1)
     }
+    console.log(parseInt(currentMonthYear) > todaysMonthYear, currentMonth)
   }
 
   const handleNextMonthChange = () => {
