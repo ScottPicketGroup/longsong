@@ -10,18 +10,13 @@ const IndexPage = ({ data }) => {
   const { heroImage, landingPageSections } =
     data.contentfulLandingPageContent
 
-  //components state
-
-  //  use effect 
-  // let modulesToPush = []
-  // map landingPageModules => modulesToPush.push({name: arrayname.firstlettertocapital, props: props})
-  // setmodules (modulestopush)
+ const openingTimes = data.contentfulFooterDetails
 
 
 
 
   return (
-    <Layout fd="column" heroImage={heroImage}>
+    <Layout fd="column" heroImage={heroImage} openingTimes={openingTimes}>
       <Seo title="Home" />
        <HeroBackground />
       <LandingPageModules data={landingPageSections} /> 
@@ -91,6 +86,11 @@ query landing {
             }
             title
       }
+    }
+  }
+  contentfulFooterDetails(id: {eq: "1077f512-6ba3-5f1c-9549-9f6893907c41"}) {
+    openingTimes {
+      raw
     }
   }
 }

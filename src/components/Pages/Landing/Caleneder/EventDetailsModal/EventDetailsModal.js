@@ -30,9 +30,11 @@ const EventDetailsModal = ({
   item,
   setOpenModel,
 }) => {
+  const currentYear = new Date().getFullYear()
   const [eventDetails, setEventDetails] = React.useState({})
   const { setMenuOpen } = useActivePage()
   const [actualMonth, setActualMonth] = React.useState()
+
   useEffect(() => {
     if (item.event) setEventDetails(item.event.node)
     if (currentMonth < 10) {
@@ -42,7 +44,7 @@ const EventDetailsModal = ({
     }
   }, [item])
 
- 
+
 
   return (
     <EventDetailsWrapper
@@ -76,11 +78,11 @@ const EventDetailsModal = ({
           </Number1>
         </DateDisplayContainer>
       </EventListWrapper>
-
-      {eventDetails.isTheVenueOpenToThePublic === false ? (
+      {/* event open to publick ? if not say that */}
+      { eventDetails &&  eventDetails.isTheVenueOpenToThePublic === false ? (
         <EventInfoWrapper>
           <EventContents>
-            <Heading2>CLOSED</Heading2>
+            <Heading2>CLOSED FOR PRIVATE EVENT</Heading2>
           </EventContents>
           <EventFooterWrapper>
             <LongsongIcon />
@@ -89,24 +91,40 @@ const EventDetailsModal = ({
       ) : (
         <EventInfoWrapper>
           <EventContents>
+            <Heading2>
+              {dayOfWeek === "Sunday" ||
+              dayOfWeek === "Monday" ||
+              dayOfWeek === "Tuesday"
+                ? "CLOSED"
+                : dayOfWeek === "Friday"
+                ? "OPEN 4PM-LATE"
+                : eventDetails.eventDate &&
+                  eventDetails.eventDate.slice(5, 10).replace("-", "") ==
+                    actualMonth + item.date
+                ? `FROM ${
+                    parseInt(eventDetails.eventDate.slice(11, 14)) - 12
+                  }` + "PM-LATE"
+                : "OPEN 5PM-LATE"}
+            </Heading2>
             {item.event && item.event.node.eventName ? (
               <>
-              {console.log(eventDetails.venueOpenBeforeEventStart)}
-                {eventDetails.eventDate &&
-                eventDetails.venueOpenBeforeEventStart === false  ? (
+                <Heading2>
+                  {eventDetails.eventDate && parseInt(eventDetails.eventDate.slice(0, 4)) ===
+                    currentYear ? eventDetails.eventName : null}
+                </Heading2>
+                {eventDetails && eventDetails.eventDate &&
+                parseInt(eventDetails.eventDate.slice(0, 4)) === currentYear ? (
                   <Heading2>
-                    OPEN
-                    {parseInt(
-                      eventDetails.eventDate.replace("-", "").slice(11, 14)
-                    ) - 12}
+                    {`FROM ${
+                      parseInt(eventDetails.eventDate.slice(11, 14)) - 12
+                    }`}
                     -LATE
                   </Heading2>
-                ) : !eventDetails.eventDate ?(
+                ) : !eventDetails.eventDate ? (
                   <>
-                    <Heading2>OPEN 5PM-LATE hi</Heading2> 
+                    <Heading2>OPEN 5PM-LATE</Heading2>
                   </>
-                ): null}
-                <Heading2>{eventDetails.eventName}</Heading2>
+                ) : null}
                 <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>
                 <Heading2>{eventDetails.foodSpecialTitle}</Heading2>
               </>
@@ -118,25 +136,11 @@ const EventDetailsModal = ({
               {dayOfWeek === "Sunday" ||
               dayOfWeek === "Monday" ||
               dayOfWeek === "Tuesday"
-                ? "CLOSED"
-                : dayOfWeek === "Friday" ? "OPEN 4PM-LATE"
-                : eventDetails.eventDate &&
-                  eventDetails.eventDate.slice(5, 10).replace("-", "") ==
-                    actualMonth + item.date
-                ? `FROM ${parseInt(eventDetails.eventDate.slice(11, 14)) - 12}` +
-                  "PM-LATE"
-                : "OPEN 5PM-LATE"}
-            </Heading2>
-              <Heading2>
-              {dayOfWeek === "Sunday" ||
-              dayOfWeek === "Monday" ||
-              dayOfWeek === "Tuesday"
                 ? ""
                 : eventDetails.eventDate &&
                   eventDetails.eventDate.slice(5, 10).replace("-", "") ==
-                    actualMonth + item.date
-                }
-              </Heading2>
+                    actualMonth + item.date}
+            </Heading2>
           </EventContents>
 
           {eventDetails.eventDate &&

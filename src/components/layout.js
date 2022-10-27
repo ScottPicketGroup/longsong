@@ -13,7 +13,7 @@ import MenuContainer from "./MenuContainer/MenuContainer"
 import LongrainLink from "./Pages/Landing/LongrainLink/LongrainLink"
 import useActivePage from "./hooks/ActivePage"
 
-const Layout = ({ children, fd, heroImage }) => {
+const Layout = ({ children, fd, heroImage, openingTimes }) => {
   const { menuOpen, setMenuOpen, activePage, setActivePage } = useActivePage();
   const [loading, setLoading] = React.useState(true)
 
@@ -48,6 +48,7 @@ const Layout = ({ children, fd, heroImage }) => {
               setMenuOpen={setMenuOpen}
               activePage={activePage}
               setActivePage={setActivePage}
+              openingTimes={openingTimes}
             />
           </PageWrapper>
         </PageContainer>

@@ -14,7 +14,7 @@ const FirstModule = ({data}) => {
     content,
     imageData,
   } = data.fourthSection
-  console.log('pageData', data.fourthSection)
+ 
 
   return (
     <>

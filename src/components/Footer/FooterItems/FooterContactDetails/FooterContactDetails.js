@@ -4,9 +4,11 @@ import {
   MobileWrapper,
 } from "../../../global-styles/containers.css"
 import { BC4 } from "../../../global-styles/typography.css"
+import Renderer from "../../../rich-text-renderers/sample-footer"
 import { FooterLinksColumn } from "../../Footer.css"
 
-const FooterContactDetails = () => {
+const FooterContactDetails = ({openingTimes}) => {
+  console.log('openingTimes', openingTimes.openingTimes)
   return (
     <FooterLinksColumn>
       <MobileWrapper>
@@ -23,13 +25,9 @@ const FooterContactDetails = () => {
         <br />
         03 9653 1611
       </BC4>
-      <BC4 >
-        Opening hours: <br />
-        Thursday & Saturday  <br />
-        4pm–late<br />
-        Friday<br/>
-         4pm–late
-      </BC4>
+      <BC4>Opening Hours:</BC4>
+      <Renderer node={openingTimes.openingTimes}/>
+     
     </FooterLinksColumn>
   )
 }

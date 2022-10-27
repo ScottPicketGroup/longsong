@@ -6,7 +6,7 @@ import Slider from "../../ImageSlider"
 import Renderer from "../../rich-text-renderers/sample"
 
 const PageSections = ({ data }) => {
-console.log('data.firstSection.section1Gallery', data.firstSection.imageData)
+
   return (
     <>
       <SectionWrapper column>

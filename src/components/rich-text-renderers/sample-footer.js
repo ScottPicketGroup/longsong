@@ -6,7 +6,8 @@ import {
   Heading2,
   Heading3,
   BC1,
-} from "../../components/global-styles/typography.css"
+  BC4,
+} from "../global-styles/typography.css"
 import { Button } from "../global-styles/GlobalStyles.css"
 
 const Renderer = ({ node }) => {
@@ -28,7 +29,7 @@ console.log('node', node)
       [BLOCKS.HEADING_3]: (node, children) => <Heading3>{children}</Heading3>,
       [BLOCKS.HEADING_4]: (node, children) => <Heading3>{children}</Heading3>,
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <BC1 marginBottom="sm">{children}hi</BC1>
+        <BC4 marginBottom="" style={{display: `block`}}>{children}</BC4>
       ),
       [INLINES.HYPERLINK]: ({ data }, children) => (
         

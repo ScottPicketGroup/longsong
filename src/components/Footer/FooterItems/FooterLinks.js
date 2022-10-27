@@ -7,10 +7,15 @@ import FooterNavigation from "./FooterLinks/FooterNavigation"
 import FooterSocials from "./FooterSocials/FooterSocials"
 import FooterLongrain from "./Longgrain/Longrain"
 
-const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage, refElement }) => {
+const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage, refElement, openingTimes }) => {
 
   const data = useStaticQuery(graphql`
   query menuLink {
+    contentfulFooterDetails(id: {eq: "1077f512-6ba3-5f1c-9549-9f6893907c41"}) {
+      openingTimes {
+        raw
+      }
+    }
     contentfulPageContent {
     
       foodMenu {
@@ -44,7 +49,7 @@ const FooterLinks = ({ menuOpen, setMenuOpen, activePage, setActivePage, refElem
           refElement={refElement}
         />
       </DesktopWrapper>
-      <FooterContactDetails />
+      <FooterContactDetails openingTimes={data.contentfulFooterDetails}/>
       <DesktopWrapper>
         <FooterSocials />
       </DesktopWrapper>

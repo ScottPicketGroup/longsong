@@ -4,12 +4,12 @@ import FooterItems from './FooterItems/FooterItems'
 import LogoSliderNew from './FooterItems/LogoSlider/LogoSlider'
 import LogoSlider from './LogoSlider'
 
-const Footer = ({menuOpen, setMenuOpen, activePage, setActivePage, refElement}) => {
+const Footer = ({menuOpen, setMenuOpen, activePage, setActivePage, refElement, openingTimes}) => {
 
     return (
         <FooterWrapper>
             <LogoSliderNew />
-            <FooterItems menuOpen={menuOpen} setMenuOpen={setMenuOpen} activePage={activePage} setActivePage={setActivePage} refElement={refElement}/>
+            <FooterItems menuOpen={menuOpen} setMenuOpen={setMenuOpen} activePage={activePage} setActivePage={setActivePage} refElement={refElement} openingTimes={openingTimes}/>
         </FooterWrapper>
     )
 }
