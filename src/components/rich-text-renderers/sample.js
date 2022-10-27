@@ -28,7 +28,7 @@ console.log('node', node)
       [BLOCKS.HEADING_3]: (node, children) => <Heading3>{children}</Heading3>,
       [BLOCKS.HEADING_4]: (node, children) => <Heading3>{children}</Heading3>,
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <BC1 marginBottom="sm">{children}hi</BC1>
+        <BC1 marginBottom="sm">{children}</BC1>
       ),
       [INLINES.HYPERLINK]: ({ data }, children) => (
         
