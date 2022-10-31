@@ -46,7 +46,7 @@ export const ChangeMonthProvider = ({ children }) => {
       setCurrentMonth(currentMonth - 1)
       setNextMonth(nextMonth - 1)
     }
-    console.log(parseInt(currentMonthYear) > todaysMonthYear, currentMonth)
+    // console.log(parseInt(currentMonthYear) > todaysMonthYear, currentMonth)
   }
 
   const handleNextMonthChange = () => {

@@ -8,7 +8,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
   const year = date.getFullYear()
   const month = date.getMonth()
   let monthtoIt = currentMonth < 12 ? currentMonth - 1 : (currentMonth % 12) - 1
-
+ 
   useEffect(() => {
     let date = new Date(Date.UTC(year, currentMonth, 1))
 
@@ -20,21 +20,12 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
       let m
       if (iterator < 10 && events) {
         events.forEach(event => {
-          if (
-            event.node.eventDate
-              .replace("-", "")
-              .replace("-", "")
-              .replace("T", "")
-              .slice(4, 8) ===
-            date
-              .toLocaleDateString("au-EN", monthtoIt)
-              .replace("/", "")
-              .substring(2, 4) +
-              date.toLocaleDateString("au-EN", monthtoIt).substring(0, 2)
-          ) {
-            
-            m = event
+          let ISOEventDate = event.node.eventDate.split("T")[0]
+          let ISODate = date.toISOString(monthtoIt + 1).split("T")[0]
+          if (ISOEventDate === ISODate) {
+            m = event 
           }
+          
         })
 
         days.push({
@@ -43,27 +34,16 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
           date: "0" + date.toLocaleDateString("au-EN", dat),
           event: m,
         })
-       // console.log("0" + date.toLocaleDateString("au-EN", dat))
       } else {
         events &&
           events.forEach(event => {
-            if (
-              event.node.eventDate
-                .replace("-", "")
-                .replace("-", "")
-                .replace("T", "")
-                .slice(4, 8) ===
-              date
-                .toLocaleDateString("au-EN", monthtoIt)
-                .replace("/", "")
-                .substring(2, 4) +
-                date.toLocaleDateString("au-EN", monthtoIt).substring(0, 2)
-            ) {
+            let ISOEventDate = event.node.eventDate.split("T")[0]
+            let ISODate = date.toISOString(monthtoIt + 1).split("T")[0]
+            if (ISOEventDate === ISODate) {
               m = event
-             
             }
           })
-          
+
         days.push({
           dayIndex: date.getDay(),
           day: date.toLocaleDateString("au-EN", day),

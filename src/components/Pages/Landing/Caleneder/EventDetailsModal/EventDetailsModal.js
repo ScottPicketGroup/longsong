@@ -25,7 +25,6 @@ const EventDetailsModal = ({
   day,
   dayOfWeek,
   todaysDate,
-  month,
   currentMonth,
   item,
   setOpenModel,
@@ -43,8 +42,6 @@ const EventDetailsModal = ({
       setActualMonth(currentMonth + 1)
     }
   }, [item])
-
-
 
   return (
     <EventDetailsWrapper
@@ -79,10 +76,12 @@ const EventDetailsModal = ({
         </DateDisplayContainer>
       </EventListWrapper>
       {/* event open to publick ? if not say that */}
-      { eventDetails &&  eventDetails.isTheVenueOpenToThePublic === false ? (
+      {eventDetails && eventDetails.isTheVenueOpenToThePublic === false ? (
         <EventInfoWrapper>
           <EventContents>
-            <Heading2>CLOSED FOR PRIVATE EVENT</Heading2>
+            <Heading2>{eventDetails.eventName}</Heading2>
+            <Heading2>{`FROM ${parseInt(eventDetails.eventDate.slice(11, 14)) - 12}
+              –LATE`}</Heading2>
           </EventContents>
           <EventFooterWrapper>
             <LongsongIcon />
@@ -93,36 +92,28 @@ const EventDetailsModal = ({
           <EventContents>
             <Heading2>
               {dayOfWeek === "Sunday" ||
-              dayOfWeek === "Monday" ||
-              dayOfWeek === "Tuesday"
+                  dayOfWeek === "Monday" ||
+                  dayOfWeek === "Tuesday"
                 ? "CLOSED"
                 : dayOfWeek === "Friday"
                 ? "OPEN 4PM-LATE"
-                : eventDetails.eventDate &&
-                  eventDetails.eventDate.slice(5, 10).replace("-", "") ==
-                    actualMonth + item.date
-                ? `FROM ${
-                    parseInt(eventDetails.eventDate.slice(11, 14)) - 12
-                  }` + "PM-LATE"
                 : "OPEN 5PM-LATE"}
             </Heading2>
             {item.event && item.event.node.eventName ? (
               <>
-                <Heading2>
-                  {eventDetails.eventDate && parseInt(eventDetails.eventDate.slice(0, 4)) ===
-                    currentYear ? eventDetails.eventName : null}
-                </Heading2>
-                {eventDetails && eventDetails.eventDate &&
+                <Heading2>{eventDetails.eventName}</Heading2>
+                {eventDetails &&
+                eventDetails.eventDate &&
                 parseInt(eventDetails.eventDate.slice(0, 4)) === currentYear ? (
                   <Heading2>
                     {`FROM ${
                       parseInt(eventDetails.eventDate.slice(11, 14)) - 12
                     }`}
-                    -LATE
+                    –LATE
                   </Heading2>
                 ) : !eventDetails.eventDate ? (
                   <>
-                    <Heading2>OPEN 5PM-LATE</Heading2>
+                    <Heading2>OPEN 5PM–LATE</Heading2>
                   </>
                 ) : null}
                 <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>

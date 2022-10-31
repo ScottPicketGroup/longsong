@@ -8,7 +8,7 @@ import Renderer from "../../../rich-text-renderers/sample-footer"
 import { FooterLinksColumn } from "../../Footer.css"
 
 const FooterContactDetails = ({openingTimes}) => {
-  console.log('openingTimes', openingTimes.openingTimes)
+  
   return (
     <FooterLinksColumn>
       <MobileWrapper>
