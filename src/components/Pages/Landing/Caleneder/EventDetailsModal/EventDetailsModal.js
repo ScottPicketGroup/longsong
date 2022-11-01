@@ -80,8 +80,9 @@ const EventDetailsModal = ({
         <EventInfoWrapper>
           <EventContents>
             <Heading2>{eventDetails.eventName}</Heading2>
-            <Heading2>{`FROM ${parseInt(eventDetails.eventDate.slice(11, 14)) - 12}
-              –LATE`}</Heading2>
+            {parseInt(eventDetails.eventDate.slice(11, 14)) - 12 !== -12 && <Heading2>{`FROM ${parseInt(eventDetails.eventDate.slice(11, 14)) - 12}
+              –LATE`}</Heading2>}
+            
           </EventContents>
           <EventFooterWrapper>
             <LongsongIcon />
