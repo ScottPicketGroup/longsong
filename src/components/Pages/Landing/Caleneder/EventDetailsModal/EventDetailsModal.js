@@ -80,9 +80,11 @@ const EventDetailsModal = ({
         <EventInfoWrapper>
           <EventContents>
             <Heading2>{eventDetails.eventName}</Heading2>
-            {parseInt(eventDetails.eventDate.slice(11, 14)) - 12 !== -12 && <Heading2>{`FROM ${parseInt(eventDetails.eventDate.slice(11, 14)) - 12}
-              –LATE`}</Heading2>}
-            
+            {parseInt(eventDetails.eventDate.slice(11, 14)) - 12 !== -12 && (
+              <Heading2>{`FROM ${
+                parseInt(eventDetails.eventDate.slice(11, 14)) - 12
+              }–LATE`}</Heading2>
+            )}
           </EventContents>
           <EventFooterWrapper>
             <LongsongIcon />
@@ -93,8 +95,8 @@ const EventDetailsModal = ({
           <EventContents>
             <Heading2>
               {dayOfWeek === "Sunday" ||
-                  dayOfWeek === "Monday" ||
-                  dayOfWeek === "Tuesday"
+              dayOfWeek === "Monday" ||
+              dayOfWeek === "Tuesday"
                 ? "CLOSED"
                 : dayOfWeek === "Friday"
                 ? "OPEN 4PM-LATE"
@@ -105,7 +107,7 @@ const EventDetailsModal = ({
                 <Heading2>{eventDetails.eventName}</Heading2>
                 {eventDetails &&
                 eventDetails.eventDate &&
-                parseInt(eventDetails.eventDate.slice(0, 4)) === currentYear ? (
+                parseInt(eventDetails.eventDate.slice(11, 14)) - 12 !== -12? (
                   <Heading2>
                     {`FROM ${
                       parseInt(eventDetails.eventDate.slice(11, 14)) - 12
