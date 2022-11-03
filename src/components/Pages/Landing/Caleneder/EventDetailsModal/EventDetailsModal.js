@@ -100,14 +100,17 @@ const EventDetailsModal = ({
                 ? "CLOSED"
                 : dayOfWeek === "Friday"
                 ? "OPEN 4PM-LATE"
+                : eventDetails.venueOpenBeforeEventStart === false
+                ? ""
                 : "OPEN 5PM-LATE"}
+                {console.log(eventDetails.venueOpenBeforeEventStart, eventDetails.eventName)}
             </Heading2>
             {item.event && item.event.node.eventName ? (
               <>
                 <Heading2>{eventDetails.eventName}</Heading2>
                 {eventDetails &&
                 eventDetails.eventDate &&
-                parseInt(eventDetails.eventDate.slice(11, 14)) - 12 !== -12? (
+                parseInt(eventDetails.eventDate.slice(11, 14)) - 12 !== -12 ? (
                   <Heading2>
                     {`FROM ${
                       parseInt(eventDetails.eventDate.slice(11, 14)) - 12
