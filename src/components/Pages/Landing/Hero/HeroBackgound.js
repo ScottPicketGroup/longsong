@@ -3,7 +3,7 @@ import { AnimationImgWrapper, HeroBG, HeroContainer } from "./Hero.css"
 import LongsongVideo from "./LongsongVideo/LongsongVideo"
 import HeroText from "./HeroText"
 import { StaticImage } from "gatsby-plugin-image"
-import styled from "styled-components"
+
 const HeroBackground = () => {
   return (
     <>

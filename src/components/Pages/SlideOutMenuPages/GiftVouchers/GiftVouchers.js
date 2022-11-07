@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Button } from "../../../global-styles/GlobalStyles.css"
 import { Heading1 } from "../../../global-styles/typography.css"

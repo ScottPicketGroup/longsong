@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import {
@@ -28,7 +27,6 @@ import useActivePage from "../../components/hooks/ActivePage"
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
   const eventDateTime = eventData.eventDate
-  // console.log(eventDateTime)
   const [imageData, setImageData] = useState([])
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -50,7 +48,8 @@ const EventTemplate = ({ pageContext }) => {
 
   useEffect(() => {
     data.allContentfulEvents.edges.forEach(({ node }) => {
-      if (node.id === eventData.id && node.eventMedia) setImageData(node.eventMedia) 
+      if (node.id === eventData.id && node.eventMedia)
+        setImageData(node.eventMedia)
     })
   }, [eventData, data])
 
@@ -62,26 +61,22 @@ const EventTemplate = ({ pageContext }) => {
           {imageData ? (
             <>
               <Slider imageData={imageData} />
-              {/* <StaticImage
-                className="play-button"
-                src="../../images/EventTemplate/playbutton.png"
-                alt="play-button"
-              /> */}
             </>
           ) : (
             <Heading1>No Media</Heading1>
           )}
-
-          {/* <StaticImage
-            className="fullscreen-button"
-            src="../../images/EventTemplate/fullscreenbutton.png"
-            alt="fullscreen-button"
-          /> */}
         </ImageWrapper>
         <DateContainer>
           <DateWrapper>
-            <Heading2>{eventDateTime.slice(8,10) + "." + eventDateTime.slice(5,7) + "." + eventDateTime.slice(2,4)}<br/></Heading2>
-            <Time>{eventDateTime.slice(11,16)}</Time>
+            <Heading2>
+              {eventDateTime.slice(8, 10) +
+                "." +
+                eventDateTime.slice(5, 7) +
+                "." +
+                eventDateTime.slice(2, 4)}
+              <br />
+            </Heading2>
+            <Time>{eventDateTime.slice(11, 16)}</Time>
           </DateWrapper>
           <ButtonWrapper>
             {eventData.bookNowButtonLink && <Button>BOOK NOW</Button>}
@@ -97,11 +92,11 @@ const EventTemplate = ({ pageContext }) => {
         <TextContainer marginBottom="lg">
           <BreakLine none style={{ marginBottom: 56 }} />
           <Heading1 marginBottom="md">{eventData.eventName}</Heading1>
-          {eventData.eventDescription ? <EventPageRenderer node={eventData.eventDescription} /> : <Heading1>No Description</Heading1>}
-          {/* <Heading1 marginBottom="md">{eventData.drinksSpecialTitle}</Heading1>
-          <EventPageRenderer node={eventData.drinksSpecialDetails} />
-          <Heading1 marginBottom="md">{eventData.foodSpecialTitle}</Heading1>
-          <EventPageRenderer node={eventData.foodSpecialDetails} /> */}
+          {eventData.eventDescription ? (
+            <EventPageRenderer node={eventData.eventDescription} />
+          ) : (
+            <Heading1>No Description</Heading1>
+          )}
         </TextContainer>
       </EventContentContainer>
     </Layout>

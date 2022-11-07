@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react"
-import styled from "styled-components"
+import React from "react"
 import Layout from "../components/layout"
 import FunctionTrackerForm from "../components/Pages/SlideOutMenuPages/PrivateDining/ContactForm/FunctionTrackerForm"
 import Seo from "../components/seo"

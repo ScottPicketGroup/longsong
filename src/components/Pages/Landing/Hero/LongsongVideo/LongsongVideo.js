@@ -1,25 +1,10 @@
 import React from "react"
-import heroGif from "../../../../../images/HeroGif.gif"
-import { IntroGifImg, StaticLogo } from "../Hero.css"
+import { StaticLogo } from "../Hero.css"
 
 const LongsongVideo = () => {
-    const [show, setShow] = React.useState("")
-
-    React.useEffect(() => {
-        const timer = setTimeout(() => {
-          setShow("loading");
-        }, 1800);
-        const timerOut = setTimeout(() => {
-            setShow("heading");
-          }, 1800);
-        return () => clearTimeout(timer);
-      }, []);
-   
-
   return (
-    <>
-     {show === "loading" &&  <IntroGifImg src={heroGif} alt="Longsong Welcome" />}
-       <StaticLogo
+  
+      <StaticLogo
         xmlns="http://www.w3.org/2000/svg"
         width="495.168"
         height="310.259"
@@ -82,16 +67,8 @@ const LongsongVideo = () => {
           fill="#fff"
         />
       </StaticLogo>
-    </>
+
   )
 }
 
 export default LongsongVideo
-
-// export const VideoContainer = styled.video`
-//   height: 10rem;
-//   width: 20rem;
-// `
-// <VideoContainer autoPlay loop muted>
-// <source src={video} type="video/mp4" />
-// </VideoContainer>

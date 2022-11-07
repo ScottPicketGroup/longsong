@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Helmet } from "react-helmet"
 import { Heading1 } from "../../../../global-styles/typography.css"
 import { TextContainer } from "../../Bar/Space.css"
 import FunctionTrackerForm from "./FunctionTrackerForm"
@@ -14,7 +13,6 @@ const ContactUsForm = () => {
       </TextContainer>
       <TextContainer sixty>
         <FunctionTrackerForm />
-        {/* <ContactUsForm /> */}
       </TextContainer>
     </>
   )

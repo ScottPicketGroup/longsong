@@ -4,7 +4,6 @@ import { BreakLine } from "../../MenuContainer/MenuSlideOutContainer/SlideOutMen
 import { ImageWrapper, TextContainer, SectionWrapper } from "./Bar/Space.css"
 import Slider from "../../ImageSlider"
 import Renderer from "../../rich-text-renderers/sample"
-import { graphql, useStaticQuery } from "gatsby"
 
 const FirstModule = ({data}) => {
 

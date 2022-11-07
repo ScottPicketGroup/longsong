@@ -16,7 +16,6 @@ import {
 import LongsongIcon from "../../../../MenuContainer/Icons/LongsongIcon"
 import { MobileWrapper } from "../../../../global-styles/containers.css"
 import useActivePage from "../../../../hooks/ActivePage"
-import useGetDaysOfMonth from "../../../../hooks/DateInformation"
 import useChangeMonth from "../../../../hooks/ChangeMonth"
 
 const EventsListView = ({
@@ -30,13 +29,14 @@ const EventsListView = ({
 }) => {
   const dayContainerRef = useRef(null)
   const asdf = parseInt(item.date, 10)
- 
 
   const [elementWidth, setElementWidth] = useState(0)
   const { setMenuOpen } = useActivePage()
- 
+
   const { year, currentMonth } = useChangeMonth()
-  const componentDate = `${year}${currentMonth < 10 ? "0" + (currentMonth + 1) : currentMonth + 1}${item.date}`
+  const componentDate = `${year}${
+    currentMonth < 10 ? "0" + (currentMonth + 1) : currentMonth + 1
+  }${item.date}`
   useEffect(() => {
     setElementWidth(window.innerWidth * 0.423)
   }, [dayContainerRef, daysView])
@@ -48,13 +48,16 @@ const EventsListView = ({
   return (
     <>
       {events.map((e, index) => {
-        
-        let eventDate = e.node.eventDate.slice(0,4).replace("-", "").replace("-", "").replace("T", "") + 
-        e.node.eventDate.slice(5,7) + e.node.eventDate.slice(8,10)
-       
-        if (
-          eventDate === componentDate
-        )
+        let eventDate =
+          e.node.eventDate
+            .slice(0, 4)
+            .replace("-", "")
+            .replace("-", "")
+            .replace("T", "") +
+          e.node.eventDate.slice(5, 7) +
+          e.node.eventDate.slice(8, 10)
+
+        if (eventDate === componentDate)
           return (
             <EventDayContainer
               key={index}
@@ -264,7 +267,7 @@ const EventsListView = ({
                         }
                         i={i}
                       >
-                     {parseInt(e.node.eventDate.slice(11)) + ":00"}
+                        {parseInt(e.node.eventDate.slice(11)) + ":00"}
                       </EventHeading2>
                       <EventHeading2
                         calander
@@ -301,7 +304,12 @@ const EventsListView = ({
                   e.node.isTheVenueOpenToThePublic === true ? (
                     <Link
                       onClick={() => setMenuOpen(false)}
-                      to={`events/${e.node.eventName.replace(/\s/g, '-')}${"-" + e.node.eventDate.slice(5,10) + "-" + e.node.eventDate.slice(0,4)}`}
+                      to={`events/${e.node.eventName.replace(/\s/g, "-")}${
+                        "-" +
+                        e.node.eventDate.slice(5, 10) +
+                        "-" +
+                        e.node.eventDate.slice(0, 4)
+                      }`}
                     >
                       VIEW DETAILS
                     </Link>
@@ -318,7 +326,12 @@ const EventsListView = ({
                     >
                       <Link
                         onClick={() => setMenuOpen(false)}
-                        to={`events/${e.node.eventName.replace(/\s/g, '-')}${"-" + e.node.eventDate.slice(5,10) + "-" + e.node.eventDate.slice(0,4)}`}
+                        to={`events/${e.node.eventName.replace(/\s/g, "-")}${
+                          "-" +
+                          e.node.eventDate.slice(5, 10) +
+                          "-" +
+                          e.node.eventDate.slice(0, 4)
+                        }`}
                       >
                         VIEW DETAILS
                       </Link>

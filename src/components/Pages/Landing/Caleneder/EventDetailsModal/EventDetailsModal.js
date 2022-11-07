@@ -29,7 +29,7 @@ const EventDetailsModal = ({
   item,
   setOpenModel,
 }) => {
-  const currentYear = new Date().getFullYear()
+
   const [eventDetails, setEventDetails] = React.useState({})
   const { setMenuOpen } = useActivePage()
   const [actualMonth, setActualMonth] = React.useState()
@@ -41,7 +41,7 @@ const EventDetailsModal = ({
     } else {
       setActualMonth(currentMonth + 1)
     }
-  }, [item])
+  }, [item,currentMonth])
 
   return (
     <EventDetailsWrapper
@@ -135,13 +135,13 @@ const EventDetailsModal = ({
               dayOfWeek === "Tuesday"
                 ? ""
                 : eventDetails.eventDate &&
-                  eventDetails.eventDate.slice(5, 10).replace("-", "") ==
+                  eventDetails.eventDate.slice(5, 10).replace("-", "") ===
                     actualMonth + item.date}
             </Heading2>
           </EventContents>
 
           {eventDetails.eventDate &&
-          eventDetails.eventDate.slice(5, 10).replace("-", "") ==
+          eventDetails.eventDate.slice(5, 10).replace("-", "") ===
             actualMonth + item.date ? (
             <EventFooterWrapper>
               <Link

@@ -5,7 +5,6 @@ import {
   Heading1,
   Heading2,
   Heading3,
-  BC1,
   BC4,
 } from "../global-styles/typography.css"
 import { Button } from "../global-styles/GlobalStyles.css"

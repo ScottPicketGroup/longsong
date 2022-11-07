@@ -88,7 +88,7 @@ stroke: white;
   }
 path, ellipse {
   stroke:   #457E5C ;
-  fill: #;
+  
 }
   
 }
