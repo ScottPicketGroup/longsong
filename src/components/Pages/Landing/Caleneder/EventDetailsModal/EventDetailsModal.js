@@ -103,7 +103,7 @@ const EventDetailsModal = ({
                 : eventDetails.venueOpenBeforeEventStart === false
                 ? ""
                 : "OPEN 5PM-LATE"}
-                {console.log(eventDetails.venueOpenBeforeEventStart, eventDetails.eventName)}
+                {/* {console.log(eventDetails.venueOpenBeforeEventStart, eventDetails.eventName)} */}
             </Heading2>
             {item.event && item.event.node.eventName ? (
               <>

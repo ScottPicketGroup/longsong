@@ -76,19 +76,19 @@ const SlideOutMenuNavigation = ({ setActivePage, activePage, setMenuOpen}) => {
         </a>
       </MenuItem>
       <MenuItem onClick={() => setActivePage(2)} active={activePage} item={2}>
-        <BC1>Bar</BC1>
+      <a href="/#bar">   <BC1>Bar</BC1></a>
       </MenuItem>
       <MenuItem onClick={() => setActivePage(6)} active={activePage} item={6}>
-        <BC1>What's on</BC1>
+      <a href="/#whats-on">   <BC1>What's on</BC1></a>
       </MenuItem>
       <MenuItem onClick={() => setActivePage(3)} active={activePage} item={3}>
-        <BC1>Private Events</BC1>
+      <a href="/#private-events">   <BC1>Private Events</BC1></a>
       </MenuItem>
       <MenuItem onClick={() => setActivePage(4)} active={activePage} item={4}>
-        <BC1>Gift Vouchers</BC1>
+      <a href="/#gift-vouchers">   <BC1>Gift Vouchers</BC1></a>
       </MenuItem>
       <MenuItem onClick={() => setActivePage(5)} active={activePage} item={5}>
-        <BC1>Contact</BC1>
+      <a href="/#contact">   <BC1>Contact</BC1></a>
       </MenuItem>
       <MenuItem active={false}>
         <BC1>
