@@ -24,11 +24,11 @@ useEffect(() => {
    } else if (location.hash === "#private-events") {
     setActivePage(3)
      setMenuOpen(true)
-   }else if (location.hash === "gift-vouchers") {
+   }else if (location.hash === "#gift-vouchers") {
     setActivePage(4)
      setMenuOpen(true)
    }
-   else if (location.hash === "##contact") {
+   else if (location.hash === "#contact") {
     setActivePage(5)
      setMenuOpen(true)
    } else {
