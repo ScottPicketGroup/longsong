@@ -7,7 +7,7 @@ export const ActivePageProvider = ({ children }) => {
   const [activePage, setActivePage] = useState()
   const location = useLocation();
 
-  console.log(location.hash)
+ 
   const handleOpenMenuClick = activePage => {
     setMenuOpen(true)
     setActivePage(activePage)

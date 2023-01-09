@@ -29,19 +29,25 @@ const EventDetailsModal = ({
   item,
   setOpenModel,
 }) => {
-
   const [eventDetails, setEventDetails] = React.useState({})
+  const [eventDate, setEventDate] = React.useState()
   const { setMenuOpen } = useActivePage()
   const [actualMonth, setActualMonth] = React.useState()
 
   useEffect(() => {
-    if (item.event) setEventDetails(item.event.node)
+    if(!item.event) return
+    if (item.event) {
+      const eventDateRaw = new Date(item.event.node.eventDate)
+      const day = eventDateRaw.getDay() > 10 ? "0" + eventDateRaw.getDay() : eventDateRaw.getDay()
+      setEventDetails(item.event.node)
+      console.log('eventDateRaw', day)
+    }
     if (currentMonth < 10) {
       setActualMonth("0" + (currentMonth + 1))
     } else {
       setActualMonth(currentMonth + 1)
     }
-  }, [item,currentMonth])
+  }, [item, currentMonth])
 
   return (
     <EventDetailsWrapper
@@ -103,7 +109,7 @@ const EventDetailsModal = ({
                 : eventDetails.venueOpenBeforeEventStart === false
                 ? ""
                 : "OPEN 5PM-LATE"}
-                {/* {console.log(eventDetails.venueOpenBeforeEventStart, eventDetails.eventName)} */}
+           
             </Heading2>
             {item.event && item.event.node.eventName ? (
               <>
