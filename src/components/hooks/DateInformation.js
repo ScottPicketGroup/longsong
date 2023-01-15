@@ -8,7 +8,7 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
   const year = date.getFullYear()
   const month = date.getMonth()
   let monthtoIt = currentMonth < 12 ? currentMonth - 1 : (currentMonth % 12) - 1
- 
+
   useEffect(() => {
     let date = new Date(Date.UTC(year, currentMonth, 1))
 
@@ -18,20 +18,24 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
     while (date.getUTCMonth() - 1 === monthtoIt) {
       let iterator = date.getDate()
       let m
+      let ISODate = date.toISOString(monthtoIt + 1).split("T")[0]
+    
       if (iterator < 10 && events) {
         events.forEach(event => {
           let ISOEventDate = event.node.eventDate.split("T")[0]
           let ISODate = date.toISOString(monthtoIt + 1).split("T")[0]
+          // console.log(event, event.node.eventDate.split("T")[0] === date.toISOString(monthtoIt + 1).split("T")[0], event.node.eventDate.split("T")[0], date.toISOString(monthtoIt + 1).split("T")[0] )
           if (ISOEventDate === ISODate) {
-            m = event 
+            m = event
           }
-          
         })
 
         days.push({
           dayIndex: date.getDay(),
           day: date.toLocaleDateString("au-EN", day),
           date: "0" + date.toLocaleDateString("au-EN", dat),
+          isoEventDate: m && m.node.eventDate.split("T")[0],
+          isoDate: ISODate,
           event: m,
         })
       } else {
@@ -48,6 +52,8 @@ const useGetDaysOfMonth = (currentMonth, nextMonth, events) => {
           dayIndex: date.getDay(),
           day: date.toLocaleDateString("au-EN", day),
           date: date.toLocaleDateString("au-EN", dat),
+          isoDate: ISODate,
+          isoEventDate: m && m.node.eventDate.split("T")[0],
           event: m,
         })
       }
