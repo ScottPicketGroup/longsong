@@ -23,9 +23,7 @@ export const NotOpenToPublic = ({ item }) => {
           </>
         )}
       </EventContents>
-      <EventFooterWrapper>
-        <LongsongIcon />
-      </EventFooterWrapper>
+   
     </EventInfoWrapper>
   )
 }

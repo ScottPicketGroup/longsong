@@ -14,8 +14,6 @@ const EventDetailsDisplay = ({
   item,
   day,
 }) => {
-  
-
   return (
     <>
       {
@@ -54,64 +52,6 @@ const EventDetailsDisplay = ({
           <LongsongIcon />
         </EventFooterWrapper>
       )}
-      {/* {
-
-    !eventDetails ?
-
-  (
-    <>no event</>
-  ) :
-
-      eventDetails && 
-      eventDetails.isTheVenueOpenToThePublic === false ? (
-       <></>
-      ) : 
-      
-      (
-        <EventInfoWrapper>
-          <EventContents>
-          
-            {item.event && item.event.node.eventName && eventDetails.isTheVenueOpenToThePublic !== false? (
-              <>
-                <Heading2>{eventDetails.eventName}</Heading2>
-                {eventDetails &&
-                eventDetails.eventDate &&
-                parseInt(eventDetails.eventDate.slice(11, 14)) - 12 !== -12 ? (
-                  <Heading2>
-                    
-                    {`FROM ${
-                      parseInt(eventDetails.eventDate.slice(11, 14)) - 12
-                    }`}
-                    –LATE
-                  </Heading2>
-                ) : !eventDetails.eventDate || !eventDetails.eventDate.includes("00:00")   ? (
-                  <>
-                    <Heading2>OPEN 5PM–LATE</Heading2>
-                  </>
-                ) : null}
-                <Heading2>{eventDetails.drinksSpecialTitle}</Heading2>
-                <Heading2>{eventDetails.foodSpecialTitle}</Heading2>
-              </>
-            ) : (
-              <>
-             
-              </>
-            )}
-
-            <Heading2>
-              {dayOfWeek === "Sunday" ||
-              dayOfWeek === "Monday" ||
-              dayOfWeek === "Tuesday"
-                ? "CLOSED"
-                : eventDetails.eventDate &&
-                  eventDetails.eventDate.slice(5, 10).replace("-", "") ===
-                    actualMonth + item.date}
-            </Heading2>
-          </EventContents>
-
-          
-        </EventInfoWrapper>
-      )} */}
     </>
   )
 }
