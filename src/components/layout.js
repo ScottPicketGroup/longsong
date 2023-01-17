@@ -12,6 +12,8 @@ import { SectionRow } from "./Pages/Landing/LandingPageModules/index.css"
 import MenuContainer from "./MenuContainer/MenuContainer"
 import LongrainLink from "./Pages/Landing/LongrainLink/LongrainLink"
 import useActivePage from "./hooks/ActivePage"
+import { LinksWrapper } from "./Pages/Landing/LongrainLink/LongrainLink.css"
+import BookATableLink from "./Pages/Landing/BookATableLink/BookATableLink"
 
 const Layout = ({ children, fd, heroImage, openingTimes }) => {
   const { menuOpen, setMenuOpen, activePage, setActivePage } = useActivePage();
@@ -37,7 +39,10 @@ const Layout = ({ children, fd, heroImage, openingTimes }) => {
           />
 
           <PageWrapper>
+          <LinksWrapper>
+            <BookATableLink heroImage/>
             <LongrainLink heroImage/>
+          </LinksWrapper>
             {heroImage ? (
               <SectionRow marginBottom="xl" >{children}</SectionRow>
             ) : (

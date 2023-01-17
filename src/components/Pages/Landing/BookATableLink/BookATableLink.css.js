@@ -5,7 +5,6 @@ export const LinksWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 30px;
-  width: 95%;
 `
 export const Underline = styled.span`
   position: absolute;
@@ -21,7 +20,7 @@ export const Underline = styled.span`
 export const LongrainLinkWrapper = styled.div`
  
   z-index: ${props => (props.heroImage ? 1 : "auto")};
- 
+
   /* right: 30px; */
 
   font-size: 40px;
