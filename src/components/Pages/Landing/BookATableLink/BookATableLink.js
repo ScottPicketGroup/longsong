@@ -7,8 +7,7 @@ const BookATableLink = ({ heroImage }) => {
     <LongrainLinkWrapper heroImage>
       <BC4 marginBottom="sm">
 
-        {/* <a
-          href="https://www.sevenrooms.com/reservations/longsong/"
+        
 
         <a
           href="https://www.sevenrooms.com/landing/longsong"
@@ -18,7 +17,7 @@ const BookATableLink = ({ heroImage }) => {
         >
           BOOK A TABLE
         </a>
-        <Underline />  */}
+        <Underline /> 
       </BC4>
     </LongrainLinkWrapper>
   )
