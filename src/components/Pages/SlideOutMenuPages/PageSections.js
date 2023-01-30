@@ -29,7 +29,7 @@ const PageSections = ({ data }) => {
           <Slider imageData={data.secondSection.imageData} aspectRatio="9/14" />
         </ImageWrapper>
       </SectionWrapper>
-      <SectionWrapper column mobInvert>
+     {data.thirdSection && <SectionWrapper column mobInvert>
         <ImageWrapper full>
           <Slider imageData={data.thirdSection.imageData} aspectRatio="3/2" />
         </ImageWrapper>
@@ -38,7 +38,7 @@ const PageSections = ({ data }) => {
           <Heading1 marginBottom="md">{data.thirdSection.title}</Heading1>
           <Renderer node={data.thirdSection.content}/>
         </TextContainer>
-      </SectionWrapper>
+      </SectionWrapper>}
     </>
   )
 }
