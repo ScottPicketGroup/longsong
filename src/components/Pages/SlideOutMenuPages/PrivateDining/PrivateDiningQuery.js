@@ -31,7 +31,7 @@ export default function usePrivateDiningQuery() {
           title
           gatsbyImageData
         }
-        privateEventsSection3title
+     
        
         privateSection4Title
         privatEventsSection4Description {
@@ -95,7 +95,7 @@ export default function usePrivateDiningQuery() {
   }
   return pageData
 }
-
+//   privateEventsSection3title
 // privateEventsSection3description {
 //   raw
 // }
