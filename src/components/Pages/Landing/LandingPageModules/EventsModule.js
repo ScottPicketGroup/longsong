@@ -18,7 +18,7 @@ const EventsModule = () => {
   const data = useStaticQuery(graphql`
     query landingEventsQuery {
       contentfulLandingPageEventsModule(
-        id: { eq: "00760aef-4841-5f1b-ad1a-a1f2336506ae" }
+        id: { eq: "cea128a7-db15-5a6d-8418-af613bc2846d" }
       ) {
         id
         landingPageEventsList {
@@ -44,28 +44,34 @@ const EventsModule = () => {
     data.contentfulLandingPageEventsModule.landingPageEventsList
   )
 
-console.log('events', events[0].eventName.includes("dummy"))
   return (
     <LandingPageModuleContainer>
-      {!events[0].eventName.includes("dummy") && events.map((event, i) => (
-        <EventSectionWrapper style={{ marginBottom: "3.25rem" }} key={i} i={i}>
-          <TextContainer full i={i}>
-            <TextWrapper>
-              <TimeAndButtonWrapper>
-                <Time style={{ margin: "0 0 3rem 0" }}>{event.eventDate}</Time>
-              </TimeAndButtonWrapper>
-              <BreakLine first style={{ width: `100%` }} />
-              <HeadingAndIntroWrapper>
-                <Heading1 marginBottom="md">{event.eventName}</Heading1>
-                <Renderer node={event.eventDescriptionPreview} />
-              </HeadingAndIntroWrapper>
-            </TextWrapper>
-          </TextContainer>
-          <ImageWrapper i={i}>
-            <Slider imageData={event.eventMedia[0]} aspcetRatio="9/16" />
-          </ImageWrapper>
-        </EventSectionWrapper>
-      ))}
+      {!events[0].eventName.includes("dummy") &&
+        events.map((event, i) => (
+          <EventSectionWrapper
+            style={{ marginBottom: "3.25rem" }}
+            key={i}
+            i={i}
+          >
+            <TextContainer full i={i}>
+              <TextWrapper>
+                <TimeAndButtonWrapper>
+                  <Time style={{ margin: "0 0 3rem 0" }}>
+                    {event.eventDate}
+                  </Time>
+                </TimeAndButtonWrapper>
+                <BreakLine first style={{ width: `100%` }} />
+                <HeadingAndIntroWrapper>
+                  <Heading1 marginBottom="md">{event.eventName}</Heading1>
+                  <Renderer node={event.eventDescriptionPreview} />
+                </HeadingAndIntroWrapper>
+              </TextWrapper>
+            </TextContainer>
+            <ImageWrapper i={i}>
+              <Slider imageData={event.eventMedia[0]} aspcetRatio="9/16" />
+            </ImageWrapper>
+          </EventSectionWrapper>
+        ))}
     </LandingPageModuleContainer>
   )
 }
@@ -74,7 +80,7 @@ export default EventsModule
 
 export const EventSectionWrapper = styled(SectionWrapper)`
   display: flex;
-  margin-top: ${props => props.i !== 0 ? '5.6rem' : '3.25rem'};
+  margin-top: ${props => (props.i !== 0 ? "5.6rem" : "3.25rem")};
   @media (max-width: 450px) {
     :first-child {
       margin-bottom: 3.25rem;
@@ -85,24 +91,22 @@ export const EventSectionWrapper = styled(SectionWrapper)`
 
 export const TextContainer = styled.div`
   display: flex;
-  justify-content: ${props => props.i % 2 ? 'flex-end': ''};
+  justify-content: ${props => (props.i % 2 ? "flex-end" : "")};
   order: ${props => (props.i % 2 ? 1 : 0)};
   width: ${props => (props.full ? "50%" : props.sixty ? "60%" : "40%")};
-
 
   float: right;
   margin-top: ${props => (props.first ? "56px" : "")};
   @media (max-width: 450px) {
     width: 100%;
     margin-bottom: 2rem;
-    margin-top: ${props => props.i > 0 && '3.5rem'};
+    margin-top: ${props => props.i > 0 && "3.5rem"};
   }
 `
 export const TextWrapper = styled.div`
   width: 90%;
   @media (max-width: 450px) {
     width: 100%;
-
   }
 `
 
