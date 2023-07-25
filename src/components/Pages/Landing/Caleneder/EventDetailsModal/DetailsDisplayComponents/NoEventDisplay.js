@@ -9,7 +9,8 @@ const NoEventDisplay = ({ item }) => {
         <Heading2>
           {item.day === "Sunday" ||
           item.day === "Monday" ||
-          item.day === "Tuesday"
+          item.day === "Tuesday" ||
+          item.day === "Wednesday"
             ? "CLOSED"
             : item.day === "Friday"
             ? "OPEN 4PM-LATE"
