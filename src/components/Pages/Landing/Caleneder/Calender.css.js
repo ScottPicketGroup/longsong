@@ -102,7 +102,6 @@ export const DayContainer = styled.div`
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date + 7
       ? "none"
-      
       : props.month === props.currentMonth &&
         parseInt(props.day) === props.date + 8
       ? "none"
@@ -188,6 +187,7 @@ export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
       ? "#314638"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
+        props.dayOfWeek === "Wednesday" ||
         props.dayOfWeek === "Monday"
       ? ""
       : ""};
@@ -395,6 +395,7 @@ export const EventBC3 = styled(BC3)`
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
+        props.dayOfWeek === "Wednesday" ||
         props.dayOfWeek === "Monday"
       ? "#6A6A6A"
       : "white"};
@@ -429,7 +430,7 @@ export const EventHeading3 = styled(Heading3)`
         props.dayOfWeek === "Monday"
       ? "#6A6A6A"
       : "white"};
-  margin-left: ${props=>props.eventStatus && "0"};
+  margin-left: ${props => props.eventStatus && "0"};
 `
 export const EventNumber1 = styled(Number1)`
   color: ${props =>
