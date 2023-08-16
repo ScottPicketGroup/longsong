@@ -30,7 +30,7 @@ export const MenuSlideOutWrapper = styled.div`
   z-index: 1000;
   height: 100vh;
   flex-direction: row;
-  width: ${props => (props.menuOpen ? "100%" : "0")};
+  width: ${props => (props.menuOpen ? "100vw" : "0")};
   background: #2b3c31;
   transition: width 1s ease-in-out;
   overflow-y: scroll;
@@ -148,12 +148,12 @@ export const WhatsOnCalendarContainer = styled.div`
 `
 
 export const ScrollToTopMenu = styled.div`
-  display: ${props => props.menuOpen ? "block" : "none"};
+  display: ${props => (props.menuOpen ? "block" : "none")};
   position: fixed;
   right: 5%;
   bottom: 5%;
   transform: rotate(180deg);
-  @media(max-width: 451px){
+  @media (max-width: 451px) {
     right: 2rem;
     bottom: 2rem;
   }

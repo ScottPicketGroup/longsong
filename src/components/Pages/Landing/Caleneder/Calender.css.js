@@ -96,6 +96,7 @@ const getDaysInMonth = (month, year) => {
 }
 
 export const DayContainer = styled.div`
+  height: 100%;
   border-top: ${props =>
     props.month === props.currentMonth && parseInt(props.day) === props.date
       ? ".5px solid #457E5C"

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const MenuWrapper = styled.div`
-  width: 5%;
+  width: 5vw;
   min-height: 100vh;
   border-right: white solid 1px;
   display: flex;
@@ -53,9 +53,9 @@ export const EventsWrapper = styled.div`
 `
 
 export const DesktopMenuIconWrapper = styled.div`
-display: flex;
-justify-content: center;
-flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   @media (max-width: 451px) {
     display: none;
   }
