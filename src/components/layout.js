@@ -16,7 +16,7 @@ import { LinksWrapper } from "./Pages/Landing/LongrainLink/LongrainLink.css"
 import BookATableLink from "./Pages/Landing/BookATableLink/BookATableLink"
 
 const Layout = ({ children, fd, heroImage, openingTimes }) => {
-  const { menuOpen, setMenuOpen, activePage, setActivePage } = useActivePage();
+  const { menuOpen, setMenuOpen, activePage, setActivePage } = useActivePage()
   const [loading, setLoading] = React.useState(true)
 
   useEffect(() => {
@@ -39,12 +39,12 @@ const Layout = ({ children, fd, heroImage, openingTimes }) => {
           />
 
           <PageWrapper>
-          <LinksWrapper>
-            <BookATableLink heroImage/>
-            <LongrainLink heroImage/>
-          </LinksWrapper>
+            <LinksWrapper>
+              <BookATableLink heroImage />
+              <LongrainLink heroImage />
+            </LinksWrapper>
             {heroImage ? (
-              <SectionRow marginBottom="xl" >{children}</SectionRow>
+              <SectionRow marginBottom="xl">{children}</SectionRow>
             ) : (
               <SectionContainer marginBottom="xl">{children}</SectionContainer>
             )}

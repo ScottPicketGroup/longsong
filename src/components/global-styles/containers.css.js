@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
 export const PageContainer = styled.div`
-  width: 100%;
+  width: 100vw;
 
- display: flex;
+  display: flex;
 
   @media (max-width: 450px) {
     width: 100%;
@@ -12,18 +12,18 @@ export const PageContainer = styled.div`
 `
 
 export const PageWrapper = styled.main`
-width: 95%;
+  width: 95vw;
 
-display: ${props => props.flex ? 'flex' : ''};
-flex-direction: ${props => props.flex ? 'row' : ''};
-@media (max-width: 450px) {
-   width: 100%;
+  display: ${props => (props.flex ? "flex" : "")};
+  flex-direction: ${props => (props.flex ? "row" : "")};
+  @media (max-width: 450px) {
+    width: 100%;
   }
 `
 
 export const SectionContainer = styled.div`
   display: flex;
-  flex-direction: ${props => props.flex ? 'row' : 'column'};
+  flex-direction: ${props => (props.flex ? "row" : "column")};
   padding: 2.25rem 6% 0 3%;
 
   width: 100%;
@@ -191,20 +191,19 @@ export const ItemImg = styled.div`
 `
 
 export const FullImageContainer = styled.div`
-
   width: 100%;
 `
 export const DesktopWrapper = styled.div`
-@media (max-width: 451px) {
+  @media (max-width: 451px) {
     display: none;
-}
+  }
 `
 
 export const MobileWrapper = styled.div`
-display:${props => props.imageControls ? ' flex': ''};
-width:${props => props.imageControls ? ' 100%': ''};
-justify-content:${props => props.imageControls ? ' space-between': ''};
-@media (min-width: 451px) {
-    display: none
-}
+  display: ${props => (props.imageControls ? " flex" : "")};
+  width: ${props => (props.imageControls ? " 100%" : "")};
+  justify-content: ${props => (props.imageControls ? " space-between" : "")};
+  @media (min-width: 451px) {
+    display: none;
+  }
 `

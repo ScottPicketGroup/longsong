@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import { fadeInBG } from './animations';
+import styled, { createGlobalStyle } from "styled-components"
+import { fadeInBG } from "./animations"
 
 const GlobalStyles = createGlobalStyle`
 
@@ -20,6 +20,10 @@ const GlobalStyles = createGlobalStyle`
  
     color: white;
   }
+  body {
+    overflow-x: hidden;
+}
+
   a {
     color: #333333;
   }
@@ -31,17 +35,17 @@ const GlobalStyles = createGlobalStyle`
 export default GlobalStyles
 
 export const Button = styled.button`
-background: transparent;
-border: 1px solid white;
-width: ${props => props.submit ? '35%' : ''};
-color: white;
-padding: .5rem .75rem;
-transition: all .2s ease-in-out;
-:hover {
-  color: #2B3C31;
-  background: white;
-}
-margin-bottom: ${props => {
+  background: transparent;
+  border: 1px solid white;
+  width: ${props => (props.submit ? "35%" : "")};
+  color: white;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    color: #2b3c31;
+    background: white;
+  }
+  margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "sm":
         return "1rem"
@@ -51,7 +55,7 @@ margin-bottom: ${props => {
         return "3.75rem"
       case "xl":
         return "8rem"
-        case "xxl":
+      case "xxl":
         return "9.63rem"
       default:
         return "0"
@@ -76,20 +80,18 @@ margin-bottom: ${props => {
 `
 
 export const SocialIcon = styled.svg`
-transition: all .2s ease-in-out;
-fill: white;
-stroke: white;
-:hover {
-  stroke: #457E5C ;
-  fill:   #457E5C ;
-   g {
-   
-    stroke:   #457E5C ;
+  transition: all 0.2s ease-in-out;
+  fill: white;
+  stroke: white;
+  :hover {
+    stroke: #457e5c;
+    fill: #457e5c;
+    g {
+      stroke: #457e5c;
+    }
+    path,
+    ellipse {
+      stroke: #457e5c;
+    }
   }
-path, ellipse {
-  stroke:   #457E5C ;
-  
-}
-  
-}
 `
