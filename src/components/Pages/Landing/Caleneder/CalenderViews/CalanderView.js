@@ -31,12 +31,13 @@ const CalanderView = ({
   useEffect(() => {
     if (dayContainerRef.current)
       setElementWidth(dayContainerRef.current.clientWidth)
-  }, [activePage, dayContainerRef])
+  }, [dayContainerRef])
 
   useEffect(() => {
     openModel === i ? setOpen(true) : setOpen(false)
     // eslint-disable-next-line
   }, [openModel])
+  console.log("elementWidth", elementWidth)
   return item.day === "" && item.date === "" ? (
     <EmptyDayContainer ref={dayContainerRef} />
   ) : (

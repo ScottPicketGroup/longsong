@@ -18,11 +18,10 @@ const Days = ({ daysView, events }) => {
     events
   )
 
-  
   const daysWrapperRef = useRef(null)
   const { activePage } = useActivePage()
   const [elementWidth, setElementWidth] = useState(0)
-  
+
   useEffect(() => {
     if (daysWrapperRef.current)
       setElementWidth(daysWrapperRef.current.clientWidth)
@@ -30,8 +29,6 @@ const Days = ({ daysView, events }) => {
 
   const [openModel, setOpenModel] = useState(null)
   const scrollPosition = useScrollPosition()
-
-
 
   return (
     <DaysWrapper

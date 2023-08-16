@@ -78,6 +78,7 @@ export const MenuMonthItem = styled.div`
 // days section
 
 export const DaysWrapper = styled.div`
+  height: 110vh;
   width: 100%;
   opacity: 1;
   display: grid;
@@ -172,7 +173,7 @@ export const DateDisplayContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: ${props => `${props.height - 2}px`};
+  height: ${props => (props.height - 2 ? `${props.height - 2}px` : "25vh")};
   width: ${props => `${props.height}px`};
 
   @media (max-width: 450px) {
