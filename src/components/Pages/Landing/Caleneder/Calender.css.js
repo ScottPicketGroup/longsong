@@ -244,7 +244,7 @@ export const EventDetailsWrapper = styled.div`
   animation: ${xFadeIn} 500ms ease-in-out;
   border: 1px solid white;
   top: ${props => (props.i <= 21 ? "0" : "")};
-  bottom: ${props => (props.i > 21 ? "0" : "")};
+  bottom: ${props => (props.i > 21 ? "-10px" : "")};
   right: ${props =>
     props.i === 7 || props.i === 14 || props.i === 21 || props.i === 28
       ? "0"

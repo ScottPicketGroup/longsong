@@ -9,6 +9,7 @@ import { DaysWrapper } from "../Calender.css"
 import useScrollPosition from "../../../../hooks/ScrollPosition"
 import useActivePage from "../../../../hooks/ActivePage"
 import useChangeMonth from "../../../../hooks/ChangeMonth"
+import { element } from "prop-types"
 
 const Days = ({ daysView, events }) => {
   const { currentMonth, nextMonth, year } = useChangeMonth()
@@ -25,7 +26,7 @@ const Days = ({ daysView, events }) => {
   useEffect(() => {
     if (daysWrapperRef.current)
       setElementWidth(daysWrapperRef.current.clientWidth)
-  }, [activePage, daysWrapperRef])
+  }, [daysWrapperRef])
 
   const [openModel, setOpenModel] = useState(null)
   const scrollPosition = useScrollPosition()

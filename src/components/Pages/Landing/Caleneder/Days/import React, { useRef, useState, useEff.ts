@@ -31,16 +31,17 @@ const CalanderView = ({
   useEffect(() => {
     if (dayContainerRef.current)
       setElementWidth(dayContainerRef.current.clientWidth)
-  }, [dayContainerRef])
+  }, [activePage, dayContainerRef])
 
   useEffect(() => {
     openModel === i ? setOpen(true) : setOpen(false)
     // eslint-disable-next-line
   }, [openModel])
 
+  console.log("elementWidth", dayContainerRef.current !== null)
   return item.day === "" && item.date === "" ? (
     <EmptyDayContainer ref={dayContainerRef} />
-  ) : (
+  ) : dayContainerRef.current !== null ? (
     <DayContainer
       ref={dayContainerRef}
       currentMonth={currentMonth}
@@ -93,7 +94,7 @@ const CalanderView = ({
           item={item}
           open={open}
           i={i + 1}
-          width={elementWidth}
+          width={modalWidth}
           month={month}
           currentMonth={currentMonth}
           onClick={() => setOpen(false)}
@@ -102,7 +103,7 @@ const CalanderView = ({
         />
       </DateDisplayContainer>
     </DayContainer>
-  )
+  ) : null
 }
 
 export default CalanderView

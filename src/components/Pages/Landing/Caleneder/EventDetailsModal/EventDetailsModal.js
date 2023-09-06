@@ -19,14 +19,13 @@ const EventDetailsModal = ({
   setOpenModel,
 }) => {
   const [eventDetails, setEventDetails] = React.useState({})
-  const [eventDate, setEventDate] = React.useState()
+  console.log("width", width)
   const { setMenuOpen } = useActivePage()
   const [actualMonth, setActualMonth] = React.useState()
 
   useEffect(() => {
     if (!item.event) return
     if (item.event) {
-   
       setEventDetails(item.event.node)
     }
     if (currentMonth < 10) {
@@ -36,12 +35,11 @@ const EventDetailsModal = ({
     }
   }, [item, currentMonth])
 
-
   return (
     <EventDetailsWrapper
       open={open}
-      height={(height - 1) * 3}
-      width={(width / 7) * 2 - 10}
+      height={height * 3 + 15}
+      width={width * 2 + 10}
       i={i}
       onClick={() => setOpen(false)}
       onMouseLeave={() => setOpenModel(null)}
