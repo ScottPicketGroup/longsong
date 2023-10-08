@@ -19,7 +19,7 @@ const EventDetailsModal = ({
   setOpenModel,
 }) => {
   const [eventDetails, setEventDetails] = React.useState({})
-  console.log("width", width)
+  const[itemHeight, setItemHeight] = React.useState(0)
   const { setMenuOpen } = useActivePage()
   const [actualMonth, setActualMonth] = React.useState()
 
@@ -34,6 +34,9 @@ const EventDetailsModal = ({
       setActualMonth(currentMonth + 1)
     }
   }, [item, currentMonth])
+useEffect(() => {
+  setItemHeight(height)
+},[])
 
   return (
     <EventDetailsWrapper

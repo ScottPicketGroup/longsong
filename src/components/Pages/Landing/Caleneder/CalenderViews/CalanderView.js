@@ -83,23 +83,23 @@ const CalanderView = ({
           {item.date}
         </Number1>
 
-        <EventDetailsModal
-          eventData={item.event}
-          dayOfWeek={item.day}
-          day={day}
-          date={todaysDate}
-          key={i}
-          height={elementWidth}
-          item={item}
-          open={open}
-          i={i + 1}
-          width={elementWidth}
-          month={month}
-          currentMonth={currentMonth}
-          onClick={() => setOpen(false)}
-          setOpenModel={setOpenModel}
-          setOpen={setOpen}
-        />
+    <EventDetailsModal
+        eventData={item.event}
+        dayOfWeek={item.day}
+        day={day}
+        date={todaysDate}
+        key={i}
+        height={elementWidth}
+        item={item}
+        open={open}
+        i={i + 1}
+        width={elementWidth}
+        month={month}
+        currentMonth={currentMonth}
+        onClick={() => setOpen(false)}
+        setOpenModel={setOpenModel}
+        setOpen={setOpen}
+      />
       </DateDisplayContainer>
     </DayContainer>
   )

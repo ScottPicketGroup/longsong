@@ -237,8 +237,8 @@ export const EventDetailsWrapper = styled.div`
   flex-direction: column;
   background: #314638;
   transform-origin: left top;
-  height: ${props => `${props.height}px` || 'auto'};
-  width: ${props => `${props.width}px`};
+  height: 65.5vh;
+  width: 43.5vh;
   position: absolute;
   z-index: 500;
   animation: ${xFadeIn} 500ms ease-in-out;
