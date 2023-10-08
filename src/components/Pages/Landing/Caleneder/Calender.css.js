@@ -237,7 +237,7 @@ export const EventDetailsWrapper = styled.div`
   flex-direction: column;
   background: #314638;
   transform-origin: left top;
-  height: 65.5vh;
+  height: 60.5vh;
   width: 43.5vh;
   position: absolute;
   z-index: 500;
@@ -257,7 +257,7 @@ export const EventDetailsWrapper = styled.div`
   }
 `
 export const EventListWrapper = styled.div`
-  height: ${props => `${props.height}px`};
+  height: ${props => props.height > 0 ? `${props.height}px` : "26vh"};
 
   padding: ${props =>
     props.i === 7 || props.i === 14 || props.i === 21 || props.i === 28
