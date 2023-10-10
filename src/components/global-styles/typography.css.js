@@ -142,7 +142,6 @@ export const Heading3 = styled.h3`
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Wednesday" ||
         props.dayOfWeek === "Monday"
       ? "#6A6A6A"
       : props.month === props.currentMonth &&
@@ -208,7 +207,6 @@ export const Number1 = styled.h3`
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Wednesday" ||
         props.dayOfWeek === "Monday"
       ? "#6A6A6A"
       : props.month === props.currentMonth &&

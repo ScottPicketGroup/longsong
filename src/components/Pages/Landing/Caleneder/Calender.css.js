@@ -111,7 +111,6 @@ export const DayContainer = styled.div`
       ? ".5px solid #6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Wednesday" ||
         props.dayOfWeek === "Monday"
       ? ".5px solid #6A6A6A"
       : ".5px solid white"};
@@ -125,7 +124,6 @@ export const DayContainer = styled.div`
       : props.day >= getDaysInMonth(props.currentMonth % 12) - 7 &&
         (props.dayOfWeek === "Sunday" ||
           props.dayOfWeek === "Tuesday" ||
-          props.dayOfWeek === "Wednesday" ||
           props.dayOfWeek === "Monday")
       ? ".5px solid #6A6A6A"
       : props.day >= getDaysInMonth(props.currentMonth % 12) - 7
@@ -191,7 +189,6 @@ export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
       ? "#314638"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Wednesday" ||
         props.dayOfWeek === "Monday"
       ? ""
       : ""};
@@ -399,7 +396,6 @@ export const EventBC3 = styled(BC3)`
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Wednesday" ||
         props.dayOfWeek === "Monday"
       ? "#6A6A6A"
       : "white"};
