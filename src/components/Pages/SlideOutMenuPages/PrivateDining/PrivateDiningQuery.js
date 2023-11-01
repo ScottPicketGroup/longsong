@@ -31,8 +31,14 @@ export default function usePrivateDiningQuery() {
           title
           gatsbyImageData
         }
-     
-       
+        privateEventsSection3title
+        privateEventsSection3description {
+          raw
+        }
+        privateEventsSection3media {
+          title
+          gatsbyImageData
+        }
         privateSection4Title
         privatEventsSection4Description {
           raw
@@ -80,12 +86,12 @@ export default function usePrivateDiningQuery() {
         data.contentfulPrivateDiningSectionInSlideOutPage.privateEventsSection2description,
       imageData: data.contentfulPrivateDiningSectionInSlideOutPage.privateEventsSection2media,
     },
-    // thirdSection: {
-    //   title: data.contentfulPrivateDiningSectionInSlideOutPage.privateEventsSection3title,
-    //   content:
-    //     data.contentfulPrivateDiningSectionInSlideOutPage.privateEventsSection3description,
-    //   imageData: data.contentfulPrivateDiningSectionInSlideOutPage.privateEventsSection3media,
-    // },
+    thirdSection: {
+      title: data.contentfulPrivateDiningSectionInSlideOutPage.privateEventsSection3title,
+      content:
+        data.contentfulPrivateDiningSectionInSlideOutPage.privateEventsSection3description,
+      imageData: data.contentfulPrivateDiningSectionInSlideOutPage.privateEventsSection3media,
+    },
     fourthSection: {
       title: data.contentfulPrivateDiningSectionInSlideOutPage.privateSection4Title,
       content:
