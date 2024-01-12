@@ -40,7 +40,7 @@ const Layout = ({ children, fd, heroImage, openingTimes }) => {
 
           <PageWrapper>
             <LinksWrapper>
-              <BookATableLink heroImage />
+              // <BookATableLink heroImage />
               <LongrainLink heroImage />
             </LinksWrapper>
             {heroImage ? (
