@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const LinksWrapper = styled.div`
   position: absolute;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 30px;
   width: 95%;
 `
