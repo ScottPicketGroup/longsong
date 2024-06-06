@@ -23,7 +23,7 @@ const FooterContactDetails = ({openingTimes}) => {
         44 Little Bourke Street VIC 3000 <br />
         <a href="mailto:info@longsong.com.au">info@longsong.com.au</a>
         <br />
-        03 9653 1611
+          03 9653 1600
       </BC4>
       <BC4>Opening Hours:</BC4>
       <Renderer node={openingTimes.openingTimes}/>
