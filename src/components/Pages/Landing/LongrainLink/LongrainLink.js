@@ -11,7 +11,7 @@ const LongrainLink = ({ heroImage }) => {
           target="_blank"
           rel="noreferrer"
         >
-          LONGRAIN STAGING
+          LONGRAIN
         </a>
         <Underline /> 
       </BC4>
