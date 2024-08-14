@@ -27,24 +27,6 @@ const GiftVouchers = ({ activePage }) => {
           />
         </ImageWrapper>
 
-        <TextContainer right full marginBottom="mx  d" >
-        <BreakLine first />
-          <Heading1 marginBottom="md">
-          {pageData.longsongVoucherHeading}
-
-          </Heading1>
-          <Renderer node={pageData.longsongVoucherDescription} />
-
-          <Button marginBottom="xl">
-          <a
-              href={pageData.longsongVoucherLinkUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {pageData.longsongVoucherLinkLabel}
-            </a>
-            </Button>
-        </TextContainer>
         <TextContainer right full marginBottom="md">
           <BreakLine none />
           <Heading1 marginBottom="md">
