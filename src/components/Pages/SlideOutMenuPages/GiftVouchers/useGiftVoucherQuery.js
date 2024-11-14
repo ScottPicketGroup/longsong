@@ -5,12 +5,6 @@ export default function useGiftVoucherPageQuery() {
     query GiftVouchersPage {
       contentfulGiftVouchers(id: {}) {
         id
-        longsongVoucherHeading
-        longsongVoucherLinkLabel
-        longsongVoucherLinkUrl
-        longsongVoucherDescription {
-          raw
-        }
         groupVoucherHeading
         groupVoucherLinkLabel
         groupVoucherLinkUrl
