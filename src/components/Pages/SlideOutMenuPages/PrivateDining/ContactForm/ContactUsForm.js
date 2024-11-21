@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Heading1 } from "../../../../global-styles/typography.css"
 import { TextContainer } from "../../Bar/Space.css"
 import FunctionTrackerForm from "./FunctionTrackerForm"
+import { Helmet } from "react-helmet"
 const ContactUsForm = () => {
   return (
     <>
@@ -10,8 +11,17 @@ const ContactUsForm = () => {
         <Heading1>Enquiry Form</Heading1>
       </TextContainer>
       <TextContainer sixty>
-        <FunctionTrackerForm />
+        <ExternalForm id="CONTACTA_61960f035e0c880c5a61ab16" />
       </TextContainer>
+      <Helmet>
+        <script type="text/javascript" async>
+          var script = document.createElement("script"); script.type =
+          "text/javascript"; script.src =
+          "https://forms.contacta.io/61960f035e0c880c5a61ab16.js";
+          document.getElementsByTagName("head")[0].appendChild(script);
+        </script>
+        <div id="CONTACTA_61960f035e0c880c5a61ab16"></div>
+      </Helmet>
     </>
   )
 }
