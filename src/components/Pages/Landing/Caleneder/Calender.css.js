@@ -111,7 +111,8 @@ export const DayContainer = styled.div`
       ? ".5px solid #6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Monday"
+        props.dayOfWeek === "Monday" || 
+        props.dayOfWeek === "Wednesday"
       ? ".5px solid #6A6A6A"
       : ".5px solid white"};
 
@@ -124,7 +125,7 @@ export const DayContainer = styled.div`
       : props.day >= getDaysInMonth(props.currentMonth % 12) - 7 &&
         (props.dayOfWeek === "Sunday" ||
           props.dayOfWeek === "Tuesday" ||
-          props.dayOfWeek === "Monday")
+          props.dayOfWeek === "Monday" || props.dayOfWeek === "Wednesday")
       ? ".5px solid #6A6A6A"
       : props.day >= getDaysInMonth(props.currentMonth % 12) - 7
       ? ".5px solid white"
@@ -154,7 +155,8 @@ export const EventDayContainer = styled(DayContainer)`
       ? "1px solid #6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Monday"
+        props.dayOfWeek === "Monday" ||
+         props.dayOfWeek === "Wednesday"
       ? "1px solid #6A6A6A"
       : "1px solid white"};
 `
@@ -189,7 +191,8 @@ export const EventsDateDisplayContainer = styled(DateDisplayContainer)`
       ? "#314638"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Monday"
+        props.dayOfWeek === "Monday" ||
+        props.dayOfWeek === "Wednesday"
       ? ""
       : ""};
   border: ${props =>
@@ -396,7 +399,8 @@ export const EventBC3 = styled(BC3)`
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Monday"
+        props.dayOfWeek === "Monday" ||
+        props.dayOfWeek === "Wednesday"
       ? "#6A6A6A"
       : "white"};
 `
@@ -427,7 +431,8 @@ export const EventHeading3 = styled(Heading3)`
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Monday"
+        props.dayOfWeek === "Monday" ||
+        props.dayOfWeek === "Wednesday"
       ? "#6A6A6A"
       : "white"};
   margin-left: ${props => props.eventStatus && "0"};
@@ -440,7 +445,8 @@ export const EventNumber1 = styled(Number1)`
       ? "#6A6A6A"
       : props.dayOfWeek === "Sunday" ||
         props.dayOfWeek === "Tuesday" ||
-        props.dayOfWeek === "Monday"
+        props.dayOfWeek === "Monday" ||
+        props.dayOfWeek === "Wednesday"
       ? "#6A6A6A"
       : "white"};
 `
