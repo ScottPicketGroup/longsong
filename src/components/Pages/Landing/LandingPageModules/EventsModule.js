@@ -46,7 +46,7 @@ const EventsModule = () => {
   console.log('events', events)
   return (
     <LandingPageModuleContainer>
-      {events && !events[0].eventName.includes("dummy") &&
+      {events && events.length > 0 && !events[0].eventName.includes("dummy") &&
         events.map((event, i) => (
           <EventSectionWrapper
             style={{ marginBottom: "3.25rem" }}
